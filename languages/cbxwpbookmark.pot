@@ -1,0 +1,2431 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-31 10:06+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+#. %d: Total system wide bookmark count
+#: templates/admin/dashboard.php:65
+msgid "%d bookmarks"
+msgstr ""
+
+#. %d: Total system wide category count
+#: templates/admin/dashboard.php:81
+msgid "%d categories"
+msgstr ""
+
+#. %s template
+#: includes/cbxwpbookmark-tpl-loader.php:74
+#, php-format
+msgid "%s does not exist."
+msgstr ""
+
+#. %s: Number of items.
+#: includes/class-cbxwpbookmark-list.php:610
+#, php-format
+msgid "%s item"
+msgid_plural "%s items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: widgets/classic_widgets/category-widget/views/admin.php:47
+msgid "-- All --"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:103
+#: widgets/classic_widgets/most-widget/views/admin.php:24
+msgid "-- All Time --"
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:150
+msgid "0 means all time"
+msgstr ""
+
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:93
+msgid "0 means all time, need numeric value."
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:108
+#: widgets/classic_widgets/most-widget/views/admin.php:26
+msgid "1 Day"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:128
+#: widgets/classic_widgets/most-widget/views/admin.php:38
+msgid "1 Year"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:118
+#: widgets/classic_widgets/most-widget/views/admin.php:32
+msgid "30 Days"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:123
+#: widgets/classic_widgets/most-widget/views/admin.php:35
+msgid "6 Months"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:113
+#: widgets/classic_widgets/most-widget/views/admin.php:29
+msgid "7 Days"
+msgstr ""
+
+#. %s: bookmark mycred plugin description url
+#: admin/class-cbxwpbookmark-admin.php:921
+#, php-format
+msgid ""
+"<a target=\"_blank\" href=\"%s\">CBX Bookmark myCred Addon</a> has myCred "
+"integration. try it  - Codeboxr Team"
+msgstr ""
+
+#. %s: bookmark product description url
+#: admin/class-cbxwpbookmark-admin.php:910
+#, php-format
+msgid ""
+"<a target=\"_blank\" href=\"%s\">CBX Bookmark Pro Addon</a> has extended "
+"features, settings, widgets and shortcodes. try it  - Codeboxr Team"
+msgstr ""
+
+#. %s: register url
+#: admin/class-cbxwpbookmark-admin.php:874
+#, php-format
+msgid ""
+"<strong>Note:</strong> CBX Bookmark & Favorite myCred Addon is custom plugin."
+" This plugin can not be auto update from dashboard/plugin manager. For "
+"manual update please check <a target=\"_blank\" href=\"%1$s\">"
+"documentation</a>. <strong style=\"color: red;\">It seems this plugin's "
+"current version is older than 1.0.5. To get the latest pro addon features, "
+"this plugin needs to upgrade to 1.0.5 or later.</strong>"
+msgstr ""
+
+#. translators:translators: %s: plugin setting url for licence
+#: admin/class-cbxwpbookmark-admin.php:836
+#, php-format
+msgid ""
+"<strong>Note:</strong> CBX Bookmark & Favorite Pro Addon is custom plugin. "
+"This plugin can not be auto update from dashboard/plugin manager. For manual "
+"update please check <a target=\"_blank\" href=\"%1$s\">documentation</a>. "
+"<strong style=\"color: red;\">It seems this plugin's current version is "
+"older than 1.4.5. To get the latest pro addon features, this plugin needs to "
+"upgrade to 1.4.4 or later.</strong>"
+msgstr ""
+
+#: templates/admin/bookmark_category_edit.php:149
+msgid "Actions"
+msgstr ""
+
+#: templates/admin/bookmark_category_edit.php:38
+msgid "Add"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-setting.php:903
+msgid "Add New"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2501
+msgid "After Content"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-category-block.php:92
+msgid "All"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:101
+#: includes/class-cbxwpbookmark-shortcodes.php:176
+#: includes/customizer/class-cbxwpbookmark-customizer.php:411
+#: includes/customizer/class-cbxwpbookmark-customizer.php:424
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:155
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:85
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:43
+msgid "All Bookmarks"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1556
+msgid "All bookmarks deleted."
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1210
+msgid "All Bookmarks Removed"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:1073
+#: includes/class-cbxwpbookmark-helper.php:1081
+msgid "All Categories"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:656
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:138
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:195
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:133
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:125
+msgid "Allow Delete"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:682
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:139
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:208
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:144
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:138
+msgid "Allow Delete All"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:340
+#: widgets/block_widgets/class-cbxwpbookmark-category-block.php:140
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:158
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:103
+msgid "Allow Edit"
+msgstr ""
+
+#: widgets/classic_widgets/category-widget/views/admin.php:93
+msgid "Allow Edit/Delete"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:696
+msgid "Another Category with same name already exists!"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1230
+msgid ""
+"Are you sure to delete all of your bookmarks? This process can not be undone."
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:298
+msgid "Are you sure to remove all steps?"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:297
+msgid "Are you sure to remove this step?"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1206
+msgid "Are you sure you want to delete this Bookmark Category?"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1207
+msgid "Are you sure you want to delete this Bookmark?"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:301
+#: public/class-cbxwpbookmark-public.php:1204
+msgid "Are you sure?"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:187
+#: includes/customizer/class-cbxwpbookmark-customizer.php:448
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:93
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:96
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:97
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:49
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:49
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:51
+#: widgets/classic_widgets/category-widget/views/admin.php:84
+#: widgets/classic_widgets/most-widget/views/admin.php:103
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:19
+msgid "Ascending"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-category-block.php:62
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:61
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:61
+msgid "Ascending Order"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:326
+#: public/class-cbxwpbookmark-public.php:1236
+msgid "Attention"
+msgstr ""
+
+#: widgets/classic_widgets/category-widget/cbxwpbookmark-category-widget.php:88
+msgid "Author's Bookmark Categories"
+msgstr ""
+
+#: widgets/classic_widgets/mybookmark-widget/cbxwpbookmark-mybookmark-widget.php:83
+msgid "Author's Bookmarks"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2495
+msgid "Auto Integration"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:733
+msgid ""
+"Automatic page creation done. This message doesn't confirm success or failed"
+msgstr ""
+
+#: templates/admin/bookmark_category_edit.php:62
+msgid "Back"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2500
+msgid "Before Content"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-btn-block.php:71
+#: widgets/block_widgets/class-cbxwpbookmark-category-block.php:128
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:153
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:123
+msgid "Block Settings"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2165
+msgid "Blue"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2170
+msgid "Blue Gray"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:370 templates/admin/dashboard.php:58
+msgid "Bookmark"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1050
+#: public/class-cbxwpbookmark-public.php:1054
+msgid "Bookmark add failed"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1039
+msgid "Bookmark added!"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2496
+msgid "Bookmark button auto integration position"
+msgstr ""
+
+#: widgets/vc_widgets/class-cbxwpbookmark-btn-vcwidget.php:28
+msgid "Bookmark button of CBX Bookmark"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:82
+#: includes/class-cbxwpbookmark-shortcodes.php:468
+#: includes/customizer/class-cbxwpbookmark-customizer.php:121
+#: includes/customizer/class-cbxwpbookmark-customizer.php:149
+#: includes/customizer/class-cbxwpbookmark-customizer.php:163
+#: widgets/block_widgets/class-cbxwpbookmark-category-block.php:157
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:81
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:41
+#: widgets/classic_widgets/category-widget/cbxwpbookmark-category-widget.php:81
+#: widgets/classic_widgets/category-widget/cbxwpbookmark-category-widget.php:199
+msgid "Bookmark Categories"
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:71
+msgid "Bookmark Categories Settings"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:67
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:110
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:60
+#: widgets/classic_widgets/most-widget/views/admin.php:86
+msgid "Bookmark Count"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:79
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:77
+#: widgets/classic_widgets/most-widget/views/admin.php:89
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:30
+msgid "Bookmark ID"
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:111
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:111
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:61
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:62
+msgid "Bookmark id"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2445
+msgid "Bookmark Label"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:122
+msgid "Bookmark List"
+msgstr ""
+
+#: templates/admin/bookmark_list_display.php:35
+msgid "Bookmark Manager"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2459
+msgid "Bookmark Mode"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1382
+msgid "Bookmark not found"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2605
+msgid "Bookmark Popup Z-Inxdex"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1011
+msgid "Bookmark remove failed!"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1209
+msgid "Bookmark Removed"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1211
+msgid "Bookmark Removed Failed"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1003
+msgid "Bookmark removed!"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:1033
+msgid "Bookmark reset setting html loaded successfully"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:1057
+msgid "Bookmark setting reset successfully"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:416
+msgid "Bookmark This"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2553
+msgid "Bookmark will work for selected post types"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:371
+msgid "Bookmarked"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2452
+msgid "Bookmarked Label"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:414
+msgid "Bookmarks"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1375
+msgid "Bookmarks loaded"
+msgstr ""
+
+#: templates/admin/setting_display.php:32
+msgid "Bookmarks: Global Settings"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2169
+msgid "Brown"
+msgstr ""
+
+#: templates/admin/dashboard.php:348
+msgid "buddyBoss"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-list.php:102
+msgid "buddyPress Activity"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:160
+#: includes/class-cbxwpbookmark-helper.php:1715
+#: includes/class-cbxwpbookmark-helper.php:1773
+msgid "Built in post types"
+msgstr ""
+
+#: widgets/classic_widgets/most-widget/views/admin.php:57
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:56
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:66
+msgid "Built-in Post Types"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:310
+#: admin/class-cbxwpbookmark-admin.php:331
+#: public/class-cbxwpbookmark-public.php:1241
+msgid "Cancel"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:315
+msgid "cancel and close"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:428
+msgid "Categories"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:149
+msgid "Categories loaded"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:134
+msgid "Categories(Comma Separated)"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:994
+#: includes/class-cbxwpbookmark-list.php:238 templates/admin/dashboard.php:74
+msgid "Category"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:451
+#: public/class-cbxwpbookmark-public.php:521
+msgid "Category add failed!"
+msgstr ""
+
+#. %s: Category add/edit mode
+#: templates/admin/bookmark_category_edit.php:48
+#, php-format
+msgctxt "Category add or edit"
+msgid "Category: %s"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:652
+#: public/class-cbxwpbookmark-public.php:756
+msgid "Category add/edit failed!"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:513
+msgid "Category created successfully!"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:681
+msgid "Category created successfully."
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:636
+msgid "Category created/edited successfully!"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2471
+msgid "Category Default Status"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2472
+msgid "Category Default Status If user category mode is selected"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1202
+msgid "Category deleted successfully"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:214
+#: includes/customizer/class-cbxwpbookmark-customizer.php:582
+#: widgets/block_widgets/class-cbxwpbookmark-category-block.php:68
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:161
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:104
+#: widgets/classic_widgets/category-widget/views/admin.php:62
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:92
+msgid "Category ID"
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:108
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:61
+msgid "Category Id"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:693
+msgid "Category id missing, are you cheating?"
+msgstr ""
+
+#: templates/admin/bookmark_category_list.php:37
+msgid "Category Manager"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:547
+#: templates/admin/bookmark_category_edit.php:133
+#: templates/admin/bookmark_category_edit.php:138
+#: widgets/block_widgets/class-cbxwpbookmark-category-block.php:72
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:107
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:60
+msgid "Category Name"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:488
+#: public/class-cbxwpbookmark-public.php:568
+#: public/class-cbxwpbookmark-public.php:690
+#: public/class-cbxwpbookmark-public.php:1213
+msgid "Category name can not be empty"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:155
+msgid "Category not found, create one."
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:215
+msgid "Category Privacy"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:213
+#: widgets/classic_widgets/category-widget/views/admin.php:65
+msgid "Category Title"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2077
+#: public/class-cbxwpbookmark-public.php:1163
+msgid "Category title"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:744
+msgid "Category updated successfully!"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:652
+msgid "Category updated successfully."
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:491
+#: public/class-cbxwpbookmark-public.php:571
+msgid "Category with same name already exists!"
+msgstr ""
+
+#. Name of the plugin
+#: includes/customizer/class-cbxwpbookmark-customizer.php:76
+msgid "CBX Bookmark & Favorite"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-blocks.php:85
+msgid "CBX Bookmark Blocks"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-btn-block.php:67
+#: widgets/elementor_widgets/class-cbxwpbookmark-btn-elemwidget.php:42
+#: widgets/vc_widgets/class-cbxwpbookmark-btn-vcwidget.php:27
+msgid "CBX Bookmark Button"
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-btn-elemwidget.php:75
+msgid "CBX Bookmark Button Settings"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-category-block.php:124
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:38
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:27
+#: widgets/classic_widgets/category-widget/cbxwpbookmark-category-widget.php:41
+msgid "CBX Bookmark Categories"
+msgstr ""
+
+#: templates/admin/dashboard.php:255
+msgid "CBX Bookmark Plugin Details"
+msgstr ""
+
+#. %s: bookmark pro plugin version
+#: admin/class-cbxwpbookmark-admin.php:904
+#, php-format
+msgid ""
+"CBX Bookmark Pro Addon V%s or any previous version is not 100%% compatible "
+"with CBX Bookmark Core V1.5.3 or later. Please update CBX Bookmark Pro Addon "
+"to version 1.1.10 or latest. - Codeboxr Team"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1444
+#: widgets/vc_widgets/class-cbxwpbookmark-btn-vcwidget.php:31
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:31
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:31
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:33
+msgid "CBX Bookmark Widgets"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:406
+msgid "CBX Bookmarks"
+msgstr ""
+
+#: templates/admin/dashboard.php:30
+msgid "CBX Bookmarks: Dashboard"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:149
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:41
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:27
+#: widgets/classic_widgets/most-widget/cbxwpbookmark-most-widget.php:37
+msgid "CBX Most Bookmarked Posts"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:119
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:42
+#: widgets/classic_widgets/mybookmark-widget/cbxwpbookmark-mybookmark-widget.php:37
+msgid "CBX My Bookmarked Posts"
+msgstr ""
+
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:29
+msgid "CBX My Bookmarks"
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:75
+msgid "CBX My Bookmarks Settings"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:427
+msgid "CBX WP Bookmark Category Listing"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:405
+msgid "CBX WP Bookmark Dashboard"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:413
+msgid "CBX WP Bookmark Listing"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:448
+msgid "CBX WP Bookmark Setting"
+msgstr ""
+
+#: templates/admin/dashboard.php:164
+msgid "Changelog Core Plugin"
+msgstr ""
+
+#: templates/admin/dashboard.php:203
+msgid "Changelog Pro Addon"
+msgstr ""
+
+#. 1. Plugin setting url 2. Documentation link
+#: admin/class-cbxwpbookmark-admin.php:784
+#: admin/class-cbxwpbookmark-admin.php:801
+#, php-format
+msgid ""
+"Check <a style=\"color:#005ae0 !important; font-weight: bold;\" "
+"href=\"%1$s\">Plugin Setting</a> | <a style=\"color:#005ae0 !important; font-"
+"weight: bold;\" href=\"%2$s\" target=\"_blank\">Documentation</a>"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2715
+#: includes/class-cbxwpbookmark-setting.php:474
+msgid "Check All"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-setting.php:771
+msgid "Choose Color"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-setting.php:741
+msgid "Choose File"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:311
+msgid "Clear"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:316
+msgid "clear and close"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:489
+#: public/class-cbxwpbookmark-public.php:1214
+msgid "Click Category to Bookmark"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:564
+msgid "Click to Close"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2083
+#: public/class-cbxwpbookmark-public.php:1169
+msgid "Click to close"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:426
+#: includes/class-cbxwpbookmark-helper.php:490
+msgid "Click to close bookmark panel/modal"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:294
+msgid "Click to copy"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2082
+msgid "Click to create/save"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:560
+#: includes/class-cbxwpbookmark-helper.php:1023
+#: public/class-cbxwpbookmark-public.php:518
+msgid "Click to delete"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-shortcodes.php:326
+msgid "Click to delete all"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:517
+msgid "Click to edit"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1215
+msgid "Click to Edit Category"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-list.php:160
+msgid "Click to edit category"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:563
+msgid "Click to save"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:1023
+msgid "Click to Save/edit"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-setting.php:276
+msgid "Click to show hide"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1168
+msgid "Click to update"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-setting.php:56
+msgid "Cloning is forbidden."
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:426
+#: includes/class-cbxwpbookmark-helper.php:490
+#: includes/class-cbxwpbookmark-helper.php:539
+#: includes/class-cbxwpbookmark-helper.php:539
+#: includes/class-cbxwpbookmark-helper.php:564
+#: includes/class-cbxwpbookmark-helper.php:2083
+#: public/class-cbxwpbookmark-public.php:1169
+msgid "Close"
+msgstr ""
+
+#: templates/admin/dashboard.php:423
+msgid "Codeboxr News Updates"
+msgstr ""
+
+#. Author of the plugin
+msgid "Codeboxr Team"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:317
+msgid "color input field"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:305
+msgid "color picker dialog"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:318
+msgid "color selection area"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:307
+msgid "color swatch"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2405
+msgid "Configure using customizer"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:329
+#: public/class-cbxwpbookmark-public.php:1239
+msgid "Confirmation"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:293
+#: public/class-cbxwpbookmark-public.php:1246
+msgid "Copied"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:295
+msgid "Copied to clipboard"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:292
+#: public/class-cbxwpbookmark-public.php:1193
+#: public/class-cbxwpbookmark-public.php:1245
+msgid "Copy"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1190
+msgid "Copy and Share Url"
+msgstr ""
+
+#: templates/admin/dashboard.php:283
+msgid "Core Plugin Support"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:538
+#: includes/class-cbxwpbookmark-helper.php:2082
+msgid "Create"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:538
+#: public/class-cbxwpbookmark-public.php:1217
+msgid "Create Category"
+msgstr ""
+
+#: templates/admin/bookmark_category_list.php:48
+msgid "Create New"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2071
+msgid "Create New Category"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:995
+#: admin/class-cbxwpbookmark-admin.php:1014
+#: includes/class-cbxwpbookmark-category.php:165
+#: includes/class-cbxwpbookmark-list.php:239
+#: templates/admin/bookmark_category_edit.php:121
+msgid "Created"
+msgstr ""
+
+#: templates/admin/bookmark_category_edit.php:113
+msgid "Created By"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-list.php:682
+#: includes/class-cbxwpbookmark-list.php:685
+msgid "Current Page"
+msgstr ""
+
+#: widgets/classic_widgets/most-widget/views/admin.php:67
+msgid "Custom Post Types"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2599
+msgid "Customizer(Recommended)"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:457
+msgid "Dashboard"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:808
+msgid "Data Updated Successfully"
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:149
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:92
+msgid "Day(s)"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2161
+msgid "Default"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2614
+msgid ""
+"Default guest user is shown wordpress core login form. Pro addon helps to "
+"integrate 3rd party plugins like woocommerce, restrict content pro etc."
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2460
+msgid ""
+"Default is category belongs to user, other two mode is global category and "
+"no category quick bookmark."
+msgstr ""
+
+#: includes/class-cbxwpbookmark-category.php:216
+#: includes/class-cbxwpbookmark-helper.php:560
+#: includes/class-cbxwpbookmark-helper.php:716
+#: includes/class-cbxwpbookmark-helper.php:1024
+#: includes/class-cbxwpbookmark-list.php:285
+msgid "Delete"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-shortcodes.php:326
+msgid "Delete All"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2655
+msgid ""
+"Delete Global Config data and custom table created by this plugin on "
+"uninstall."
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:188
+#: includes/customizer/class-cbxwpbookmark-customizer.php:447
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:94
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:97
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:98
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:50
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:50
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:52
+#: widgets/classic_widgets/category-widget/views/admin.php:88
+#: widgets/classic_widgets/most-widget/views/admin.php:104
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:20
+msgid "Descending"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-category-block.php:57
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:56
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:56
+msgid "Descending Order"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2655
+msgid "Details table information is here"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2502
+msgid "Disable Auto Integration"
+msgstr ""
+
+#: widgets/classic_widgets/category-widget/views/admin.php:15
+msgid "Display"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2432
+msgid "Display Bookmark Label"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:261
+#: widgets/block_widgets/class-cbxwpbookmark-category-block.php:135
+msgid "Display Format"
+msgstr ""
+
+#: widgets/classic_widgets/most-widget/views/admin.php:14
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:37
+msgid "Display Limit"
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:132
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:81
+msgid "Display method"
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:88
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:91
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:92
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:46
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:46
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:48
+msgid "Display order"
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:102
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:105
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:106
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:57
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:57
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:59
+msgid "Display order by"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:140
+msgid "Display Share Url"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2433
+msgid ""
+"Display the label Bookmark or Bookmarked. This param has no shortcode method,"
+" if enabled works everywhere, if disabled then same."
+msgstr ""
+
+#: templates/global/login_form.php:38
+msgid ""
+"Do you have account, <a role=\"button\" class=\"guest-login-trigger "
+"cbxwpbookmark-guest-login-trigger\" href=\"#\">please login</a>"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:965
+msgid "Documentation"
+msgstr ""
+
+#: templates/admin/dashboard.php:265
+msgid "Documentation & User Guide"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2015
+msgid "Don't show login form"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:268
+#: widgets/block_widgets/class-cbxwpbookmark-category-block.php:86
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:138
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:85
+#: widgets/classic_widgets/category-widget/views/admin.php:23
+msgid "Dropdown"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:163
+msgid "Duration"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-category.php:42
+#: includes/class-cbxwpbookmark-helper.php:1023
+#: templates/admin/bookmark_category_edit.php:38
+msgid "Edit"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-category.php:42
+#: public/class-cbxwpbookmark-public.php:1216
+msgid "Edit Category"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-list.php:82
+msgid "Edit Post"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-category.php:71
+#: includes/class-cbxwpbookmark-list.php:143
+msgid "Edit User"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:327
+#: public/class-cbxwpbookmark-public.php:1237
+msgid "Error"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:691
+msgid "Error creating category"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1212
+msgid "Error loading data. Response code = "
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2446
+msgid "Example: Bookmark. If empty then label will be used from translation"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2453
+msgid "Example: Bookmarked. If empty then label will be used from translation"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1208
+msgid "Failed to Bookmark"
+msgstr ""
+
+#: templates/admin/dashboard.php:378
+msgid "Fifu(Featured Image from URL)"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-list.php:663
+msgid "First page"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2749
+msgid "Following database tables will be reset/deleted and then re-created."
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2713
+msgid ""
+"Following option values created by this plugin(including addon) from "
+"WordPress core option table"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2564
+msgid "For which post types auto integration will be used"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:961
+msgid "Free Support"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2323
+#: includes/class-cbxwpbookmark-helper.php:2418
+msgid "General Settings"
+msgstr ""
+
+#: templates/admin/dashboard.php:115
+msgid "Get Free & Pro Addons"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2465
+msgid "Global Category"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:351
+#: templates/admin/bookmark_category_edit.php:64
+#: templates/admin/bookmark_category_list.php:55
+#: templates/admin/bookmark_list_display.php:41
+#: templates/admin/dashboard.php:37
+msgid "Global Settings"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2167
+msgid "Green"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:1579
+#: includes/class-cbxwpbookmark-helper.php:1591
+msgid "Guest"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2613
+msgid "Guest User Login Form"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:698
+msgid "Hacking attempt ?"
+msgstr ""
+
+#: templates/admin/dashboard.php:244
+msgid "Help & Supports"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2633
+msgid "Hide Bookmark for Guest"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2483
+msgid "Hide Category Privacy Field"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2484
+msgid ""
+"Hide category privacy field if user category mode is selected. Default "
+"status will be used from above setting. This feature does't disable the "
+"category feature but hides from user interface."
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://codeboxr.com"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://codeboxr.com/product/cbx-wordpress-bookmark"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:319
+msgid "hue selection slider"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:990
+#: admin/class-cbxwpbookmark-admin.php:1010
+#: includes/class-cbxwpbookmark-category.php:161
+#: includes/class-cbxwpbookmark-list.php:234
+#: includes/customizer/class-cbxwpbookmark-customizer.php:472
+msgid "ID"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:240
+msgid "Ignore Privacy"
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:122
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:72
+msgid "Ignore privacy"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:267
+msgid "Import Bookmark Setting: Json file"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:366
+#: widgets/classic_widgets/category-widget/views/admin.php:122
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:165
+msgid "In Author Archive Show for Author"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2164
+msgid "Indigo"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:324
+#: public/class-cbxwpbookmark-public.php:1234
+msgid "Info"
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:79
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:82
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:83
+msgid "Keep empty to hide"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-list.php:714
+msgid "Last page"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-category-block.php:130
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:155
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:125
+msgid "Leave empty to hide"
+msgstr ""
+
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:39
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:39
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:41
+msgid "Leave empty to ignore"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:494
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:122
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:122
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:73
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:74
+msgid "Limit"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:267
+#: widgets/block_widgets/class-cbxwpbookmark-category-block.php:82
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:137
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:84
+#: widgets/classic_widgets/category-widget/views/admin.php:20
+msgid "List"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:571
+msgid "List Category"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"List/category based bookmark for WordPress, create your own private or "
+"public list of favorite posts, page, custom object"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-shortcodes.php:411
+msgid "Load More"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1228
+msgid "Load More ..."
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:328
+#: public/class-cbxwpbookmark-public.php:1238
+msgid "Loading"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2363
+msgid "Loading ..."
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:572
+msgid "Manage Category"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1219
+msgid "Maximum category limit reached"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:1015
+#: includes/class-cbxwpbookmark-category.php:166
+msgid "Modified"
+msgstr ""
+
+#: widgets/classic_widgets/most-widget/cbxwpbookmark-most-widget.php:93
+#: widgets/classic_widgets/most-widget/cbxwpbookmark-most-widget.php:211
+msgid "Most Bookmarked Post"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-shortcodes.php:627
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:180
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:84
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:41
+msgid "Most Bookmarked Posts"
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:74
+msgid "Most Bookmarked Posts Settings"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2586
+msgid "My Bookmark Page"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2388
+msgid "My Bookmark Page doesn't exists."
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2594
+msgid "My Bookmark Page Method"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-category-block.php:143
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:141
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:116
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:168
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:182
+msgid "My Bookmark Page Url(Base Url)"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:389
+#: includes/customizer/class-cbxwpbookmark-customizer.php:732
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:184
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:232
+#: widgets/classic_widgets/category-widget/views/admin.php:139
+msgid "My Bookmark Page url(Base Url)"
+msgstr ""
+
+#: widgets/classic_widgets/mybookmark-widget/cbxwpbookmark-mybookmark-widget.php:77
+#: widgets/classic_widgets/mybookmark-widget/cbxwpbookmark-mybookmark-widget.php:209
+msgid "My Bookmarks"
+msgstr ""
+
+#: templates/admin/dashboard.php:363
+msgid "myCred"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-list.php:162
+msgid "N/A"
+msgstr ""
+
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:74
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:75
+msgid "Need numeric value."
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:570
+msgid "New Category"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-list.php:702
+msgid "Next page"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:300
+#: includes/class-cbxwpbookmark-helper.php:2438
+#: includes/class-cbxwpbookmark-helper.php:2489
+#: includes/class-cbxwpbookmark-helper.php:2533
+#: includes/class-cbxwpbookmark-helper.php:2545
+#: includes/class-cbxwpbookmark-helper.php:2580
+#: includes/class-cbxwpbookmark-helper.php:2627
+#: includes/class-cbxwpbookmark-helper.php:2639
+#: includes/class-cbxwpbookmark-helper.php:2659
+#: widgets/elementor_widgets/class-cbxwpbookmark-btn-elemwidget.php:85
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:149
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:161
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:174
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:165
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:177
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:152
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:173
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:186
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:198
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:211
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:223
+#: widgets/vc_widgets/class-cbxwpbookmark-btn-vcwidget.php:40
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:96
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:107
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:104
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:115
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:95
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:115
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:126
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:137
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:148
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:159
+#: widgets/classic_widgets/category-widget/views/admin.php:33
+#: widgets/classic_widgets/category-widget/views/admin.php:102
+#: widgets/classic_widgets/category-widget/views/admin.php:117
+#: widgets/classic_widgets/category-widget/views/admin.php:131
+#: widgets/classic_widgets/most-widget/views/admin.php:118
+#: widgets/classic_widgets/most-widget/views/admin.php:130
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:86
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:105
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:119
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:132
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:145
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:158
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:175
+msgid "No"
+msgstr ""
+
+#. %s: registration url
+#: templates/global/login_form.php:56
+#, php-format
+msgid "No account yet? <a href=\"%1$s\">Register</a>"
+msgstr ""
+
+#: templates/bookmarkpost/single-notfound.php:9
+msgid "No bookmark found"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1227
+msgid "No bookmarks found"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-list.php:584
+msgid ""
+"No bookmarks found. Please change your search criteria for better result."
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1218
+msgid "No category found"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:1138
+#: includes/class-cbxwpbookmark-helper.php:1140
+msgid "No category found."
+msgstr ""
+
+#: includes/class-cbxwpbookmark-category.php:540
+msgid ""
+"No category found. Please change your search criteria for better result."
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2466
+msgid "No Category(Single Click Bookmark)"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:919
+#: public/class-cbxwpbookmark-public.php:1118
+msgid "No data available"
+msgstr ""
+
+#: templates/bookmarkmost/single-notfound.php:10
+msgid "No item found"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:499
+#: admin/class-cbxwpbookmark-admin.php:561
+msgid "Number of items per page"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:162
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:132
+msgid "Number of Posts"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:330
+#: public/class-cbxwpbookmark-public.php:1240
+msgid "OK"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2654
+msgid "On Uninstall delete plugin data"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:302
+#: public/class-cbxwpbookmark-public.php:1205
+msgid "Once you delete, it's gone forever. You can not revert it back."
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2721
+#: includes/class-cbxwpbookmark-helper.php:2742
+msgid "Option ID"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2720
+#: includes/class-cbxwpbookmark-helper.php:2741
+msgid "Option Name"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2168
+msgid "Orange"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:181
+#: includes/customizer/class-cbxwpbookmark-customizer.php:441
+#: widgets/block_widgets/class-cbxwpbookmark-category-block.php:131
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:156
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:126
+#: widgets/classic_widgets/category-widget/views/admin.php:78
+#: widgets/classic_widgets/most-widget/views/admin.php:100
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:16
+msgid "Order"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:207
+#: includes/customizer/class-cbxwpbookmark-customizer.php:466
+#: widgets/block_widgets/class-cbxwpbookmark-category-block.php:133
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:158
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:128
+#: widgets/classic_widgets/category-widget/views/admin.php:58
+#: widgets/classic_widgets/most-widget/views/admin.php:83
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:25
+msgid "Order By"
+msgstr ""
+
+#: templates/admin/dashboard.php:386
+msgid "Other WordPress Plugins"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2865
+msgctxt "Page slug"
+msgid "mybookmarks"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2866
+msgctxt "Page title"
+msgid "My Bookmarks"
+msgstr ""
+
+#. 1. Current page 2. Total page
+#: includes/class-cbxwpbookmark-list.php:693
+#, php-format
+msgctxt "paging"
+msgid "%1$s of %2$s"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2388
+msgid ""
+"Please <a data-busy=\"0\" id=\"cbxwpbookmark_autocreate_page\" "
+"class=\"button\" href=\"#\" target=\"_blank\">click here</a> to create. If "
+"<strong>My Bookmark Page Method</strong> is <strong>Customizer</strong> then "
+"only page will be created without shortcode as shortcode is not needed for "
+"customizer method."
+msgstr ""
+
+#. %s: Login url
+#: templates/global/login_url.php:8
+#, php-format
+msgid "Please <a href=\"%1$s\">login</a> to access."
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:349
+msgid "Please check the captcha."
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:339
+msgid "Please enter a valid date ( ISO )."
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:338
+msgid "Please enter a valid date."
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:336
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:340
+msgid "Please enter a valid number."
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:337
+msgid "Please enter a valid URL."
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:345
+msgid "Please enter a value between {0} and {1} characters long."
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:346
+msgid "Please enter a value between {0} and {1}."
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:348
+msgid "Please enter a value greater than or equal to {0}."
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:347
+msgid "Please enter a value less than or equal to {0}."
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:344
+msgid "Please enter at least {0} characters."
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:343
+msgid "Please enter no more than {0} characters."
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:341
+msgid "Please enter only digits."
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:342
+msgid "Please enter the same value again."
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:335
+msgid "Please fix this field."
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:425
+msgid "Please login to bookmark"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1526
+msgid "Please login to delete your bookmarks."
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2655
+msgid ""
+"Please note that this process can not be undone and it is recommended to "
+"keep full database backup before doing this."
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:280
+#: includes/class-cbxwpbookmark-setting.php:583
+#: includes/class-cbxwpbookmark-setting.php:644
+#: includes/customizer/class-cbxwpbookmark-customizer.php:809
+msgid "Please Select"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:537
+msgid "Please select post type(s)"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:126
+msgid "Please select shortcode(s)"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:810
+msgid "Please Select Shortcodes"
+msgstr ""
+
+#: includes/customizer/fields/class-cbxwpbookmark-customizer-select.php:42
+msgid "Please select..."
+msgstr ""
+
+#: templates/admin/bookmark_category_edit.php:168
+msgid "Please wait, do not close this window."
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:991
+#: includes/class-cbxwpbookmark-list.php:235
+msgid "Post"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:473
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:75
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:72
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:112
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:112
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:62
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:63
+#: widgets/classic_widgets/most-widget/views/admin.php:88
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:29
+msgid "Post ID"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:475
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:83
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:82
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:114
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:114
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:64
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:65
+#: widgets/classic_widgets/most-widget/views/admin.php:90
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:31
+msgid "Post Title"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:992
+#: includes/class-cbxwpbookmark-list.php:236
+#: includes/customizer/class-cbxwpbookmark-customizer.php:474
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:71
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:67
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:113
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:113
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:63
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:64
+#: widgets/classic_widgets/most-widget/views/admin.php:87
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:28
+msgid "Post Type"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2563
+msgid "Post Type Auto Integration"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2552
+msgid "Post Type Selection"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:530
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:160
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:130
+#: widgets/classic_widgets/most-widget/views/admin.php:47
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:47
+msgid "Post Type(s)"
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:135
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:135
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:82
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:83
+msgid "Post type(s)"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-list.php:675
+msgid "Previous page"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:1013
+#: includes/class-cbxwpbookmark-category.php:164
+#: includes/customizer/class-cbxwpbookmark-customizer.php:234
+#: includes/customizer/class-cbxwpbookmark-customizer.php:242
+#: widgets/block_widgets/class-cbxwpbookmark-category-block.php:76
+#: widgets/block_widgets/class-cbxwpbookmark-category-block.php:137
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:109
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:117
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:62
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:69
+#: widgets/classic_widgets/category-widget/views/admin.php:42
+#: widgets/classic_widgets/category-widget/views/admin.php:68
+msgid "Privacy"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:1957
+#: includes/class-cbxwpbookmark-helper.php:2080
+#: includes/class-cbxwpbookmark-helper.php:2477
+#: public/class-cbxwpbookmark-public.php:1166
+#: templates/admin/bookmark_category_edit.php:157
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:124
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:74
+msgid "Private"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:532
+#: includes/class-cbxwpbookmark-helper.php:554
+#: public/class-cbxwpbookmark-public.php:1166
+msgid "Private Category"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-category-block.php:100
+#: widgets/classic_widgets/category-widget/views/admin.php:53
+msgid "Private only"
+msgstr ""
+
+#: templates/admin/dashboard.php:293
+msgid "Pro Addon Support"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:1638
+msgid "Proportional"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:1956
+#: includes/class-cbxwpbookmark-helper.php:2079
+#: includes/class-cbxwpbookmark-helper.php:2476
+#: public/class-cbxwpbookmark-public.php:1165
+#: includes/customizer/class-cbxwpbookmark-customizer.php:241
+#: templates/admin/bookmark_category_edit.php:155
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:123
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:73
+msgid "Public"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:531
+#: includes/class-cbxwpbookmark-helper.php:553
+#: public/class-cbxwpbookmark-public.php:1165
+msgid "Public Category"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-category-block.php:96
+#: widgets/classic_widgets/category-widget/views/admin.php:50
+msgid "Public only"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2163
+msgid "Purple"
+msgstr ""
+
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:79
+msgid "Read More"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2162
+msgid "Red"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:276
+msgid "Request failed, please reload the page."
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2665
+msgid "Reset all data"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2666
+msgid "Reset Data"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2666
+msgid "Reset option values and all tables created by this plugin"
+msgstr ""
+
+#: templates/admin/dashboard.php:273
+msgid "Review & Rate CBX Bookmark Plugin"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:963
+msgid "Reviews"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:309
+#: includes/class-cbxwpbookmark-helper.php:563
+msgid "Save"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:314
+msgid "save and close"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-setting.php:1135
+#: templates/admin/setting_display.php:47
+msgid "Save Settings"
+msgstr ""
+
+#: templates/admin/bookmark_category_list.php:76
+msgid "Search"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:282
+msgid "Search here"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:496
+#: includes/class-cbxwpbookmark-helper.php:515
+msgid "Search..."
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:114
+msgid "Select Bookmark Shortcodes"
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:135
+msgid "Select display"
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:91
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:94
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:95
+msgid "Select order"
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:105
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:108
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:109
+msgid "Select order by"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:90
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:89
+msgid "Select Post Type"
+msgstr ""
+
+#: widgets/classic_widgets/most-widget/views/admin.php:53
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:52
+msgid "Select Post Type(s)"
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:138
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:138
+msgid "Select post type(s)"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2425
+msgid "Select predefine theme."
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:120
+msgid "Select privacy"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2424
+msgid "Select Theme"
+msgstr ""
+
+#: widgets/classic_widgets/most-widget/views/admin.php:21
+msgid "Select Time Duration"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:115
+msgid "Select which bookmark shortcodes"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:320
+msgid "selection slider"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:449
+msgid "Setting"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:936
+msgid "Settings"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-shortcodes.php:437
+msgid "Share"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-shortcodes.php:437
+msgid "Share bookmarks with others"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2600
+msgid "Shortcode"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2595
+msgid ""
+"Shortcode method is old, customizer way is new and more easy. We recommend "
+"to use customizer and remove the shortcodes from that page related with this "
+"plugin. If the shortcode still exists in the my bookmarks page and  "
+"customizer method enabled still it will work."
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:139
+msgid "Shortcode Params: Bookmark Categories"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:401
+msgid "Shortcode Params: Bookmark List"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:92
+msgid "Shortcodes/Functionalities"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2575
+msgid "Show bookmark count"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:314
+msgid "Show Bookmark Sublist"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-category-block.php:141
+msgid "Show Bookmarks"
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:171
+msgid "Show bookmarks as sublist"
+msgstr ""
+
+#: widgets/classic_widgets/category-widget/views/admin.php:29
+msgid "Show Bookmarks as Sublist(Only for List View)"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:137
+msgid "Show Category Count"
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:183
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:122
+msgid "Show category count"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:136
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:97
+msgid "Show Category Title"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:605
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:170
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:111
+msgid "Show category title"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:289
+#: widgets/block_widgets/class-cbxwpbookmark-btn-block.php:72
+#: widgets/block_widgets/class-cbxwpbookmark-category-block.php:139
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:165
+#: widgets/vc_widgets/class-cbxwpbookmark-btn-vcwidget.php:36
+#: widgets/classic_widgets/category-widget/views/admin.php:108
+#: widgets/classic_widgets/most-widget/views/admin.php:109
+msgid "Show Count"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2574
+#: widgets/elementor_widgets/class-cbxwpbookmark-btn-elemwidget.php:82
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:146
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:162
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:92
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:100
+msgid "Show count"
+msgstr ""
+
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:111
+msgid "Show count for category"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2527
+#: includes/class-cbxwpbookmark-helper.php:2528
+msgid "Show in Archive"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2539
+#: includes/class-cbxwpbookmark-helper.php:2540
+msgid "Show in Home"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:630
+msgid "Show item count per category"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:559
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:133
+msgid "Show Load More"
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:149
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:91
+msgid "Show load more"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2621
+msgid "Show Register link to guest"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2622
+msgid ""
+"Show register link to guest, depends on if registration is enabled in "
+"wordpress core"
+msgstr ""
+
+#: includes/customizer/class-cbxwpbookmark-customizer.php:708
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:151
+msgid "Show Share Option"
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:220
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:155
+msgid "Show Share url"
+msgstr ""
+
+#: widgets/classic_widgets/most-widget/views/admin.php:124
+msgid "Show Thumb"
+msgstr ""
+
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:111
+msgid "Show thumb"
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:166
+msgid "Show Thumbnail"
+msgstr ""
+
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:174
+msgid "Show thumbnail"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2515
+msgid "Skip for User Role"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2507
+msgid "Skip Post Id(s)"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2508
+msgid ""
+"Skip to show bookmark button for post id, put post id as comma separated for "
+"multiple"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2516
+msgid "Skip to show bookmark button for user roles"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2606
+msgid ""
+"Sometimes bookmark popup doesn't show properly or may not compatible with "
+"theme. Increasing the z-index value will help."
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:645
+msgid "Sorry! category update failed or database error"
+msgstr ""
+
+#: widgets/classic_widgets/category-widget/cbxwpbookmark-category-widget.php:155
+msgid ""
+"Sorry, This widget is not compatible as per setting. This widget can be used "
+"only if bookmark mode is \"User owns category\""
+msgstr ""
+
+#: includes/class-cbxwpbookmark-shortcodes.php:609
+msgid ""
+"Sorry, This widget is not compatible as per setting. This widget can be used "
+"only if bookmark mode is \"User owns category\" or \"Global Category\""
+msgstr ""
+
+#: includes/cbxwpbookmark-functions.php:90
+msgid ""
+"Sorry, User categories or global categories can not be shown if bookmark "
+"mode is not \"No Category\""
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:464
+msgid ""
+"Sorry, you can not create any more category, maximum allowed reached or you "
+"do not have enough permission."
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:1037
+#: admin/class-cbxwpbookmark-admin.php:1062
+msgid "Sorry, you don't have enough permission"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1222
+msgid ""
+"Sorry, you reached the maximum category limit and to create one one, please "
+"delete unnecessary categories first"
+msgstr ""
+
+#: templates/admin/bookmark_category_edit.php:152
+msgid "Status"
+msgstr ""
+
+#: templates/admin/bookmark_category_edit.php:171
+msgid "Submit Create"
+msgstr ""
+
+#: templates/admin/bookmark_category_edit.php:171
+msgid "Submit Edit"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:325
+#: public/class-cbxwpbookmark-public.php:1235
+msgid "Success"
+msgstr ""
+
+#: templates/admin/dashboard.php:49
+msgid "Summary at a Glance"
+msgstr ""
+
+#: templates/admin/setting_display.php:39
+msgid "Support & Docs"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2754
+#: includes/class-cbxwpbookmark-helper.php:2776
+msgid "Table Name"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2755
+#: includes/class-cbxwpbookmark-helper.php:2777
+msgid "Table Name in DB"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2166
+msgid "Teal"
+msgstr ""
+
+#. %s: bookmark core plugin version
+#: admin/class-cbxwpbookmark-admin.php:781
+#, php-format
+msgid ""
+"Thanks for installing/deactivating <strong>CBX Bookmark</strong> V%s - "
+"Codeboxr Team"
+msgstr ""
+
+#. %s: bookmark core plugin version
+#: admin/class-cbxwpbookmark-admin.php:798
+#, php-format
+msgid ""
+"Thanks for upgrading <strong>CBX Bookmark</strong> V%s , enjoy the new "
+"features and bug fixes - Codeboxr Team"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:621
+msgid "The title field character limit must be between 3 to 250."
+msgstr ""
+
+#: templates/admin/dashboard.php:301
+msgid "Third Party plugin Integration(Pro)"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:334
+msgid "This field is required."
+msgstr ""
+
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:135
+msgid "This is practically useful if category mode = global category"
+msgstr ""
+
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:28
+#: widgets/classic_widgets/category-widget/cbxwpbookmark-category-widget.php:43
+msgid "This widget shows bookmark categories from a logged in user."
+msgstr ""
+
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:30
+#: widgets/classic_widgets/mybookmark-widget/cbxwpbookmark-mybookmark-widget.php:39
+msgid "This widget shows bookmarked posts from a user"
+msgstr ""
+
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:28
+#: widgets/classic_widgets/most-widget/cbxwpbookmark-most-widget.php:39
+msgid ""
+"This widget shows most bookmarked post from all user within specific time "
+"limit."
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:323
+#: public/class-cbxwpbookmark-public.php:1233
+msgid "Tip"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:1011
+#: includes/class-cbxwpbookmark-category.php:162
+#: includes/customizer/class-cbxwpbookmark-customizer.php:159
+#: includes/customizer/class-cbxwpbookmark-customizer.php:420
+#: widgets/block_widgets/class-cbxwpbookmark-category-block.php:129
+#: widgets/block_widgets/class-cbxwpbookmark-most-block.php:154
+#: widgets/block_widgets/class-cbxwpbookmark-mybookmark-block.php:124
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:78
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:81
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:82
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:38
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:38
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:40
+#: widgets/classic_widgets/category-widget/views/admin.php:7
+#: widgets/classic_widgets/most-widget/views/admin.php:6
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:6
+msgid "Title"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2407
+msgid ""
+"To configure <strong>My Bookmarks</strong> page using customizer please "
+"create a page and set as my bookmark page using above setting."
+msgstr ""
+
+#: includes/class-cbxwpbookmark-setting.php:1110
+msgid "Toggle All Sections"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:306
+msgid "toggle color picker dialog"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:120
+msgid "Tools"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2648
+msgid "Tools Settings"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2634
+msgid "Totally hide bookmark button for guest user, default it's shown but "
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:971
+msgid "Try Pro Addon"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:525
+msgid "Type Category Name"
+msgstr ""
+
+#: templates/admin/dashboard.php:318
+msgid "Ultimate member"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1203
+msgid "Unable to delete the category"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2715
+#: includes/class-cbxwpbookmark-setting.php:474
+msgid "Uncheck All"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:1636
+#: includes/class-cbxwpbookmark-helper.php:1637
+msgid "Unknown"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2211
+msgid "Unnamed"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-setting.php:65
+msgid "Unserializing instances of this class is forbidden."
+msgstr ""
+
+#: templates/bookmarkmost/single.php:12 templates/bookmarkpost/single.php:11
+msgid "Untitled"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-list.php:77
+#: includes/class-cbxwpbookmark-list.php:113
+msgid "Untitled article"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:1168
+msgid "Update"
+msgstr ""
+
+#: public/class-cbxwpbookmark-public.php:814
+msgid "Update Failed"
+msgstr ""
+
+#: templates/admin/bookmark_category_edit.php:125
+msgid "Updated"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:308
+msgid "use previous color"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:993
+#: admin/class-cbxwpbookmark-admin.php:1012
+#: includes/class-cbxwpbookmark-category.php:163
+#: includes/class-cbxwpbookmark-list.php:237
+msgid "User"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2464
+msgid "User owns category"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2587
+msgid ""
+"User's private(or public based on shortcode/customizer params) bookmark page."
+msgstr ""
+
+#: templates/admin/dashboard.php:333
+msgid "usersWP"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:936
+msgid "View settings"
+msgstr ""
+
+#. %s: my bookmark page url
+#: includes/class-cbxwpbookmark-helper.php:2381
+#, php-format
+msgid "Visit <a href=\"%s\" target=\"_blank\">My Bookmarks</a> Page"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:281
+#: includes/customizer/class-cbxwpbookmark-customizer.php:811
+msgid "Window Title"
+msgstr ""
+
+#: includes/class-cbxwpbookmark-helper.php:2014
+msgid "WordPress Core Login Form"
+msgstr ""
+
+#: admin/class-cbxwpbookmark-admin.php:299
+#: includes/class-cbxwpbookmark-helper.php:2437
+#: includes/class-cbxwpbookmark-helper.php:2488
+#: includes/class-cbxwpbookmark-helper.php:2532
+#: includes/class-cbxwpbookmark-helper.php:2544
+#: includes/class-cbxwpbookmark-helper.php:2579
+#: includes/class-cbxwpbookmark-helper.php:2626
+#: includes/class-cbxwpbookmark-helper.php:2638
+#: includes/class-cbxwpbookmark-helper.php:2658
+#: widgets/elementor_widgets/class-cbxwpbookmark-btn-elemwidget.php:84
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:148
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:160
+#: widgets/elementor_widgets/class-cbxwpbookmark-category-elemwidget.php:173
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:164
+#: widgets/elementor_widgets/class-cbxwpbookmark-most-elemwidget.php:176
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:151
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:172
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:185
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:197
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:210
+#: widgets/elementor_widgets/class-cbxwpbookmark-mybookmark-elemwidget.php:222
+#: widgets/vc_widgets/class-cbxwpbookmark-btn-vcwidget.php:39
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:95
+#: widgets/vc_widgets/class-cbxwpbookmark-category-vcwidget.php:106
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:103
+#: widgets/vc_widgets/class-cbxwpbookmark-most-vcwidget.php:114
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:94
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:114
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:125
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:136
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:147
+#: widgets/vc_widgets/class-cbxwpbookmark-mybookmark-vcwidget.php:158
+#: widgets/classic_widgets/category-widget/views/admin.php:36
+#: widgets/classic_widgets/category-widget/views/admin.php:98
+#: widgets/classic_widgets/category-widget/views/admin.php:113
+#: widgets/classic_widgets/category-widget/views/admin.php:127
+#: widgets/classic_widgets/most-widget/views/admin.php:114
+#: widgets/classic_widgets/most-widget/views/admin.php:127
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:83
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:102
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:116
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:129
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:142
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:155
+#: widgets/classic_widgets/mybookmark-widget/views/admin.php:171
+msgid "Yes"
+msgstr ""
