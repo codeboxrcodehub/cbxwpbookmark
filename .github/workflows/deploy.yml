@@ -17,10 +17,18 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install subversion
-    - name: WordPress Plugin Deploy
+    - name: WordPress Plugin Deploy      
+      id: deploy
       uses: 10up/action-wordpress-plugin-deploy@stable
+      with:
+        generate-zip: true
       env:
         SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
         SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
         #SLUG: my-super-cool-plugin # optional, remove if GitHub repo name matches SVN slug, including capitalization
-        
+    - name: Create GitHub release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: ${{github.workspace}}/${{ github.event.repository.name }}.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
