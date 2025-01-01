@@ -167,6 +167,14 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                     <div class="content">
                         <div class="cbx-backend-settings-row">
                             <p>
+                                Version - 1.8.11
+                            </p>
+                            <ul>
+                                <li>[improvement] Minor improvement</li>
+                            </ul>
+                        </div>
+                        <div class="cbx-backend-settings-row">
+                            <p>
                                 Version - 1.8.10
                             </p>
                             <ul>
@@ -185,14 +193,6 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                                 <li>[updated] myCred addon plugin new version(1.0.5) released</li>
                                 <li>[improvement] Plugin check latest check</li>
                                 <li>[added] Added new method for plugin update checker</li>
-                            </ul>
-                        </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.8.8
-                            </p>
-                            <ul>
-                                <li>[fixed] PHP error fixed for login form</li>
                             </ul>
                         </div>
                     </div>
