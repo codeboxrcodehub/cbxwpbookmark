@@ -181,9 +181,8 @@ class CBXWPBookmark {
 		//plugin notices, active, upgrade, deactivation
 		add_filter( 'plugin_action_links_' . CBXWPBOOKMARK_BASE_NAME, [ $plugin_admin, 'plugin_action_links' ] );
 		add_filter( 'plugin_row_meta', [ $plugin_admin, 'plugin_row_meta' ], 10, 4 );
-		//add_action( 'upgrader_process_complete', [ $plugin_admin, 'plugin_upgrader_process_complete' ], 10, 2 );
-		add_action( 'plugins_loaded', [ $plugin_admin, 'plugin_upgrader_process_complete' ] );
 
+		add_action( 'plugins_loaded', [ $plugin_admin, 'plugin_upgrader_process_complete' ] );
 		add_action( 'admin_notices', [ $plugin_admin, 'plugin_activate_upgrade_notices' ] );
 		add_action( 'after_plugin_row_cbxwpbookmarkaddon/cbxwpbookmarkaddon.php', [ $plugin_admin, 'custom_message_after_plugin_row_proaddon' ], 10, 2 );
 		add_action( 'after_plugin_row_cbxwpbookmarkmycred/cbxwpbookmarkmycred.php', [ $plugin_admin, 'custom_message_after_plugin_row_mycredaddon' ], 10, 2 );
@@ -242,7 +241,7 @@ class CBXWPBookmark {
 		add_action( 'wp_ajax_cbx_delete_bookmark_post', [ $plugin_public, 'delete_bookmark_post' ] );
 
 
-		//find all boomkark category by loggedin user ajax hook
+		//find all bookmark category by loggedin user ajax hook
 		add_action( 'wp_ajax_cbx_find_category', [ $plugin_public, 'find_category' ] );
 
 

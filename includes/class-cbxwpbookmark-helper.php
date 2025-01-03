@@ -2978,6 +2978,13 @@ class CBXWPBookmarkHelper {
 		return $page_id;
 	}//end cbxbookmark_create_page
 
+	/**
+     * Get any plugin version number
+     *
+	 * @param $plugin_slug
+	 *
+	 * @return mixed|string
+	 */
 	public static function get_any_plugin_version( $plugin_slug = '' ) {
 		if ( $plugin_slug == '' ) {
 			return '';

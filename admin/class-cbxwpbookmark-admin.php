@@ -774,6 +774,8 @@ class CBXWPBookmark_Admin {
 	 * This notice shouldn't display to anyone who has just updated this plugin
 	 */
 	public function plugin_activate_upgrade_notices() {
+		$activation_notice_shown = false;
+
 		// Check the transient to see if we've just activated the plugin
 		if ( get_transient( 'cbxwpbookmark_activated_notice' ) ) {
 			echo '<div style="border-left-color: #005ae0;" class="notice notice-success is-dismissible">';
@@ -789,22 +791,26 @@ class CBXWPBookmark_Admin {
 			delete_transient( 'cbxwpbookmark_activated_notice' );
 
 			$this->pro_addon_compatibility_campaign();
+
+			$activation_notice_shown = true;
 		}
 
 		// Check the transient to see if we've just activated the plugin
 		if ( get_transient( 'cbxwpbookmark_upgraded_notice' ) ) {
-			echo '<div style="border-left-color: #005ae0;" class="notice notice-success is-dismissible">';
-			/* translators: %s: bookmark core plugin version */
-			echo '<p>' . sprintf( wp_kses( __( 'Thanks for upgrading <strong>CBX Bookmark</strong> V%s , enjoy the new features and bug fixes - Codeboxr Team', 'cbxwpbookmark' ), [ 'strong' => [] ] ), esc_attr( CBXWPBOOKMARK_PLUGIN_VERSION ) ) . '</p>'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			if(!$activation_notice_shown){
+				echo '<div style="border-left-color: #005ae0;" class="notice notice-success is-dismissible">';
+				/* translators: %s: bookmark core plugin version */
+				echo '<p>' . sprintf( wp_kses( __( 'Thanks for upgrading <strong>CBX Bookmark</strong> V%s , enjoy the new features and bug fixes - Codeboxr Team', 'cbxwpbookmark' ), [ 'strong' => [] ] ), esc_attr( CBXWPBOOKMARK_PLUGIN_VERSION ) ) . '</p>'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
-			/* translators: 1. Plugin setting url 2. Documentation link */
-			echo '<p>' . sprintf( wp_kses( __( 'Check <a style="color:#005ae0 !important; font-weight: bold;" href="%1$s">Plugin Setting</a> | <a style="color:#005ae0 !important; font-weight: bold;" href="%2$s" target="_blank">Documentation</a>', 'cbxwpbookmark' ), [ 'a' => [ 'href' => [], 'style' => [], 'target' => [] ] ] ), esc_url( admin_url( 'admin.php?page=cbxwpbookmark_settings' ) ), 'https://codeboxr.com/product/cbx-wordpress-bookmark/' ) . '</p>';
-			echo '</div>';
+				/* translators: 1. Plugin setting url 2. Documentation link */
+				echo '<p>' . sprintf( wp_kses( __( 'Check <a style="color:#005ae0 !important; font-weight: bold;" href="%1$s">Plugin Setting</a> | <a style="color:#005ae0 !important; font-weight: bold;" href="%2$s" target="_blank">Documentation</a>', 'cbxwpbookmark' ), [ 'a' => [ 'href' => [], 'style' => [], 'target' => [] ] ] ), esc_url( admin_url( 'admin.php?page=cbxwpbookmark_settings' ) ), 'https://codeboxr.com/product/cbx-wordpress-bookmark/' ) . '</p>';
+				echo '</div>';
+
+				$this->pro_addon_compatibility_campaign();
+			}
 
 			// Delete the transient so we don't keep displaying the activation message
 			delete_transient( 'cbxwpbookmark_upgraded_notice' );
-
-			$this->pro_addon_compatibility_campaign();
 		}
 	}//end plugin_activate_upgrade_notices
 

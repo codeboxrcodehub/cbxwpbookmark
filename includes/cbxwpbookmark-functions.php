@@ -389,7 +389,7 @@ if ( ! function_exists( 'cbxwpbookmarks_load_svg' ) ) {
 
 		$credentials = request_filesystem_credentials( site_url() . '/wp-admin/', '', false, false, null );
 		if ( ! WP_Filesystem( $credentials ) ) {
-			return; // Error handling here
+			return ''; // Error handling here
 		}
 
 		global $wp_filesystem;

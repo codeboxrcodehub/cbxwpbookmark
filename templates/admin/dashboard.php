@@ -167,6 +167,15 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                     <div class="content">
                         <div class="cbx-backend-settings-row">
                             <p>
+                                Version - 1.8.12
+                            </p>
+                            <ul>
+                                <li>[fixed] Style fixed for buddyboss theme</li>
+                                <li>[updated] Update notification display logic improved</li>
+                            </ul>
+                        </div>
+                        <div class="cbx-backend-settings-row">
+                            <p>
                                 Version - 1.8.11
                             </p>
                             <ul>
