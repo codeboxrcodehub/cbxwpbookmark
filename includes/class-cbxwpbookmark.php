@@ -81,13 +81,8 @@ class CBXWPBookmark {
 
 	/**
 	 * Singleton Instance.
-	 *
-	 * Ensures only one instance of cbxwpbookmark is loaded or can be loaded.
-	 *
-	 * @return self Main instance.
-	 * @see run_cbxwpbookmark()
-	 * @since  1.1.1
-	 * @static
+	 * @return CBXWPBookmark|self|null
+	 * @since 1.8.13
 	 */
 	public static function instance() {
 		if ( is_null( self::$instance ) ) {
@@ -96,6 +91,24 @@ class CBXWPBookmark {
 
 		return self::$instance;
 	}//end method instance
+
+	/**
+	 * Cloning is forbidden.
+	 *
+	 * @since 1.8.13
+	 */
+	public function __clone() {
+		cbxwpbookmark_doing_it_wrong( __FUNCTION__, esc_html__( 'Cloning is forbidden.', 'cbxwpbookmark' ), '1.8.13' );
+	}//end method clone
+
+	/**
+	 * Unserializing instances of this class is forbidden.
+	 *
+	 * @since 1.8.13
+	 */
+	public function __wakeup() {
+		cbxwpbookmark_doing_it_wrong( __FUNCTION__, esc_html__( 'Unserializing instances of this class is forbidden.', 'cbxwpbookmark' ), '1.8.13' );
+	}//end method wakeup
 
 	/**
 	 * Load the required dependencies for this plugin.
@@ -184,15 +197,24 @@ class CBXWPBookmark {
 
 		add_action( 'plugins_loaded', [ $plugin_admin, 'plugin_upgrader_process_complete' ] );
 		add_action( 'admin_notices', [ $plugin_admin, 'plugin_activate_upgrade_notices' ] );
-		add_action( 'after_plugin_row_cbxwpbookmarkaddon/cbxwpbookmarkaddon.php', [ $plugin_admin, 'custom_message_after_plugin_row_proaddon' ], 10, 2 );
-		add_action( 'after_plugin_row_cbxwpbookmarkmycred/cbxwpbookmarkmycred.php', [ $plugin_admin, 'custom_message_after_plugin_row_mycredaddon' ], 10, 2 );
+		add_action( 'after_plugin_row_cbxwpbookmarkaddon/cbxwpbookmarkaddon.php', [
+			$plugin_admin,
+			'custom_message_after_plugin_row_proaddon'
+		], 10, 2 );
+		add_action( 'after_plugin_row_cbxwpbookmarkmycred/cbxwpbookmarkmycred.php', [
+			$plugin_admin,
+			'custom_message_after_plugin_row_mycredaddon'
+		], 10, 2 );
 
 		//page auto created
 		add_action( 'wp_ajax_cbxwpbookmark_autocreate_page', [ $plugin_admin, 'cbxwpbookmark_autocreate_page' ] );
 
 		//for bookmark log listing screens
 		add_filter( 'manage_cbx-bookmark_page_cbxwpbookmark_columns', [ $plugin_admin, 'log_listing_screen_cols' ] );
-		add_filter( 'manage_cbx-bookmark_page_cbxwpbookmarkcats_columns', [ $plugin_admin, 'category_listing_screen_cols' ] );
+		add_filter( 'manage_cbx-bookmark_page_cbxwpbookmarkcats_columns', [
+			$plugin_admin,
+			'category_listing_screen_cols'
+		] );
 
 		//ajax plugin reset
 		add_action( 'wp_ajax_cbxwpbookmark_settings_reset_load', [ $plugin_admin, 'settings_reset_load' ] );
@@ -225,7 +247,10 @@ class CBXWPBookmark {
 
 
 		add_action( 'wp_ajax_cbx_add_bookmark_category', [ $plugin_public, 'add_category' ] );         //from popup
-		add_action( 'wp_ajax_cbx_add_bookmark_category_std', [ $plugin_public, 'add_category_std' ] ); //from category listing
+		add_action( 'wp_ajax_cbx_add_bookmark_category_std', [
+			$plugin_public,
+			'add_category_std'
+		] ); //from category listing
 		add_action( 'wp_ajax_cbx_edit_bookmark_category', [ $plugin_public, 'edit_category' ] );
 
 
@@ -249,7 +274,7 @@ class CBXWPBookmark {
 		add_action( 'wp_ajax_cbx_add_bookmark', [ $plugin_public, 'add_bookmark' ] );
 
 
-		//loadmore bookmark ajax
+		//load more bookmark ajax
 		add_action( 'wp_ajax_cbx_bookmark_loadmore', [ $plugin_public, 'bookmark_loadmore' ] );
 
 		//classic widget
@@ -260,7 +285,10 @@ class CBXWPBookmark {
 
 		//visual composer widget
 		//add_action( 'vc_before_init',[ $plugin_public, 'vc_before_init_actions'], 12 );//priority 12 works for both old and new version of vc
-		add_action( 'vc_before_init', [ $plugin_public, 'vc_before_init_actions' ] );                  //priority 12 works for both old and new version of vc
+		add_action( 'vc_before_init', [
+			$plugin_public,
+			'vc_before_init_actions'
+		] );                  //priority 12 works for both old and new version of vc
 
 		//load bookmarks on click on category
 		add_action( 'wp_ajax_cbx_load_bookmarks_sublist', [ $plugin_public, 'load_bookmarks_sublist' ] );
@@ -270,7 +298,10 @@ class CBXWPBookmark {
 		//add_action('admin_init', [$plugin_public,  'admin_init_ajax_lang']);
 
 		//delete all bookmarks of any user by user from frontend
-		add_action( 'wp_ajax_cbxwpbkmark_delete_all_bookmarks_by_user', [ $plugin_public, 'delete_all_bookmarks_by_user' ] );
+		add_action( 'wp_ajax_cbxwpbkmark_delete_all_bookmarks_by_user', [
+			$plugin_public,
+			'delete_all_bookmarks_by_user'
+		] );
 
 		//bbpress
 		//add_filter('bbp_get_single_forum_description', [$plugin_public, 'bbp_get_single_forum_description'], 10, 3);

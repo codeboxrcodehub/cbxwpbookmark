@@ -18,9 +18,9 @@ class CBXWPBookmark_List_Table extends WP_List_Table {
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string $settings_api settings api of this plugin.
+	 * @var      string $settings settings api of this plugin.
 	 */
-	private $settings_api;
+	private $settings;
 
 	/**
 	 * The current list of all branches.
@@ -31,7 +31,7 @@ class CBXWPBookmark_List_Table extends WP_List_Table {
 	 */
 	function __construct( $args = [] ) {
 
-		$this->settings_api = new CBXWPBookmark_Settings_API();
+		$this->settings = new CBXWPBookmark_Settings_API();
 		//Set parent defaults
 		parent::__construct( [
 			'singular' => 'cbxwpbookmarklist',     //singular name of the listed records
@@ -65,8 +65,8 @@ class CBXWPBookmark_List_Table extends WP_List_Table {
 	function column_object_id( $item ) {
 		$post_id     = $object_id = intval( $item['object_id'] );
 		$object_type = esc_attr( $item['object_type'] );
-		$setting     = new CBXWPBookmark_Settings_API();;
-		$enable_buddypress_bookmark = intval( $setting->get_option( 'enable_buddypress_bookmark', 'cbxwpbookmark_proaddon', 0 ) );
+		$settings     = new CBXWPBookmark_Settings_API();;
+		$enable_buddypress_bookmark = intval( $settings->get_field( 'enable_buddypress_bookmark', 'cbxwpbookmark_proaddon', 0 ) );
 
 		$object_types = CBXWPBookmarkHelper::object_types( true ); //get plain post type as array
 
@@ -350,7 +350,7 @@ class CBXWPBookmark_List_Table extends WP_List_Table {
 	 */
 	function prepare_items() {
 		global $wpdb; //This is used only if making any database queries
-		//$settings = $this->settings_api;
+		//$settings = $this->settings;
 
 		$user   = get_current_user_id();
 		$screen = get_current_screen();
@@ -422,7 +422,7 @@ class CBXWPBookmark_List_Table extends WP_List_Table {
 	 */
 	public function getLogData( $search = '', $id = 0, $object_id = 0, $object_type = '', $cat_id = 0, $user_id = 0, $order_by = 'logs.id', $order = 'DESC', $per_page = 20, $page = 1 ) {
 		global $wpdb;
-		$settings       = $this->settings_api;
+		$settings       = $this->settings;
 		$bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
 		$category_table = $wpdb->prefix . 'cbxwpbookmarkcat';
 
@@ -511,7 +511,7 @@ class CBXWPBookmark_List_Table extends WP_List_Table {
 	 */
 	public function getLogDataCount( $search = '', $id = 0, $object_id = 0, $object_type = '', $cat_id = 0, $user_id = 0 ) {
 		global $wpdb;
-		$settings       = $this->settings_api;
+		$settings       = $this->settings;
 		$bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
 
 		//prepare data

@@ -39,7 +39,7 @@ class CBXWPBookmark_Shortcodes {
 	 */
 	private $version;
 
-	private $settings_api;
+	private $settings;
 
 	/**
 	 * Constructor.
@@ -52,7 +52,7 @@ class CBXWPBookmark_Shortcodes {
 			$this->version = current_time( 'timestamp' ); //for development time only
 		}
 
-		$this->settings_api = new CBXWPBookmark_Settings_API();
+		$this->settings = new CBXWPBookmark_Settings_API();
 
 		global $wp_version;
 
@@ -166,8 +166,8 @@ class CBXWPBookmark_Shortcodes {
 		$category_table = $wpdb->prefix . 'cbxwpbookmarkcat';
 
 
-		$setting       = $this->settings_api;
-		$bookmark_mode = $setting->get_option( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
+		$settings       = $this->settings;
+		$bookmark_mode = $settings->get_field( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
 
 		$current_user_id = get_current_user_id();
 
@@ -458,8 +458,8 @@ class CBXWPBookmark_Shortcodes {
 	public function category_shortcode( $attr ) {
 		$attr = array_change_key_case( (array) $attr, CASE_LOWER );
 
-		$setting       = new CBXWPBookmark_Settings_API();
-		$bookmark_mode = $setting->get_option( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
+		$settings       = new CBXWPBookmark_Settings_API();
+		$bookmark_mode = $settings->get_field( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
 
 		$current_user_id = get_current_user_id();
 

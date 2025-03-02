@@ -32,7 +32,7 @@ class CBXWPBookmark_Public {
 	 */
 	private $version;
 
-	private $settings_api;
+	private $settings;
 
 
 	/**
@@ -54,7 +54,7 @@ class CBXWPBookmark_Public {
 			$this->version = current_time( 'timestamp' ); //for development time only
 		}
 
-		$this->settings_api = new CBXWPBookmark_Settings_API();
+		$this->settings = new CBXWPBookmark_Settings_API();
 	}//end constructor
 
 	/**
@@ -91,8 +91,8 @@ class CBXWPBookmark_Public {
 
 		global $wpdb;
 
-		$setting       = $this->settings_api;
-		$bookmark_mode = $setting->get_option( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
+		$settings       = $this->settings;
+		$bookmark_mode = $settings->get_field( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
 
 
 		$category_table = $wpdb->prefix . 'cbxwpbookmarkcat';
@@ -190,10 +190,10 @@ class CBXWPBookmark_Public {
 			return $content;
 		}
 
-		$settings_api = $this->settings_api;
+		$settings = $this->settings;
 
-		$mybookmark_pageid = absint( $settings_api->get_option( 'mybookmark_pageid', 'cbxwpbookmark_basics', 0 ) );
-		$mybookmark_way    = $settings_api->get_option( 'mybookmark_way', 'cbxwpbookmark_basics', 'shortcode' );
+		$mybookmark_pageid = absint( $settings->get_field( 'mybookmark_pageid', 'cbxwpbookmark_basics', 0 ) );
+		$mybookmark_way    = $settings->get_field( 'mybookmark_way', 'cbxwpbookmark_basics', 'shortcode' );
 
 
 		global $post;
@@ -275,10 +275,10 @@ class CBXWPBookmark_Public {
 			return $content;
 		}
 
-		$setting = $this->settings_api;
+		$settings = $this->settings;
 
 
-		$mybookmark_pageid = absint( $setting->get_option( 'mybookmark_pageid', 'cbxwpbookmark_basics', 0 ) );
+		$mybookmark_pageid = absint( $settings->get_field( 'mybookmark_pageid', 'cbxwpbookmark_basics', 0 ) );
 
 
 		$user_id = get_current_user_id();
@@ -298,7 +298,7 @@ class CBXWPBookmark_Public {
 
 		$post_type = $post->post_type;
 
-		$post_types_to_show_bookmark = $setting->get_option( 'cbxbookmarkposttypes', 'cbxwpbookmark_basics', [
+		$post_types_to_show_bookmark = $settings->get_field( 'cbxbookmarkposttypes', 'cbxwpbookmark_basics', [
 			'post',
 			'page'
 		] );
@@ -306,17 +306,17 @@ class CBXWPBookmark_Public {
 			$post_types_to_show_bookmark = [];
 		}
 
-		$post_types_automation = $setting->get_option( 'post_types_automation', 'cbxwpbookmark_basics', [] );
+		$post_types_automation = $settings->get_field( 'post_types_automation', 'cbxwpbookmark_basics', [] );
 		if ( ! is_array( $post_types_automation ) ) {
 			$post_types_automation = [];
 		}
 
-		$position        = $setting->get_option( 'cbxbookmarkpostion', 'cbxwpbookmark_basics', 'after_content' );
-		$skip_ids        = $setting->get_option( 'skip_ids', 'cbxwpbookmark_basics', '' );
-		$skip_roles      = $setting->get_option( 'skip_roles', 'cbxwpbookmark_basics', '' );
-		$show_in_archive = intval( $setting->get_option( 'showinarchive', 'cbxwpbookmark_basics', 0 ) );
-		$show_in_home    = intval( $setting->get_option( 'showinhome', 'cbxwpbookmark_basics', 0 ) );
-		$showcount       = intval( $setting->get_option( 'showcount', 'cbxwpbookmark_basics', 0 ) );
+		$position        = $settings->get_field( 'cbxbookmarkpostion', 'cbxwpbookmark_basics', 'after_content' );
+		$skip_ids        = $settings->get_field( 'skip_ids', 'cbxwpbookmark_basics', '' );
+		$skip_roles      = $settings->get_field( 'skip_roles', 'cbxwpbookmark_basics', '' );
+		$show_in_archive = intval( $settings->get_field( 'showinarchive', 'cbxwpbookmark_basics', 0 ) );
+		$show_in_home    = intval( $settings->get_field( 'showinhome', 'cbxwpbookmark_basics', 0 ) );
+		$showcount       = intval( $settings->get_field( 'showcount', 'cbxwpbookmark_basics', 0 ) );
 
 
 		//if disabled return content
@@ -443,8 +443,8 @@ class CBXWPBookmark_Public {
 		$message = [];
 
 
-		$settings_api  = $this->settings_api;
-		$bookmark_mode = $settings_api->get_option( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
+		$settings  = $this->settings;
+		$bookmark_mode = $settings->get_field( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
 
 		if ( $bookmark_mode != 'user_cat' ) {
 			$message['code'] = 0;
@@ -832,8 +832,8 @@ class CBXWPBookmark_Public {
 		global $wpdb;
 
 
-		$setting       = $this->settings_api;
-		$bookmark_mode = $setting->get_option( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
+		$settings       = $this->settings;
+		$bookmark_mode = $settings->get_field( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
 
 		if ( isset( $_POST ) && $bookmark_mode == 'user_cat' ) {
 			$cat_id = isset( $_POST['id'] ) ? absint( $_POST['id'] ) : 0;
@@ -934,9 +934,9 @@ class CBXWPBookmark_Public {
 
 		$alert_msg = '';
 
-		//$setting       = new CBXWPBookmark_Settings_API();
-		$setting       = $this->settings_api;
-		$bookmark_mode = $setting->get_option( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
+		//$settings       = new CBXWPBookmark_Settings_API();
+		$settings       = $this->settings;
+		$bookmark_mode = $settings->get_field( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
 
 		$user_id   = get_current_user_id();
 		$cat_id    = isset( $_POST['cat_id'] ) ? absint( $_POST['cat_id'] ) : 0;
@@ -1144,12 +1144,12 @@ class CBXWPBookmark_Public {
 
 		$close_svg = cbxwpbookmarks_load_svg( 'icon_close' );
 
-		$setting = $this->settings_api;
+		$settings = $this->settings;
 
-		$bookmark_mode           = $setting->get_option( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
-		$category_default_status = intval( $setting->get_option( 'category_status', 'cbxwpbookmark_basics', 1 ) );
+		$bookmark_mode           = $settings->get_field( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
+		$category_default_status = intval( $settings->get_field( 'category_status', 'cbxwpbookmark_basics', 1 ) );
 
-		$hide_cat_privacy = intval( $setting->get_option( 'hide_cat_privacy', 'cbxwpbookmark_basics', 0 ) );
+		$hide_cat_privacy = intval( $settings->get_field( 'hide_cat_privacy', 'cbxwpbookmark_basics', 0 ) );
 
 		$cat_hide_class = ( $hide_cat_privacy == 1 ) ? 'cbxwpbkmark_cat_hide' : '';
 
@@ -1271,8 +1271,8 @@ class CBXWPBookmark_Public {
 		global $wpdb;
 
 
-		$setting       = $this->settings_api;
-		$bookmark_mode = $setting->get_option( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
+		$settings       = $this->settings;
+		$bookmark_mode = $settings->get_field( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
 
 
 		$category_table = $wpdb->prefix . 'cbxwpbookmarkcat';
@@ -1509,8 +1509,8 @@ class CBXWPBookmark_Public {
 	 * @return array
 	 */
 	public function add_theme_class( $classes ) {
-		$setting              = $this->settings_api;
-		$bookmark_theme_class = $setting->get_option( 'display_theme', 'cbxwpbookmark_basics', 'cbxwpbookmark-blue' );
+		$settings              = $this->settings;
+		$bookmark_theme_class = $settings->get_field( 'display_theme', 'cbxwpbookmark_basics', 'cbxwpbookmark-blue' );
 
 		return array_merge( $classes, [ $bookmark_theme_class ] );
 	}//end method add_theme_class
@@ -1589,9 +1589,9 @@ class CBXWPBookmark_Public {
 
 		$post_type = 'forum';
 
-		$setting = $this->settings_api;
+		$settings = $this->settings;
 
-		$post_types_to_show_bookmark = $setting->get_option( 'cbxbookmarkposttypes', 'cbxwpbookmark_basics', [
+		$post_types_to_show_bookmark = $settings->get_field( 'cbxbookmarkposttypes', 'cbxwpbookmark_basics', [
 			'post',
 			'page'
 		] );
@@ -1599,16 +1599,16 @@ class CBXWPBookmark_Public {
 			$post_types_to_show_bookmark = [];
 		}
 
-		$post_types_automation = $setting->get_option( 'post_types_automation', 'cbxwpbookmark_basics', [] );
+		$post_types_automation = $settings->get_field( 'post_types_automation', 'cbxwpbookmark_basics', [] );
 		if ( ! is_array( $post_types_automation ) ) {
 			$post_types_automation = [];
 		}
 
 
-		$position   = $setting->get_option( 'cbxbookmarkpostion', 'cbxwpbookmark_basics', 'after_content' );
-		$skip_ids   = $setting->get_option( 'skip_ids', 'cbxwpbookmark_basics', '' );
-		$skip_roles = $setting->get_option( 'skip_roles', 'cbxwpbookmark_basics', '' );
-		$showcount  = intval( $setting->get_option( 'showcount', 'cbxwpbookmark_basics', 0 ) );
+		$position   = $settings->get_field( 'cbxbookmarkpostion', 'cbxwpbookmark_basics', 'after_content' );
+		$skip_ids   = $settings->get_field( 'skip_ids', 'cbxwpbookmark_basics', '' );
+		$skip_roles = $settings->get_field( 'skip_roles', 'cbxwpbookmark_basics', '' );
+		$showcount  = intval( $settings->get_field( 'showcount', 'cbxwpbookmark_basics', 0 ) );
 
 		if ( $position == 'disable' ) {
 			return $content;
@@ -1658,9 +1658,9 @@ class CBXWPBookmark_Public {
 
 		$post_type = 'forum';
 
-		$setting = $this->settings_api;
+		$settings = $this->settings;
 
-		$post_types_to_show_bookmark = $setting->get_option( 'cbxbookmarkposttypes', 'cbxwpbookmark_basics', [
+		$post_types_to_show_bookmark = $settings->get_field( 'cbxbookmarkposttypes', 'cbxwpbookmark_basics', [
 			'post',
 			'page'
 		] );
@@ -1668,16 +1668,16 @@ class CBXWPBookmark_Public {
 			$post_types_to_show_bookmark = [];
 		}
 
-		$post_types_automation = $setting->get_option( 'post_types_automation', 'cbxwpbookmark_basics', [] );
+		$post_types_automation = $settings->get_field( 'post_types_automation', 'cbxwpbookmark_basics', [] );
 		if ( ! is_array( $post_types_automation ) ) {
 			$post_types_automation = [];
 		}
 
 
-		$position   = $setting->get_option( 'cbxbookmarkpostion', 'cbxwpbookmark_basics', 'after_content' );
-		$skip_ids   = $setting->get_option( 'skip_ids', 'cbxwpbookmark_basics', '' );
-		$skip_roles = $setting->get_option( 'skip_roles', 'cbxwpbookmark_basics', '' );
-		$showcount  = intval( $setting->get_option( 'showcount', 'cbxwpbookmark_basics', 0 ) );
+		$position   = $settings->get_field( 'cbxbookmarkpostion', 'cbxwpbookmark_basics', 'after_content' );
+		$skip_ids   = $settings->get_field( 'skip_ids', 'cbxwpbookmark_basics', '' );
+		$skip_roles = $settings->get_field( 'skip_roles', 'cbxwpbookmark_basics', '' );
+		$showcount  = intval( $settings->get_field( 'showcount', 'cbxwpbookmark_basics', 0 ) );
 
 		if ( $position == 'disable' ) {
 			return;
@@ -1726,9 +1726,9 @@ class CBXWPBookmark_Public {
 
 		$post_type = 'topic';
 
-		$setting = $this->settings_api;
+		$settings = $this->settings;
 
-		$post_types_to_show_bookmark = $setting->get_option( 'cbxbookmarkposttypes', 'cbxwpbookmark_basics', [
+		$post_types_to_show_bookmark = $settings->get_field( 'cbxbookmarkposttypes', 'cbxwpbookmark_basics', [
 			'post',
 			'page'
 		] );
@@ -1736,16 +1736,16 @@ class CBXWPBookmark_Public {
 			$post_types_to_show_bookmark = [];
 		}
 
-		$post_types_automation = $setting->get_option( 'post_types_automation', 'cbxwpbookmark_basics', [] );
+		$post_types_automation = $settings->get_field( 'post_types_automation', 'cbxwpbookmark_basics', [] );
 		if ( ! is_array( $post_types_automation ) ) {
 			$post_types_automation = [];
 		}
 
 
-		$position   = $setting->get_option( 'cbxbookmarkpostion', 'cbxwpbookmark_basics', 'after_content' );
-		$skip_ids   = $setting->get_option( 'skip_ids', 'cbxwpbookmark_basics', '' );
-		$skip_roles = $setting->get_option( 'skip_roles', 'cbxwpbookmark_basics', '' );
-		$showcount  = intval( $setting->get_option( 'showcount', 'cbxwpbookmark_basics', 0 ) );
+		$position   = $settings->get_field( 'cbxbookmarkpostion', 'cbxwpbookmark_basics', 'after_content' );
+		$skip_ids   = $settings->get_field( 'skip_ids', 'cbxwpbookmark_basics', '' );
+		$skip_roles = $settings->get_field( 'skip_roles', 'cbxwpbookmark_basics', '' );
+		$showcount  = intval( $settings->get_field( 'showcount', 'cbxwpbookmark_basics', 0 ) );
 
 		if ( $position == 'disable' ) {
 			return;

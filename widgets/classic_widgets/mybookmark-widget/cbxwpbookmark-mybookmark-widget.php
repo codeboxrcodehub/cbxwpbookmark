@@ -100,8 +100,8 @@ class CBXWPBookmarkMyBookmark_Widget extends WP_Widget {
 		//$readmore             = isset( $instance['readmore'] ) ? intval( $instance['readmore'] ) : 0; //if show view more link in widget
 
 
-		//$settings_api      = new CBXWPBookmark_Settings_API();
-		//$mybookmark_pageid = absint( $settings_api->get_option( 'mybookmark_pageid', 'cbxwpbookmark_basics', 0 ) );
+		//$settings      = new CBXWPBookmark_Settings_API();
+		//$mybookmark_pageid = absint( $settings->get_field( 'mybookmark_pageid', 'cbxwpbookmark_basics', 0 ) );
 
 		$instance['title'] = ''; // we will send our shortcode's title attribute blank so that in widget it doesn't show extra title
 

@@ -600,9 +600,9 @@ class CBXWPBookmarkHelper {
 		$bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
 		$category_table = $wpdb->prefix . 'cbxwpbookmarkcat';
 
-		$setting = new CBXWPBookmark_Settings_API();
+		$settings = new CBXWPBookmark_Settings_API();
 
-		$bookmark_mode = $setting->get_option( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
+		$bookmark_mode = $settings->get_field( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
 
 		$limit    = isset( $instance['limit'] ) ? intval( $instance['limit'] ) : 10;
 		$order_by = isset( $instance['orderby'] ) ? esc_attr( $instance['orderby'] ) : 'id';
@@ -722,15 +722,15 @@ class CBXWPBookmarkHelper {
 					echo cbxwpbookmark_get_template_html( 'bookmarkpost/single.php', [
 						'item'           => $item,
 						'instance'       => $instance,
-						'setting'        => $setting,
+						'setting'        => $settings,
 						'action_html'    => $action_html,
 						'sub_item_class' => $sub_item_class, //used in category widget to display sub list
 
 					] );
 
 				} else {
-					//do_action( 'cbxwpbookmark_othertype_item', $item, $instance, $setting, $action_html, $sub_item_class );
-					do_action( 'cbxwpbookmark_item_othertype', $item, $instance, $setting, $action_html, $sub_item_class );
+					//do_action( 'cbxwpbookmark_othertype_item', $item, $instance, $settings, $action_html, $sub_item_class );
+					do_action( 'cbxwpbookmark_item_othertype', $item, $instance, $settings, $action_html, $sub_item_class );
 				}
 
 			}
@@ -760,7 +760,7 @@ class CBXWPBookmarkHelper {
 	public static function cbxbookmark_most_html( $instance, $attr = [] ) {
 		global $wpdb;
 		$bookmark_table       = $wpdb->prefix . 'cbxwpbookmark';
-		$setting              = new CBXWPBookmark_Settings_API();
+		$settings              = new CBXWPBookmark_Settings_API();
 		$allowed_object_types = cbxwpbookmarks_allowed_object_type();
 
 		$object_types = CBXWPBookmarkHelper::object_types( true ); //get plain post type as array
@@ -876,13 +876,13 @@ class CBXWPBookmarkHelper {
 						echo cbxwpbookmark_get_template_html( 'bookmarkmost/single.php', [
 							'item'            => $item,
 							'instance'        => $instance,
-							'setting'         => $setting,
+							'setting'         => $settings,
 							'li_class'        => $li_class,
 							'show_count_html' => $show_count_html
 						] );
 					} else {
-						//do_action( 'cbxwpbookmark_othertype_mostitem', $item, array_merge( $instance, $attr ), $setting, $li_class, $show_count_html );
-						do_action( 'cbxwpbookmark_mostitem_othertype', $item, array_merge( $instance, $attr ), $setting, esc_attr( $li_class ), $show_count_html );
+						//do_action( 'cbxwpbookmark_othertype_mostitem', $item, array_merge( $instance, $attr ), $settings, $li_class, $show_count_html );
+						do_action( 'cbxwpbookmark_mostitem_othertype', $item, array_merge( $instance, $attr ), $settings, esc_attr( $li_class ), $show_count_html );
 					}
 				}
 			} else {
@@ -2279,16 +2279,16 @@ class CBXWPBookmarkHelper {
 	 * Number field sanitization
 	 *
 	 * @param $number
-	 * @param $setting
+	 * @param $settings
 	 *
 	 * @return int
 	 */
-	public static function sanitize_number_field( $number, $setting ) {
+	public static function sanitize_number_field( $number, $settings ) {
 		// Ensure $number is an absolute integer (whole number, zero or greater).
 		$number = absint( $number );
 
 		// If the input is an absolute integer, return it; otherwise, return the default
-		return ( $number ? $number : $setting->default );
+		return ( $number ? $number : $settings->default );
 	}//end sanitize_number_field
 
 	public static function text_sanitization( $input ) {
@@ -2746,7 +2746,7 @@ class CBXWPBookmarkHelper {
 
 
 		if ( sizeof( $table_names ) > 0 ):
-			$table_html .= '<p style="margin-bottom: 15px;" id="cbxscratingreview_info"><strong>' . esc_html__( 'Following database tables will be reset/deleted and then re-created.', 'cbxwpbookmark' ) . '</strong></p>';
+			$table_html .= '<p style="margin-bottom: 15px;" id="cbxwpbookmark_info"><strong>' . esc_html__( 'Following database tables will be reset/deleted and then re-created.', 'cbxwpbookmark' ) . '</strong></p>';
 
 			$table_html .= '<table class="widefat widethin cbxwpbookmark_table_data">
         <thead>

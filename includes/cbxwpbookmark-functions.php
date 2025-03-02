@@ -1,5 +1,48 @@
 <?php
 
+if(!function_exists('cbxwpbookmark_is_rest_api_request')){
+	/**
+	 * Check if doing rest request
+	 *
+	 * @return bool
+	 */
+	function cbxwpbookmark_is_rest_api_request() {
+		if ( defined( 'REST_REQUEST' ) && REST_REQUEST ) {
+			return true;
+		}
+
+		if ( empty( $_SERVER['REQUEST_URI'] ) ) {
+			return false;
+		}
+
+		$rest_prefix = trailingslashit( rest_get_url_prefix() );
+		return ( false !== strpos( wp_unslash($_SERVER['REQUEST_URI']), $rest_prefix ) );//phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+	}//end function cbxwpbookmark_is_rest_api_request
+}
+
+if(!function_exists('cbxwpbookmark_doing_it_wrong')){
+	/**
+	 * Wrapper for _doing_it_wrong().
+	 *
+	 * @since  1.0.0
+	 * @param string $function Function used.
+	 * @param string $message Message to log.
+	 * @param string $version Version the message was added in.
+	 */
+	function cbxwpbookmark_doing_it_wrong( $function, $message, $version ) {
+		// @codingStandardsIgnoreStart
+		$message .= ' Backtrace: ' . wp_debug_backtrace_summary();
+
+		if ( wp_doing_ajax() || cbxwpbookmark_is_rest_api_request() ) {
+			do_action( 'doing_it_wrong_run', $function, $message, $version );
+			error_log( "{$function} was called incorrectly. {$message}. This message was added in version {$version}." );
+		} else {
+			_doing_it_wrong( $function, $message, $version );
+		}
+		// @codingStandardsIgnoreEnd
+	}//end function cbxwpbookmark_doing_it_wrong
+}
+
 /**
  * The file that defines the custom fucntions of the plugin
  *
@@ -78,11 +121,11 @@ if ( ! function_exists( 'cbxbookmark_mycat_html' ) ) {
 	 * @return void|string
 	 */
 	function cbxbookmark_mycat_html( $instance, $echo = false ) {
-		$settings_api    = new CBXWPBookmark_Settings_API();
+		$settings    = new CBXWPBookmark_Settings_API();
 		$current_user_id = get_current_user_id();
 
 
-		$bookmark_mode = $settings_api->get_option( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
+		$bookmark_mode = $settings->get_field( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
 
 		if ( $bookmark_mode == 'user_cat' || $bookmark_mode == 'global_cat' ) {
 			$output = CBXWPBookmarkHelper::cbxbookmark_mycat_html( $instance );
@@ -376,8 +419,7 @@ if ( ! function_exists( 'cbxwpbookmarks_load_svg' ) ) {
 	 * @return string|false The SVG content if found, or false on failure.
 	 * @since 1.0.0
 	 */
-	function cbxwpbookmarks_load_svg( $svg_name = '' ) {
-		//note: code partially generated using chatgpt
+	function cbxwpbookmarks_load_svg( $svg_name = '', $folder = '') {
 		if ( $svg_name == '' ) {
 			return '';
 		}
@@ -400,8 +442,12 @@ if ( ! function_exists( 'cbxwpbookmarks_load_svg' ) ) {
 		// Sanitize the file name to prevent directory traversal attacks.
 		$svg_name = sanitize_file_name( $svg_name );
 
+		if($folder != ''){
+			$folder = trailingslashit($folder);
+		}
+
 		// Construct the full file path.
-		$file_path = $directory . $svg_name . '.svg';
+		$file_path = $directory. $folder . $svg_name . '.svg';
 		$file_path = apply_filters( 'cbxwpbookmarks_svg_file_path', $file_path, $svg_name );
 
 		// Check if the file exists.

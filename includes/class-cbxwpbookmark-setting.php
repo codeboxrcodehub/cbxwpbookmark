@@ -53,7 +53,7 @@ if ( ! class_exists( 'CBXWPBookmark_Settings_API' ) ):
 		 * @since 2.1
 		 */
 		public function __clone() {
-			wc_doing_it_wrong( __FUNCTION__, esc_html__( 'Cloning is forbidden.', 'cbxwpbookmark' ), '2.1' );
+			cbxwpbookmark_doing_it_wrong( __FUNCTION__, esc_html__( 'Cloning is forbidden.', 'cbxwpbookmark' ), '1.8.12' );
 		}//end method clone
 
 		/**
@@ -62,7 +62,7 @@ if ( ! class_exists( 'CBXWPBookmark_Settings_API' ) ):
 		 * @since 2.1
 		 */
 		public function __wakeup() {
-			wc_doing_it_wrong( __FUNCTION__, esc_html__( 'Unserializing instances of this class is forbidden.', 'cbxwpbookmark' ), '2.1' );
+			cbxwpbookmark_doing_it_wrong( __FUNCTION__, esc_html__( 'Unserializing instances of this class is forbidden.', 'cbxwpbookmark' ), '1.8.12' );
 		}//end method wakeup
 
 		public function __construct() {
@@ -188,7 +188,7 @@ if ( ! class_exists( 'CBXWPBookmark_Settings_API' ) ):
 						'allow_new'         => isset( $option['allow_new'] ) ? intval( $option['allow_new'] ) : 0,    //only works for repeatable
 						'allow_clear'       => isset( $option['allow_clear'] ) ? intval( $option['allow_clear'] ) : 0,//for select2
 						'check_content'     => isset( $option['check_content'] ) ? $option['check_content'] : '',
-						'inline'            => isset( $option['inline'] ) ? absint( $option['inline'] ) : 1,
+						'inline'            => isset( $option['inline'] ) ? absint( $option['inline'] ) : 1
 					];
 
 					//add_settings_field($section . '[' . $option['name'] . ']', $option['label'], array($this, 'callback_' . $type), $section, $section, $args);
@@ -198,6 +198,7 @@ if ( ! class_exists( 'CBXWPBookmark_Settings_API' ) ):
 
 			// creates our settings in the options table
 			foreach ( $this->settings_sections as $section ) {
+                //phpcs:ignore PluginCheck.CodeAnalysis.SettingSanitization.register_settingDynamic
 				register_setting( $section['id'], $section['id'], [ $this, 'sanitize_options' ] );
 			}
 		}//end method admin_init
@@ -235,7 +236,6 @@ if ( ! class_exists( 'CBXWPBookmark_Settings_API' ) ):
 				if ( ! isset( $section_value[ $field['name'] ] ) ) {
 					$section_value[ $field['name'] ] = isset( $field['default'] ) ? $field['default'] : '';
 				}
-
 			}
 
 			return $section_value;
@@ -429,9 +429,6 @@ if ( ! class_exists( 'CBXWPBookmark_Settings_API' ) ):
 			$html_id = "{$args['section']}_{$args['id']}";
 			$html_id = $this->settings_clean_label_for( $html_id );
 
-			//$display_inline        = isset( $args['inline']) ? absint($args['inline']) : 1;
-			//$display_inline_class = ($display_inline)? 'radio_fields_inline' : '';
-
 			$html = '<div class="checkbox_field magic_checkbox_field">';
 			$html .= sprintf( '<input type="hidden" name="%1$s[%2$s]" value="off" />', $args['section'], $args['id'] );
 			$html .= sprintf( '<input type="checkbox" class="magic-checkbox" id="wpuf-%4$s" name="%1$s[%2$s]" value="on" %3$s />', $args['section'], $args['id'], checked( $value, 'on', false ), $html_id );
@@ -492,15 +489,6 @@ if ( ! class_exists( 'CBXWPBookmark_Settings_API' ) ):
 				if ( $sortable ) {
 					$html .= '<span class="checkbox_field_handle"></span>';
 				}
-
-				/*$html .= sprintf( '<label for="wpuf-%1$s">', $html_id );
-				$html .= sprintf( '<input type="hidden" name="%1$s[%2$s][%3$s]" value="" />', $args['section'], $args['id'], $key );
-				$html .= '<span class="checkbox-toggle-btn ' . esc_attr( $active_class ) . '">';
-				$html .= sprintf( '<input type="checkbox" class="checkbox" id="wpuf-%5$s" name="%1$s[%2$s][%3$s]" value="%3$s" %4$s />', $args['section'], $args['id'], $key, $checked, $html_id );
-				$html .= '<i class="checkbox-round-btn"></i></span>';
-
-				$html .= sprintf( '<i class="checkbox-round-btn-text">%1$s</i></label></p>', $label );*/
-
 
 				$html .= sprintf( '<input type="hidden" name="%1$s[%2$s][%3$s]" value="" />', $args['section'], $args['id'], $key );
 				$html .= sprintf( '<input type="checkbox" class="magic-checkbox" id="wpuf-%5$s" name="%1$s[%2$s][%3$s]" value="%3$s" %4$s />', $args['section'], $args['id'], $key, $checked, $html_id );
@@ -659,7 +647,7 @@ if ( ! class_exists( 'CBXWPBookmark_Settings_API' ) ):
 						$option_vals = [];
 					} else {
 						//$option_vals = $this->convert_associate($option_vals);
-						$option_vals = $option_vals;
+						//$option_vals = $option_vals;
 					}
 
 
@@ -758,7 +746,6 @@ if ( ! class_exists( 'CBXWPBookmark_Settings_API' ) ):
 		 * @return void
 		 */
 		function callback_color( $args, $value = null ) {
-
 			if ( $value === null ) {
 				$value = esc_attr( $this->get_option( $args['id'], $args['section'], $args['default'] ) );
 			}
@@ -909,6 +896,7 @@ if ( ! class_exists( 'CBXWPBookmark_Settings_API' ) ):
 			echo $html; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}//end callback_repeat
 
+
 		/**
 		 * Sanitize callback for Settings API
 		 */
@@ -1005,6 +993,18 @@ if ( ! class_exists( 'CBXWPBookmark_Settings_API' ) ):
 			return $option_value;
 		}//end method sanitize_multi_select_check
 
+		/**
+		 * Get the value of a settings field
+		 *
+		 * @param  string  $option  settings field name
+		 * @param  string  $section  the section name this field belongs to
+		 * @param  string  $default  default text if it's not found
+		 *
+		 * @return string
+		 */
+		function get_option( $option, $section, $default = '' ) {
+			return $this->get_field( $option, $section, $default );
+		}//end method get_option
 
 		/**
 		 * Get the value of a settings field
@@ -1023,20 +1023,6 @@ if ( ! class_exists( 'CBXWPBookmark_Settings_API' ) ):
 			}
 
 			return $default;
-		}//end method get_option
-
-
-		/**
-		 * Get the value of a settings field
-		 *
-		 * @param  string  $option  settings field name
-		 * @param  string  $section  the section name this field belongs to
-		 * @param  string  $default  default text if it's not found
-		 *
-		 * @return string
-		 */
-		function get_option( $option, $section, $default = '' ) {
-			return $this->get_field( $option, $section, $default );
 		}//end method get_option
 
 		/**

@@ -744,12 +744,12 @@ class CBXWPBookmark_Customizer {
 	 * Number field sanitization
 	 *
 	 * @param $number
-	 * @param $setting
+	 * @param $settings
 	 *
 	 * @return int
 	 */
-	public function sanitize_number_field( $number, $setting ) {
-		return CBXWPBookmarkHelper::sanitize_number_field( $number, $setting );
+	public function sanitize_number_field( $number, $settings ) {
+		return CBXWPBookmarkHelper::sanitize_number_field( $number, $settings );
 	}//end sanitize_number_field
 
 	public function text_sanitization( $input ) {
@@ -760,11 +760,11 @@ class CBXWPBookmark_Customizer {
 	 * Post type sanitization
 	 *
 	 * @param $number
-	 * @param $setting
+	 * @param $settings
 	 *
 	 * @return int
 	 */
-	public function sanitize_post_types( $types, $setting ) {
+	public function sanitize_post_types( $types, $settings ) {
 		return wp_unslash( $types );
 	}//end sanitize_post_types
 

@@ -105,8 +105,8 @@ class CBXWPBookmarkCategory_Widget extends WP_Widget {
 
 		// Checking if the user is logged in
 
-		$settings_api  = new CBXWPBookmark_Settings_API();
-		$bookmark_mode = $settings_api->get_option( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
+		$settings  = new CBXWPBookmark_Settings_API();
+		$bookmark_mode = $settings->get_field( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
 
 		$instance['title'] = ''; // we will send our shortcode's title attribute blank so that in widget it doesn't show extra title
 

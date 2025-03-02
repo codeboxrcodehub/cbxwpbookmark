@@ -167,6 +167,16 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                     <div class="content">
                         <div class="cbx-backend-settings-row">
                             <p>
+                                Version - 1.9.0
+                            </p>
+                            <ul>
+                                <li>[fixed] Dashboard category, bookmark listing delete fixed/li>
+                                <li>[updated] WordPress 6.7.2 compatible</li>
+                                <li>[updated] Pro addon plugin 1.4.7 released</li>
+                            </ul>
+                        </div>
+                        <div class="cbx-backend-settings-row">
+                            <p>
                                 Version - 1.8.12
                             </p>
                             <ul>
@@ -182,28 +192,6 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                                 <li>[improvement] Minor improvement</li>
                             </ul>
                         </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.8.10
-                            </p>
-                            <ul>
-                                <li>[improvement] Plugin on upgrade migration process improved</li>
-                            </ul>
-                        </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.8.9
-                            </p>
-                            <ul>
-                                <li>[improvement] Login form/url improved</li>
-                                <li>[improvement] Login form/url improved</li>
-                                <li>[fixed] Visual composer param php error fixed</li>
-                                <li>[updated] Pro addon plugin new version(1.4.4) released</li>
-                                <li>[updated] myCred addon plugin new version(1.0.5) released</li>
-                                <li>[improvement] Plugin check latest check</li>
-                                <li>[added] Added new method for plugin update checker</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
                 <div class="cbx-backend-card dashboard-changelog">
@@ -213,6 +201,15 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                         </div>
                     </div>
                     <div class="content">
+                        <div class="cbx-backend-settings-row">
+                            <p>
+                                Version - 1.4.7
+                            </p>
+                            <ul>
+                                <li>[updated] WordPress 6.7.2 compatible</li>
+                                <li>[updated] Core plugin 1.9.0 compatible</li>
+                            </ul>
+                        </div>
                         <div class="cbx-backend-settings-row">
                             <p>
                                 Version - 1.4.5
@@ -231,16 +228,6 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                                 <li>[updated] Core plugin new version(1.8.9) released</li>
                                 <li>[added] Added new method for plugin update checker</li>
                                 <li>[improvement] Minor improvements and WordPress latest version 6.7.1 compatible</li>
-                            </ul>
-                        </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.4.3
-                            </p>
-                            <ul>
-                                <li>[fixed] Fixed icon missing bug after last icons update</li>
-                                <li>[improvement] Accessibility improvement</li>
-                                <li>[updated] Core plugin new version(1.8.5) released</li>
                             </ul>
                         </div>
                     </div>
