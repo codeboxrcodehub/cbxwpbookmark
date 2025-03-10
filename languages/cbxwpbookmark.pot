@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-31 10:06+0000\n"
+"POT-Creation-Date: 2025-03-02 19:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -81,7 +81,7 @@ msgid "7 Days"
 msgstr ""
 
 #. %s: bookmark mycred plugin description url
-#: admin/class-cbxwpbookmark-admin.php:921
+#: admin/class-cbxwpbookmark-admin.php:925
 #, php-format
 msgid ""
 "<a target=\"_blank\" href=\"%s\">CBX Bookmark myCred Addon</a> has myCred "
@@ -89,7 +89,7 @@ msgid ""
 msgstr ""
 
 #. %s: bookmark product description url
-#: admin/class-cbxwpbookmark-admin.php:910
+#: admin/class-cbxwpbookmark-admin.php:914
 #, php-format
 msgid ""
 "<a target=\"_blank\" href=\"%s\">CBX Bookmark Pro Addon</a> has extended "
@@ -97,27 +97,27 @@ msgid ""
 msgstr ""
 
 #. %s: register url
-#: admin/class-cbxwpbookmark-admin.php:874
+#: admin/class-cbxwpbookmark-admin.php:878
 #, php-format
 msgid ""
 "<strong>Note:</strong> CBX Bookmark & Favorite myCred Addon is custom plugin."
 " This plugin can not be auto update from dashboard/plugin manager. For "
 "manual update please check <a target=\"_blank\" href=\"%1$s\">"
 "documentation</a>. <strong style=\"color: red;\">It seems this plugin's "
-"current version is older than 1.0.5. To get the latest pro addon features, "
-"this plugin needs to upgrade to 1.0.5 or later.</strong>"
+"current version is older than %2$s . To get the latest pro addon features, "
+"this plugin needs to upgrade to %2$s or later.</strong>"
 msgstr ""
 
 #. translators:translators: %s: plugin setting url for licence
-#: admin/class-cbxwpbookmark-admin.php:836
+#: admin/class-cbxwpbookmark-admin.php:840
 #, php-format
 msgid ""
 "<strong>Note:</strong> CBX Bookmark & Favorite Pro Addon is custom plugin. "
 "This plugin can not be auto update from dashboard/plugin manager. For manual "
 "update please check <a target=\"_blank\" href=\"%1$s\">documentation</a>. "
 "<strong style=\"color: red;\">It seems this plugin's current version is "
-"older than 1.4.5. To get the latest pro addon features, this plugin needs to "
-"upgrade to 1.4.4 or later.</strong>"
+"older than %2$s . To get the latest pro addon features, this plugin needs to "
+"upgrade to %2$s or later.</strong>"
 msgstr ""
 
 #: templates/admin/bookmark_category_edit.php:149
@@ -128,7 +128,7 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
-#: includes/class-cbxwpbookmark-setting.php:903
+#: includes/class-cbxwpbookmark-setting.php:890
 msgid "Add New"
 msgstr ""
 
@@ -384,11 +384,11 @@ msgstr ""
 msgid "Bookmark removed!"
 msgstr ""
 
-#: admin/class-cbxwpbookmark-admin.php:1033
+#: admin/class-cbxwpbookmark-admin.php:1037
 msgid "Bookmark reset setting html loaded successfully"
 msgstr ""
 
-#: admin/class-cbxwpbookmark-admin.php:1057
+#: admin/class-cbxwpbookmark-admin.php:1061
 msgid "Bookmark setting reset successfully"
 msgstr ""
 
@@ -424,7 +424,7 @@ msgstr ""
 msgid "Brown"
 msgstr ""
 
-#: templates/admin/dashboard.php:348
+#: templates/admin/dashboard.php:344
 msgid "buddyBoss"
 msgstr ""
 
@@ -466,7 +466,7 @@ msgstr ""
 msgid "Categories(Comma Separated)"
 msgstr ""
 
-#: admin/class-cbxwpbookmark-admin.php:994
+#: admin/class-cbxwpbookmark-admin.php:998
 #: includes/class-cbxwpbookmark-list.php:238 templates/admin/dashboard.php:74
 msgid "Category"
 msgstr ""
@@ -608,12 +608,12 @@ msgstr ""
 msgid "CBX Bookmark Categories"
 msgstr ""
 
-#: templates/admin/dashboard.php:255
+#: templates/admin/dashboard.php:251
 msgid "CBX Bookmark Plugin Details"
 msgstr ""
 
 #. %s: bookmark pro plugin version
-#: admin/class-cbxwpbookmark-admin.php:904
+#: admin/class-cbxwpbookmark-admin.php:908
 #, php-format
 msgid ""
 "CBX Bookmark Pro Addon V%s or any previous version is not 100%% compatible "
@@ -678,13 +678,13 @@ msgstr ""
 msgid "Changelog Core Plugin"
 msgstr ""
 
-#: templates/admin/dashboard.php:203
+#: templates/admin/dashboard.php:200
 msgid "Changelog Pro Addon"
 msgstr ""
 
 #. 1. Plugin setting url 2. Documentation link
-#: admin/class-cbxwpbookmark-admin.php:784
-#: admin/class-cbxwpbookmark-admin.php:801
+#: admin/class-cbxwpbookmark-admin.php:783
+#: admin/class-cbxwpbookmark-admin.php:803
 #, php-format
 msgid ""
 "Check <a style=\"color:#005ae0 !important; font-weight: bold;\" "
@@ -693,15 +693,15 @@ msgid ""
 msgstr ""
 
 #: includes/class-cbxwpbookmark-helper.php:2715
-#: includes/class-cbxwpbookmark-setting.php:474
+#: includes/class-cbxwpbookmark-setting.php:471
 msgid "Check All"
 msgstr ""
 
-#: includes/class-cbxwpbookmark-setting.php:771
+#: includes/class-cbxwpbookmark-setting.php:758
 msgid "Choose Color"
 msgstr ""
 
-#: includes/class-cbxwpbookmark-setting.php:741
+#: includes/class-cbxwpbookmark-setting.php:729
 msgid "Choose File"
 msgstr ""
 
@@ -779,6 +779,7 @@ msgid "Click to update"
 msgstr ""
 
 #: includes/class-cbxwpbookmark-setting.php:56
+#: includes/class-cbxwpbookmark.php:101
 msgid "Cloning is forbidden."
 msgstr ""
 
@@ -792,7 +793,7 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: templates/admin/dashboard.php:423
+#: templates/admin/dashboard.php:419
 msgid "Codeboxr News Updates"
 msgstr ""
 
@@ -844,7 +845,7 @@ msgstr ""
 msgid "Copy and Share Url"
 msgstr ""
 
-#: templates/admin/dashboard.php:283
+#: templates/admin/dashboard.php:279
 msgid "Core Plugin Support"
 msgstr ""
 
@@ -866,8 +867,8 @@ msgstr ""
 msgid "Create New Category"
 msgstr ""
 
-#: admin/class-cbxwpbookmark-admin.php:995
-#: admin/class-cbxwpbookmark-admin.php:1014
+#: admin/class-cbxwpbookmark-admin.php:999
+#: admin/class-cbxwpbookmark-admin.php:1018
 #: includes/class-cbxwpbookmark-category.php:165
 #: includes/class-cbxwpbookmark-list.php:239
 #: templates/admin/bookmark_category_edit.php:121
@@ -1023,11 +1024,11 @@ msgid ""
 "cbxwpbookmark-guest-login-trigger\" href=\"#\">please login</a>"
 msgstr ""
 
-#: admin/class-cbxwpbookmark-admin.php:965
+#: admin/class-cbxwpbookmark-admin.php:969
 msgid "Documentation"
 msgstr ""
 
-#: templates/admin/dashboard.php:265
+#: templates/admin/dashboard.php:261
 msgid "Documentation & User Guide"
 msgstr ""
 
@@ -1092,7 +1093,7 @@ msgstr ""
 msgid "Failed to Bookmark"
 msgstr ""
 
-#: templates/admin/dashboard.php:378
+#: templates/admin/dashboard.php:374
 msgid "Fifu(Featured Image from URL)"
 msgstr ""
 
@@ -1114,7 +1115,7 @@ msgstr ""
 msgid "For which post types auto integration will be used"
 msgstr ""
 
-#: admin/class-cbxwpbookmark-admin.php:961
+#: admin/class-cbxwpbookmark-admin.php:965
 msgid "Free Support"
 msgstr ""
 
@@ -1156,7 +1157,7 @@ msgstr ""
 msgid "Hacking attempt ?"
 msgstr ""
 
-#: templates/admin/dashboard.php:244
+#: templates/admin/dashboard.php:240
 msgid "Help & Supports"
 msgstr ""
 
@@ -1187,8 +1188,8 @@ msgstr ""
 msgid "hue selection slider"
 msgstr ""
 
-#: admin/class-cbxwpbookmark-admin.php:990
-#: admin/class-cbxwpbookmark-admin.php:1010
+#: admin/class-cbxwpbookmark-admin.php:994
+#: admin/class-cbxwpbookmark-admin.php:1014
 #: includes/class-cbxwpbookmark-category.php:161
 #: includes/class-cbxwpbookmark-list.php:234
 #: includes/customizer/class-cbxwpbookmark-customizer.php:472
@@ -1296,7 +1297,7 @@ msgstr ""
 msgid "Maximum category limit reached"
 msgstr ""
 
-#: admin/class-cbxwpbookmark-admin.php:1015
+#: admin/class-cbxwpbookmark-admin.php:1019
 #: includes/class-cbxwpbookmark-category.php:166
 msgid "Modified"
 msgstr ""
@@ -1350,7 +1351,7 @@ msgstr ""
 msgid "My Bookmarks"
 msgstr ""
 
-#: templates/admin/dashboard.php:363
+#: templates/admin/dashboard.php:359
 msgid "myCred"
 msgstr ""
 
@@ -1525,7 +1526,7 @@ msgstr ""
 msgid "Order By"
 msgstr ""
 
-#: templates/admin/dashboard.php:386
+#: templates/admin/dashboard.php:382
 msgid "Other WordPress Plugins"
 msgstr ""
 
@@ -1636,8 +1637,8 @@ msgid ""
 msgstr ""
 
 #: admin/class-cbxwpbookmark-admin.php:280
-#: includes/class-cbxwpbookmark-setting.php:583
-#: includes/class-cbxwpbookmark-setting.php:644
+#: includes/class-cbxwpbookmark-setting.php:571
+#: includes/class-cbxwpbookmark-setting.php:632
 #: includes/customizer/class-cbxwpbookmark-customizer.php:809
 msgid "Please Select"
 msgstr ""
@@ -1662,7 +1663,7 @@ msgstr ""
 msgid "Please wait, do not close this window."
 msgstr ""
 
-#: admin/class-cbxwpbookmark-admin.php:991
+#: admin/class-cbxwpbookmark-admin.php:995
 #: includes/class-cbxwpbookmark-list.php:235
 msgid "Post"
 msgstr ""
@@ -1691,7 +1692,7 @@ msgstr ""
 msgid "Post Title"
 msgstr ""
 
-#: admin/class-cbxwpbookmark-admin.php:992
+#: admin/class-cbxwpbookmark-admin.php:996
 #: includes/class-cbxwpbookmark-list.php:236
 #: includes/customizer/class-cbxwpbookmark-customizer.php:474
 #: widgets/block_widgets/class-cbxwpbookmark-most-block.php:71
@@ -1732,7 +1733,7 @@ msgstr ""
 msgid "Previous page"
 msgstr ""
 
-#: admin/class-cbxwpbookmark-admin.php:1013
+#: admin/class-cbxwpbookmark-admin.php:1017
 #: includes/class-cbxwpbookmark-category.php:164
 #: includes/customizer/class-cbxwpbookmark-customizer.php:234
 #: includes/customizer/class-cbxwpbookmark-customizer.php:242
@@ -1768,7 +1769,7 @@ msgstr ""
 msgid "Private only"
 msgstr ""
 
-#: templates/admin/dashboard.php:293
+#: templates/admin/dashboard.php:289
 msgid "Pro Addon Support"
 msgstr ""
 
@@ -1826,11 +1827,11 @@ msgstr ""
 msgid "Reset option values and all tables created by this plugin"
 msgstr ""
 
-#: templates/admin/dashboard.php:273
+#: templates/admin/dashboard.php:269
 msgid "Review & Rate CBX Bookmark Plugin"
 msgstr ""
 
-#: admin/class-cbxwpbookmark-admin.php:963
+#: admin/class-cbxwpbookmark-admin.php:967
 msgid "Reviews"
 msgstr ""
 
@@ -1843,7 +1844,7 @@ msgstr ""
 msgid "save and close"
 msgstr ""
 
-#: includes/class-cbxwpbookmark-setting.php:1135
+#: includes/class-cbxwpbookmark-setting.php:1121
 #: templates/admin/setting_display.php:47
 msgid "Save Settings"
 msgstr ""
@@ -1924,7 +1925,7 @@ msgstr ""
 msgid "Setting"
 msgstr ""
 
-#: admin/class-cbxwpbookmark-admin.php:936
+#: admin/class-cbxwpbookmark-admin.php:940
 msgid "Settings"
 msgstr ""
 
@@ -2123,7 +2124,7 @@ msgid ""
 "only if bookmark mode is \"User owns category\" or \"Global Category\""
 msgstr ""
 
-#: includes/cbxwpbookmark-functions.php:90
+#: includes/cbxwpbookmark-functions.php:133
 msgid ""
 "Sorry, User categories or global categories can not be shown if bookmark "
 "mode is not \"No Category\""
@@ -2135,8 +2136,8 @@ msgid ""
 "do not have enough permission."
 msgstr ""
 
-#: admin/class-cbxwpbookmark-admin.php:1037
-#: admin/class-cbxwpbookmark-admin.php:1062
+#: admin/class-cbxwpbookmark-admin.php:1041
+#: admin/class-cbxwpbookmark-admin.php:1066
 msgid "Sorry, you don't have enough permission"
 msgstr ""
 
@@ -2186,7 +2187,7 @@ msgid "Teal"
 msgstr ""
 
 #. %s: bookmark core plugin version
-#: admin/class-cbxwpbookmark-admin.php:781
+#: admin/class-cbxwpbookmark-admin.php:780
 #, php-format
 msgid ""
 "Thanks for installing/deactivating <strong>CBX Bookmark</strong> V%s - "
@@ -2194,7 +2195,7 @@ msgid ""
 msgstr ""
 
 #. %s: bookmark core plugin version
-#: admin/class-cbxwpbookmark-admin.php:798
+#: admin/class-cbxwpbookmark-admin.php:800
 #, php-format
 msgid ""
 "Thanks for upgrading <strong>CBX Bookmark</strong> V%s , enjoy the new "
@@ -2205,7 +2206,7 @@ msgstr ""
 msgid "The title field character limit must be between 3 to 250."
 msgstr ""
 
-#: templates/admin/dashboard.php:301
+#: templates/admin/dashboard.php:297
 msgid "Third Party plugin Integration(Pro)"
 msgstr ""
 
@@ -2239,7 +2240,7 @@ msgstr ""
 msgid "Tip"
 msgstr ""
 
-#: admin/class-cbxwpbookmark-admin.php:1011
+#: admin/class-cbxwpbookmark-admin.php:1015
 #: includes/class-cbxwpbookmark-category.php:162
 #: includes/customizer/class-cbxwpbookmark-customizer.php:159
 #: includes/customizer/class-cbxwpbookmark-customizer.php:420
@@ -2264,7 +2265,7 @@ msgid ""
 "create a page and set as my bookmark page using above setting."
 msgstr ""
 
-#: includes/class-cbxwpbookmark-setting.php:1110
+#: includes/class-cbxwpbookmark-setting.php:1096
 msgid "Toggle All Sections"
 msgstr ""
 
@@ -2284,7 +2285,7 @@ msgstr ""
 msgid "Totally hide bookmark button for guest user, default it's shown but "
 msgstr ""
 
-#: admin/class-cbxwpbookmark-admin.php:971
+#: admin/class-cbxwpbookmark-admin.php:975
 msgid "Try Pro Addon"
 msgstr ""
 
@@ -2292,7 +2293,7 @@ msgstr ""
 msgid "Type Category Name"
 msgstr ""
 
-#: templates/admin/dashboard.php:318
+#: templates/admin/dashboard.php:314
 msgid "Ultimate member"
 msgstr ""
 
@@ -2301,7 +2302,7 @@ msgid "Unable to delete the category"
 msgstr ""
 
 #: includes/class-cbxwpbookmark-helper.php:2715
-#: includes/class-cbxwpbookmark-setting.php:474
+#: includes/class-cbxwpbookmark-setting.php:471
 msgid "Uncheck All"
 msgstr ""
 
@@ -2315,6 +2316,7 @@ msgid "Unnamed"
 msgstr ""
 
 #: includes/class-cbxwpbookmark-setting.php:65
+#: includes/class-cbxwpbookmark.php:110
 msgid "Unserializing instances of this class is forbidden."
 msgstr ""
 
@@ -2343,8 +2345,8 @@ msgstr ""
 msgid "use previous color"
 msgstr ""
 
-#: admin/class-cbxwpbookmark-admin.php:993
-#: admin/class-cbxwpbookmark-admin.php:1012
+#: admin/class-cbxwpbookmark-admin.php:997
+#: admin/class-cbxwpbookmark-admin.php:1016
 #: includes/class-cbxwpbookmark-category.php:163
 #: includes/class-cbxwpbookmark-list.php:237
 msgid "User"
@@ -2359,11 +2361,11 @@ msgid ""
 "User's private(or public based on shortcode/customizer params) bookmark page."
 msgstr ""
 
-#: templates/admin/dashboard.php:333
+#: templates/admin/dashboard.php:329
 msgid "usersWP"
 msgstr ""
 
-#: admin/class-cbxwpbookmark-admin.php:936
+#: admin/class-cbxwpbookmark-admin.php:940
 msgid "View settings"
 msgstr ""
 

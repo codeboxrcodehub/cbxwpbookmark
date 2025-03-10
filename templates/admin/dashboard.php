@@ -167,10 +167,19 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                     <div class="content">
                         <div class="cbx-backend-settings-row">
                             <p>
+                                Version - 1.9.1
+                            </p>
+                            <ul>
+                                <li>[updated] Minor improvement</li>
+                                <li>[updated] Pro addon plugin 1.4.8 released</li>
+                            </ul>
+                        </div>
+                        <div class="cbx-backend-settings-row">
+                            <p>
                                 Version - 1.9.0
                             </p>
                             <ul>
-                                <li>[fixed] Dashboard category, bookmark listing delete fixed/li>
+                                <li>[fixed] Dashboard category, bookmark listing delete fixed</li>
                                 <li>[updated] WordPress 6.7.2 compatible</li>
                                 <li>[updated] Pro addon plugin 1.4.7 released</li>
                             </ul>
@@ -184,14 +193,6 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                                 <li>[updated] Update notification display logic improved</li>
                             </ul>
                         </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.8.11
-                            </p>
-                            <ul>
-                                <li>[improvement] Minor improvement</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
                 <div class="cbx-backend-card dashboard-changelog">
@@ -201,6 +202,15 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                         </div>
                     </div>
                     <div class="content">
+                        <div class="cbx-backend-settings-row">
+                            <p>
+                                Version - 1.4.8
+                            </p>
+                            <ul>
+                                <li>[updated] Plugin update checker updated</li>
+                                <li>[updated] Core plugin 1.9.1 compatible</li>
+                            </ul>
+                        </div>
                         <div class="cbx-backend-settings-row">
                             <p>
                                 Version - 1.4.7
@@ -217,17 +227,6 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                             <ul>
                                 <li>[improvement] Style and other minor improvements</li>
                                 <li>[improvement] Style improvement</li>
-                            </ul>
-                        </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.4.4
-                            </p>
-                            <ul>
-                                <li>[improvement] Shortcode improvement for grid plugin</li>
-                                <li>[updated] Core plugin new version(1.8.9) released</li>
-                                <li>[added] Added new method for plugin update checker</li>
-                                <li>[improvement] Minor improvements and WordPress latest version 6.7.1 compatible</li>
                             </ul>
                         </div>
                     </div>
