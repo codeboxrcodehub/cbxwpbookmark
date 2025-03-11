@@ -722,7 +722,7 @@ class CBXWPBookmarkHelper {
 					echo cbxwpbookmark_get_template_html( 'bookmarkpost/single.php', [
 						'item'           => $item,
 						'instance'       => $instance,
-						'setting'        => $settings,
+						'settings'        => $settings,
 						'action_html'    => $action_html,
 						'sub_item_class' => $sub_item_class, //used in category widget to display sub list
 
@@ -876,7 +876,7 @@ class CBXWPBookmarkHelper {
 						echo cbxwpbookmark_get_template_html( 'bookmarkmost/single.php', [
 							'item'            => $item,
 							'instance'        => $instance,
-							'setting'         => $settings,
+							'settings'         => $settings,
 							'li_class'        => $li_class,
 							'show_count_html' => $show_count_html
 						] );

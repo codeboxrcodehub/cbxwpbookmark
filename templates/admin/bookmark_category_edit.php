@@ -8,8 +8,6 @@ if ( ! defined( 'WPINC' ) ) {
 
 global $wpdb;
 $log_id = ( isset( $_GET['id'] ) && absint( $_GET['id'] ) > 0 ) ? absint( $_GET['id'] ) : 0; //phpcs:ignore WordPress.Security.NonceVerification.Recommended
-
-//$settings = new CBXWPBookmark_Settings_API();
 ?>
 
 <?php

@@ -104,10 +104,6 @@ class CBXWPBookmarkMost_Widget extends WP_Widget {
 
 		$instance['title'] = '';
 
-		/*$widget_string .= cbxwpbookmark_get_template_html( 'widgets/cbxwpbookmarkmost-widget.php', array(
-			'instance' => $instance
-		) );*/
-
 		$attr = [];
 
 		$type = $instance['type'];

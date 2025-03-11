@@ -3,7 +3,7 @@ Contributors: codeboxr, manchumahara
 Tags: bookmark,favorite,collection,user collection,user bookmark
 Requires at least: 5.3
 Tested up to: 6.7.2
-Stable tag: 1.9.2
+Stable tag: 1.9.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -169,6 +169,9 @@ How to install the plugin and get it working.
 == Screenshots ==
 
 == Changelog ==
+= 1.9.3 =
+* [fixed] Setting variable related issues fixed
+
 = 1.9.2 =
 * [fixed] Fixed the method 'get_opt' in core and updated the pro addon based on that.
 * [updated] Pro addon plugin 1.4.9 compatible

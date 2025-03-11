@@ -167,6 +167,14 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                     <div class="content">
                         <div class="cbx-backend-settings-row">
                             <p>
+                                Version - 1.9.3
+                            </p>
+                            <ul>
+                                <li>[fixed] Setting variable related issues fixed</li>
+                            </ul>
+                        </div>
+                        <div class="cbx-backend-settings-row">
+                            <p>
                                 Version - 1.9.2
                             </p>
                             <ul>
@@ -183,16 +191,6 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                                 <li>[updated] Pro addon plugin 1.4.8 released</li>
                             </ul>
                         </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.9.0
-                            </p>
-                            <ul>
-                                <li>[fixed] Dashboard category, bookmark listing delete fixed</li>
-                                <li>[updated] WordPress 6.7.2 compatible</li>
-                                <li>[updated] Pro addon plugin 1.4.7 released</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
                 <div class="cbx-backend-card dashboard-changelog">
@@ -202,6 +200,14 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                         </div>
                     </div>
                     <div class="content">
+                        <div class="cbx-backend-settings-row">
+                            <p>
+                                Version - 1.5.0
+                            </p>
+                            <ul>
+                                <li>[fixed] Setting variable related issues fixed</li>
+                            </ul>
+                        </div>
                         <div class="cbx-backend-settings-row">
                             <p>
                                 Version - 1.4.9
@@ -218,15 +224,6 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                             <ul>
                                 <li>[updated] Plugin update checker updated</li>
                                 <li>[updated] Core plugin 1.9.1 compatible</li>
-                            </ul>
-                        </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.4.7
-                            </p>
-                            <ul>
-                                <li>[updated] WordPress 6.7.2 compatible</li>
-                                <li>[updated] Core plugin 1.9.0 compatible</li>
                             </ul>
                         </div>
                     </div>
