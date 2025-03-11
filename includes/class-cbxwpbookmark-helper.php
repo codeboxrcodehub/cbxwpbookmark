@@ -74,7 +74,7 @@ class CBXWPBookmarkHelper {
 	 * @return array
 	 */
 	public static function customizer_default_values() {
-        $my_bookmark_url = cbxwpbookmarks_mybookmark_page_url();
+		$my_bookmark_url = cbxwpbookmarks_mybookmark_page_url();
 
 		$customizer_default = [
 			'shortcodes'          => 'cbxwpbookmark-mycat,cbxwpbookmark',
@@ -118,10 +118,10 @@ class CBXWPBookmarkHelper {
 	}//end customizer_default_values
 
 	/**
-     * Adjust customizer default values
-     *
-	 * @param boolean $update
-	 * @param boolean $return
+	 * Adjust customizer default values
+	 *
+	 * @param  boolean  $update
+	 * @param  boolean  $return
 	 *
 	 * @return array|void
 	 */
@@ -272,7 +272,7 @@ class CBXWPBookmarkHelper {
 
 		$settings = new CBXWPBookmark_Settings_API();
 
-		$hide_for_guest = absint( $settings->get_opt( 'hide_for_guest', 'cbxwpbookmark_basics', 0 ) );
+		$hide_for_guest = absint( $settings->get_field( 'hide_for_guest', 'cbxwpbookmark_basics', 0 ) );
 		if ( $hide_for_guest && ! is_user_logged_in() ) {
 			return '';
 		}
@@ -760,7 +760,7 @@ class CBXWPBookmarkHelper {
 	public static function cbxbookmark_most_html( $instance, $attr = [] ) {
 		global $wpdb;
 		$bookmark_table       = $wpdb->prefix . 'cbxwpbookmark';
-		$settings              = new CBXWPBookmark_Settings_API();
+		$settings             = new CBXWPBookmark_Settings_API();
 		$allowed_object_types = cbxwpbookmarks_allowed_object_type();
 
 		$object_types = CBXWPBookmarkHelper::object_types( true ); //get plain post type as array
@@ -1239,7 +1239,7 @@ class CBXWPBookmarkHelper {
 	 * @return false|string
 	 */
 	public static function cbxwpbookmarks_mybookmark_page_url() {
-		$settings           = new CBXWPBookmark_Settings_API();
+		$settings = new CBXWPBookmark_Settings_API();
 
 		$my_bookmark_page_id = absint( $settings->get_field( 'mybookmark_pageid', 'cbxwpbookmark_basics', 0 ) );
 
@@ -2412,7 +2412,7 @@ class CBXWPBookmarkHelper {
 
 		$settings_builtin_fields =
 			[
-				'cbxwpbookmark_basics'   => [
+				'cbxwpbookmark_basics' => [
 					'basics_heading'     => [
 						'name'    => 'basics_heading',
 						'label'   => esc_html__( 'General Settings', 'cbxwpbookmark' ),
@@ -2642,7 +2642,7 @@ class CBXWPBookmarkHelper {
 					],
 
 				],
-				'cbxwpbookmark_tools'    => [
+				'cbxwpbookmark_tools'  => [
 					'tools_heading'        => [
 						'name'    => 'tools_heading',
 						'label'   => esc_html__( 'Tools Settings', 'cbxwpbookmark' ),
@@ -2979,8 +2979,8 @@ class CBXWPBookmarkHelper {
 	}//end cbxbookmark_create_page
 
 	/**
-     * Get any plugin version number
-     *
+	 * Get any plugin version number
+	 *
 	 * @param $plugin_slug
 	 *
 	 * @return mixed|string
@@ -3006,4 +3006,49 @@ class CBXWPBookmarkHelper {
 		// Return false if the plugin is not found
 		return '';
 	}//end method get_pro_addon_version
+
+	/**
+	 * Returns codeboxr news feeds using transient cache
+	 *
+	 * @return false|mixed|\SimplePie\Item[]|null
+	 */
+	public static function codeboxr_news_feed() {
+		$cache_key   = 'codeboxr_news_feed_cache';
+		$cached_feed = get_transient( $cache_key );
+
+		$news = false;
+
+		if ( false === $cached_feed ) {
+			include_once ABSPATH . WPINC . '/feed.php'; // Ensure feed functions are available
+			$feed = fetch_feed( 'https://codeboxr.com/feed?post_type=post' );
+
+			if ( is_wp_error( $feed ) ) {
+				return false; // Return false if there's an error
+			}
+
+			$feed->init();
+
+			$feed->set_output_encoding( 'UTF-8' );                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        // this is the encoding parameter, and can be left unchanged in almost every case
+			$feed->handle_content_type();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                // this double-checks the encoding type
+			$feed->set_cache_duration( 21600 );                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          // 21,600 seconds is six hours
+			$limit  = $feed->get_item_quantity( 10 );                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     // fetches the 18 most recent RSS feed stories
+			$items  = $feed->get_items( 0, $limit );
+			$blocks = array_slice( $items, 0, 10 );
+
+            $news = [];
+            foreach ( $blocks as $block ) {
+				$url   = $block->get_permalink();
+				$url   = CBXWPBookmarkHelper::url_utmy( esc_url( $url ) );
+				$title = $block->get_title();
+
+                $news[] = ['url' => $url, 'title' => $title];
+			}
+
+			set_transient( $cache_key, $news, HOUR_IN_SECONDS * 6 ); // Cache for 6 hours
+		} else {
+			$news = $cached_feed;
+		}
+
+		return $news;
+	}//end method codeboxr_news_feed
 }//end CBXWPBookmarkHelper

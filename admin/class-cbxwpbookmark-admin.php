@@ -827,7 +827,7 @@ class CBXWPBookmark_Admin {
 		if(defined('CBXWPBOOKMARKADDON_PLUGIN_NAME')) return;
 
 		$pro_addon_version = CBXWPBookmarkHelper::get_any_plugin_version('cbxwpbookmarkaddon/cbxwpbookmarkaddon.php');
-		$pro_latest_version  = '1.4.8';
+		$pro_latest_version  = '1.4.9';
 
 		if($pro_addon_version != '' && version_compare( $pro_addon_version, $pro_latest_version, '<' ) ){
 			// Custom message to display
@@ -866,9 +866,9 @@ class CBXWPBookmark_Admin {
 		if(defined('CBXWPBOOKMARKMYCRED_PLUGIN_NAME')) return;
 
 		$pro_addon_version = CBXWPBookmarkHelper::get_any_plugin_version('cbxwpbookmarkmycred/cbxwpbookmarkmycred.php');
-		$pro_latest_version  = '1.0.5';
+		$pro_latest_version  = '1.0.6';
 
-		if($pro_addon_version != '' && version_compare( $pro_addon_version, '1.0.5', '<' ) ){
+		if($pro_addon_version != '' && version_compare( $pro_addon_version, $pro_latest_version, '<' ) ){
 			// Custom message to display
 
 			//$plugin_setting_url = admin_url( 'admin.php?page=cbxwpbookmark_settings#cbxwpbookmark_licences' );

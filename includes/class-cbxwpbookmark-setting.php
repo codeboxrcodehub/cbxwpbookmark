@@ -1015,14 +1015,8 @@ if ( ! class_exists( 'CBXWPBookmark_Settings_API' ) ):
 		 *
 		 * @return string
 		 */
-		function get_field( $option, $section, $default = '' ) {
-			$options = get_option( $section );
-
-			if ( isset( $options[ $option ] ) ) {
-				return $options[ $option ];
-			}
-
-			return $default;
+		function get_opt( $option, $section, $default = '' ) {
+			return $this->get_field( $option, $section, $default );
 		}//end method get_option
 
 		/**
@@ -1034,8 +1028,14 @@ if ( ! class_exists( 'CBXWPBookmark_Settings_API' ) ):
 		 *
 		 * @return string
 		 */
-		function get_opt( $option, $section, $default = '' ) {
-			return $this->get_option( $option, $section, $default );
+		function get_field( $option, $section, $default = '' ) {
+			$options = get_option( $section );
+
+			if ( isset( $options[ $option ] ) ) {
+				return $options[ $option ];
+			}
+
+			return $default;
 		}//end method get_option
 
 		/**
