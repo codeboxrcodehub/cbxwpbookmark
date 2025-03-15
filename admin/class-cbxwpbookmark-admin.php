@@ -753,6 +753,8 @@ class CBXWPBookmark_Admin {
 
 			// Update the saved version
 			update_option('cbxwpbookmark_version', CBXWPBOOKMARK_PLUGIN_VERSION);
+
+			//deactivate mycred addon
 		}
 	}//end plugin_upgrader_process_complete
 
@@ -827,7 +829,7 @@ class CBXWPBookmark_Admin {
 		if(defined('CBXWPBOOKMARKADDON_PLUGIN_NAME')) return;
 
 		$pro_addon_version = CBXWPBookmarkHelper::get_any_plugin_version('cbxwpbookmarkaddon/cbxwpbookmarkaddon.php');
-		$pro_latest_version  = '1.5.0';
+		$pro_latest_version  = '1.5.1';
 
 		if($pro_addon_version != '' && version_compare( $pro_addon_version, $pro_latest_version, '<' ) ){
 			// Custom message to display

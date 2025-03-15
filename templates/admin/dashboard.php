@@ -167,7 +167,16 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                     <div class="content">
                         <div class="cbx-backend-settings-row">
                             <p>
-                                Version - 1.9.3
+                                Version - 1.9.5
+                            </p>
+                            <ul>
+                                <li>[updated] Misc changes</li>
+                                <li>[updated] Pro addon plugin 1.5.1 released</li>
+                            </ul>
+                        </div>
+                        <div class="cbx-backend-settings-row">
+                            <p>
+                                Version - 1.9.4
                             </p>
                             <ul>
                                 <li>[fixed] Setting variable related issues fixed</li>
@@ -175,20 +184,10 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                         </div>
                         <div class="cbx-backend-settings-row">
                             <p>
-                                Version - 1.9.2
+                                Version - 1.9.3
                             </p>
                             <ul>
-                                <li>[fixed] Fixed the method 'get_opt' in core and updated the pro addon based on that.</li>
-                                <li>[updated] Pro addon plugin 1.4.9 compatible</li>
-                            </ul>
-                        </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.9.1
-                            </p>
-                            <ul>
-                                <li>[updated] Minor improvement</li>
-                                <li>[updated] Pro addon plugin 1.4.8 released</li>
+                                <li>[fixed] Setting variable related issues fixed</li>
                             </ul>
                         </div>
                     </div>
@@ -200,6 +199,16 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                         </div>
                     </div>
                     <div class="content">
+                        <div class="cbx-backend-settings-row">
+                            <p>
+                                Version - 1.5.1
+                            </p>
+                            <ul>
+                                <li>[updated] Merged mycred addon with pro addon.</li>
+                                <li>[new] Add gamipress support from V1.5.1</li>
+                                <li>[updated] Core plugin V1.9.5 released</li>
+                            </ul>
+                        </div>
                         <div class="cbx-backend-settings-row">
                             <p>
                                 Version - 1.5.0
@@ -215,15 +224,6 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                             <ul>
                                 <li>[fixed] Fixed the method 'get_opt' in core and updated the pro addon based on that.</li>
                                 <li>[updated] Core plugin 1.9.2 compatible</li>
-                            </ul>
-                        </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.4.8
-                            </p>
-                            <ul>
-                                <li>[updated] Plugin update checker updated</li>
-                                <li>[updated] Core plugin 1.9.1 compatible</li>
                             </ul>
                         </div>
                     </div>
@@ -417,7 +417,6 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                     </div>
                     <div class="content">
 						<?php
-
 						$items = CBXWPBookmarkHelper::codeboxr_news_feed();
 						if ( $items !== false && count( $items ) > 0 ) {
 							foreach ( $items as $item ) {

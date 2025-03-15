@@ -3,7 +3,7 @@ Contributors: codeboxr, manchumahara
 Tags: bookmark,favorite,collection,user collection,user bookmark
 Requires at least: 5.3
 Tested up to: 6.7.2
-Stable tag: 1.9.3
+Stable tag: 1.9.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -169,6 +169,13 @@ How to install the plugin and get it working.
 == Screenshots ==
 
 == Changelog ==
+= 1.9.5 =
+* [updated] Misc changes
+* [updated] Pro addon plugin 1.5.1 released
+
+= 1.9.4 =
+* [fixed] Setting variable related issues fixed
+
 = 1.9.3 =
 * [fixed] Setting variable related issues fixed
 
@@ -196,31 +203,3 @@ How to install the plugin and get it working.
 = 1.8.10 =
 * [improvement] Plugin on upgrade migration process improved
 * [improvement] Style improvement
-
-= 1.8.9 =
-* [improvement] Login form/url improved
-* [improvement] Login form/url improved
-* [fixed] Visual composer param php error fixed
-* [updated] Pro addon plugin new version(1.4.4) released
-* [updated] myCred addon plugin new version(1.0.5) released
-* [improvement] Plugin check latest check
-* [added] Added new method for plugin update checker
-
-= 1.8.8 =
-* [fixed] PHP error fixed for login form
-
-= 1.8.6 =
-* [fixed] Style related issues
-
-= 1.8.5 =
-* [fixed] Fixed icon missing bug after last icons update
-* [improvement] Accessibility improvement
-* [updated] Pro addon plugin new version(1.4.3) released
-
-= 1.8.4 =
-* [improvement] Accessibility improvement modal close button for guest modal
-
-= 1.8.3 =
-* [new] Fresh new icons
-* [improvement] Accessibility improvement
-* [updated] Pro addon new version(1.4.2) released
