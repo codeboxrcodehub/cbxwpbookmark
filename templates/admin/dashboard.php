@@ -167,6 +167,14 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                     <div class="content">
                         <div class="cbx-backend-settings-row">
                             <p>
+                                Version - 1.9.6
+                            </p>
+                            <ul>
+                                <li>[updated] Category order and order by display changed for bookmark modal screen, new hooks</li>
+                            </ul>
+                        </div>
+                        <div class="cbx-backend-settings-row">
+                            <p>
                                 Version - 1.9.5
                             </p>
                             <ul>

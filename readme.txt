@@ -3,7 +3,7 @@ Contributors: codeboxr, manchumahara
 Tags: bookmark,favorite,collection,user collection,user bookmark
 Requires at least: 5.3
 Tested up to: 6.7.2
-Stable tag: 1.9.5
+Stable tag: 1.9.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -169,6 +169,9 @@ How to install the plugin and get it working.
 == Screenshots ==
 
 == Changelog ==
+= 1.9.6 =
+* [updated] Category order and order by display changed for bookmark modal screen, new hooks
+
 = 1.9.5 =
 * [updated] Misc changes
 * [updated] Pro addon plugin 1.5.1 released

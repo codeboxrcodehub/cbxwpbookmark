@@ -38,8 +38,8 @@ class CBXWPBookmark_Public {
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @param  string  $plugin_name  The name of the plugin.
-	 * @param  string  $version  The version of this plugin.
+	 * @param string $plugin_name The name of the plugin.
+	 * @param string $version The version of this plugin.
 	 *
 	 * @since    1.0.0
 	 *
@@ -91,7 +91,7 @@ class CBXWPBookmark_Public {
 
 		global $wpdb;
 
-		$settings       = $this->settings;
+		$settings      = $this->settings;
 		$bookmark_mode = $settings->get_field( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
 
 
@@ -102,12 +102,18 @@ class CBXWPBookmark_Public {
 		$object_id   = isset( $_POST['object_id'] ) ? absint( $_POST['object_id'] ) : 0;
 		$object_type = isset( $_POST['object_type'] ) ? sanitize_text_field( wp_unslash( $_POST['object_type'] ) ) : 'post'; //post, page, user, product, any thing custom
 
+		$cats_by_user_orderby = 'id';
+		$cats_by_user_order   = 'DESC';
+
+		$cats_by_user_orderby = apply_filters( 'cbxwpbookmark_cats_by_user_orderby', $cats_by_user_orderby );
+		$cats_by_user_order   = apply_filters( 'cbxwpbookmark_cats_by_user_order', $cats_by_user_order );
+
 		if ( $bookmark_mode == 'user_cat' ) {
 			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
-			$cats_by_user = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $category_table WHERE user_id = %d", $user_id ), ARRAY_A );
+			$cats_by_user = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $category_table WHERE user_id = %d ORDER BY $cats_by_user_orderby $cats_by_user_order", $user_id ), ARRAY_A );
 		} else {
 			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
-			$cats_by_user = $wpdb->get_results( "SELECT * FROM $category_table WHERE 1", ARRAY_A );
+			$cats_by_user = $wpdb->get_results( "SELECT * FROM $category_table WHERE 1 ORDER BY $cats_by_user_orderby $cats_by_user_order", ARRAY_A );
 		}
 
 		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
@@ -443,7 +449,7 @@ class CBXWPBookmark_Public {
 		$message = [];
 
 
-		$settings  = $this->settings;
+		$settings      = $this->settings;
 		$bookmark_mode = $settings->get_field( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
 
 		if ( $bookmark_mode != 'user_cat' ) {
@@ -832,7 +838,7 @@ class CBXWPBookmark_Public {
 		global $wpdb;
 
 
-		$settings       = $this->settings;
+		$settings      = $this->settings;
 		$bookmark_mode = $settings->get_field( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
 
 		if ( isset( $_POST ) && $bookmark_mode == 'user_cat' ) {
@@ -935,7 +941,7 @@ class CBXWPBookmark_Public {
 		$alert_msg = '';
 
 		//$settings       = new CBXWPBookmark_Settings_API();
-		$settings       = $this->settings;
+		$settings      = $this->settings;
 		$bookmark_mode = $settings->get_field( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
 
 		$user_id   = get_current_user_id();
@@ -1271,7 +1277,7 @@ class CBXWPBookmark_Public {
 		global $wpdb;
 
 
-		$settings       = $this->settings;
+		$settings      = $this->settings;
 		$bookmark_mode = $settings->get_field( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
 
 
@@ -1509,7 +1515,7 @@ class CBXWPBookmark_Public {
 	 * @return array
 	 */
 	public function add_theme_class( $classes ) {
-		$settings              = $this->settings;
+		$settings             = $this->settings;
 		$bookmark_theme_class = $settings->get_field( 'display_theme', 'cbxwpbookmark_basics', 'cbxwpbookmark-blue' );
 
 		return array_merge( $classes, [ $bookmark_theme_class ] );
