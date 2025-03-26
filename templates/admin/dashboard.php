@@ -117,7 +117,7 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                     </div>
                     <div class="content">
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-12">
                                 <div class="cbx-backend-feature-card">
                                     <div class="feature-card-body static">
                                         <div class="feature-card-header">
@@ -136,7 +136,7 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6">
+                            <!--<div class="col-6">
                                 <div class="cbx-backend-feature-card">
                                     <div class="feature-card-body static">
                                         <div class="feature-card-header">
@@ -154,7 +154,7 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -165,6 +165,14 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                         </div>
                     </div>
                     <div class="content">
+                        <div class="cbx-backend-settings-row">
+                            <p>
+                                Version - 1.9.7
+                            </p>
+                            <ul>
+                                <li>[fixed] Frontend delete all bookmarks was not clearing the bookmarks display but was deleting properly. https://wordpress.org/support/topic/delete-all-bug/</li>
+                            </ul>
+                        </div>
                         <div class="cbx-backend-settings-row">
                             <p>
                                 Version - 1.9.6
@@ -180,22 +188,6 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                             <ul>
                                 <li>[updated] Misc changes</li>
                                 <li>[updated] Pro addon plugin 1.5.1 released</li>
-                            </ul>
-                        </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.9.4
-                            </p>
-                            <ul>
-                                <li>[fixed] Setting variable related issues fixed</li>
-                            </ul>
-                        </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.9.3
-                            </p>
-                            <ul>
-                                <li>[fixed] Setting variable related issues fixed</li>
                             </ul>
                         </div>
                     </div>

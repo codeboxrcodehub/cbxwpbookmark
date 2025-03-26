@@ -1728,6 +1728,7 @@
             e.preventDefault();
 
             var $this = $(this);
+            var $parent = $this.closest('.cbxwpbookmark-title');
             var $busy = Number($this.data('busy'));
 
 
@@ -1741,7 +1742,7 @@
             };
 
             var onOk = () => {
-                //notifier.info('You pressed OK');
+
                 $this.data('busy', 1);
                 $this.prop('disabled', true);
                 $this.addClass('running');
@@ -1758,8 +1759,10 @@
                         $this.removeClass('running');
 
                         if (response && response.code === 1) {
-                            //alert(response.msg);
                             new AWN(awn_options).success(response.msg);
+
+                            $parent.next('.cbxwpbookmark-list-generic').remove();
+                            $parent.next('.cbxbookmark_cards_wrapper_postgrid').remove();
                         } else {
                             $this.data('busy', 0);
                             $this.prop('disabled', false);
@@ -1767,8 +1770,6 @@
                         }
                     }
                 );
-
-                //$this.hide();
             };
 
             notifier.confirm(
