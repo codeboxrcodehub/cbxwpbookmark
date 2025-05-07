@@ -2,8 +2,8 @@
 Contributors: codeboxr, manchumahara
 Tags: bookmark,favorite,collection,user collection,user bookmark
 Requires at least: 5.3
-Tested up to: 6.7.2
-Stable tag: 1.9.7
+Tested up to: 6.8
+Stable tag: 1.9.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -169,6 +169,13 @@ How to install the plugin and get it working.
 == Screenshots ==
 
 == Changelog ==
+= 1.9.9 =
+ * [improved] WordPress version 6.8 compatibility checked
+ * [updated] Pro addon plugin 1.5.2 released
+
+= 1.9.8 =
+ * [improved] Bookmark button tooltip improved based on bookmarked or not https://wordpress.org/support/topic/return-to-page-message/
+
 = 1.9.7 =
 * [fixed] Frontend delete all bookmarks was not clearing the bookmarks display but was deleting properly. https://wordpress.org/support/topic/delete-all-bug/
 
@@ -197,15 +204,3 @@ How to install the plugin and get it working.
 * [fixed] Dashboard category, bookmark listing delete fixed
 * [updated] WordPress 6.7.2 compatible
 * [updated] Pro addon plugin 1.4.7 released
-
-= 1.8.12 =
-* [fixed] Style fixed for buddyboss theme
-* [updated] Update notification display logic improved
-
-= 1.8.11 =
-* [improvement] Minor improvement
-* [new] Implemented WordPress Action based release. Github repo in sync https://github.com/codeboxrcodehub/cbxwpbookmark
-
-= 1.8.10 =
-* [improvement] Plugin on upgrade migration process improved
-* [improvement] Style improvement

@@ -167,27 +167,27 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                     <div class="content">
                         <div class="cbx-backend-settings-row">
                             <p>
+                                Version - 1.9.9
+                            </p>
+                            <ul>
+                                <li>[improved] WordPress version 6.8 compatibility checked</li>
+                                <li>[updated] Pro addon plugin 1.5.2 released</li>
+                            </ul>
+                        </div>
+                        <div class="cbx-backend-settings-row">
+                            <p>
+                                Version - 1.9.8
+                            </p>
+                            <ul>
+                                <li>[improved] Bookmark button tooltip improved based on bookmarked or not <a href="https://wordpress.org/support/topic/return-to-page-message/">https://wordpress.org/support/topic/return-to-page-message/</a></li>
+                            </ul>
+                        </div>
+                        <div class="cbx-backend-settings-row">
+                            <p>
                                 Version - 1.9.7
                             </p>
                             <ul>
                                 <li>[fixed] Frontend delete all bookmarks was not clearing the bookmarks display but was deleting properly. https://wordpress.org/support/topic/delete-all-bug/</li>
-                            </ul>
-                        </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.9.6
-                            </p>
-                            <ul>
-                                <li>[updated] Category order and order by display changed for bookmark modal screen, new hooks</li>
-                            </ul>
-                        </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.9.5
-                            </p>
-                            <ul>
-                                <li>[updated] Misc changes</li>
-                                <li>[updated] Pro addon plugin 1.5.1 released</li>
                             </ul>
                         </div>
                     </div>
@@ -199,6 +199,15 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                         </div>
                     </div>
                     <div class="content">
+                        <div class="cbx-backend-settings-row">
+                            <p>
+                                Version - 1.5.2
+                            </p>
+                            <ul>
+                                <li>[improved] WordPress version 6.8 compatibility checked</li>
+                                <li>[updated] Core plugin 1.9.9 released</li>
+                            </ul>
+                        </div>
                         <div class="cbx-backend-settings-row">
                             <p>
                                 Version - 1.5.1
@@ -215,15 +224,6 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                             </p>
                             <ul>
                                 <li>[fixed] Setting variable related issues fixed</li>
-                            </ul>
-                        </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.4.9
-                            </p>
-                            <ul>
-                                <li>[fixed] Fixed the method 'get_opt' in core and updated the pro addon based on that.</li>
-                                <li>[updated] Core plugin 1.9.2 compatible</li>
                             </ul>
                         </div>
                     </div>

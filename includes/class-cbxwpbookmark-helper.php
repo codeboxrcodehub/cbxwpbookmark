@@ -372,9 +372,12 @@ class CBXWPBookmarkHelper {
 
 		$bookmark_text = $bookmark_label;
 
+        $tooltip_title = esc_attr__('Bookmark This', 'cbxwpbookmark');
+
 		if ( $bookmarked_by_user ) {
 			$bookmark_class = 'cbxwpbkmarktrig-marked';
 			$bookmark_text  = $bookmarked_label;
+			$tooltip_title = esc_attr__('Bookmarked', 'cbxwpbookmark');
 		}
 
 		$bookmark_text = apply_filters( 'cbxwpbookmark_bookmark_label_text', $bookmark_text, $bookmarked_by_user, $object_id, $object_type );
@@ -413,8 +416,7 @@ class CBXWPBookmarkHelper {
 		endif;
 
 
-		$output = '<a ' . $redirect_data_attr . ' data-display-label="' . intval( $display_label ) . '" data-show-count="' . intval( $show_count ) . '" data-bookmark-label="' . esc_attr( $bookmark_label ) . '"  data-bookmarked-label="' . esc_attr( $bookmarked_label ) . '" ' . $nocat_loggedin_html . ' data-loggedin="' . intval( $logged_in ) . '" data-type="' . $object_type . '" data-object_id="' . $object_id . '" class="cbxwpbkmarktrig ' . $bookmark_class . ' cbxwpbkmarktrig-button-addto ld-ext-left" title="' . esc_html__( 'Bookmark This',
-				'cbxwpbookmark' ) . '" href="#"><span class="cbxwpbkmarktrig-icon"></span><span class="ld ld-ring ld-spin"></span><span class="cbxwpbkmarktrig-label" ' . $display_label_style . '>' . esc_attr( $bookmark_text ) . $show_count_html . '</span></a>';
+		$output = '<a ' . $redirect_data_attr . ' data-display-label="' . intval( $display_label ) . '" data-show-count="' . intval( $show_count ) . '" data-bookmark-label="' . esc_attr( $bookmark_label ) . '"  data-bookmarked-label="' . esc_attr( $bookmarked_label ) . '" ' . $nocat_loggedin_html . ' data-loggedin="' . absint( $logged_in ) . '" data-type="' . $object_type . '" data-object_id="' . $object_id . '" class="cbxwpbkmarktrig ' . $bookmark_class . ' cbxwpbkmarktrig-button-addto ld-ext-left" title="' .esc_attr($tooltip_title) . '" href="#"><span class="cbxwpbkmarktrig-icon"></span><span class="ld ld-ring ld-spin"></span><span class="cbxwpbkmarktrig-label" ' . $display_label_style . '>' . esc_attr( $bookmark_text ) . $show_count_html . '</span></a>';
 
 		if ( $user_id == 0 ):
 

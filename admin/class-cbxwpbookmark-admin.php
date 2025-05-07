@@ -826,15 +826,14 @@ class CBXWPBookmark_Admin {
 			return;
 		}
 
+		//if pro addon is active then ignore this notification from core
 		if(defined('CBXWPBOOKMARKADDON_PLUGIN_NAME')) return;
 
 		$pro_addon_version = CBXWPBookmarkHelper::get_any_plugin_version('cbxwpbookmarkaddon/cbxwpbookmarkaddon.php');
-		$pro_latest_version  = '1.5.1';
+		$pro_latest_version  = '1.5.2';
 
 		if($pro_addon_version != '' && version_compare( $pro_addon_version, $pro_latest_version, '<' ) ){
-			// Custom message to display
 
-			//$plugin_setting_url = admin_url( 'admin.php?page=cbxwpbookmark_settings#cbxwpbookmark_licences' );
 			$plugin_manual_update = 'https://codeboxr.com/manual-update-pro-addon/';
 
 
