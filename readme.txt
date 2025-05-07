@@ -170,11 +170,11 @@ How to install the plugin and get it working.
 
 == Changelog ==
 = 1.9.9 =
- * [improved] WordPress version 6.8 compatibility checked
- * [updated] Pro addon plugin 1.5.2 released
+* [improved] WordPress version 6.8 compatibility checked
+* [updated] Pro addon plugin 1.5.2 released
 
 = 1.9.8 =
- * [improved] Bookmark button tooltip improved based on bookmarked or not https://wordpress.org/support/topic/return-to-page-message/
+* [improved] Bookmark button tooltip improved based on bookmarked or not https://wordpress.org/support/topic/return-to-page-message/
 
 = 1.9.7 =
 * [fixed] Frontend delete all bookmarks was not clearing the bookmarks display but was deleting properly. https://wordpress.org/support/topic/delete-all-bug/
