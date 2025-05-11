@@ -3,7 +3,7 @@ Contributors: codeboxr, manchumahara
 Tags: bookmark,favorite,collection,user collection,user bookmark
 Requires at least: 5.3
 Tested up to: 6.8
-Stable tag: 1.9.9
+Stable tag: 1.9.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -169,6 +169,11 @@ How to install the plugin and get it working.
 == Screenshots ==
 
 == Changelog ==
+= 1.9.10 =
+* [updated] Pro addon plugin 1.5.3 released
+* [improved] Minor improvements
+
+
 = 1.9.9 =
 * [improved] WordPress version 6.8 compatibility checked
 * [updated] Pro addon plugin 1.5.2 released
@@ -191,16 +196,3 @@ How to install the plugin and get it working.
 
 = 1.9.3 =
 * [fixed] Setting variable related issues fixed
-
-= 1.9.2 =
-* [fixed] Fixed the method 'get_opt' in core and updated the pro addon based on that.
-* [updated] Pro addon plugin 1.4.9 compatible
-
-= 1.9.1 =
-* [updated] Minor improvement
-* [updated] Pro addon plugin 1.4.8 released
-
-= 1.9.0 =
-* [fixed] Dashboard category, bookmark listing delete fixed
-* [updated] WordPress 6.7.2 compatible
-* [updated] Pro addon plugin 1.4.7 released
