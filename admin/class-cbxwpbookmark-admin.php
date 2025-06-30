@@ -830,7 +830,7 @@ class CBXWPBookmark_Admin {
 		if(defined('CBXWPBOOKMARKADDON_PLUGIN_NAME')) return;
 
 		$pro_addon_version = CBXWPBookmarkHelper::get_any_plugin_version('cbxwpbookmarkaddon/cbxwpbookmarkaddon.php');
-		$pro_latest_version  = '1.5.3';
+		$pro_latest_version  = '1.5.4';
 
 		if($pro_addon_version != '' && version_compare( $pro_addon_version, $pro_latest_version, '<' ) ){
 

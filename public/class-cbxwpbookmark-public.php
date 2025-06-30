@@ -872,7 +872,7 @@ class CBXWPBookmark_Public {
 
 				if ( $bookmarks_by_category != null ) {
 					foreach ( $bookmarks_by_category as $single_bookmark ) {
-						cbxwpbookmarks_delete_bookmark( $single_bookmark['id'], $single_bookmark['user_id'], $single_bookmark['object_id'], $single_bookmark['object_type'] );
+						cbxwpbookmarks_delete_bookmark( $single_bookmark['id'], $single_bookmark['user_id'], $single_bookmark['object_id'], $single_bookmark['object_type'], $cat_id );
 						/*do_action( 'cbxbookmark_bookmark_removed_before', $single_bookmark['id'], $single_bookmark['user_id'], $single_bookmark['object_id'], $single_bookmark['object_type'] );
 
 						// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared

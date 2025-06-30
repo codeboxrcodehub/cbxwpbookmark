@@ -3,7 +3,7 @@ Contributors: codeboxr, manchumahara
 Tags: bookmark,favorite,collection,user collection,user bookmark
 Requires at least: 5.3
 Tested up to: 6.8
-Stable tag: 1.9.10
+Stable tag: 1.9.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -169,6 +169,11 @@ How to install the plugin and get it working.
 == Screenshots ==
 
 == Changelog ==
+= 1.9.11 =
+* [fixed] Deleting one category was deleting bookmarks from other category if bookmarks were in both category.
+* [updated] Pro addon plugin 1.5.4 released and compatible with latest Core Plugin 1.9.11
+* [improved] Minor improvements for style
+
 = 1.9.10 =
 * [updated] Pro addon plugin 1.5.3 released
 * [improved] Minor improvements

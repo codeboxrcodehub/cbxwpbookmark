@@ -1,6 +1,6 @@
 <?php
 
-if(!function_exists('cbxwpbookmark_is_rest_api_request')){
+if ( ! function_exists( 'cbxwpbookmark_is_rest_api_request' ) ) {
 	/**
 	 * Check if doing rest request
 	 *
@@ -16,18 +16,20 @@ if(!function_exists('cbxwpbookmark_is_rest_api_request')){
 		}
 
 		$rest_prefix = trailingslashit( rest_get_url_prefix() );
-		return ( false !== strpos( wp_unslash($_SERVER['REQUEST_URI']), $rest_prefix ) );//phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+
+		return ( false !== strpos( wp_unslash( $_SERVER['REQUEST_URI'] ), $rest_prefix ) );//phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 	}//end function cbxwpbookmark_is_rest_api_request
 }
 
-if(!function_exists('cbxwpbookmark_doing_it_wrong')){
+if ( ! function_exists( 'cbxwpbookmark_doing_it_wrong' ) ) {
 	/**
 	 * Wrapper for _doing_it_wrong().
 	 *
-	 * @since  1.0.0
 	 * @param string $function Function used.
 	 * @param string $message Message to log.
 	 * @param string $version Version the message was added in.
+	 *
+	 * @since  1.0.0
 	 */
 	function cbxwpbookmark_doing_it_wrong( $function, $message, $version ) {
 		// @codingStandardsIgnoreStart
@@ -60,7 +62,7 @@ if ( ! function_exists( 'cbxwpbookmark_object_types' ) ) {
 	/**
 	 * Return post types list, if plain is true then send as plain array , else array as post type groups
 	 *
-	 * @param  bool|false  $plain
+	 * @param bool|false $plain
 	 *
 	 * @return array
 	 */
@@ -75,12 +77,12 @@ if ( ! function_exists( 'show_cbxbookmark_btn' ) ):
 	/**
 	 * Returns bookmark button html markup
 	 *
-	 * @param  int  $object_id  post id
-	 * @param  null  $object_type  post type
-	 * @param  int  $show_count  if show bookmark counts
-	 * @param  string  $extra_wrap_class  style css class
-	 * @param  string  $skip_ids  post ids to skip
-	 * @param  string  $skip_roles  user roles
+	 * @param int $object_id post id
+	 * @param null $object_type post type
+	 * @param int $show_count if show bookmark counts
+	 * @param string $extra_wrap_class style css class
+	 * @param string $skip_ids post ids to skip
+	 * @param string $skip_roles user roles
 	 *
 	 * @return string
 	 */
@@ -94,8 +96,8 @@ if ( ! function_exists( 'cbxbookmark_post_html' ) ) {
 	/**
 	 * Returns bookmarks as per $instance attribues
 	 *
-	 * @param  array  $instance
-	 * @param  bool  $echo
+	 * @param array $instance
+	 * @param bool $echo
 	 *
 	 * @return void|string
 	 */
@@ -115,13 +117,13 @@ if ( ! function_exists( 'cbxbookmark_mycat_html' ) ) {
 	/**
 	 * Return users bookmark categories
 	 *
-	 * @param  array  $instance
-	 * @param  bool  $echo
+	 * @param array $instance
+	 * @param bool $echo
 	 *
 	 * @return void|string
 	 */
 	function cbxbookmark_mycat_html( $instance, $echo = false ) {
-		$settings    = new CBXWPBookmark_Settings_API();
+		$settings        = new CBXWPBookmark_Settings_API();
 		$current_user_id = get_current_user_id();
 
 
@@ -151,9 +153,9 @@ if ( ! function_exists( 'cbxbookmark_most_html' ) ) {
 	/**
 	 * Returns most bookmarked posts
 	 *
-	 * @param  array  $instance
-	 * @param  array  $attr
-	 * @param  bool  $echo
+	 * @param array $instance
+	 * @param array $attr
+	 * @param bool $echo
 	 *
 	 * @return void|string
 	 */
@@ -218,8 +220,8 @@ if ( ! function_exists( 'cbxwpbookmarks_getTotalBookmarkByUserByPostype' ) ) {
 	/**
 	 * Get total bookmark by user_id by post type
 	 *
-	 * @param  int  $user_id
-	 * @param  string  $post_type
+	 * @param int $user_id
+	 * @param string $post_type
 	 *
 	 * @return int
 	 */
@@ -233,7 +235,7 @@ if ( ! function_exists( 'cbxwpbookmarks_getTotalBookmarkByCategory' ) ) {
 	/**
 	 * Get total bookmark count for any category id
 	 *
-	 * @param  int  $cat_id
+	 * @param int $cat_id
 	 *
 	 * @return int
 	 */
@@ -246,8 +248,8 @@ if ( ! function_exists( 'cbxwpbookmarks_getTotalBookmarkByCategoryByUser' ) ) {
 	/**
 	 * Get total bookmark count for any category id of any user
 	 *
-	 * @param  int  $cat_id
-	 * @param  int  $user_id
+	 * @param int $cat_id
+	 * @param int $user_id
 	 *
 	 * @return int
 	 */
@@ -260,7 +262,7 @@ if ( ! function_exists( 'cbxwpbookmarks_isBookmarked' ) ) {
 	/**
 	 * Is a post bookmarked at least once
 	 *
-	 * @param  int  $object_id
+	 * @param int $object_id
 	 *
 	 * @return bool
 	 */
@@ -273,8 +275,8 @@ if ( ! function_exists( 'cbxwpbookmarks_isBookmarkedByUser' ) ) {
 	/**
 	 * Is post bookmarked by user
 	 *
-	 * @param  int  $object_id
-	 * @param  string  $user_id
+	 * @param int $object_id
+	 * @param string $user_id
 	 *
 	 * @return mixed
 	 */
@@ -413,13 +415,13 @@ if ( ! function_exists( 'cbxwpbookmarks_load_svg' ) ) {
 	/**
 	 * Load an SVG file from a directory.
 	 *
-	 * @param  string  $svg_name  The name of the SVG file (without the .svg extension).
-	 * @param  string  $directory  The directory where the SVG files are stored.
+	 * @param string $svg_name The name of the SVG file (without the .svg extension).
+	 * @param string $directory The directory where the SVG files are stored.
 	 *
 	 * @return string|false The SVG content if found, or false on failure.
 	 * @since 1.0.0
 	 */
-	function cbxwpbookmarks_load_svg( $svg_name = '', $folder = '') {
+	function cbxwpbookmarks_load_svg( $svg_name = '', $folder = '' ) {
 		if ( $svg_name == '' ) {
 			return '';
 		}
@@ -442,12 +444,12 @@ if ( ! function_exists( 'cbxwpbookmarks_load_svg' ) ) {
 		// Sanitize the file name to prevent directory traversal attacks.
 		$svg_name = sanitize_file_name( $svg_name );
 
-		if($folder != ''){
-			$folder = trailingslashit($folder);
+		if ( $folder != '' ) {
+			$folder = trailingslashit( $folder );
 		}
 
 		// Construct the full file path.
-		$file_path = $directory. $folder . $svg_name . '.svg';
+		$file_path = $directory . $folder . $svg_name . '.svg';
 		$file_path = apply_filters( 'cbxwpbookmarks_svg_file_path', $file_path, $svg_name );
 
 		// Check if the file exists.
@@ -518,8 +520,8 @@ if ( ! function_exists( 'cbxwpbookmarks_delete_bookmarks' ) ) {
 	/**
 	 * Delete bookmark by object id and object type(optional))
 	 *
-	 * @param  int  $object_id
-	 * @param  string  $object_type
+	 * @param int $object_id
+	 * @param string $object_type
 	 */
 	function cbxwpbookmarks_delete_bookmarks( $object_id, $object_type = '' ) {
 		//global $wpdb;
@@ -562,7 +564,18 @@ if ( ! function_exists( 'cbxwpbookmarks_delete_bookmarks' ) ) {
 }
 
 if ( ! function_exists( ' cbxwpbookmarks_delete_bookmark' ) ) {
-	function cbxwpbookmarks_delete_bookmark( $bookmark_id, $user_id, $object_id, $object_type ) {
+	/**
+	 * Delete a bookmark
+	 *
+	 * @param $bookmark_id
+	 * @param $user_id
+	 * @param $object_id
+	 * @param $object_type
+	 * @param $category_id
+	 *
+	 * @return bool|int|mixed|mysqli_result|null
+	 */
+	function cbxwpbookmarks_delete_bookmark( $bookmark_id, $user_id, $object_id, $object_type, $category_id = 0 ) {
 		global $wpdb;
 		$bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
 
@@ -570,24 +583,39 @@ if ( ! function_exists( ' cbxwpbookmarks_delete_bookmark' ) ) {
 		$user_id     = absint( $user_id );
 		$object_id   = absint( $object_id );
 		$object_type = esc_attr( $object_type );
+		$category_id = absint( $category_id );
 
 		if ( $bookmark_id == 0 || $user_id == 0 || $object_id == 0 || $object_type == '' ) {
-			return;
+			return false;
 		}
 
 
-		do_action( 'cbxbookmark_bookmark_removed_before', $bookmark_id, $user_id, $object_id, $object_type );
+		do_action( 'cbxbookmark_bookmark_removed_before', $bookmark_id, $user_id, $object_id, $object_type, $category_id );
 
-		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
-		$delete_bookmark = $wpdb->delete( $bookmark_table,
-			[
-				'object_id' => $object_id,
-				'user_id'   => $user_id,
-			],
-			[ '%d', '%d' ] );
+		if ( $category_id > 0 ) {
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+			$delete_bookmark = $wpdb->delete( $bookmark_table,
+				[
+					'id'        => $bookmark_id,
+					'object_id' => $object_id,
+					'user_id'   => $user_id,
+					'cat_id'    => $category_id,
+				],
+				[ '%d', '%d', '%d', '%d' ] );
+		} else {
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+			$delete_bookmark = $wpdb->delete( $bookmark_table,
+				[
+					'id'        => $bookmark_id,
+					'object_id' => $object_id,
+					'user_id'   => $user_id,
+				],
+				[ '%d', '%d', '%d' ] );
+		}
+
 
 		if ( $delete_bookmark !== false ) {
-			do_action( 'cbxbookmark_bookmark_removed', $bookmark_id, $user_id, $object_id, $object_type );
+			do_action( 'cbxbookmark_bookmark_removed', $bookmark_id, $user_id, $object_id, $object_type, $category_id );
 		}
 
 		return $delete_bookmark;

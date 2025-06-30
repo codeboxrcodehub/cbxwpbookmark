@@ -116,7 +116,6 @@ class CBXWPBookmark_Category_Table extends WP_List_Table {
 	 * @return string
 	 */
 	function column_modyfied_date( $item ) {
-
 		$created_date = '';
 		if ( $item['modyfied_date'] != '0000-00-00 00:00:00' ) {
 			$created_date = CBXWPBookmarkHelper::dateReadableFormat( stripslashes( $item['modyfied_date'] ) );
@@ -271,7 +270,7 @@ class CBXWPBookmark_Category_Table extends WP_List_Table {
 
 						if ( $bookmarks_by_category != null ) {
 							foreach ( $bookmarks_by_category as $single_bookmark ) {
-								cbxwpbookmarks_delete_bookmark( $single_bookmark['id'], $single_bookmark['user_id'], $single_bookmark['object_id'], $single_bookmark['object_type'] );
+								cbxwpbookmarks_delete_bookmark( $single_bookmark['id'], $single_bookmark['user_id'], $single_bookmark['object_id'], $single_bookmark['object_type'], $id );
 
 								/*do_action( 'cbxbookmark_bookmark_removed_before', $single_bookmark['id'], $single_bookmark['user_id'], $single_bookmark['object_id'], $single_bookmark['object_type'] );
 

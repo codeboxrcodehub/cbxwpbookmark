@@ -167,6 +167,16 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                     <div class="content">
                         <div class="cbx-backend-settings-row">
                             <p>
+                                Version - 1.9.11
+                            </p>
+                            <ul>
+                                <li>[fixed] Deleting one category was deleting bookmarks from other category if bookmarks were in both category.</li>
+                                <li>[updated] Pro addon plugin 1.5.4 released and compatible with latest Core Plugin 1.9.11</li>
+                                <li>[improved] Minor improvements for style</li>
+                            </ul>
+                        </div>
+                        <div class="cbx-backend-settings-row">
+                            <p>
                                 Version - 1.9.10
                             </p>
                             <ul>
@@ -183,14 +193,6 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                                 <li>[updated] Pro addon plugin 1.5.2 released</li>
                             </ul>
                         </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.9.8
-                            </p>
-                            <ul>
-                                <li>[improved] Bookmark button tooltip improved based on bookmarked or not <a href="https://wordpress.org/support/topic/return-to-page-message/">https://wordpress.org/support/topic/return-to-page-message/</a></li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
                 <div class="cbx-backend-card dashboard-changelog">
@@ -200,6 +202,15 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                         </div>
                     </div>
                     <div class="content">
+                        <div class="cbx-backend-settings-row">
+                            <p>
+                                Version - 1.5.4
+                            </p>
+                            <ul>
+                                <li>[fixed] Deleting one category was deleting bookmarks from other category if bookmarks were in both category.</li>
+                                <li>[updated] Core plugin 1.9.11 released</li>
+                            </ul>
+                        </div>
                         <div class="cbx-backend-settings-row">
                             <p>
                                 Version - 1.5.3
@@ -216,16 +227,6 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                             <ul>
                                 <li>[improved] WordPress version 6.8 compatibility checked</li>
                                 <li>[updated] Core plugin 1.9.9 released</li>
-                            </ul>
-                        </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.5.1
-                            </p>
-                            <ul>
-                                <li>[updated] Merged mycred addon with pro addon.</li>
-                                <li>[new] Add gamipress support from V1.5.1</li>
-                                <li>[updated] Core plugin V1.9.5 released</li>
                             </ul>
                         </div>
                     </div>
