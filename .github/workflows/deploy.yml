@@ -101,7 +101,7 @@ jobs:
 
       # Phase 1: Deploy only trunk
       - name: Deploy trunk (safe commit)
-        uses: 10up/action-wordpress-plugin-deploy@stable
+        uses: 10up/action-wordpress-plugin-deploy@2.2.2
         with:
           skip-assets: true
           skip-tag: true
@@ -109,18 +109,27 @@ jobs:
 
       # Phase 2: Tag the release
       - name: Tag release version
-        uses: 10up/action-wordpress-plugin-deploy@stable
+        uses: 10up/action-wordpress-plugin-deploy@2.2.2
         with:
           skip-trunk: true
           generate-zip: false
 
-      # Optional retry in case SVN hangs or fails
+      # Optional retry if SVN commit fails (e.g., connection reset)
       - name: Retry SVN Deploy (if failed)
         if: failure()
         run: |
           echo "Retrying SVN deploy after 30 seconds..."
           sleep 30
-          npx @10up/action-wordpress-plugin-deploy@latest
+        shell: bash
+
+      - name: Retry Trunk Deploy
+        if: failure()
+        uses: 10up/action-wordpress-plugin-deploy@2.2.2
+        with:
+          skip-assets: true
+          skip-tag: true
+          generate-zip: true
+
 
       # Create GitHub release with extracted changelog
       - name: Create GitHub Release
