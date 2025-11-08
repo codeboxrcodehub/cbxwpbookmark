@@ -131,7 +131,7 @@ jobs:
           files: ${{github.workspace}}/${{ github.event.repository.name }}.zip
 
 env:
-  SVN_URL: https://plugins.svn.wordpress.org/YOUR-PLUGIN-SLUG
+  SVN_URL: https://plugins.svn.wordpress.org/${{ github.event.repository.name }}
   SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
   SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
