@@ -1,0 +1,28 @@
+{
+  "name": "cbx/bookmark",
+  "description": "List/category based bookmark for WordPress, create your own private or public list of favorite posts, page, custom object",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "illuminate/database": "^8.83",
+    "illuminate/pagination": "^8.83",
+    "rakit/validation": "^1.4",
+    "pelago/emogrifier": "^7.0",
+    "enshrined/svg-sanitize": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "Cbx\\Bookmark\\": "includes/"
+    },
+    "files": [
+      "includes/Helpers/cbxwpbookmark-functions.php",
+      "includes/Helpers/cbxwpbookmark-tpl-loader.php",
+      "includes/Helpers/CBXWPBookmarkHelper.php"
+    ]
+  },
+  "replace": {
+    "symfony/console": "*",
+    "symfony/translation": "*",
+    "symfony/translation-contracts": "*"
+  }
+}

@@ -1,4 +1,5 @@
 <?php
+use Cbx\Bookmark\CBXWPBookmarkUninstall;
 
 /**
  * Fired when the plugin is uninstalled.
@@ -19,11 +20,9 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
  * The code that runs during plugin uninstall.
  */
 function uninstall_cbxwpbookmark() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-cbxwpbookmark-setting.php';
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-cbxwpbookmark-helper.php';
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-cbxwpbookmark-uninstall.php';
+	require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 
-	cbxwpbookmark_Uninstall::uninstall();
+	CBXWPBookmarkUninstall::uninstall();
 }//end function uninstall_cbxwpbookmark
 
 if ( ! defined( 'CBXWPBOOKMARK_PLUGIN_NAME' ) ) {

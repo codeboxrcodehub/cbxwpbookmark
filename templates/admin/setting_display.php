@@ -16,7 +16,7 @@ if ( ! defined( 'WPINC' ) ) {
 <?php
 $save_svg = cbxwpbookmarks_load_svg( 'icon_save' );
 ?>
-<div class="wrap cbx-chota cbxchota-setting-common cbxwpbookmark-page-wrapper cbxwpbookmark-setting-wrapper" id="cbxwpbookmark-setting">
+<div class="wrap cbx-chota cbxchota-setting-common cbx-page-wrapper cbxwpbookmark-page-wrapper cbxwpbookmark-setting-wrapper" id="cbxwpbookmark-setting">
     <div class="container">
         <div class="row">
             <div class="col-12">

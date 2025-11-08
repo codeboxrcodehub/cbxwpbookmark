@@ -3,7 +3,7 @@ Contributors: codeboxr, manchumahara
 Tags: bookmark,favorite,collection,user collection,user bookmark
 Requires at least: 5.3
 Tested up to: 6.8
-Stable tag: 1.9.11
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -169,6 +169,14 @@ How to install the plugin and get it working.
 == Screenshots ==
 
 == Changelog ==
+= 2.0.0 =
+* [updated] PHP version compatibility check updated
+* [fixed] PHP file direct access check issue checked for all files
+* [updated] Admin dashboard design/views updated.
+* [updated] Admin dashboard pages implemented with js views
+* [improved] Helps and support and dashboard page separated
+* [updated] Pro Addon plugin V2.0.0 released
+
 = 1.9.11 =
 * [fixed] Deleting one category was deleting bookmarks from other category if bookmarks were in both category.
 * [updated] Pro addon plugin 1.5.4 released and compatible with latest Core Plugin 1.9.11

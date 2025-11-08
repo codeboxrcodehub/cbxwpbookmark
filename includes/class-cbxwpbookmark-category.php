@@ -4,6 +4,9 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+use Cbx\Bookmark\CBXWPBookmarkSettings;
+//use Cbx\Bookmark\Helpers\CBXWPBookmarkHelper;
+
 if ( ! class_exists( 'WP_List_Table' ) ) {
 	require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
 }
@@ -25,7 +28,7 @@ class CBXWPBookmark_Category_Table extends WP_List_Table {
 		//Set parent defaults
 		parent::__construct( [
 			'singular' => 'cbxwpbookmarkcat',     //singular name of the listed records
-			'plural'   => 'cbxwpbookmarkcats',    //plural name of the listed records
+			'plural'   => 'cbxwpbookmark-cats',    //plural name of the listed records
 			'ajax'     => false,                  //does this table support ajax?
 			'screen'   => isset( $args['screen'] ) ? $args['screen'] : null,
 		] );
@@ -39,7 +42,7 @@ class CBXWPBookmark_Category_Table extends WP_List_Table {
 	 * @return string
 	 */
 	function column_id( $item ) {
-		return intval( $item['id'] ) . ' - <a href="' . esc_url( admin_url( 'admin.php?page=cbxwpbookmarkcats&view=edit&id=' . intval( $item['id'] ) ) ) . '" title="' . esc_html__( 'Edit Category', 'cbxwpbookmark' ) . '">' . esc_html__( 'Edit', 'cbxwpbookmark' ) . '</a>';
+		return intval( $item['id'] ) . ' - <a href="' . esc_url( admin_url( 'admin.php?page=cbxwpbookmark-cats&view=edit&id=' . intval( $item['id'] ) ) ) . '" title="' . esc_html__( 'Edit Category', 'cbxwpbookmark' ) . '">' . esc_html__( 'Edit', 'cbxwpbookmark' ) . '</a>';
 	}//end method column_id
 
 

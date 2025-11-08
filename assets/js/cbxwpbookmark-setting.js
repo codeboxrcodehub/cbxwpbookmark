@@ -1,6 +1,10 @@
 (function ($) {
     'use strict';
 
+    function cbxwpbookmark_isEmptyOrUndefined(val) {
+        return val === undefined || val === null || val === '';
+    }//end method cbxwpbookmark_isEmptyOrUndefined
+
     $(document).ready(function () {
         //awesome notifcation object
         var cbxwpbookmark_awn_options = {
@@ -115,15 +119,52 @@
 
 
         //add chooser
-        $('.selecttwo-select-wrapper').each(function (index, element) {
+        /*$('.selecttwo-select-wrapper').each(function (index, element) {
             var $element = $(element);
 
             $element.find('.selecttwo-select').select2({
                 placeholder: cbxwpbookmark_setting.please_select,
                 allowClear: false,
-                theme: 'default select2-container--cbx',
-                //dropdownParent: $element
+               //theme: 'default select2-container--cbx',
+                dropdownParent: $element
             });
+        });*/
+
+        $('.selecttwo-select-wrapper').each(function (index, element) {
+            var $element = $(element);
+
+            var $placeholder = $element.data('placeholder');
+            var $allow_clear = $element.data('allow-clear');
+
+            if(cbxwpbookmark_isEmptyOrUndefined($placeholder)) $placeholder = cbxwpbookmark_setting.please_select;
+
+            $placeholder =
+                $placeholder == ''
+                    ? cbxwpbookmark_setting.please_select
+                    : $placeholder;
+
+            $element
+                .find('.selecttwo-select')
+                .select2({
+                    placeholder: $placeholder,
+                    allowClear: $allow_clear ? true : false,
+                    //theme: 'default select2-container--cbx',
+                    dropdownParent: $(element)
+                })
+                .on('select2:open', function () {
+                    $('.select2-search__field').attr(
+                        'placeholder',
+                        cbxwpbookmark_setting?.search
+                    );
+                })
+                .on('select2:close', function () {
+                    $('.select2-search__field').attr('placeholder', $placeholder);
+                });
+
+            $element
+                .find('.select2-selection__rendered')
+                .find('.select2-search--inline .select2-search__field')
+                .attr('placeholder', $placeholder);
         });
 
 

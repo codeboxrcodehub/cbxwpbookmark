@@ -15,7 +15,7 @@
  * Plugin Name:       CBX Bookmark & Favorite
  * Plugin URI:        https://codeboxr.com/product/cbx-wordpress-bookmark
  * Description:       List/category based bookmark for WordPress, create your own private or public list of favorite posts, page, custom object
- * Version:           1.9.11
+ * Version:           2.0.0
  * Author:            Codeboxr Team
  * Author URI:        https://codeboxr.com
  * License:           GPL-2.0+
@@ -29,13 +29,28 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+//use Cbx\Bookmark\Helpers\CBXWPBookmarkHelper;
 
 defined( 'CBXWPBOOKMARK_PLUGIN_NAME' ) or define( 'CBXWPBOOKMARK_PLUGIN_NAME', 'cbxwpbookmark' );
-defined( 'CBXWPBOOKMARK_PLUGIN_VERSION' ) or define( 'CBXWPBOOKMARK_PLUGIN_VERSION', '1.9.11' );
+defined( 'CBXWPBOOKMARK_PLUGIN_VERSION' ) or define( 'CBXWPBOOKMARK_PLUGIN_VERSION', '2.0.0' );
 defined( 'CBXWPBOOKMARK_BASE_NAME' ) or define( 'CBXWPBOOKMARK_BASE_NAME', plugin_basename( __FILE__ ) );
 defined( 'CBXWPBOOKMARK_ROOT_PATH' ) or define( 'CBXWPBOOKMARK_ROOT_PATH', plugin_dir_path( __FILE__ ) );
 defined( 'CBXWPBOOKMARK_ROOT_URL' ) or define( 'CBXWPBOOKMARK_ROOT_URL', plugin_dir_url( __FILE__ ) );
 
+defined( 'CBX_DEBUG' ) or define( 'CBX_DEBUG', false );
+defined( 'CBXWPBOOKMARK_DEV_MODE' ) or define( 'CBXWPBOOKMARK_DEV_MODE', CBX_DEBUG );
+
+defined( 'CBXWPBOOKMARK_PHP_MIN_VERSION' ) or define( 'CBXWPBOOKMARK_PHP_MIN_VERSION', '7.4' );
+defined( 'CBXWPBOOKMARK_WP_MIN_VERSION' ) or define( 'CBXWPBOOKMARK_WP_MIN_VERSION', '5.3' );
+
+
+// Include the main Bookmark class.
+if ( ! class_exists( 'CBXWPBookmark', false ) ) {
+	include_once CBXWPBOOKMARK_ROOT_PATH . 'includes/CBXWPBookmark.php';
+}
+
+register_activation_hook( __FILE__, 'activate_cbxwpbookmark' );
+register_deactivation_hook( __FILE__, 'deactivate_cbxwpbookmark' );
 
 /**
  * The code that runs during plugin activation.
@@ -43,8 +58,28 @@ defined( 'CBXWPBOOKMARK_ROOT_URL' ) or define( 'CBXWPBOOKMARK_ROOT_URL', plugin_
  */
 function activate_cbxwpbookmark() {
 
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-cbxwpbookmark-activator.php';
-	CBXWPBookmark_Activator::activate();                 //db table creates
+	$wp_version  = CBXWPBOOKMARK_WP_MIN_VERSION;
+	$php_version = CBXWPBOOKMARK_PHP_MIN_VERSION;
+
+	if ( ! cbxwpbookmark_compatible_wp_version( $wp_version ) ) {
+		deactivate_plugins( plugin_basename( __FILE__ ) );
+		/* translators: %s: wordpress version  */
+		wp_die( sprintf( esc_html__( 'CBX Bookmark plugin requires WordPress %s or higher!', 'cbxwpbookmark' ), esc_attr($wp_version) ) );
+	}
+
+	if ( ! cbxwpbookmark_compatible_php_version( $php_version ) ) {
+		deactivate_plugins( plugin_basename( __FILE__ ) );
+		/* translators: %s: php version  */
+		wp_die( sprintf( esc_html__( 'CBX Bookmark plugin requires PHP %s or higher!', 'cbxwpbookmark' ), esc_attr($php_version) ) );
+	}
+
+	cbxwpbookmark_core();
+
+	//load orm
+	CBXWPBookmarkHelper::load_orm();
+
+	//do some extra on plugin activation
+	CBXWPBookmarkHelper::activate();
 
 	CBXWPBookmarkHelper::customizer_default_adjust( true );
 }//end memthod activate_cbxwpbookmark
@@ -54,20 +89,65 @@ function activate_cbxwpbookmark() {
  * This action is documented in includes/class-cbxwpbookmark-deactivator.php
  */
 function deactivate_cbxwpbookmark() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-cbxwpbookmark-deactivator.php';
-	CBXWPBookmark_Deactivator::deactivate();
+	//require_once plugin_dir_path( __FILE__ ) . 'includes/class-cbxwpbookmark-deactivator.php';
+	CBXWPBookmarkHelper::deactivate();
 }//end method deactivate_cbxwpbookmark
 
+/**
+ * Checking wp version
+ *
+ * @param $version
+ *
+ * @return bool
+ * @since 1.0.0
+ */
+function cbxwpbookmark_compatible_wp_version( $version = CBXWPBOOKMARK_WP_MIN_VERSION ) {
+	if ( version_compare( $GLOBALS['wp_version'], $version, '<' ) ) {
+		return false;
+	}
 
-register_activation_hook( __FILE__, 'activate_cbxwpbookmark' );
-register_deactivation_hook( __FILE__, 'deactivate_cbxwpbookmark' );
+	// Add sanity checks for other version requirements here
+	return true;
+}//end function cbxwpbookmark_compatible_wp_version
+
+/**
+ * Checking php version
+ *
+ * @param $version
+ *
+ * @return bool
+ * @since 1.0.0
+ */
+function cbxwpbookmark_compatible_php_version( $version = CBXWPBOOKMARK_PHP_MIN_VERSION ) {
+	if ( version_compare( PHP_VERSION, $version, '<' ) ) {
+		return false;
+	}
+
+	return true;
+}//end function cbxwpbookmark_compatible_php_version
+
+/**
+ * Returns the main instance of CBXWPBookmark.
+ *
+ * @since  1.0.0
+ */
+function cbxwpbookmark_core() { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
+	global $cbxwpbookmark_core;
+
+	if ( ! isset( $cbxwpbookmark_core ) ) {
+		$cbxwpbookmark_core = run_cbxwpbookmark_core();
+	}
+
+	return $cbxwpbookmark_core;
+}//end method cbxwpbookmark_core
+
 
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-cbxwpbookmark.php';
+//require plugin_dir_path( __FILE__ ) . 'includes/class-cbxwpbookmark.php';
 
 /**
  * Begins execution of the plugin.
@@ -78,8 +158,8 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-cbxwpbookmark.php';
  *
  * @since    1.7.13
  */
-function run_cbxwpbookmark() {
+function run_cbxwpbookmark_core() {
 	return CBXWPBookmark::instance();
-}//end function run_cbxwpbookmark
+}//end function run_cbxwpbookmark_core
 
-$GLOBALS['cbxwpbookmark_core'] = run_cbxwpbookmark();
+$GLOBALS['cbxwpbookmark_core'] = run_cbxwpbookmark_core();

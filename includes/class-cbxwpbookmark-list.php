@@ -4,6 +4,9 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+use Cbx\Bookmark\CBXWPBookmarkSettings;
+//use Cbx\Bookmark\Helpers\CBXWPBookmarkHelper;
+
 if ( ! class_exists( 'WP_List_Table' ) ) {
 	require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
 }
@@ -31,7 +34,7 @@ class CBXWPBookmark_List_Table extends WP_List_Table {
 	 */
 	function __construct( $args = [] ) {
 
-		$this->settings = new CBXWPBookmark_Settings_API();
+		$this->settings = new CBXWPBookmarkSettings();
 		//Set parent defaults
 		parent::__construct( [
 			'singular' => 'cbxwpbookmarklist',     //singular name of the listed records
@@ -65,7 +68,7 @@ class CBXWPBookmark_List_Table extends WP_List_Table {
 	function column_object_id( $item ) {
 		$post_id     = $object_id = intval( $item['object_id'] );
 		$object_type = esc_attr( $item['object_type'] );
-		$settings     = new CBXWPBookmark_Settings_API();;
+		$settings     = new CBXWPBookmarkSettings();;
 		$enable_buddypress_bookmark = intval( $settings->get_field( 'enable_buddypress_bookmark', 'cbxwpbookmark_proaddon', 0 ) );
 
 		$object_types = CBXWPBookmarkHelper::object_types( true ); //get plain post type as array
@@ -157,7 +160,7 @@ class CBXWPBookmark_List_Table extends WP_List_Table {
 	function column_cat_id( $item ) {
 		$cat_id = intval( $item['cat_id'] );
 		if ( $cat_id > 0 ) {
-			return '<a title="' . esc_html__( 'Click to edit category', 'cbxwpbookmark' ) . '" href="' . admin_url( 'admin.php?page=cbxwpbookmarkcats&view=edit&id=' . intval( $cat_id ) ) . '">' . esc_attr( wp_unslash( $item['cat_name'] ) ) . '</a>';
+			return '<a title="' . esc_html__( 'Click to edit category', 'cbxwpbookmark' ) . '" href="' . admin_url( 'admin.php?page=cbxwpbookmark-cats&view=edit&id=' . intval( $cat_id ) ) . '">' . esc_attr( wp_unslash( $item['cat_name'] ) ) . '</a>';
 		} else {
 			return esc_html__( 'N/A', 'cbxwpbookmark' );
 		}
@@ -329,14 +332,6 @@ class CBXWPBookmark_List_Table extends WP_List_Table {
 				if ( 'delete' === $new_status ) {
 
 					cbxwpbookmarks_delete_bookmark( $id, $single_bookmark['user_id'], $single_bookmark['object_id'], $single_bookmark['object_type'] );
-					/*do_action( 'cbxbookmark_bookmark_removed_before', $id, $single_bookmark['user_id'], $single_bookmark['object_id'], $single_bookmark['object_type'] );
-
-					// phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
-					$delete_status = $wpdb->query( $wpdb->prepare( "DELETE FROM $bookmark_table WHERE id=%d", intval( $id ) ) );
-
-					if ( $delete_status !== false ) {
-						do_action( 'cbxbookmark_bookmark_removed', $id, $single_bookmark['user_id'], $single_bookmark['object_id'], $single_bookmark['object_type'] );
-					}*/
 				}
 			}
 		}
