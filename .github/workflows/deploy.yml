@@ -6,19 +6,20 @@ on:
       - "*"
 
 jobs:
-  tag:
-    name: New tag
+  deploy:
+    name: Deploy WordPress Plugin
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
 
-      - name: Debug File List
-        run: ls -R
+    steps:
+      # Lightweight checkout
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
 
       - name: Install SVN (Subversion)
         run: |
           sudo apt-get update
-          sudo apt-get install subversion
+          sudo apt-get install -y subversion
 
       - name: Find Readme File
         id: find_readme
@@ -31,9 +32,7 @@ jobs:
             fi
           done
 
-          # Ensure the variable is available within the current step
           source $GITHUB_ENV
-
           if [ -z "$readme_file" ]; then
             echo "::error::Readme file not found."
             exit 1
@@ -45,10 +44,9 @@ jobs:
           changelog_section_start="== Changelog =="
           readme_file="$readme_file"
 
-          # Extract the tag name from GITHUB_REF (plugin_version)
           if [[ "$GITHUB_REF" == refs/tags/* ]]; then
             plugin_version="${GITHUB_REF#refs/tags/}"
-            echo "DEBUG: Plugin latest version found: $plugin_version."
+            echo "Plugin version: $plugin_version"
           else
             echo "::error::This workflow must be triggered by a tag push."
             exit 1
@@ -58,47 +56,32 @@ jobs:
           found_version=0
           release_notes=""
 
-          echo "DEBUG: Starting to extract release notes from $readme_file for version $plugin_version."
-
           while IFS= read -r line; do
-            echo "DEBUG: Processing line: $line"
-
             # Start processing after the changelog header
             if [[ "$line" == "$changelog_section_start" ]]; then
               in_changelog=1
-              echo "DEBUG: Found changelog section header."
               continue
             fi
 
-            # Skip if not in changelog section
+            # Skip until changelog section found
             if [[ $in_changelog -eq 0 ]]; then
-              echo "DEBUG: Skipping line (not in changelog section)."
               continue
             fi
 
-            # Check for the current version header
+            # Detect version header
             if [[ "$line" == "= ${plugin_version} =" ]]; then
               found_version=1
-              echo "DEBUG: Found version header for $plugin_version."
               continue
             fi
 
-            # Break if a new version header is found after the current version
+            # Stop when next version header found
             if [[ $found_version -eq 1 ]] && echo "$line" | grep -qE '^= [0-9]+\.[0-9]+\.[0-9]+ =$'; then
-              echo "DEBUG: Found a new version header. Stopping collection."
               break
             fi
 
-            # Collect lines starting with '*' if we are in the current version section
+            # Collect lines for current version
             if [[ $found_version -eq 1 ]] && echo "$line" | grep -qE '^\*'; then
-              echo "DEBUG: Found changelog entry: $line"
               release_notes+="${line}\n"
-              continue
-            fi
-
-            # Log skipped lines in the current version section
-            if [[ $found_version -eq 1 ]]; then
-              echo "DEBUG: Skipping line (not a changelog entry): $line"
             fi
           done < "$readme_file"
 
@@ -107,21 +90,39 @@ jobs:
             exit 1
           fi
 
-          echo "DEBUG: Successfully extracted release notes."
-          echo "DEBUG: Release notes content:"
-          echo -e "$release_notes"
-
-          # Write the release notes with actual line breaks
           echo "RELEASE_NOTES<<EOF" >> $GITHUB_ENV
           echo -e "$release_notes" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV           
+          echo "EOF" >> $GITHUB_ENV
 
-      - name: WordPress Plugin Deploy
-        id: deploy
+      - name: Cleanup unnecessary files before deploy
+        run: |
+          find . -type f -name "*.zip" -delete
+          find . -type f -name "*.psd" -delete
+
+      # Phase 1: Deploy only trunk
+      - name: Deploy trunk (safe commit)
         uses: 10up/action-wordpress-plugin-deploy@stable
         with:
+          skip-assets: true
+          skip-tag: true
           generate-zip: true
 
+      # Phase 2: Tag the release
+      - name: Tag release version
+        uses: 10up/action-wordpress-plugin-deploy@stable
+        with:
+          skip-trunk: true
+          generate-zip: false
+
+      # Optional retry in case SVN hangs or fails
+      - name: Retry SVN Deploy (if failed)
+        if: failure()
+        run: |
+          echo "Retrying SVN deploy after 30 seconds..."
+          sleep 30
+          npx @10up/action-wordpress-plugin-deploy@latest
+
+      # Create GitHub release with extracted changelog
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
@@ -130,6 +131,7 @@ jobs:
           files: ${{github.workspace}}/${{ github.event.repository.name }}.zip
 
 env:
-  SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+  SVN_URL: https://plugins.svn.wordpress.org/YOUR-PLUGIN-SLUG
   SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+  SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
