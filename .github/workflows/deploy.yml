@@ -1,34 +1,28 @@
-name: Deploy Plugin to WordPress.org via svn-github-deploy
+name: Deploy to WordPress.org
 
 on:
   push:
     tags:
       - "*"
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
-    name: Deploy WordPress Plugin (Trunk + Tag)
+    name: Deploy WordPress Plugin
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      - name: Checkout Git repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Install SVN
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y subversion
+        run: sudo apt-get update && sudo apt-get install -y subversion
 
-      - name: Keep GitHub Action alive (prevent timeout)
-        run: |
-          while true; do echo "Still working... $(date)"; sleep 60; done &
-        shell: bash
-
-      # --------------------------------------------------------
-      # Step 1: Find readme.txt or readme.md
-      # --------------------------------------------------------
+      # 🔍 Find Readme File (from your original workflow)
       - name: Find Readme File
         id: find_readme
         run: |
@@ -46,9 +40,7 @@ jobs:
             exit 1
           fi
 
-      # --------------------------------------------------------
-      # Step 2: Extract changelog notes for GitHub release
-      # --------------------------------------------------------
+      # 🧾 Extract Release Notes (from your original workflow)
       - name: Extract Release Notes
         id: release_notes
         run: |
@@ -68,29 +60,24 @@ jobs:
           release_notes=""
 
           while IFS= read -r line; do
-            # Start processing after the changelog header
             if [[ "$line" == "$changelog_section_start" ]]; then
               in_changelog=1
               continue
             fi
 
-            # Skip until changelog section found
             if [[ $in_changelog -eq 0 ]]; then
               continue
             fi
 
-            # Detect version header
             if [[ "$line" == "= ${plugin_version} =" ]]; then
               found_version=1
               continue
             fi
 
-            # Stop when next version header found
             if [[ $found_version -eq 1 ]] && echo "$line" | grep -qE '^= [0-9]+\.[0-9]+\.[0-9]+ =$'; then
               break
             fi
 
-            # Collect lines for current version
             if [[ $found_version -eq 1 ]] && echo "$line" | grep -qE '^\*'; then
               release_notes+="${line}\n"
             fi
@@ -105,55 +92,67 @@ jobs:
           echo -e "$release_notes" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
-      # --------------------------------------------------------
-      # Step 3: Cleanup large/unnecessary files
-      # --------------------------------------------------------
-      - name: Cleanup before deploy
+      - name: Prepare environment variables
+        id: vars
         run: |
-          rm -rf node_modules/ tests/ .git .github
-          find . -type f -name "*.zip" -delete
-          find . -type f -name "*.psd" -delete
+          VERSION="${GITHUB_REF#refs/tags/}"
+          SLUG=$(basename "${GITHUB_REPOSITORY}")
+          echo "version=${VERSION}" >> $GITHUB_ENV
+          echo "slug=${SLUG}" >> $GITHUB_ENV
+          echo "🔧 Detected plugin slug: ${SLUG}"
 
-      # --------------------------------------------------------
-      # Step 4: Deploy trunk via svn-github-deploy (efficient sync)
-      # --------------------------------------------------------
-      - name: Deploy trunk
-        uses: 10up/svn-github-deploy@v1
-        with:
-          svn_user: ${{ secrets.SVN_USERNAME }}
-          svn_pass: ${{ secrets.SVN_PASSWORD }}
-          svn_url: https://plugins.svn.wordpress.org/${{ github.event.repository.name }}
-          local_path: ./
-          svn_path: trunk
-          exclude: |
-            .git*
-            .github/*
-            node_modules/*
-            tests/*
-            *.zip
-            *.psd
-
-      # --------------------------------------------------------
-      # Step 5: Tag release in SVN after successful trunk upload
-      # --------------------------------------------------------
-      - name: Tag SVN release
+      - name: Checkout WordPress.org SVN
         run: |
-          TAG="${GITHUB_REF#refs/tags/}"
-          SVN_URL="https://plugins.svn.wordpress.org/${{ github.event.repository.name }}"
-          echo "Tagging version $TAG"
-          svn cp "$SVN_URL/trunk" "$SVN_URL/tags/$TAG" -m "Tagging version $TAG"
+          SVN_URL="https://plugins.svn.wordpress.org/${slug}"
+          SVN_DIR="$HOME/svn-wordpress"
+          echo "📦 Checking out SVN repo..."
+          svn co "$SVN_URL" "$SVN_DIR" --depth immediates
+          svn update "$SVN_DIR/trunk" --set-depth infinity
+          svn update "$SVN_DIR/tags" --set-depth immediates
 
-      # --------------------------------------------------------
-      # Step 6: Create GitHub Release with extracted changelog
-      # --------------------------------------------------------
+      - name: Sync files to trunk
+        run: |
+          SVN_DIR="$HOME/svn-wordpress"
+          echo "🚀 Syncing files to trunk..."
+          rsync -rc --exclude-from=.distignore ./ "$SVN_DIR/trunk/" --delete
+          cp readme.txt "$SVN_DIR/readme.txt" || true
+
+      - name: Commit trunk changes to SVN
+        env:
+          SVN_USERNAME: ${{ secrets.WP_ORG_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.WP_ORG_PASSWORD }}
+        run: |
+          SVN_DIR="$HOME/svn-wordpress"
+          cd "$SVN_DIR/trunk"
+          echo "🧩 Committing trunk updates..."
+          svn add --force . --auto-props --parents --depth infinity -q
+          svn ci -m "Update trunk for version ${version}" \
+            --username "$SVN_USERNAME" \
+            --password "$SVN_PASSWORD" \
+            --non-interactive
+
+      - name: Tag the new version in SVN
+        env:
+          SVN_USERNAME: ${{ secrets.WP_ORG_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.WP_ORG_PASSWORD }}
+        run: |
+          SVN_DIR="$HOME/svn-wordpress"
+          cd "$SVN_DIR"
+          echo "🏷️ Creating tag ${version}..."
+          svn copy trunk "tags/${version}" \
+            -m "Tagging version ${version}" \
+            --username "$SVN_USERNAME" \
+            --password "$SVN_PASSWORD" \
+            --non-interactive
+
+      # 🎉 Create GitHub Release (from your original workflow)
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}
           body: ${{ env.RELEASE_NOTES }}
-          files: ${{github.workspace}}/${{ github.event.repository.name }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    env:
-      SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
-      SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
