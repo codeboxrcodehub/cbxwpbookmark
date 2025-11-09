@@ -1,4 +1,4 @@
-name: Deploy to WordPress.org
+name: Deploy Plugin to WordPress.org via svn-github-deploy
 
 on:
   push:
@@ -7,20 +7,28 @@ on:
 
 jobs:
   deploy:
-    name: Deploy WordPress Plugin
+    name: Deploy WordPress Plugin (Trunk + Tag)
     runs-on: ubuntu-latest
 
     steps:
-      # Lightweight checkout
-      - uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 0
 
-      - name: Install SVN (Subversion)
+      - name: Install SVN
         run: |
           sudo apt-get update
           sudo apt-get install -y subversion
 
+      - name: Keep GitHub Action alive (prevent timeout)
+        run: |
+          while true; do echo "Still working... $(date)"; sleep 60; done &
+        shell: bash
+
+      # --------------------------------------------------------
+      # Step 1: Find readme.txt or readme.md
+      # --------------------------------------------------------
       - name: Find Readme File
         id: find_readme
         run: |
@@ -38,6 +46,9 @@ jobs:
             exit 1
           fi
 
+      # --------------------------------------------------------
+      # Step 2: Extract changelog notes for GitHub release
+      # --------------------------------------------------------
       - name: Extract Release Notes
         id: release_notes
         run: |
@@ -94,44 +105,47 @@ jobs:
           echo -e "$release_notes" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
-      - name: Cleanup unnecessary files before deploy
+      # --------------------------------------------------------
+      # Step 3: Cleanup large/unnecessary files
+      # --------------------------------------------------------
+      - name: Cleanup before deploy
         run: |
+          rm -rf node_modules/ tests/ .git .github
           find . -type f -name "*.zip" -delete
           find . -type f -name "*.psd" -delete
 
-      # Phase 1: Deploy only trunk
-      - name: Deploy trunk (safe commit)
-        uses: 10up/action-wordpress-plugin-deploy@2.2.2
+      # --------------------------------------------------------
+      # Step 4: Deploy trunk via svn-github-deploy (efficient sync)
+      # --------------------------------------------------------
+      - name: Deploy trunk
+        uses: 10up/svn-github-deploy@v1
         with:
-          skip-assets: true
-          skip-tag: true
-          generate-zip: true
+          svn_user: ${{ secrets.SVN_USERNAME }}
+          svn_pass: ${{ secrets.SVN_PASSWORD }}
+          svn_url: https://plugins.svn.wordpress.org/${{ github.event.repository.name }}
+          local_path: ./
+          svn_path: trunk
+          exclude: |
+            .git*
+            .github/*
+            node_modules/*
+            tests/*
+            *.zip
+            *.psd
 
-      # Phase 2: Tag the release
-      - name: Tag release version
-        uses: 10up/action-wordpress-plugin-deploy@2.2.2
-        with:
-          skip-trunk: true
-          generate-zip: false
-
-      # Optional retry if SVN commit fails (e.g., connection reset)
-      - name: Retry SVN Deploy (if failed)
-        if: failure()
+      # --------------------------------------------------------
+      # Step 5: Tag release in SVN after successful trunk upload
+      # --------------------------------------------------------
+      - name: Tag SVN release
         run: |
-          echo "Retrying SVN deploy after 30 seconds..."
-          sleep 30
-        shell: bash
+          TAG="${GITHUB_REF#refs/tags/}"
+          SVN_URL="https://plugins.svn.wordpress.org/${{ github.event.repository.name }}"
+          echo "Tagging version $TAG"
+          svn cp "$SVN_URL/trunk" "$SVN_URL/tags/$TAG" -m "Tagging version $TAG"
 
-      - name: Retry Trunk Deploy
-        if: failure()
-        uses: 10up/action-wordpress-plugin-deploy@2.2.2
-        with:
-          skip-assets: true
-          skip-tag: true
-          generate-zip: true
-
-
-      # Create GitHub release with extracted changelog
+      # --------------------------------------------------------
+      # Step 6: Create GitHub Release with extracted changelog
+      # --------------------------------------------------------
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
@@ -139,8 +153,7 @@ jobs:
           body: ${{ env.RELEASE_NOTES }}
           files: ${{github.workspace}}/${{ github.event.repository.name }}.zip
 
-env:
-  SVN_URL: https://plugins.svn.wordpress.org/${{ github.event.repository.name }}
-  SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
-  SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    env:
+      SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+      SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
