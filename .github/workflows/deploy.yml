@@ -119,8 +119,8 @@ jobs:
 
       - name: Commit trunk changes to SVN
         env:
-          SVN_USERNAME: ${{ secrets.WP_ORG_USERNAME }}
-          SVN_PASSWORD: ${{ secrets.WP_ORG_PASSWORD }}
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
         run: |
           SVN_DIR="$HOME/svn-wordpress"
           cd "$SVN_DIR/trunk"
@@ -133,8 +133,8 @@ jobs:
 
       - name: Tag the new version in SVN
         env:
-          SVN_USERNAME: ${{ secrets.WP_ORG_USERNAME }}
-          SVN_PASSWORD: ${{ secrets.WP_ORG_PASSWORD }}
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
         run: |
           SVN_DIR="$HOME/svn-wordpress"
           cd "$SVN_DIR"
