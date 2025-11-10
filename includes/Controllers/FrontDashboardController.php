@@ -1,10 +1,10 @@
 <?php
-namespace Cbx\Bookmark\Controllers;
+namespace CBXWPBookmark\Controllers;
 // If this file is called directly, abort.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-use Cbx\Bookmark\CBXWPBookmarkSettings;
+use CBXWPBookmark\CBXWPBookmarkSettings;
 use Exception;
 
 class FrontDashboardController {

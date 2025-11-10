@@ -6,12 +6,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 
-if (!class_exists("BookmarkAddSortOrder")) {
+if (!class_exists("CBXWPBookmarkAddSortOrder")) {
     /**
-     * Class BookmarkAddSortOrder
+     * Class CBXWPBookmarkAddSortOrder
      * @since 2.0.0
      */
-    class BookmarkAddSortOrder
+    class CBXWPBookmarkAddSortOrder
     {
         /**
          * Migration run
@@ -51,12 +51,12 @@ if (!class_exists("BookmarkAddSortOrder")) {
             }
         }//end method down
 
-    }//end class BookmarkAddSortOrder
+    }//end class CBXWPBookmarkAddSortOrder
 }
 
 
 if (isset($action) && $action == 'up') {
-    BookmarkAddSortOrder::up();
+    CBXWPBookmarkAddSortOrder::up();
 } elseif (isset($action) && $action == "drop") {
-    BookmarkAddSortOrder::down();
+    CBXWPBookmarkAddSortOrder::down();
 }

@@ -1,19 +1,19 @@
 <?php
-namespace Cbx\Bookmark;
+namespace CBXWPBookmark;
 
-use Cbx\Bookmark\CBXWPBookmarkSettings;
-//use Cbx\Bookmark\Helpers\CBXWPBookmarkHelper;
+use CBXWPBookmark\CBXWPBookmarkSettings;
+//use CBXWPBookmark\Helpers\CBXWPBookmarkHelper;
 
-use Cbx\Bookmark\Models\Category;
-use Cbx\Bookmark\Widgets\Elementor\CBXWPBookmarkBtnElemWidget;
-use Cbx\Bookmark\Widgets\Elementor\CBXWPBookmarkCategoryElemWidget;
-use Cbx\Bookmark\Widgets\Elementor\CBXWPBookmarkMostElemWidget;
-use Cbx\Bookmark\Widgets\Elementor\CBXWPBookmarkMyBookmarkElemWidget;
-use Cbx\Bookmark\Widgets\Vc\CBXWPBookmarkBtnVCWidget;
-use Cbx\Bookmark\Widgets\Vc\CBXWPBookmarkCategoryVCWidget;
-use Cbx\Bookmark\Widgets\Vc\CBXWPBookmarkMostVCWidget;
-use Cbx\Bookmark\Widgets\Vc\CBXWPBookmarkMyBookmarkVCWidget;
-use Cbx\Bookmark\Widgets\Vc\Params\CBXWPBookmarkVCParamDropDownMulti;
+use CBXWPBookmark\Models\Category;
+use CBXWPBookmark\Widgets\Elementor\CBXWPBookmarkBtnElemWidget;
+use CBXWPBookmark\Widgets\Elementor\CBXWPBookmarkCategoryElemWidget;
+use CBXWPBookmark\Widgets\Elementor\CBXWPBookmarkMostElemWidget;
+use CBXWPBookmark\Widgets\Elementor\CBXWPBookmarkMyBookmarkElemWidget;
+use CBXWPBookmark\Widgets\Vc\CBXWPBookmarkBtnVCWidget;
+use CBXWPBookmark\Widgets\Vc\CBXWPBookmarkCategoryVCWidget;
+use CBXWPBookmark\Widgets\Vc\CBXWPBookmarkMostVCWidget;
+use CBXWPBookmark\Widgets\Vc\CBXWPBookmarkMyBookmarkVCWidget;
+use CBXWPBookmark\Widgets\Vc\Params\CBXWPBookmarkVCParamDropDownMulti;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
@@ -121,15 +121,16 @@ class CBXWPBookmarkPublic {
 		$cats_by_user_order   = 'DESC';
 
 		$cats_by_user_orderby = apply_filters( 'cbxwpbookmark_cats_by_user_orderby', $cats_by_user_orderby );
+
 		$cats_by_user_order   = apply_filters( 'cbxwpbookmark_cats_by_user_order', $cats_by_user_order );
 
+		//phpcs:disable
 		if ( $bookmark_mode == 'user_cat' ) {
-			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 			$cats_by_user = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $category_table WHERE user_id = %d ORDER BY $cats_by_user_orderby $cats_by_user_order", $user_id ), ARRAY_A );
 		} else {
-			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 			$cats_by_user = $wpdb->get_results( "SELECT * FROM $category_table WHERE 1 ORDER BY $cats_by_user_orderby $cats_by_user_order", ARRAY_A );
 		}
+
 
 		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 		$post_in_cats_t = $wpdb->get_results( $wpdb->prepare( "SELECT DISTINCT cat_id FROM $bookmark_table WHERE object_type = %s AND user_id = %d AND object_id = %d", [
@@ -138,8 +139,9 @@ class CBXWPBookmarkPublic {
 			$object_id
 		] ), ARRAY_A
 		);
+		//phpcs:enable
 
-		//
+
 		$post_in_cats = [];
 		foreach ( $post_in_cats_t as $cat ) {
 			$post_in_cats[] = $cat['cat_id'];
@@ -488,8 +490,8 @@ class CBXWPBookmarkPublic {
 		}
 
 		global $wpdb;
-		$category_table = $wpdb->prefix . 'cbxwpbookmarkcat';
-		$bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
+		$category_table = esc_sql($wpdb->prefix . 'cbxwpbookmarkcat');
+		$bookmark_table = esc_sql($wpdb->prefix . 'cbxwpbookmark');
 
 		$cat_name    = isset( $_POST['cat_name'] ) ? sanitize_text_field( wp_unslash( $_POST['cat_name'] ) ) : '';
 		$cat_privacy = isset( $_POST['privacy'] ) ? absint( $_POST['privacy'] ) : 1;
@@ -497,11 +499,11 @@ class CBXWPBookmarkPublic {
 
 		$message = [];
 
-
+		//phpcs:disable
 		if ( $cat_name != '' ) {
-			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 			$duplicate = $wpdb->get_var( $wpdb->prepare( "SELECT id FROM $category_table WHERE cat_name = %s and user_id = %d", $cat_name, $user_id ) );
 		}
+		//phpcs:enable
 
 
 		if ( $cat_name == '' ) {
@@ -574,11 +576,11 @@ class CBXWPBookmarkPublic {
 			//category create mode
 			if ( $cat_id == 0 ) {
 
-				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
 				$duplicate = $wpdb->get_var( $wpdb->prepare( "SELECT id FROM $category_table WHERE cat_name = %s and user_id = %d", $cat_name, $user_id ) );
 			} else {
 				//category edit mode
-				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
 				$duplicate = $wpdb->get_var( $wpdb->prepare( "SELECT id FROM $category_table WHERE cat_name = %s AND id != %d AND user_id = %d", $cat_name, $cat_id, $user_id ) );
 			}
 		}
@@ -594,7 +596,7 @@ class CBXWPBookmarkPublic {
 
 			if ( $cat_id == 0 ) {
 				//create category
-				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
 				$return = $wpdb->query( $wpdb->prepare( "INSERT INTO $category_table ( cat_name, user_id, privacy ) VALUES ( %s, %d, %d )", [
 					$cat_name,
 					$user_id,
@@ -629,7 +631,7 @@ class CBXWPBookmarkPublic {
 					$cat_id = $wpdb->insert_id; //get the newly created category id or already exists one
 				}
 
-				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
 				$cats_by_user = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $category_table WHERE user_id = %d", $user_id ), ARRAY_A );
 
 				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
@@ -701,7 +703,7 @@ class CBXWPBookmarkPublic {
 
 
 		if ( $cat_name != '' ) {
-			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
 			$duplicate = $wpdb->get_var( $wpdb->prepare( "SELECT id FROM $category_table WHERE cat_name = %s AND id != %d AND user_id = %d", $cat_name, $cat_id, $user_id ) );
 		}
 
@@ -737,7 +739,7 @@ class CBXWPBookmarkPublic {
 
 			if ( $return !== false ) {
 
-				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
 				$cats_by_user = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $category_table WHERE user_id = %d", $user_id ), ARRAY_A );
 
 				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
@@ -882,7 +884,7 @@ class CBXWPBookmarkPublic {
 				//now delete any bookmark entry for that category
 				//$delete_bookmark = $wpdb->delete($bookmark_table, array('cat_id' => $cat_id, 'user_id' => $user_id), array('%d', '%d'));
 
-				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
 				$bookmarks_by_category = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $bookmark_table WHERE cat_id = %d", $cat_id ), ARRAY_A );
 
 				if ( $bookmarks_by_category != null ) {
@@ -904,10 +906,10 @@ class CBXWPBookmarkPublic {
 					$object_id   = intval( $_POST['object_id'] );
 					$object_type = isset( $_POST['object_type'] ) ? sanitize_text_field( wp_unslash( $_POST['object_type'] ) ) : 'post'; //post, page, user, product, any thing custom
 
-					// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+					// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
 					$cats_by_user = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $category_table WHERE user_id = %d", $user_id ), ARRAY_A );
 
-					// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+					// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
 					$post_in_cats_t = $wpdb->get_results( $wpdb->prepare( "SELECT DISTINCT cat_id FROM $bookmark_table WHERE object_type = %s AND  user_id = %d AND object_id = %d", [
 						$object_type,
 						$user_id,
@@ -970,7 +972,7 @@ class CBXWPBookmarkPublic {
 		$category_privacy     = 1;
 
 		if ( $bookmark_mode == 'no_cat' ) {
-			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
 			$duplicate = $wpdb->get_var( $wpdb->prepare( "SELECT id FROM $bookmark_table WHERE object_type = %s AND object_id = %d AND user_id = %d", [
 				$object_type,
 				$object_id,
@@ -980,7 +982,7 @@ class CBXWPBookmarkPublic {
 			//$category_privacy = 1; //no category that means publicly sharable information
 
 		} else {
-			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
 			$duplicate = $wpdb->get_var( $wpdb->prepare( "SELECT id FROM $bookmark_table WHERE object_type = %s AND object_id = %d AND cat_id = %d AND user_id = %d", [
 				$object_type,
 				$object_id,
@@ -999,7 +1001,7 @@ class CBXWPBookmarkPublic {
 		if ( intval( $duplicate ) > 0 ) {
 			if ( $bookmark_mode == 'no_cat' ) {
 				//already exists, so remove
-				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
 				$return = $wpdb->query( $wpdb->prepare( "DELETE FROM $bookmark_table WHERE object_type = %s AND object_id = %d AND user_id = %d", [
 					$object_type,
 					$object_id,
@@ -1007,7 +1009,7 @@ class CBXWPBookmarkPublic {
 				] ) );
 			} else {
 				//already exists, so remove
-				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
 				$return = $wpdb->query( $wpdb->prepare( "DELETE FROM $bookmark_table WHERE object_type = %s AND object_id = %d AND cat_id = %d AND user_id = %d", [
 					$object_type,
 					$object_id,
@@ -1045,7 +1047,7 @@ class CBXWPBookmarkPublic {
 			$alert_msg = isset( $gate['msg'] ) ? $gate['msg'] : '';
 
 			if ( $allow ) {
-				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
 				$return = $wpdb->query( $wpdb->prepare( "INSERT INTO $bookmark_table ( object_id, object_type, cat_id, user_id ) VALUES ( %d,%s, %d, %d )", [
 					$object_id,
 					$object_type,
@@ -1345,7 +1347,7 @@ class CBXWPBookmarkPublic {
 			$main_sql .= "SELECT *  FROM $bookmark_table  WHERE cat_id = %d group by object_id  ORDER BY $order_by $order $limit_sql";
 		}
 
-		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.NotPrepared
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.NotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
 		$items = $wpdb->get_results( $wpdb->prepare( $main_sql, $param ) );
 
 		$output = '';

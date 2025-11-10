@@ -4,13 +4,13 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-$object_id    = $item->object_id;
-$object_type  = $item->object_type;
-$object_title = wp_strip_all_tags( get_the_title( $object_id ) );
+$object_id    = $item->object_id;//phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+$object_type  = $item->object_type;//phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+$object_title = wp_strip_all_tags( get_the_title( $object_id ) );//phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 if ( $object_title == '' ) {
-	$object_title = esc_html__( 'Untitled', 'cbxwpbookmark' );
+	$object_title = esc_html__( 'Untitled', 'cbxwpbookmark' );//phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 }
-$object_link = get_permalink( $object_id );
+$object_link = get_permalink( $object_id );//phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 
 echo '<li class="cbxwpbookmark-mylist-item ' . esc_attr( $sub_item_class ) . '">';
 do_action( 'cbxwpbookmark_bookmarkpost_single_item_start', $object_id, $item );

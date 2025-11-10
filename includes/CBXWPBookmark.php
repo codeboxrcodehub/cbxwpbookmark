@@ -1,13 +1,13 @@
 <?php
 
-use Cbx\Bookmark\Api\CbxRoute;
-//use Cbx\Bookmark\Helpers\CBXWPBookmarkHelper;
-use Cbx\Bookmark\CBXWPBookmarkAdmin;
-use Cbx\Bookmark\CBXWPBookmarkPublic;
-use Cbx\Bookmark\CBXWPBookmarkMisc;
-use Cbx\Bookmark\CBXWPBookmarkBlocks;
-use Cbx\Bookmark\CBXWPBookmarkShortcodes;
-use Cbx\Bookmark\Customizer\CBXWPBookmarkCustomizer;
+use CBXWPBookmark\Api\CbxRoute;
+//use CBXWPBookmark\Helpers\CBXWPBookmarkHelper;
+use CBXWPBookmark\CBXWPBookmarkAdmin;
+use CBXWPBookmark\CBXWPBookmarkPublic;
+use CBXWPBookmark\CBXWPBookmarkMisc;
+use CBXWPBookmark\CBXWPBookmarkBlocks;
+use CBXWPBookmark\CBXWPBookmarkShortcodes;
+use CBXWPBookmark\Customizer\CBXWPBookmarkCustomizer;
 
 /**
  * The file that defines the core plugin class

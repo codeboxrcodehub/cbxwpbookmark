@@ -1,7 +1,7 @@
 <?php
 
-//use Cbx\Bookmark\Helpers\CBXWPBookmarkHelper;
-use Cbx\Bookmark\CBXWPBookmarkSettings;
+//use CBXWPBookmark\Helpers\CBXWPBookmarkHelper;
+use CBXWPBookmark\CBXWPBookmarkSettings;
 use enshrined\svgSanitize\Sanitizer;
 
 if ( ! function_exists( 'cbxwpbookmark_is_rest_api_request' ) ) {
@@ -69,13 +69,14 @@ if ( ! function_exists( 'cbxwpbookmark_object_types' ) ) {
 	 * @param  bool|false  $plain
 	 *
 	 * @return array
+	 *
 	 */
 	function cbxwpbookmark_object_types( $plain = false ) {
 		return CBXWPBookmarkHelper::post_types( $plain );
 	}//end function cbxwpbookmark_object_types
 }
 
-
+//phpcs:disable
 if ( ! function_exists( 'show_cbxbookmark_btn' ) ):
 
 	/**
@@ -89,10 +90,31 @@ if ( ! function_exists( 'show_cbxbookmark_btn' ) ):
 	 * @param  string  $skip_roles  user roles
 	 *
 	 * @return string
+	 * @deprecated 2.0.0 Use cbxwpbookmark_show_btn() instead.
 	 */
 	function show_cbxbookmark_btn( $object_id = 0, $object_type = null, $show_count = 1, $extra_wrap_class = '', $skip_ids = '', $skip_roles = '' ) {
-		return CBXWPBookmarkHelper::show_cbxbookmark_btn( $object_id, $object_type, $show_count, $extra_wrap_class, $skip_ids, $skip_roles );
+		return CBXWPBookmarkHelper::cbxwpbookmark_show_btn( $object_id, $object_type, $show_count, $extra_wrap_class, $skip_ids, $skip_roles );
 	}//end function show_cbxbookmark_btn
+endif;
+//phpcs:enable
+
+if ( ! function_exists( 'cbxwpbookmark_show_btn' ) ):
+
+	/**
+	 * Returns bookmark button html markup
+	 *
+	 * @param  int  $object_id  post id
+	 * @param  null  $object_type  post type
+	 * @param  int  $show_count  if show bookmark counts
+	 * @param  string  $extra_wrap_class  style css class
+	 * @param  string  $skip_ids  post ids to skip
+	 * @param  string  $skip_roles  user roles
+	 *
+	 * @return string
+	 */
+	function cbxwpbookmark_show_btn( $object_id = 0, $object_type = null, $show_count = 1, $extra_wrap_class = '', $skip_ids = '', $skip_roles = '' ) {
+		return CBXWPBookmarkHelper::cbxwpbookmark_show_btn( $object_id, $object_type, $show_count, $extra_wrap_class, $skip_ids, $skip_roles );
+	}//end function cbxwpbookmark_show_btn
 endif;
 
 
@@ -174,13 +196,27 @@ if ( ! function_exists( 'cbxbookmark_most_html' ) ) {
 	}//end cbxbookmark_most_html
 }//end exists cbxbookmark_most_html
 
-
+//phpcs:disable
 if ( ! function_exists( 'get_author_cbxwpbookmarks_url' ) ) {
+	/**
+	 * Get author url
+	 *
+	 * @deprecated 2.0.0 Use cbxwpbookmark_get_author_url() instead.
+	 */
 	function get_author_cbxwpbookmarks_url( $author_id = 0 ) {
-		return CBXWPBookmarkHelper::get_author_cbxwpbookmarks_url( $author_id );
+		return CBXWPBookmarkHelper::cbxwpbookmark_get_author_url( $author_id );
 	}//end function get_author_cbxwpbookmarks_url
-
 }//end exists get_author_cbxwpbookmarks_url
+//phpcs:enable
+
+if ( ! function_exists( 'cbxwpbookmark_get_author_url' ) ) {
+	function cbxwpbookmark_get_author_url( $author_id = 0 ) {
+		/**
+		 * Get author url
+		 */
+		return CBXWPBookmarkHelper::cbxwpbookmark_get_author_url( $author_id );
+	}//end function cbxwpbookmark_get_author_url
+}//end exists cbxwpbookmark_get_author_url
 
 if ( ! function_exists( 'cbxwpbookmarks_mybookmark_page_url' ) ) {
 	/**
@@ -189,7 +225,7 @@ if ( ! function_exists( 'cbxwpbookmarks_mybookmark_page_url' ) ) {
 	 * @return false|string
 	 */
 	function cbxwpbookmarks_mybookmark_page_url() {
-		return CBXWPBookmarkHelper::cbxwpbookmarks_mybookmark_page_url();
+		return CBXWPBookmarkHelper::cbxwpbookmark_mybookmark_page_url();
 	}//end function cbxwpbookmarks_mybookmark_page_url
 }//end exists cbxwpbookmarks_mybookmark_page_url
 
@@ -481,6 +517,7 @@ if ( ! function_exists( 'cbxwpbookmarks_delete_bookmark_by_type_and_object_id' )
 		global $wpdb;
 
 		$bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
+		$bookmark_table = esc_sql( $bookmark_table );
 		$object_id      = absint( $object_id );
 		$object_type    = esc_attr( $object_type );
 		$bookmarks      = null;
@@ -490,8 +527,13 @@ if ( ! function_exists( 'cbxwpbookmarks_delete_bookmark_by_type_and_object_id' )
 		}
 
 		if ( $object_type != '' ) {
-			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
-			$bookmarks = $wpdb->get_results( $wpdb->prepare( "SELECT log.* FROM $bookmark_table AS log WHERE log.object_id = %d AND  log.object_type = %s;", $object_id, $object_type ), 'ARRAY_A' );
+			//phpcs:disable
+			$bookmarks = $wpdb->get_results( $wpdb->prepare(
+				"SELECT log.* FROM {$bookmark_table} AS log WHERE log.object_id = %d AND log.object_type = %s",
+				$object_id,
+				$object_type
+			), 'ARRAY_A' );
+			//phpcs:enable
 		} else {
 			//todo:  Need to write the code here
 		}

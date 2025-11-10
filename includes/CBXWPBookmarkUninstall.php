@@ -1,5 +1,5 @@
 <?php
-namespace Cbx\Bookmark;
+namespace CBXWPBookmark;
 
 // If this file is called directly, abort.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -89,8 +89,10 @@ class CBXWPBookmarkUninstall {
 				global $wpdb;
 
 				foreach ( $table_names as $table_name ) {
+					$escaped_table = esc_sql( $table_name );
+
 					//phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.SchemaChange, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
-					$query_result = $wpdb->query( "DROP TABLE IF EXISTS {$table_name}" );
+					$query_result  = $wpdb->query( "DROP TABLE IF EXISTS `{$escaped_table}`" );
 				}
 
 				//delete from migration table

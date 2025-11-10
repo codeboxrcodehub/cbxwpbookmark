@@ -1,13 +1,13 @@
 <?php
-namespace Cbx\Bookmark;
+namespace CBXWPBookmark;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-use Cbx\Bookmark\CBXWPBookmarkSettings;
-//use Cbx\Bookmark\Helpers\CBXWPBookmarkHelper;
+use CBXWPBookmark\CBXWPBookmarkSettings;
+//use CBXWPBookmark\Helpers\CBXWPBookmarkHelper;
 
 /**
  * The customizer specific functionality of the plugin.
@@ -369,10 +369,10 @@ class CBXWPBookmarkShortcodes {
 				if ( $bookmark_mode == 'user_cat' ) {
 					//same user seeing
 					if ( $privacy != 2 ) {
-						//phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+						//phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
 						$cats = $wpdb->get_results( $wpdb->prepare( "SELECT *  FROM  {$category_table} WHERE user_id = %d AND privacy = %d", $userid, intval( $privacy ) ), ARRAY_A );
 					} else {
-						// phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+						// phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
 						$cats = $wpdb->get_results( $wpdb->prepare( "SELECT *  FROM  {$category_table} WHERE user_id = %d", $userid ), ARRAY_A );
 					}
 
@@ -383,7 +383,7 @@ class CBXWPBookmarkShortcodes {
 						}
 
 						$cats_ids_placeholders = implode( ',', array_fill( 0, count( $cats_ids ), '%d' ) );
-						/* phpcs:disable WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQLPlaceholders.UnfinishedPrepare */
+						// phpcs:disable WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQLPlaceholders.UnfinishedPrepare, PluginCheck.Security.DirectDB.UnescapedDBParameter
 						$cat_sql = $wpdb->prepare( "AND cat_id IN ({$cats_ids_placeholders})", $cats_ids );
 					}
 				}

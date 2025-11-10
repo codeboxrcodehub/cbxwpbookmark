@@ -29,7 +29,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-//use Cbx\Bookmark\Helpers\CBXWPBookmarkHelper;
+//use CBXWPBookmark\Helpers\CBXWPBookmarkHelper;
 
 defined( 'CBXWPBOOKMARK_PLUGIN_NAME' ) or define( 'CBXWPBOOKMARK_PLUGIN_NAME', 'cbxwpbookmark' );
 defined( 'CBXWPBOOKMARK_PLUGIN_VERSION' ) or define( 'CBXWPBOOKMARK_PLUGIN_VERSION', '2.0.0' );
@@ -49,15 +49,14 @@ if ( ! class_exists( 'CBXWPBookmark', false ) ) {
 	include_once CBXWPBOOKMARK_ROOT_PATH . 'includes/CBXWPBookmark.php';
 }
 
-register_activation_hook( __FILE__, 'activate_cbxwpbookmark' );
-register_deactivation_hook( __FILE__, 'deactivate_cbxwpbookmark' );
+register_activation_hook( __FILE__, 'cbxwpbookmark_activate' );
+register_deactivation_hook( __FILE__, 'cbxwpbookmark_deactivate' );
 
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-cbxwpbookmark-activator.php
  */
-function activate_cbxwpbookmark() {
-
+function cbxwpbookmark_activate() {
 	$wp_version  = CBXWPBOOKMARK_WP_MIN_VERSION;
 	$php_version = CBXWPBOOKMARK_PHP_MIN_VERSION;
 
@@ -82,16 +81,16 @@ function activate_cbxwpbookmark() {
 	CBXWPBookmarkHelper::activate();
 
 	CBXWPBookmarkHelper::customizer_default_adjust( true );
-}//end memthod activate_cbxwpbookmark
+}//end memthod cbxwpbookmark_activate
 
 /**
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-cbxwpbookmark-deactivator.php
  */
-function deactivate_cbxwpbookmark() {
+function cbxwpbookmark_deactivate() {
 	//require_once plugin_dir_path( __FILE__ ) . 'includes/class-cbxwpbookmark-deactivator.php';
 	CBXWPBookmarkHelper::deactivate();
-}//end method deactivate_cbxwpbookmark
+}//end method cbxwpbookmark_deactivate
 
 /**
  * Checking wp version
@@ -135,7 +134,7 @@ function cbxwpbookmark_core() { // phpcs:ignore WordPress.NamingConventions.Vali
 	global $cbxwpbookmark_core;
 
 	if ( ! isset( $cbxwpbookmark_core ) ) {
-		$cbxwpbookmark_core = run_cbxwpbookmark_core();
+		$cbxwpbookmark_core = cbxwpbookmark_run_core();
 	}
 
 	return $cbxwpbookmark_core;
@@ -158,8 +157,8 @@ function cbxwpbookmark_core() { // phpcs:ignore WordPress.NamingConventions.Vali
  *
  * @since    1.7.13
  */
-function run_cbxwpbookmark_core() {
+function cbxwpbookmark_run_core() {
 	return CBXWPBookmark::instance();
-}//end function run_cbxwpbookmark_core
+}//end function cbxwpbookmark_run_core
 
-$GLOBALS['cbxwpbookmark_core'] = run_cbxwpbookmark_core();
+$GLOBALS['cbxwpbookmark_core'] = cbxwpbookmark_run_core();

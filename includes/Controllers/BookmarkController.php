@@ -1,14 +1,14 @@
 <?php
-namespace Cbx\Bookmark\Controllers;
+namespace CBXWPBookmark\Controllers;
 
 // If this file is called directly, abort.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-use Cbx\Bookmark\CBXWPBookmarkSettings;
-//use Cbx\Bookmark\Helpers\CBXWPBookmarkHelper;
-use Cbx\Bookmark\Models\Bookmark;
+use CBXWPBookmark\CBXWPBookmarkSettings;
+//use CBXWPBookmark\Helpers\CBXWPBookmarkHelper;
+use CBXWPBookmark\Models\Bookmark;
 use Exception;
 use WP_REST_Request;
 use WP_REST_Response;

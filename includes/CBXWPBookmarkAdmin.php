@@ -1,8 +1,8 @@
 <?php
-namespace Cbx\Bookmark;
+namespace CBXWPBookmark;
 
-use Cbx\Bookmark\CBXWPBookmarkSettings;
-//use Cbx\Bookmark\Helpers\CBXWPBookmarkHelper;
+use CBXWPBookmark\CBXWPBookmarkSettings;
+//use CBXWPBookmark\Helpers\CBXWPBookmarkHelper;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
@@ -809,10 +809,6 @@ class CBXWPBookmarkAdmin {
 	public function cbxwpbookmark_autocreate_page() {
 		check_ajax_referer( 'cbxbookmarknonce', 'security' );
 
-		if ( ! class_exists( 'CBXWPBookmark_Activator' ) ) {
-			require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-cbxwpbookmark-activator.php';
-		}
-
 		//create pages
 		\CBXWPBookmarkHelper::cbxbookmark_create_pages(); //create the shortcode page
 
@@ -840,8 +836,6 @@ class CBXWPBookmarkAdmin {
 
 			// Update the saved version
 			update_option('cbxwpbookmark_version', CBXWPBOOKMARK_PLUGIN_VERSION);
-
-			//deactivate mycred addon
 		}
 	}//end plugin_upgrader_process_complete
 
@@ -970,6 +964,7 @@ class CBXWPBookmarkAdmin {
 		}
 
 		//if the pro addon is active or installed
+		//phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 		if ( in_array( 'cbxwpbookmarkaddon/cbxwpbookmarkaddon.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) || defined( 'CBXWPBOOKMARKADDON_PLUGIN_NAME' ) ) {
 			//plugin is activated
 
@@ -986,18 +981,6 @@ class CBXWPBookmarkAdmin {
 			/* translators: %s: bookmark product description url */
 			echo '<div style="border-left-color: #005ae0;" class="notice notice-success is-dismissible"><p>' . sprintf( wp_kses( __( '<a target="_blank" href="%s">CBX Bookmark Pro Addon</a> has extended features, settings, widgets and shortcodes. try it  - Codeboxr Team', 'cbxwpbookmark' ), [ 'a' => [ 'href' => [], 'target' => [] ] ] ), 'https://codeboxr.com/product/cbx-wordpress-bookmark/' ) . '</p></div>';
 		}
-
-
-		//if the mycred addon is active or installed
-		if ( in_array( 'cbxwpbookmarkmycred/cbxwpbookmarkmycred.php.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) || defined( 'CBXWPBOOKMARKMYCRED_PLUGIN_NAME' ) ) {
-			//plugin is activated
-
-			//$plugin_version = CBXWPBOOKMARKMYCRED_PLUGIN_VERSION;
-		} else {
-			/* translators: %s: bookmark mycred plugin description url */
-			echo '<div style="border-left-color: #005ae0;" class="notice notice-success is-dismissible"><p>' . sprintf( wp_kses( __( '<a target="_blank" href="%s">CBX Bookmark myCred Addon</a> has myCred integration. try it  - Codeboxr Team', 'cbxwpbookmark' ), [ 'a' => [ 'href' => [], 'target' => [] ] ] ), 'https://codeboxr.com/product/cbx-bookmark-mycred-addon/' ) . '</p></div>';
-		}
-
 	}//end pro_addon_compatibility_campaign
 
 
@@ -1042,6 +1025,7 @@ class CBXWPBookmarkAdmin {
 			$links_array[] = '<a target="_blank" style="color:#005ae0 !important; font-weight: bold;" href="https://codeboxr.com/doc/cbxwpbookmark-doc/" aria-label="' . esc_attr__( 'Documentation', 'cbxwpbookmark' ) . '">' . esc_html__( 'Documentation', 'cbxwpbookmark' ) . '</a>';
 
 
+			//phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 			if ( in_array( 'cbxwpbookmarkaddon/cbxwpbookmarkaddon.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) || defined( 'CBXWPBOOKMARKADDON_PLUGIN_NAME' ) ) {
 
 			} else {
@@ -1175,8 +1159,10 @@ class CBXWPBookmarkAdmin {
 			global $wpdb;
 
 			foreach ( $table_names as $table_name ) {
+				$escaped_table = esc_sql( $table_name );
+
 				//phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.SchemaChange, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
-				$query_result = $wpdb->query( "DROP TABLE IF EXISTS {$table_name}" );
+				$query_result  = $wpdb->query( "DROP TABLE IF EXISTS `{$escaped_table}`" );
 			}
 
 			do_action( 'cbxwpbookmark_plugin_tables_deleted_after', $table_names );

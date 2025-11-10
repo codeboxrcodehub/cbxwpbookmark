@@ -1,10 +1,10 @@
 <?php
-namespace Cbx\Bookmark;
+namespace CBXWPBookmark;
 
-use Cbx\Bookmark\Widgets\Block\CBXWPBookmarkBtnBlock;
-use Cbx\Bookmark\Widgets\Block\CBXWPBookmarkCategoryBlock;
-use Cbx\Bookmark\Widgets\Block\CBXWPBookmarkMostBlock;
-use Cbx\Bookmark\Widgets\Block\CBXWPBookmarkMyBookmarkBlock;
+use CBXWPBookmark\Widgets\Block\CBXWPBookmarkBtnBlock;
+use CBXWPBookmark\Widgets\Block\CBXWPBookmarkCategoryBlock;
+use CBXWPBookmark\Widgets\Block\CBXWPBookmarkMostBlock;
+use CBXWPBookmark\Widgets\Block\CBXWPBookmarkMyBookmarkBlock;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {

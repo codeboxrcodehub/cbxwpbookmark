@@ -14,8 +14,8 @@ if ( ! defined( 'WPINC' ) ) {
 }
 ?>
 <?php
-$plugin_url = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/product/cbx-wordpress-bookmark/' );
-$doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbookmark-doc/' );
+$cbxwpbookmark_plugin_url = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/product/cbx-wordpress-bookmark/' );
+$cbxwpbookmark_doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbookmark-doc/' );
 ?>
 <div class="wrap cbx-chota cbxwpbookmark-page-wrapper cbxwpbookmark-support-wrapper" id="cbxwpbookmark-support">
     <div class="container">
@@ -162,11 +162,12 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                     </div>
                     <div class="content">
                         <?php
-                        $items = CBXWPBookmarkHelper::codeboxr_news_feed();
-                        if ( $items !== false && count( $items ) > 0 ) {
-                            foreach ( $items as $item ) {
-                                $url   = $item['url'];
-                                $title = $item['title'];
+                        $cbxwpbookmark_items = CBXWPBookmarkHelper::codeboxr_news_feed();
+                        if ( $cbxwpbookmark_items !== false && count( $cbxwpbookmark_items ) > 0 ) {
+                            //phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+                            foreach ( $cbxwpbookmark_items as $item ) {
+                                $url   = $item['url']; //phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+                                $title = $item['title'];//phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 
                                 echo '<div class="cbx-backend-settings-row">';
                                 echo '<a href="' . esc_url( $url ) . '" target="_blank">';
@@ -176,7 +177,7 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                                                       fill="currentColor"/>
                                             </svg>';
 
-                                //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                                //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
                                 echo $title;
                                 echo '</a>';
                                 echo '</div>';
@@ -195,7 +196,7 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                     </div>
                     <div class="content">
                         <div class="cbx-backend-settings-row">
-                            <a href="<?php echo esc_url( $plugin_url ); ?>" target="_blank">
+                            <a href="<?php echo esc_url( $cbxwpbookmark_plugin_url ); ?>" target="_blank">
                                 <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <defs/>
                                     <path d="M10 2.6c-4.4 0-7.9 3.6-7.9 7.9s3.6 7.9 7.9 7.9 7.9-3.6 7.9-7.9-3.5-7.9-7.9-7.9zm1.7 12.3c-.4.2-.7.3-1 .4-.2.1-.5.1-.8.1-.5 0-.9-.1-1.2-.4-.3-.2-.4-.5-.4-.9v-.4c0-.2.1-.3.1-.5l.5-1.8c0-.2.1-.4.1-.5v-.4c0-.2 0-.4-.1-.5-.1-.1-.3-.2-.5-.2-.1 0-.3 0-.4.1-.2 0-.3.1-.4.1l.1-.6c.3-.1.7-.3 1-.3.3-.1.6-.2.9-.2.5 0 .9.1 1.1.4.3.2.4.5.4.9v.4c0 .2-.1.4-.1.5l-.5 1.9c0 .1-.1.3-.1.5v.4c0 .2.1.4.2.5.1.1.3.1.6.1.1 0 .3 0 .4-.1.2 0 .3-.1.3-.1l-.2.6zm-.1-7.3c-.2.2-.5.3-.9.3-.3 0-.6-.1-.9-.3-.2-.2-.3-.5-.3-.8 0-.3.1-.6.4-.8.2-.2.5-.3.9-.3.3 0 .6.1.9.3.2.2.4.5.4.8-.2.3-.3.6-.5.8z"
@@ -204,7 +205,7 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                                 <?php esc_html_e( 'CBX Bookmark Plugin Details', 'cbxwpbookmark' ); ?> </a>
                         </div>
                         <div class="cbx-backend-settings-row">
-                            <a href="<?php echo esc_url( $doc_url ); ?>" target="_blank">
+                            <a href="<?php echo esc_url( $cbxwpbookmark_doc_url ); ?>" target="_blank">
                                 <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M14.5834 3.75C12.9584 3.75 11.2084 4.08333 10 5C8.79171 4.08333 7.04171 3.75 5.41671 3.75C4.20837 3.75 2.92504 3.93333 1.85004 4.40833C1.24171 4.68333 0.833374 5.275 0.833374 5.95V15.35C0.833374 16.4333 1.85004 17.2333 2.90004 16.9667C3.71671 16.7583 4.58337 16.6667 5.41671 16.6667C6.71671 16.6667 8.10004 16.8833 9.21671 17.4333C9.71671 17.6833 10.2834 17.6833 10.775 17.4333C11.8917 16.875 13.275 16.6667 14.575 16.6667C15.4084 16.6667 16.275 16.7583 17.0917 16.9667C18.1417 17.2417 19.1584 16.4417 19.1584 15.35V5.95C19.1584 5.275 18.75 4.68333 18.1417 4.40833C17.075 3.93333 15.7917 3.75 14.5834 3.75ZM17.5 14.3583C17.5 14.8833 17.0167 15.2667 16.5 15.175C15.875 15.0583 15.225 15.0083 14.5834 15.0083C13.1667 15.0083 11.125 15.55 10 16.2583V6.66667C11.125 5.95833 13.1667 5.41667 14.5834 5.41667C15.35 5.41667 16.1084 5.49167 16.8334 5.65C17.2167 5.73333 17.5 6.075 17.5 6.46667V14.3583Z"
                                           fill="currentColor"></path>
@@ -251,7 +252,7 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                     </div>
                     <div class="content">
                         <?php
-                        $top_plugins = [
+                        $cbxwpbookmark_top_plugins = [
                                 'https://codeboxr.com/product/cbx-changelog-for-wordpress/'                           => 'CBX Changelog',
                                 'https://codeboxr.com/product/cbx-tour-user-walkthroughs-guided-tours-for-wordpress/' => 'CBX Tour – User Walkthroughs/Guided Tours',
                                 'https://codeboxr.com/product/cbx-currency-converter-for-wordpress/'                  => 'CBX Currency Converter',
@@ -264,7 +265,7 @@ $doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com/doc/cbxwpbook
                                 'https://codeboxr.com/product/comfort-restaurant-booking-for-wordpress/'              => 'Comfort Restaurant Booking for WordPress'
                         ];
 
-                        foreach ( $top_plugins as $link => $title ) {
+                        foreach ( $cbxwpbookmark_top_plugins as $link => $title ) {
                             echo '<div class="cbx-backend-settings-row">
                             <a href="' . esc_url( $link ) . '" target="_blank">
                                 <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

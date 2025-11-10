@@ -1,5 +1,5 @@
 <?php
-namespace Cbx\Bookmark\Widgets\Vc;
+namespace CBXWPBookmark\Widgets\Vc;
 
 // Prevent direct file access
 if ( ! defined( 'ABSPATH' ) ) {

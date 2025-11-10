@@ -1,6 +1,6 @@
 <?php
 
-namespace Cbx\Bookmark\Widgets\Elementor;
+namespace CBXWPBookmark\Widgets\Elementor;
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Class CBXWPBookmarkMyBookmarkElemWidget
  *
- * @package Cbx\Bookmark\Widgets\Elementor
+ * @package CBXWPBookmark\Widgets\Elementor
  */
 class CBXWPBookmarkMyBookmarkElemWidget extends Widget_Base {
 

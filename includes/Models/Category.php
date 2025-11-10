@@ -1,5 +1,5 @@
 <?php
-namespace Cbx\Bookmark\Models;
+namespace CBXWPBookmark\Models;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
 

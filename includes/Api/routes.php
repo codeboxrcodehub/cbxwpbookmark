@@ -4,13 +4,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-use Cbx\Bookmark\Api\CbxRoute;
-use Cbx\Bookmark\Controllers\BookmarkController;
-use Cbx\Bookmark\Controllers\BookmarkFrontController;
-use Cbx\Bookmark\Controllers\CategoryController;
-use Cbx\Bookmark\Controllers\CategoryFrontController;
-use Cbx\Bookmark\Controllers\AdminDashboardController;
-use Cbx\Bookmark\Controllers\FrontDashboardController;
+use CBXWPBookmark\Api\CbxRoute;
+use CBXWPBookmark\Controllers\BookmarkController;
+use CBXWPBookmark\Controllers\BookmarkFrontController;
+use CBXWPBookmark\Controllers\CategoryController;
+use CBXWPBookmark\Controllers\CategoryFrontController;
+use CBXWPBookmark\Controllers\AdminDashboardController;
+use CBXWPBookmark\Controllers\FrontDashboardController;
 
 //routes admin
 CbxRoute::middleware( 'cbxwpbookmark_log_manage' )->get( 'v1/admin/get-bookmarks', [ BookmarkController::class, 'index' ] );

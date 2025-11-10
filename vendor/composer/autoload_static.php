@@ -57,9 +57,9 @@ class ComposerStaticInit0224a415ee21e1bdd14b3e0d377e97c6
         ),
         'C' => 
         array (
-            'Cbx\\Bookmark\\' => 13,
             'Carbon\\Doctrine\\' => 16,
             'Carbon\\' => 7,
+            'CBXWPBookmark\\' => 14,
         ),
     );
 
@@ -110,9 +110,9 @@ class ComposerStaticInit0224a415ee21e1bdd14b3e0d377e97c6
         ),
         'Illuminate\\Support\\' => 
         array (
-            0 => __DIR__ . '/..' . '/illuminate/collections',
-            1 => __DIR__ . '/..' . '/illuminate/macroable',
-            2 => __DIR__ . '/..' . '/illuminate/support',
+            0 => __DIR__ . '/..' . '/illuminate/support',
+            1 => __DIR__ . '/..' . '/illuminate/collections',
+            2 => __DIR__ . '/..' . '/illuminate/macroable',
         ),
         'Illuminate\\Pagination\\' => 
         array (
@@ -134,10 +134,6 @@ class ComposerStaticInit0224a415ee21e1bdd14b3e0d377e97c6
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/src',
         ),
-        'Cbx\\Bookmark\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/includes',
-        ),
         'Carbon\\Doctrine\\' => 
         array (
             0 => __DIR__ . '/..' . '/carbonphp/carbon-doctrine-types/src/Carbon/Doctrine',
@@ -145,6 +141,10 @@ class ComposerStaticInit0224a415ee21e1bdd14b3e0d377e97c6
         'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
+        ),
+        'CBXWPBookmark\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/includes',
         ),
     );
 

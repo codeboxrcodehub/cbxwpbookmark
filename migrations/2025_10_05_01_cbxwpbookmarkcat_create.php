@@ -6,12 +6,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 
-if ( ! class_exists( 'CreateCbxBookmarkCategoryTable' ) ) {
+if ( ! class_exists( 'CBXWPBookmarkCreateCatTable' ) ) {
 	/**
-	 * Class CreateCbxBookmarkCategoryTable
-	 * @since 1.0.0
+	 * Class CBXWPBookmarkCreateCatTable
+	 * @since 2.0.0
 	 */
-	class CreateCbxBookmarkCategoryTable {
+	class CBXWPBookmarkCreateCatTable {
 
 		/**
 		 * Run migration
@@ -55,11 +55,11 @@ if ( ! class_exists( 'CreateCbxBookmarkCategoryTable' ) ) {
 			}
 		}//end method down
 
-	}//end class CreateCbxBookmarkCategoryTable
+	}//end class CBXWPBookmarkCreateCatTable
 }
 
 if ( isset( $action ) && $action == 'up' ) {
-	CreateCbxBookmarkCategoryTable::up();
+	CBXWPBookmarkCreateCatTable::up();
 } elseif ( isset( $action ) && $action == 'drop' ) {
-	CreateCbxBookmarkCategoryTable::down();
+	CBXWPBookmarkCreateCatTable::down();
 }

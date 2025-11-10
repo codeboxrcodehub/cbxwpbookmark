@@ -1,11 +1,11 @@
 <?php
-namespace Cbx\Bookmark\Widgets\Block;
+namespace CBXWPBookmark\Widgets\Block;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-//use Cbx\Bookmark\Helpers\CBXWPBookmarkHelper;
+//use CBXWPBookmark\Helpers\CBXWPBookmarkHelper;
 
 /**
  * CBX Bookmarks - My Bookmark Block Widget

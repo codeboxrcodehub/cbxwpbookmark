@@ -1,16 +1,16 @@
 <?php
-namespace Cbx\Bookmark;
+namespace CBXWPBookmark;
 
 // If this file is called directly, abort.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-//use Cbx\Bookmark\Helpers\CBXWPBookmarkHelper;
+//use CBXWPBookmark\Helpers\CBXWPBookmarkHelper;
 
 /**
  * Class CBXWPBookmarkMisc
- * @package Cbx\Bookmark
+ * @package CBXWPBookmark
  * @since 1.0.0
  */
 class CBXWPBookmarkMisc {

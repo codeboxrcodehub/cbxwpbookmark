@@ -1,13 +1,13 @@
 <?php
-namespace Cbx\Bookmark\Controllers;
+namespace CBXWPBookmark\Controllers;
 // If this file is called directly, abort.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-//use Cbx\Bookmark\Helpers\CBXWPBookmarkHelper;
+//use CBXWPBookmark\Helpers\CBXWPBookmarkHelper;
 use Exception;
-use Cbx\Bookmark\MigrationManage;
+use CBXWPBookmark\MigrationManage;
 
 class AdminDashboardController {
 

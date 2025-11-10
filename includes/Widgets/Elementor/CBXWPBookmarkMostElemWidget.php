@@ -1,6 +1,6 @@
 <?php
 
-namespace Cbx\Bookmark\Widgets\Elementor;
+namespace CBXWPBookmark\Widgets\Elementor;
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * CBX Bookmark - Most Bookmarked post elementor widget
  *
  * Class CBXWPBookmarkMostElemWidget
- * @package Cbx\Bookmark\Widgets\Elementor
+ * @package CBXWPBookmark\Widgets\Elementor
  */
 class CBXWPBookmarkMostElemWidget extends \Elementor\Widget_Base {
 

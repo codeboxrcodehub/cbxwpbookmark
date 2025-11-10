@@ -7,14 +7,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 
-if ( ! class_exists( 'CreateCBXMigrationsTable' ) ) {
+if ( ! class_exists( 'CBXWPBookmarkCreateMigrations' ) ) {
 	/**
 	 * Common migration class for migration table and other tables(codeboxr's plugin or 3rd party if anyone use)
 	 *
-	 * Class CBXWPMigrationsTable
-	 * @since 1.0.0
+	 * Class CBXWPBookmarkCreateMigrations
+	 * @since 2.0.0
 	 */
-	class CreateCBXMigrationsTable {
+	class CBXWPBookmarkCreateMigrations {
 
 		/**
 		 * Run migrations
@@ -54,12 +54,12 @@ if ( ! class_exists( 'CreateCBXMigrationsTable' ) ) {
 			}
 		}//end method down
 
-	}//end class CreateCBXMigrationsTable
+	}//end class CBXWPBookmarkCreateMigrations
 }
 
 
 if ( isset( $action ) && $action == 'up' ) {
-	CreateCBXMigrationsTable::up();
+	CBXWPBookmarkCreateMigrations::up();
 } elseif ( isset( $action ) && $action == 'drop' ) {
-	CreateCBXMigrationsTable::down();
+	CBXWPBookmarkCreateMigrations::down();
 }

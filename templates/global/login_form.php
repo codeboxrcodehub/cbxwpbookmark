@@ -23,47 +23,47 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php
 if ( ! is_user_logged_in() ):
 	if ( is_singular() ) {
-		$login_url    = wp_login_url( get_permalink() );
-		$redirect_url = get_permalink();
+		$cbxwpbookmark_login_url    = wp_login_url( get_permalink() );
+		$cbxwpbookmark_redirect_url = get_permalink();
 	} else {
 		global $wp;
-		//$login_url =  wp_login_url( home_url( $wp->request ) );
-		$login_url    = wp_login_url( home_url( add_query_arg( [], $wp->request ) ) );
-		$redirect_url = home_url( add_query_arg( [], $wp->request ) );
+		//$cbxwpbookmark_login_url =  wp_login_url( home_url( $wp->request ) );
+		$cbxwpbookmark_login_url    = wp_login_url( home_url( add_query_arg( [], $wp->request ) ) );
+		$cbxwpbookmark_redirect_url = home_url( add_query_arg( [], $wp->request ) );
 	}
 
-	$guest_html = '<div class="cbx-guest-wrap cbxwpbookmark-guest-wrap">';
+	$cbxwpbookmark_guest_html = '<div class="cbx-guest-wrap cbxwpbookmark-guest-wrap">';
 
 	if ( isset( $inline ) && $inline == 1 ) {
-		$guest_html .= '<p class="cbx-title-login cbxwpbookmark-title-login">' . wp_kses( __( 'Do you have account, <a role="button" class="guest-login-trigger cbxwpbookmark-guest-login-trigger" href="#">please login</a>', 'cbxwpbookmark' ), [ 'a' => [ 'href' => [], 'role' => [], 'class' => [], 'style' => [] ] ] ) . '</p>';
+		$cbxwpbookmark_guest_html .= '<p class="cbx-title-login cbxwpbookmark-title-login">' . wp_kses( __( 'Do you have account, <a role="button" class="guest-login-trigger cbxwpbookmark-guest-login-trigger" href="#">please login</a>', 'cbxwpbookmark' ), [ 'a' => [ 'href' => [], 'role' => [], 'class' => [], 'style' => [] ] ] ) . '</p>';
 	}
 
-	$guest_login_html = wp_login_form( [
-		'redirect' => $redirect_url,
+	$cbxwpbookmark_guest_login_html = wp_login_form( [
+		'redirect' => $cbxwpbookmark_redirect_url,
 		'echo'     => false
 	] );
 
 
-	$guest_login_html = apply_filters( 'cbxwpbookmark_login_html', $guest_login_html, $login_url, $redirect_url );
+	$cbxwpbookmark_guest_login_html = apply_filters( 'cbxwpbookmark_login_html', $cbxwpbookmark_guest_login_html, $cbxwpbookmark_login_url, $cbxwpbookmark_redirect_url );
 
 
-	$guest_register_html = '';
-	$guest_show_register = absint( $settings->get_field( 'guest_show_register', 'cbxwpbookmark_basics', 1 ) );
-	if ( $guest_show_register ) {
+	$cbxwpbookmark_guest_register_html = '';
+	$cbxwpbookmark_guest_show_register = absint( $settings->get_field( 'guest_show_register', 'cbxwpbookmark_basics', 1 ) );
+	if ( $cbxwpbookmark_guest_show_register ) {
 		if ( get_option( 'users_can_register' ) ) {
-			$register_url = add_query_arg( 'redirect_to', urlencode( $redirect_url ), wp_registration_url() );
+			$cbxwpbookmark_register_url = add_query_arg( 'redirect_to', urlencode( $cbxwpbookmark_redirect_url ), wp_registration_url() );
 			/* translators: %s: registration url */
-			$guest_register_html .= '<p class="cbx-guest-register cbxwpbookmark-guest-register">' . sprintf( wp_kses( __( 'No account yet? <a href="%1$s">Register</a>', 'cbxwpbookmark' ), [ 'a' => [ 'href' => [] ] ] ), $register_url ) . '</p>';
+			$cbxwpbookmark_guest_register_html .= '<p class="cbx-guest-register cbxwpbookmark-guest-register">' . sprintf( wp_kses( __( 'No account yet? <a href="%1$s">Register</a>', 'cbxwpbookmark' ), [ 'a' => [ 'href' => [] ] ] ), $cbxwpbookmark_register_url ) . '</p>';
 		}
 
-		$guest_register_html = apply_filters( 'cbxwpbookmark_register_html', $guest_register_html, $redirect_url );
+		$cbxwpbookmark_guest_register_html = apply_filters( 'cbxwpbookmark_register_html', $cbxwpbookmark_guest_register_html, $cbxwpbookmark_redirect_url );
 	}//end show register
 
-	$guest_html .= '<div class="cbx-guest-login-wrap cbxwpbookmark-guest-login-wrap">' . $guest_login_html . $guest_register_html . '</div>';
-	$guest_html .= '</div>';
+	$cbxwpbookmark_guest_html .= '<div class="cbx-guest-login-wrap cbxwpbookmark-guest-login-wrap">' . $cbxwpbookmark_guest_login_html . $cbxwpbookmark_guest_register_html . '</div>';
+	$cbxwpbookmark_guest_html .= '</div>';
 
 	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	echo '<div class="cbx-chota"><div class="container"><div class="row"><div class="col-12">' . $guest_html . '</div></div></div></div>';
+	echo '<div class="cbx-chota"><div class="container"><div class="row"><div class="col-12">' . $cbxwpbookmark_guest_html . '</div></div></div></div>';
 endif;
 if ( isset( $inline ) && $inline == 1 ):
 	?>

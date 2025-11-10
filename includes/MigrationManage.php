@@ -1,19 +1,19 @@
 <?php
-namespace Cbx\Bookmark;
+namespace CBXWPBookmark;
 
 // If this file is called directly, abort.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-use Cbx\Bookmark\Models\Migrations;
+use CBXWPBookmark\Models\Migrations;
 use Exception;
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 /**
  * Manage migration and database table
  * Class MigrationManage
- * @package Cbx\Bookmark
+ * @package CBXWPBookmark
  * @since 1.0.0
  */
 class MigrationManage {

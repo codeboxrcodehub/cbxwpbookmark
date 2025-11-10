@@ -1,5 +1,5 @@
 <?php
-namespace Cbx\Bookmark;
+namespace CBXWPBookmark;
 
 // If this file is called directly, abort.
 if ( ! defined( 'ABSPATH' ) ) {

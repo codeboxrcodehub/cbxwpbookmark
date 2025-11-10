@@ -1,8 +1,8 @@
 <?php
 
-namespace Cbx\Bookmark\Models;
+namespace CBXWPBookmark\Models;
 
-//use Cbx\Bookmark\Helpers\CBXWPBookmarkHelper;
+//use CBXWPBookmark\Helpers\CBXWPBookmarkHelper;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
 /**

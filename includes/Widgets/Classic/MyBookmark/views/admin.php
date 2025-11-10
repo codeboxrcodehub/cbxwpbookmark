@@ -10,7 +10,7 @@
            name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>"/>
 </p>
 <?php
-$order = strtoupper( $order );
+$order = strtoupper( $order );//phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 ?>
 <p>
     <label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php esc_html_e( 'Order', 'cbxwpbookmark' ); ?>
@@ -40,7 +40,7 @@ $order = strtoupper( $order );
            name="<?php echo esc_attr( $this->get_field_name( 'limit' ) ); ?>" type="text" value="<?php echo absint( $limit ); ?>"/>
 </p>
 <?php
-$object_types = CBXWPBookmarkHelper::object_types();
+$object_types = CBXWPBookmarkHelper::object_types();//phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 ?>
 
 <p>
@@ -54,9 +54,10 @@ $object_types = CBXWPBookmarkHelper::object_types();
 			<?php
 			if ( isset( $object_types['builtin']['types'] ) ) {
 				echo '<optgroup label="' . esc_html__( 'Built-in Post Types', 'cbxwpbookmark' ) . '">';
+                //phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 				foreach ( $object_types['builtin']['types'] as $type_slug => $type_name ) {
-					$type_slug = esc_attr( $type_slug );
-					$selected  = in_array( $type_slug, $type ) ? ' selected="selected" ' : '';
+					$type_slug = esc_attr( $type_slug );//phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+					$selected  = in_array( $type_slug, $type ) ? ' selected="selected" ' : '';//phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 					echo '<option value="' . esc_attr( $type_slug ) . '" ' . $selected . ' >' . esc_attr( $type_name ) . '</option>'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				}
 				echo '</optgroup>';
@@ -64,9 +65,10 @@ $object_types = CBXWPBookmarkHelper::object_types();
 
 			if ( isset( $object_types['custom']['types'] ) ) {
 				echo '<optgroup label="' . esc_html__( 'Built-in Post Types', 'cbxwpbookmark' ) . '">';
+                //phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 				foreach ( $object_types['custom']['types'] as $type_slug => $type_name ) {
-					$type_slug = esc_attr( $type_slug );
-					$selected  = in_array( $type_slug, $type ) ? ' selected="selected" ' : '';
+					$type_slug = esc_attr( $type_slug );//phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+					$selected  = in_array( $type_slug, $type ) ? ' selected="selected" ' : '';//phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 					echo '<option value="' . esc_attr( $type_slug ) . '" ' . $selected . ' >' . esc_attr( $type_name ) . '</option>'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				}
 				echo '</optgroup>';

@@ -1,14 +1,14 @@
 <?php
-namespace Cbx\Bookmark\Customizer;
+namespace CBXWPBookmark\Customizer;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-use Cbx\Bookmark\Customizer\Fields\CustomizerControlCheckbox;
-use Cbx\Bookmark\Customizer\Fields\CustomizerControlSwitch;
-use Cbx\Bookmark\Customizer\Fields\CustomizerControlSelect2;
+use CBXWPBookmark\Customizer\Fields\CustomizerControlCheckbox;
+use CBXWPBookmark\Customizer\Fields\CustomizerControlSwitch;
+use CBXWPBookmark\Customizer\Fields\CustomizerControlSelect2;
 
 /**
  * The customizer specific functionality of the plugin.

@@ -1,5 +1,5 @@
 <?php
-namespace Cbx\Bookmark\Api;
+namespace CBXWPBookmark\Api;
 
 // If this file is called directly, abort.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -10,7 +10,7 @@ use WP_Error;
 
 /**
  * Class CbxRoute
- * @package Cbx\Bookmark\Api
+ * @package CBXWPBookmark\Api
  * @since 1.0.0
  */
 class CbxRoute {

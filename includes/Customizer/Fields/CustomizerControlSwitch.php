@@ -1,5 +1,5 @@
 <?php
-namespace Cbx\Bookmark\Customizer\Fields;
+namespace CBXWPBookmark\Customizer\Fields;
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {

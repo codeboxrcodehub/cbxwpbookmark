@@ -14,7 +14,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 ?>
 <?php
-$save_svg = cbxwpbookmarks_load_svg( 'icon_save' );
+$cbxwpbookmark_save_svg = cbxwpbookmarks_load_svg( 'icon_save' );
 ?>
 <div class="wrap cbx-chota cbxchota-setting-common cbx-page-wrapper cbxwpbookmark-page-wrapper cbxwpbookmark-setting-wrapper" id="cbxwpbookmark-setting">
     <div class="container">
@@ -41,7 +41,7 @@ $save_svg = cbxwpbookmarks_load_svg( 'icon_save' );
                             <i class="cbx-icon">
 								<?php
 								// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-								echo $save_svg;
+								echo $cbxwpbookmark_save_svg;
 								?>
                             </i>
                             <span class="button-label"><?php esc_html_e( 'Save Settings', 'cbxwpbookmark' ); ?></span>
