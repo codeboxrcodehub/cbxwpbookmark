@@ -3,7 +3,7 @@
         'name' => 'cbx/bookmark',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'ce38e1e6ba220fe5757f07e0014ffdbcb07e7732',
+        'reference' => '3fb5870860b9af1b286f231db7a22e84844ca016',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'cbx/bookmark' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'ce38e1e6ba220fe5757f07e0014ffdbcb07e7732',
+            'reference' => '3fb5870860b9af1b286f231db7a22e84844ca016',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

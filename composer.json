@@ -26,5 +26,6 @@
     "symfony/translation-contracts": "*"
   },
   "config": {
+    "platform-check": false
   }
 }

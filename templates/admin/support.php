@@ -102,6 +102,14 @@ $cbxwpbookmark_doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com
                     <div class="content">
                         <div class="cbx-backend-settings-row">
                             <p>
+                                Version - 2.0.1
+                            </p>
+                            <ul>
+                                <li>[fixed] Composer loading issue solved</li>
+                            </ul>
+                        </div>
+                        <div class="cbx-backend-settings-row">
+                            <p>
                                 Version - 2.0.0
                             </p>
                             <ul>
@@ -132,6 +140,14 @@ $cbxwpbookmark_doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com
                         </div>
                     </div>
                     <div class="content">
+                        <div class="cbx-backend-settings-row">
+                            <p>
+                                Version - 2.0.1
+                            </p>
+                            <ul>
+                                <li>[fixed] Composer loading issue solved</li>
+                            </ul>
+                        </div>
                         <div class="cbx-backend-settings-row">
                             <p>
                                 Version - 2.0.0

@@ -3,7 +3,7 @@ Contributors: codeboxr, manchumahara
 Tags: bookmark,favorite,collection,user collection,user bookmark
 Requires at least: 5.3
 Tested up to: 6.8
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -169,6 +169,9 @@ How to install the plugin and get it working.
 == Screenshots ==
 
 == Changelog ==
+= 2.0.1 =
+* [fixed] Composer loading issue solved
+
 = 2.0.0 =
 * [updated] PHP version compatibility check updated
 * [fixed] PHP file direct access check issue checked for all files
