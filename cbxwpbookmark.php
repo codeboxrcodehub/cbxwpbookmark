@@ -15,7 +15,7 @@
  * Plugin Name:       CBX Bookmark & Favorite
  * Plugin URI:        https://codeboxr.com/product/cbx-wordpress-bookmark
  * Description:       List/category based bookmark for WordPress, create your own private or public list of favorite posts, page, custom object
- * Version:           2.0.1
+ * Version:           2.0.2
  * Author:            Codeboxr Team
  * Author URI:        https://codeboxr.com
  * License:           GPL-2.0+
@@ -31,7 +31,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 
 defined( 'CBXWPBOOKMARK_PLUGIN_NAME' ) or define( 'CBXWPBOOKMARK_PLUGIN_NAME', 'cbxwpbookmark' );
-defined( 'CBXWPBOOKMARK_PLUGIN_VERSION' ) or define( 'CBXWPBOOKMARK_PLUGIN_VERSION', '2.0.1' );
+defined( 'CBXWPBOOKMARK_PLUGIN_VERSION' ) or define( 'CBXWPBOOKMARK_PLUGIN_VERSION', '2.0.2' );
 defined( 'CBXWPBOOKMARK_BASE_NAME' ) or define( 'CBXWPBOOKMARK_BASE_NAME', plugin_basename( __FILE__ ) );
 defined( 'CBXWPBOOKMARK_ROOT_PATH' ) or define( 'CBXWPBOOKMARK_ROOT_PATH', plugin_dir_path( __FILE__ ) );
 defined( 'CBXWPBOOKMARK_ROOT_URL' ) or define( 'CBXWPBOOKMARK_ROOT_URL', plugin_dir_url( __FILE__ ) );
@@ -41,7 +41,7 @@ defined( 'CBXWPBOOKMARK_DEV_MODE' ) or define( 'CBXWPBOOKMARK_DEV_MODE', false )
 
 defined( 'CBXWPBOOKMARK_PHP_MIN_VERSION' ) or define( 'CBXWPBOOKMARK_PHP_MIN_VERSION', '7.4' );
 defined( 'CBXWPBOOKMARK_WP_MIN_VERSION' ) or define( 'CBXWPBOOKMARK_WP_MIN_VERSION', '5.3' );
-defined( 'CBXWPBOOKMARK_PRO_VERSION' ) or define( 'CBXWPBOOKMARK_PRO_VERSION', '2.0.1' );
+defined( 'CBXWPBOOKMARK_PRO_VERSION' ) or define( 'CBXWPBOOKMARK_PRO_VERSION', '2.0.2' );
 
 
 // Include the main Bookmark class.

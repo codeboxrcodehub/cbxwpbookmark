@@ -102,6 +102,16 @@ $cbxwpbookmark_doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com
                     <div class="content">
                         <div class="cbx-backend-settings-row">
                             <p>
+                                Version - 2.0.2
+                            </p>
+                            <ul>
+                                <li>[fixed] Pro Addon compatibility checking improved</li>
+                                <li>[updated] Pro addon 2.0.2 released</li>
+                                <li>[fixed] Auto page create security issue fixed(Reported by Nabil Irawan)</li>
+                            </ul>
+                        </div>
+                        <div class="cbx-backend-settings-row">
+                            <p>
                                 Version - 2.0.1
                             </p>
                             <ul>
@@ -121,16 +131,6 @@ $cbxwpbookmark_doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com
                                 <li>[updated] Pro Addon plugin V2.0.0 released</li>
                             </ul>
                         </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.9.11
-                            </p>
-                            <ul>
-                                <li>[fixed] Deleting one category was deleting bookmarks from other category if bookmarks were in both category.</li>
-                                <li>[updated] Pro addon plugin 1.5.4 released and compatible with latest Core Plugin 1.9.11</li>
-                                <li>[improved] Minor improvements for style</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
                 <div class="cbx-backend-card dashboard-changelog">
@@ -140,6 +140,15 @@ $cbxwpbookmark_doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com
                         </div>
                     </div>
                     <div class="content">
+                        <div class="cbx-backend-settings-row">
+                            <p>
+                                Version - 2.0.2
+                            </p>
+                            <ul>
+                                <li>[updated] Misc improvement</li>
+                                <li>[updated] Core plugin 2.0.2 released</li>
+                            </ul>
+                        </div>
                         <div class="cbx-backend-settings-row">
                             <p>
                                 Version - 2.0.1

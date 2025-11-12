@@ -3,7 +3,7 @@ Contributors: codeboxr, manchumahara
 Tags: bookmark,favorite,collection,user collection,user bookmark
 Requires at least: 5.3
 Tested up to: 6.8
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -169,6 +169,11 @@ How to install the plugin and get it working.
 == Screenshots ==
 
 == Changelog ==
+= 2.0.2 =
+* [fixed] Pro Addon compatibility checking improved
+* [updated] Pro addon 2.0.2 released
+* [fixed] Auto page create security issue fixed(Reported by Nabil Irawan)
+
 = 2.0.1 =
 * [fixed] Composer loading issue solved
 

@@ -2,6 +2,8 @@
 namespace CBXWPBookmark;
 
 use CBXWPBookmark\CBXWPBookmarkSettings;
+use Exception;
+
 //use CBXWPBookmark\Helpers\CBXWPBookmarkHelper;
 
 // If this file is called directly, abort.
@@ -809,6 +811,10 @@ class CBXWPBookmarkAdmin {
 	public function cbxwpbookmark_autocreate_page() {
 		check_ajax_referer( 'cbxbookmarknonce', 'security' );
 
+		if ( ! current_user_can( 'manage_options' ) ) {
+			throw new Exception( esc_html__( 'Sorry, you don\'t have enough permission!', 'cbxwpbookmark' ) );
+		}
+
 		//create pages
 		\CBXWPBookmarkHelper::cbxbookmark_create_pages(); //create the shortcode page
 
@@ -894,7 +900,7 @@ class CBXWPBookmarkAdmin {
 		}
 
 		if ( get_transient( 'cbxwpbookmark_proaddon_deactivated' ) ) {
-			echo '<div class="notice notice-success is-dismissible" style="border-color: #6648fe !important;">';
+			echo '<div class="notice notice-warning is-dismissible" style="border-color: #6648fe !important;">';
 
 			echo '<p>';
 			esc_html_e( 'Current version of CBX Bookmark & Favorite Pro Addon is not compatible with core CBX Bookmark & Favorite. CBX Bookmark & Favorite Pro Addon is forced deactivate. Update CBX Bookmark & Favorite Pro Addon to V2.0.0 or later.', 'cbxwpbookmark' );
@@ -964,22 +970,9 @@ class CBXWPBookmarkAdmin {
 		}
 
 		//if the pro addon is active or installed
-		//phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
-		if ( in_array( 'cbxwpbookmarkaddon/cbxwpbookmarkaddon.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) || defined( 'CBXWPBOOKMARKADDON_PLUGIN_NAME' ) ) {
-			//plugin is activated
-
-			$pro_plugin_version = CBXWPBOOKMARKADDON_PLUGIN_VERSION;
-			//$core_plugin_version = CBXWPBOOKMARK_PLUGIN_VERSION;
-
-			if ( version_compare( $pro_plugin_version, '1.1.10', '<' ) ) {
-				/* translators: %s: bookmark pro plugin version */
-				echo '<div style="border-left-color: #005ae0;" class="notice notice-success is-dismissible"><p>' . sprintf( esc_html__( 'CBX Bookmark Pro Addon V%s or any previous version is not 100%% compatible with CBX Bookmark Core V1.5.3 or later. Please update CBX Bookmark Pro Addon to version 1.1.10 or latest. - Codeboxr Team', 'cbxwpbookmark' ), $pro_plugin_version ) . '</p></div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			}
-
-
-		} else {
+		if (!defined( 'CBXWPBOOKMARKADDON_PLUGIN_NAME' )) {
 			/* translators: %s: bookmark product description url */
-			echo '<div style="border-left-color: #005ae0;" class="notice notice-success is-dismissible"><p>' . sprintf( wp_kses( __( '<a target="_blank" href="%s">CBX Bookmark Pro Addon</a> has extended features, settings, widgets and shortcodes. try it  - Codeboxr Team', 'cbxwpbookmark' ), [ 'a' => [ 'href' => [], 'target' => [] ] ] ), 'https://codeboxr.com/product/cbx-wordpress-bookmark/' ) . '</p></div>';
+			echo '<div style="border-left-color: #005ae0;" class="notice notice-warning is-dismissible"><p>' . sprintf( wp_kses( __( '<a target="_blank" href="%s">CBX Bookmark Pro Addon</a> has extended features, settings, widgets and shortcodes. try it  - Codeboxr Team', 'cbxwpbookmark' ), [ 'a' => [ 'href' => [], 'target' => [] ] ] ), 'https://codeboxr.com/product/cbx-wordpress-bookmark/' ) . '</p></div>';
 		}
 	}//end pro_addon_compatibility_campaign
 
@@ -1019,25 +1012,13 @@ class CBXWPBookmarkAdmin {
 			}
 
 			$links_array[] = '<a target="_blank" style="color:#005ae0 !important; font-weight: bold;" href="https://wordpress.org/support/plugin/cbxwpbookmark/" aria-label="' . esc_attr__( 'Free Support', 'cbxwpbookmark' ) . '">' . esc_html__( 'Free Support', 'cbxwpbookmark' ) . '</a>';
-
 			$links_array[] = '<a target="_blank" style="color:#005ae0 !important; font-weight: bold;" href="https://wordpress.org/plugins/cbxwpbookmark/#reviews" aria-label="' . esc_attr__( 'Reviews', 'cbxwpbookmark' ) . '">' . esc_html__( 'Reviews', 'cbxwpbookmark' ) . '</a>';
-
 			$links_array[] = '<a target="_blank" style="color:#005ae0 !important; font-weight: bold;" href="https://codeboxr.com/doc/cbxwpbookmark-doc/" aria-label="' . esc_attr__( 'Documentation', 'cbxwpbookmark' ) . '">' . esc_html__( 'Documentation', 'cbxwpbookmark' ) . '</a>';
-
-
-			//phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
-			if ( in_array( 'cbxwpbookmarkaddon/cbxwpbookmarkaddon.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) || defined( 'CBXWPBOOKMARKADDON_PLUGIN_NAME' ) ) {
-
-			} else {
-				$links_array[] = '<a target="_blank" style="color:#005ae0 !important; font-weight: bold;" href="https://codeboxr.com/product/cbx-wordpress-bookmark/" aria-label="' . esc_attr__( 'Try Pro Addon', 'cbxwpbookmark' ) . '">' . esc_html__( 'Try Pro Addon', 'cbxwpbookmark' ) . '</a>';
-			}
+			$links_array[] = '<a target="_blank" style="color:#005ae0 !important; font-weight: bold;" href="https://codeboxr.com/product/cbx-wordpress-bookmark/" aria-label="' . esc_attr__( 'Try Pro Addon', 'cbxwpbookmark' ) . '">' . esc_html__( 'Try Pro Addon', 'cbxwpbookmark' ) . '</a>';
 		}
 
 		return $links_array;
 	}//end plugin_row_meta
-
-
-
 
 	/**
 	 * User's bookmarks listing screen option columns
@@ -1088,6 +1069,8 @@ class CBXWPBookmarkAdmin {
 	public function settings_reset_load() {
 		//security check
 		check_ajax_referer( 'settingsnonce', 'security' );
+
+
 
 		$msg            = [];
 		$msg['html']    = '';
