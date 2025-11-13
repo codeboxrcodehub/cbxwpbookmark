@@ -169,8 +169,8 @@ class CBXWPBookmarkShortcodes {
 
 		// Checking Available Parameter
 		global $wpdb;
-		$bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
-		$category_table = $wpdb->prefix . 'cbxwpbookmarkcat';
+		$bookmark_table = esc_sql($wpdb->prefix . 'cbxwpbookmark');
+		$category_table = esc_sql($wpdb->prefix . 'cbxwpbookmarkcat');
 
 
 		$settings       = $this->settings;

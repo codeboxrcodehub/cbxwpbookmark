@@ -3,7 +3,7 @@ Contributors: codeboxr, manchumahara
 Tags: bookmark,favorite,collection,user collection,user bookmark
 Requires at least: 5.3
 Tested up to: 6.8
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -169,6 +169,14 @@ How to install the plugin and get it working.
 == Screenshots ==
 
 == Changelog ==
+= 2.0.3 =
+* [important] From core version 2.0.0 there is compatibility issues with php and pro addon. For safe deactivate Bookmark pro addon(s). Update core & activate. the update pro addon.
+* [fixed] Fixed site crash or db connectivity error if not default mysql port
+* [improved] Table names are now escape[security improvement]
+* [improved] Pro Addon compatibility checking improved(2nd attempt)
+* [fixed] Frontend Dashboard - bookmarks and category link fixed
+* [updated] Pro addon 2.0.3 released
+
 = 2.0.2 =
 * [fixed] Pro Addon compatibility checking improved
 * [updated] Pro addon 2.0.2 released

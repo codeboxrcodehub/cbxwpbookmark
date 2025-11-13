@@ -110,8 +110,8 @@ class CBXWPBookmarkPublic {
 		$bookmark_mode = $settings->get_field( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
 
 
-		$category_table = $wpdb->prefix . 'cbxwpbookmarkcat';
-		$bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
+		$category_table = esc_sql($wpdb->prefix . 'cbxwpbookmarkcat');
+		$bookmark_table = esc_sql($wpdb->prefix . 'cbxwpbookmark');
 
 		$user_id     = absint( get_current_user_id() ); //get the current logged in user id
 		$object_id   = isset( $_POST['object_id'] ) ? absint( $_POST['object_id'] ) : 0;
@@ -558,8 +558,8 @@ class CBXWPBookmarkPublic {
 		check_ajax_referer( 'cbxbookmarknonce', 'security' );
 
 		global $wpdb;
-		$category_table = $wpdb->prefix . 'cbxwpbookmarkcat';
-		$bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
+		$category_table = esc_sql($wpdb->prefix . 'cbxwpbookmarkcat');
+		$bookmark_table = esc_sql($wpdb->prefix . 'cbxwpbookmark');
 
 		$cat_id      = isset( $_POST['cat_id'] ) ? intval( $_POST['cat_id'] ) : 0;
 		$cat_name    = isset( $_POST['cat_name'] ) ? sanitize_text_field( wp_unslash( $_POST['cat_name'] ) ) : '';
@@ -688,8 +688,8 @@ class CBXWPBookmarkPublic {
 		check_ajax_referer( 'cbxbookmarknonce', 'security' );
 
 		global $wpdb;
-		$category_table = $wpdb->prefix . 'cbxwpbookmarkcat';
-		$bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
+		$category_table = esc_sql($wpdb->prefix . 'cbxwpbookmarkcat');
+		$bookmark_table = esc_sql($wpdb->prefix . 'cbxwpbookmark');
 
 
 		$cat_id      = isset( $_POST['cat_id'] ) ? intval( $_POST['cat_id'] ) : 0;
@@ -804,7 +804,7 @@ class CBXWPBookmarkPublic {
 			$user_id  = get_current_user_id();
 
 			// Category Table with database Prefix
-			$category_table = $wpdb->prefix . 'cbxwpbookmarkcat';
+			$category_table = esc_sql($wpdb->prefix . 'cbxwpbookmarkcat');
 
 			// Update Query
 			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
@@ -862,8 +862,8 @@ class CBXWPBookmarkPublic {
 			$cat_id = isset( $_POST['id'] ) ? absint( $_POST['id'] ) : 0;
 
 
-			$category_table = $wpdb->prefix . 'cbxwpbookmarkcat';
-			$bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
+			$category_table = esc_sql($wpdb->prefix . 'cbxwpbookmarkcat');
+			$bookmark_table = esc_sql($wpdb->prefix . 'cbxwpbookmark');
 
 			$user_id = get_current_user_id();
 
@@ -967,7 +967,7 @@ class CBXWPBookmarkPublic {
 
 		$object_type = isset( $_POST['object_type'] ) ? sanitize_text_field( wp_unslash( $_POST['object_type'] ) ) : 'post'; //post, page or any custom post and later any object type
 
-		$bookmark_table       = $wpdb->prefix . 'cbxwpbookmark';
+		$bookmark_table       = esc_sql($wpdb->prefix . 'cbxwpbookmark');
 		$user_bookmarks_count = cbxwpbookmarks_getTotalBookmarkByUser( $user_id );
 		$category_privacy     = 1;
 
@@ -1107,7 +1107,6 @@ class CBXWPBookmarkPublic {
 			$object_type = isset( $_POST['object_type'] ) ? sanitize_text_field( wp_unslash( $_POST['object_type'] ) ) : 'post'; //post, page or any custom post and later any object type
 
 
-			//$bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
 
 			$user_id = get_current_user_id();
 
@@ -1298,8 +1297,8 @@ class CBXWPBookmarkPublic {
 		$bookmark_mode = $settings->get_field( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
 
 
-		$category_table = $wpdb->prefix . 'cbxwpbookmarkcat';
-		$bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
+		$category_table = esc_sql($wpdb->prefix . 'cbxwpbookmarkcat');
+		$bookmark_table = esc_sql($wpdb->prefix . 'cbxwpbookmark');
 
 		$user_id = absint( get_current_user_id() ); //get the current logged in user id
 
@@ -1530,7 +1529,7 @@ class CBXWPBookmarkPublic {
 
 		if ( is_array( $bookmarks ) && sizeof( $bookmarks ) > 0 ) {
 			global $wpdb;
-			$bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
+			$bookmark_table = esc_sql($wpdb->prefix . 'cbxwpbookmark');
 
 			foreach ( $bookmarks as $single_bookmark ) {
 				$id = absint( $single_bookmark['id'] );

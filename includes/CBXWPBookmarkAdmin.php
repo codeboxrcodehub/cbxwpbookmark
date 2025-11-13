@@ -675,7 +675,7 @@ class CBXWPBookmarkAdmin {
 		//phpcs:ignore WordPress.Security.NonceVerification.Missing
 		if ( isset( $_POST['cbxwpbookmark_cat_addedit'] ) && intval( $_POST['cbxwpbookmark_cat_addedit'] ) == 1 ) {
 			global $wpdb;
-			$category_table = $wpdb->prefix . 'cbxwpbookmarkcat';
+			$category_table = esc_sql($wpdb->prefix . 'cbxwpbookmarkcat');
 
 			$redirect_url        = 'admin.php?page=cbxwpbookmark-cats&view=edit';
 			$form_validated      = true;

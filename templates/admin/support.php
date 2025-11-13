@@ -102,6 +102,19 @@ $cbxwpbookmark_doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com
                     <div class="content">
                         <div class="cbx-backend-settings-row">
                             <p>
+                                Version - 2.0.3
+                            </p>
+                            <ul>
+                                <li>[important] From core version 2.0.0 there is compatibility issues with php and pro addon. For safe deactivate Bookmark pro addon(s). Update core &amp; activate. the update pro addon.</li>
+                                <li>[fixed] Fixed site crash or db connectivity error if not default mysql port</li>
+                                <li>[improved] Table names are now escape[security improvement]</li>
+                                <li>[improved] Pro Addon compatibility checking improved(2nd attempt)</li>
+                                <li>[fixed] Frontend Dashboard - bookmarks and category link fixed</li>
+                                <li>[updated] Pro addon 2.0.3 released</li>
+                            </ul>
+                        </div>
+                        <div class="cbx-backend-settings-row">
+                            <p>
                                 Version - 2.0.2
                             </p>
                             <ul>
@@ -140,6 +153,15 @@ $cbxwpbookmark_doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com
                         </div>
                     </div>
                     <div class="content">
+                        <div class="cbx-backend-settings-row">
+                            <p>
+                                Version - 2.0.3
+                            </p>
+                            <ul>
+                                <li>[improved] Table names are now escape[security improvement]</li>
+                                <li>[updated] Core plugin 2.0.3 released</li>
+                            </ul>
+                        </div>
                         <div class="cbx-backend-settings-row">
                             <p>
                                 Version - 2.0.2

@@ -244,8 +244,7 @@ class CBXWPBookmarkHelper {
                 ];
 
                 wp_update_post( $page_data );
-            }
-            elseif ( ( $page_id = intval( $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_type = 'page' AND post_status = 'trash' AND post_name = %s LIMIT 1;",
+            } elseif ( ( $page_id = intval( $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_type = 'page' AND post_status = 'trash' AND post_name = %s LIMIT 1;",
                             $slug . '__trashed' ) ) ) ) > 0 ) {
                 //trash post found and un trash/publish it
                 wp_untrash_post( $page_id );
@@ -302,15 +301,13 @@ class CBXWPBookmarkHelper {
 
         $capsule = new Manager();
 
-        $connection_params = [
+        /*$connection_params = [
                 'driver'   => 'mysql',
                 'host'     => DB_HOST,
                 'database' => DB_NAME,
                 'username' => DB_USER,
                 'password' => DB_PASSWORD,
                 'prefix'   => $wpdb->prefix,
-            //'charset'   => DB_CHARSET,
-            //'collation' => DB_COLLATE,
         ];
 
         if ( $wpdb->has_cap( 'collation' ) ) {
@@ -320,6 +317,39 @@ class CBXWPBookmarkHelper {
             }
             if ( DB_COLLATE != '' ) {
                 //$charset_collate .= " COLLATE $wpdb->collate";
+                $connection_params['collation'] = DB_COLLATE;
+            }
+        }*/
+
+        $connection_params = [
+                'driver'   => 'mysql',
+                'database' => DB_NAME,
+                'username' => DB_USER,
+                'password' => DB_PASSWORD,
+                'prefix'   => $wpdb->prefix,
+        ];
+
+        // Parse host and port
+        $host = DB_HOST;
+        $port = null;
+
+        // Handle host like "localhost:3307"
+        if ( strpos( $host, ':' ) !== false ) {
+            [ $host, $port ] = explode( ':', $host, 2 );
+        }
+
+        $connection_params['host'] = $host;
+
+        if ( ! empty( $port ) ) {
+            $connection_params['port'] = (int) $port;
+        }
+
+        // Handle charset and collation
+        if ( $wpdb->has_cap( 'collation' ) ) {
+            if ( ! empty( DB_CHARSET ) ) {
+                $connection_params['charset'] = DB_CHARSET;
+            }
+            if ( ! empty( DB_COLLATE ) ) {
                 $connection_params['collation'] = DB_COLLATE;
             }
         }
@@ -338,8 +368,8 @@ class CBXWPBookmarkHelper {
         $charset_collate = $wpdb->get_charset_collate();
         // charset_collate Defination
 
-        $bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
-        $category_table = $wpdb->prefix . 'cbxwpbookmarkcat';
+        $bookmark_table = esc_sql( $wpdb->prefix . 'cbxwpbookmark' );
+        $category_table = esc_sql( $wpdb->prefix . 'cbxwpbookmarkcat' );
 
 
         //Bookmark table
@@ -1286,8 +1316,8 @@ class CBXWPBookmarkHelper {
         global $wpdb;
 
         $object_types   = CBXWPBookmarkHelper::object_types( true ); //get plain post type as array
-        $bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
-        $category_table = $wpdb->prefix . 'cbxwpbookmarkcat';
+        $bookmark_table = esc_sql( $wpdb->prefix . 'cbxwpbookmark' );
+        $category_table = esc_sql( $wpdb->prefix . 'cbxwpbookmarkcat' );
 
         $settings = new CBXWPBookmarkSettings();
 
@@ -1379,7 +1409,7 @@ class CBXWPBookmarkHelper {
 
         if ( $order_by == 'title' ) {
 
-            $posts_table = $wpdb->prefix . 'posts'; //core posts table
+            $posts_table = esc_sql( $wpdb->prefix . 'posts' ); //core posts table
             $join        .= " LEFT JOIN $posts_table posts ON posts.ID = bookmarks.object_id ";
 
             $order_by = 'posts.post_title';
@@ -1449,7 +1479,7 @@ class CBXWPBookmarkHelper {
      */
     public static function cbxbookmark_most_html( $instance, $attr = [] ) {
         global $wpdb;
-        $bookmark_table       = $wpdb->prefix . 'cbxwpbookmark';
+        $bookmark_table       = esc_sql( $wpdb->prefix . 'cbxwpbookmark' );
         $settings             = new CBXWPBookmarkSettings();
         $allowed_object_types = cbxwpbookmarks_allowed_object_type();
 
@@ -1541,7 +1571,7 @@ class CBXWPBookmarkHelper {
 
                 if ( $order_by == 'title' ) {
 
-                    $posts_table = $wpdb->prefix . 'posts'; //core posts table
+                    $posts_table = esc_sql( $wpdb->prefix . 'posts' ); //core posts table
                     $join        .= " LEFT JOIN $posts_table posts ON posts.ID = bookmarks.object_id ";
 
                     $order_by = 'posts.post_title';
@@ -1662,8 +1692,8 @@ class CBXWPBookmarkHelper {
 
         if ( ( $userid > 0 && $bookmark_mode == 'user_cat' ) || ( $bookmark_mode == 'global_cat' ) ) {
 
-            $bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
-            $category_table = $wpdb->prefix . 'cbxwpbookmarkcat';
+            $bookmark_table = esc_sql( $wpdb->prefix . 'cbxwpbookmark' );
+            $category_table = esc_sql( $wpdb->prefix . 'cbxwpbookmarkcat' );
 
 
             // Getting Current User ID
@@ -1975,7 +2005,7 @@ class CBXWPBookmarkHelper {
      */
     public static function getTotalCategoryCount() {
         global $wpdb;
-        $category_table = $wpdb->prefix . 'cbxwpbookmarkcat';
+        $category_table = esc_sql( $wpdb->prefix . 'cbxwpbookmarkcat' );
 
         $query = "SELECT count(*) as count FROM $category_table WHERE 1";
 
@@ -1999,7 +2029,7 @@ class CBXWPBookmarkHelper {
         }
 
         global $wpdb;
-        $category_table = $wpdb->prefix . 'cbxwpbookmarkcat';
+        $category_table = esc_sql( $wpdb->prefix . 'cbxwpbookmarkcat' );
 
         $query = "SELECT count(*) as count FROM $category_table WHERE user_id= %d";
 
@@ -2019,7 +2049,7 @@ class CBXWPBookmarkHelper {
      */
     public static function getTotalBookmarkCountByType( $object_type = '' ) {
         global $wpdb;
-        $bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
+        $bookmark_table = esc_sql( $wpdb->prefix . 'cbxwpbookmark' );
 
         $object_type = esc_attr( $object_type );
 
@@ -2043,7 +2073,7 @@ class CBXWPBookmarkHelper {
      */
     public static function getTotalBookmarkCount() {
         global $wpdb;
-        $bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
+        $bookmark_table = esc_sql( $wpdb->prefix . 'cbxwpbookmark' );
 
 
         $query = "SELECT count(*) as count FROM $bookmark_table WHERE 1";
@@ -2063,7 +2093,7 @@ class CBXWPBookmarkHelper {
      */
     public static function getTotalBookmark( $object_id = 0 ) {
         global $wpdb;
-        $bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
+        $bookmark_table = esc_sql( $wpdb->prefix . 'cbxwpbookmark' );
 
         $object_id = absint( $object_id );
 
@@ -2090,7 +2120,7 @@ class CBXWPBookmarkHelper {
      */
     public static function getTotalBookmarkByUser( $user_id = 0 ) {
         global $wpdb;
-        $bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
+        $bookmark_table = esc_sql( $wpdb->prefix . 'cbxwpbookmark' );
 
         $user_id = absint( $user_id );
 
@@ -2116,7 +2146,7 @@ class CBXWPBookmarkHelper {
      */
     public static function getTotalBookmarkByUserByPostype( $user_id = 0, $post_type = '' ) {
         global $wpdb;
-        $bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
+        $bookmark_table = esc_sql( $wpdb->prefix . 'cbxwpbookmark' );
 
         $user_id = absint( $user_id );
 
@@ -2149,7 +2179,7 @@ class CBXWPBookmarkHelper {
      */
     public static function getTotalBookmarkByCategory( $cat_id = 0 ) {
         global $wpdb;
-        $bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
+        $bookmark_table = esc_sql( $wpdb->prefix . 'cbxwpbookmark' );
 
         $cat_id = absint( $cat_id );
 
@@ -2174,7 +2204,7 @@ class CBXWPBookmarkHelper {
      */
     public static function getTotalBookmarkByCategoryByUser( $cat_id = 0, $user_id = 0 ) {
         global $wpdb;
-        $bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
+        $bookmark_table = esc_sql( $wpdb->prefix . 'cbxwpbookmark' );
 
         $cat_id  = absint( $cat_id );
         $user_id = absint( $user_id );
@@ -2242,7 +2272,7 @@ class CBXWPBookmarkHelper {
         }
 
         global $wpdb;
-        $bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
+        $bookmark_table = esc_sql( $wpdb->prefix . 'cbxwpbookmark' );
 
         //$query = "SELECT count(DISTINCT user_id) as count FROM $bookmark_table WHERE object_id= %d AND user_id = %d GROUP BY object_id ";
 
@@ -2284,7 +2314,7 @@ class CBXWPBookmarkHelper {
 
         $catid = absint( $catid );
         global $wpdb;
-        $category_table = $wpdb->prefix . 'cbxwpbookmarkcat';
+        $category_table = esc_sql( $wpdb->prefix . 'cbxwpbookmarkcat' );
 
 
         // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
@@ -2391,10 +2421,9 @@ class CBXWPBookmarkHelper {
     public static function getAllDBTablesList() {
         global $wpdb;
 
-        $bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
-        $category_table = $wpdb->prefix . 'cbxwpbookmarkcat';
+        $bookmark_table = esc_sql( $wpdb->prefix . 'cbxwpbookmark' );
+        $category_table = esc_sql( $wpdb->prefix . 'cbxwpbookmarkcat' );
 
-        //todo: are we using the table names hardcoded ?
         $table_names                            = [];
         $table_names['Bookmark List Table']     = $bookmark_table;
         $table_names['Bookmark Category Table'] = $category_table;
@@ -2592,7 +2621,7 @@ class CBXWPBookmarkHelper {
     public static function getBookmarksByObject( $object_id = 0, $object_type = '' ) {
         global $wpdb;
 
-        $bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
+        $bookmark_table = esc_sql( $wpdb->prefix . 'cbxwpbookmark' );
         $object_id      = intval( $object_id );
         $bookmarks      = null;
 
@@ -2620,7 +2649,7 @@ class CBXWPBookmarkHelper {
      */
     public static function singleBookmark( $bookmark_id = 0 ) {
         global $wpdb;
-        $bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
+        $bookmark_table = esc_sql( $wpdb->prefix . 'cbxwpbookmark' );
 
         $bookmark_id = intval( $bookmark_id );
 
@@ -2643,7 +2672,7 @@ class CBXWPBookmarkHelper {
      */
     public static function singleBookmarkByObjectUser( $object_id = 0, $user_id = 0 ) {
         global $wpdb;
-        $bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
+        $bookmark_table = esc_sql( $wpdb->prefix . 'cbxwpbookmark' );
 
         $object_id = intval( $object_id );
         $user_id   = intval( $user_id );
@@ -2666,7 +2695,7 @@ class CBXWPBookmarkHelper {
      */
     public static function singleCategory( $category_id = 0 ) {
         global $wpdb;
-        $category_table = $wpdb->prefix . 'cbxwpbookmarkcat';
+        $category_table = esc_sql( $wpdb->prefix . 'cbxwpbookmarkcat' );
 
         $category_id = intval( $category_id );
 
@@ -2852,7 +2881,7 @@ class CBXWPBookmarkHelper {
         }
 
         global $wpdb;
-        $category_table = $wpdb->prefix . 'cbxwpbookmarkcat';
+        $category_table = esc_sql( $wpdb->prefix . 'cbxwpbookmarkcat' );
 
         // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
         $user_cat_count = $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM $category_table WHERE user_id = %d", $user_id ) );
@@ -2972,7 +3001,7 @@ class CBXWPBookmarkHelper {
         }
 
         global $wpdb;
-        $bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
+        $bookmark_table = esc_sql( $wpdb->prefix . 'cbxwpbookmark' );
 
         // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
         $bookmarks = $wpdb->get_results( $wpdb->prepare( "SELECT *  FROM  $bookmark_table WHERE user_id = %d", $user_id ), ARRAY_A );
@@ -4111,6 +4140,12 @@ class CBXWPBookmarkHelper {
     public static function dashboard_js_translation( $current_user, $blog_id ) {
         $common_js_translations = self::common_js_translation( $current_user, $blog_id );
 
+        $settings = new CBXWPBookmarkSettings();
+        $user_dashboard_page = absint($settings->get_field('user_dashboard_page', 'cbxwpbookmark_basics', 0));
+        $user_dashboard_url = ($user_dashboard_page > 0)? get_the_permalink($user_dashboard_page) : '';
+        $dashboard_log_url = ($user_dashboard_url != '')? add_query_arg('component', 'bookmark_manager', $user_dashboard_url) : '';
+        $dashboard_cat_url = ($user_dashboard_url != '')? add_query_arg('component', 'category_manager', $user_dashboard_url) : '';
+
         $tools_js_translations = [
                 'translation'          => [
                         'dashboard' => [
@@ -4145,6 +4180,11 @@ class CBXWPBookmarkHelper {
                 ],
                 'dashboard_data'       => self::getBookmarkAdminDashboardData(),
                 'front_dashboard_data' => self::getBookmarkFrontDashboardData(),
+                'front_dashboard_urls' => [
+                        'dash_url' => $user_dashboard_url,
+                        'log_url' => $dashboard_log_url,
+                        'cat_url' => $dashboard_cat_url,
+                ],
         ];
 
         $js_translations = array_merge_recursive( $common_js_translations, $tools_js_translations );

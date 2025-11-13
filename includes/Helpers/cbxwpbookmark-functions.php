@@ -516,8 +516,7 @@ if ( ! function_exists( 'cbxwpbookmarks_delete_bookmark_by_type_and_object_id' )
 	function cbxwpbookmarks_delete_bookmark_by_type_and_object_id( $object_id = 0, $object_type = '' ) {
 		global $wpdb;
 
-		$bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
-		$bookmark_table = esc_sql( $bookmark_table );
+		$bookmark_table = esc_sql($wpdb->prefix . 'cbxwpbookmark');
 		$object_id      = absint( $object_id );
 		$object_type    = esc_attr( $object_type );
 		$bookmarks      = null;
@@ -570,14 +569,9 @@ if ( ! function_exists( 'cbxwpbookmarks_delete_bookmarks' ) ) {
 	 * @param  string  $object_type
 	 */
 	function cbxwpbookmarks_delete_bookmarks( $object_id, $object_type = '' ) {
-		//global $wpdb;
-		//$bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
-
-		$object_id = intval( $object_id );
-
+		$object_id    = intval( $object_id );
 		$object_types = CBXWPBookmarkHelper::object_types( true ); //get plain post type as array
-
-		$bookmarks = CBXWPBookmarkHelper::getBookmarksByObject( $object_id, $object_type );
+		$bookmarks    = CBXWPBookmarkHelper::getBookmarksByObject( $object_id, $object_type );
 
 		if ( is_array( $bookmarks ) && sizeof( $bookmarks ) > 0 ) {
 			foreach ( $bookmarks as $bookmark ) {
@@ -623,7 +617,7 @@ if ( ! function_exists( ' cbxwpbookmarks_delete_bookmark' ) ) {
 	 */
 	function cbxwpbookmarks_delete_bookmark( $bookmark_id, $user_id, $object_id, $object_type, $category_id = 0 ) {
 		global $wpdb;
-		$bookmark_table = $wpdb->prefix . 'cbxwpbookmark';
+		$bookmark_table = esc_sql( $wpdb->prefix . 'cbxwpbookmark' );
 
 		$bookmark_id = absint( $bookmark_id );
 		$user_id     = absint( $user_id );
