@@ -1,19 +1,16 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types=1);
+namespace CBXWPBookmarkScoped\Carbon\Doctrine;
 
-namespace Carbon\Doctrine;
-
-use Carbon\CarbonImmutable;
+use CBXWPBookmarkScoped\Carbon\CarbonImmutable;
 use DateTimeImmutable;
-use Doctrine\DBAL\Platforms\AbstractPlatform;
-use Doctrine\DBAL\Types\VarDateTimeImmutableType;
-
+use CBXWPBookmarkScoped\Doctrine\DBAL\Platforms\AbstractPlatform;
+use CBXWPBookmarkScoped\Doctrine\DBAL\Types\VarDateTimeImmutableType;
 class DateTimeImmutableType extends VarDateTimeImmutableType implements CarbonDoctrineType
 {
     /** @use CarbonTypeConverter<CarbonImmutable> */
     use CarbonTypeConverter;
-
     /**
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
@@ -21,7 +18,6 @@ class DateTimeImmutableType extends VarDateTimeImmutableType implements CarbonDo
     {
         return $this->doConvertToPHPValue($value);
     }
-
     /**
      * @return class-string<CarbonImmutable>
      */

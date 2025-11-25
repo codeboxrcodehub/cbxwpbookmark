@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Support\Facades;
+namespace CBXWPBookmarkScoped\Illuminate\Support\Facades;
 
 /**
  * @method static \Doctrine\DBAL\Driver\PDOConnection getPdo()

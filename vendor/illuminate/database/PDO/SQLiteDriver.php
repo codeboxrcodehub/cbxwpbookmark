@@ -1,10 +1,9 @@
 <?php
 
-namespace Illuminate\Database\PDO;
+namespace CBXWPBookmarkScoped\Illuminate\Database\PDO;
 
-use Doctrine\DBAL\Driver\AbstractSQLiteDriver;
-use Illuminate\Database\PDO\Concerns\ConnectsToDatabase;
-
+use CBXWPBookmarkScoped\Doctrine\DBAL\Driver\AbstractSQLiteDriver;
+use CBXWPBookmarkScoped\Illuminate\Database\PDO\Concerns\ConnectsToDatabase;
 class SQLiteDriver extends AbstractSQLiteDriver
 {
     use ConnectsToDatabase;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Support\Facades;
+namespace CBXWPBookmarkScoped\Illuminate\Support\Facades;
 
 /**
  * @method static \Illuminate\Contracts\View\Factory addNamespace(string $namespace, string|array $hints)

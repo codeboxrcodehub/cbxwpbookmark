@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 //use CBXWPBookmark\Helpers\CBXWPBookmarkHelper;
 use CBXWPBookmark\CBXWPBookmarkSettings;
-use Illuminate\Database\Eloquent\Model as Eloquent;
+use CBXWPBookmarkScoped\Illuminate\Database\Eloquent\Model as Eloquent;
 
 /**
  * Class Bookmark
@@ -46,7 +46,7 @@ class Bookmark extends Eloquent {
 		$user_id     = absint( $bookmark['user_id'] );
 		$object_id   = absint( $bookmark['object_id'] );
 		$object_type = $bookmark['object_type'];
-		$category_id = absint( $bookmark['category_id'] );
+		$category_id = absint( $bookmark['cat_id'] );
 
 		do_action( 'cbxbookmark_bookmark_removed_before', $bookmark_id, $user_id, $object_id, $object_type, $category_id );
 

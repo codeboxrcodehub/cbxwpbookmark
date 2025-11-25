@@ -1,14 +1,12 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types=1);
+namespace CBXWPBookmarkScoped\Doctrine\Inflector\Rules\NorwegianBokmal;
 
-namespace Doctrine\Inflector\Rules\NorwegianBokmal;
-
-use Doctrine\Inflector\Rules\Pattern;
-use Doctrine\Inflector\Rules\Substitution;
-use Doctrine\Inflector\Rules\Transformation;
-use Doctrine\Inflector\Rules\Word;
-
+use CBXWPBookmarkScoped\Doctrine\Inflector\Rules\Pattern;
+use CBXWPBookmarkScoped\Doctrine\Inflector\Rules\Substitution;
+use CBXWPBookmarkScoped\Doctrine\Inflector\Rules\Transformation;
+use CBXWPBookmarkScoped\Doctrine\Inflector\Rules\Word;
 class Inflectible
 {
     /** @return Transformation[] */
@@ -17,7 +15,6 @@ class Inflectible
         yield new Transformation(new Pattern('/re$/i'), 'r');
         yield new Transformation(new Pattern('/er$/i'), '');
     }
-
     /** @return Transformation[] */
     public static function getPlural(): iterable
     {
@@ -25,7 +22,6 @@ class Inflectible
         yield new Transformation(new Pattern('/r$/i'), 're');
         yield new Transformation(new Pattern('/$/'), 'er');
     }
-
     /** @return Substitution[] */
     public static function getIrregular(): iterable
     {

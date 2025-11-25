@@ -1,6 +1,6 @@
 <?php
 
-namespace Sabberworm\CSS\Property;
+namespace CBXWPBookmarkScoped\Sabberworm\CSS\Property;
 
 class KeyframeSelector extends Selector
 {

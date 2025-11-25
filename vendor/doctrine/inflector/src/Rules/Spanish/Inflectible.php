@@ -1,14 +1,12 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types=1);
+namespace CBXWPBookmarkScoped\Doctrine\Inflector\Rules\Spanish;
 
-namespace Doctrine\Inflector\Rules\Spanish;
-
-use Doctrine\Inflector\Rules\Pattern;
-use Doctrine\Inflector\Rules\Substitution;
-use Doctrine\Inflector\Rules\Transformation;
-use Doctrine\Inflector\Rules\Word;
-
+use CBXWPBookmarkScoped\Doctrine\Inflector\Rules\Pattern;
+use CBXWPBookmarkScoped\Doctrine\Inflector\Rules\Substitution;
+use CBXWPBookmarkScoped\Doctrine\Inflector\Rules\Transformation;
+use CBXWPBookmarkScoped\Doctrine\Inflector\Rules\Word;
 class Inflectible
 {
     /** @return Transformation[] */
@@ -20,21 +18,19 @@ class Inflectible
         yield new Transformation(new Pattern('/es$/'), '');
         yield new Transformation(new Pattern('/s$/'), '');
     }
-
     /** @return Transformation[] */
     public static function getPlural(): iterable
     {
-        yield new Transformation(new Pattern('/ú([sn])$/i'), 'u\1es');
-        yield new Transformation(new Pattern('/ó([sn])$/i'), 'o\1es');
-        yield new Transformation(new Pattern('/í([sn])$/i'), 'i\1es');
-        yield new Transformation(new Pattern('/é([sn])$/i'), 'e\1es');
-        yield new Transformation(new Pattern('/á([sn])$/i'), 'a\1es');
+        yield new Transformation(new Pattern('/ú([sn])$/i'), 'CBXWPBookmarkScoped\u\1es');
+        yield new Transformation(new Pattern('/ó([sn])$/i'), 'CBXWPBookmarkScoped\o\1es');
+        yield new Transformation(new Pattern('/í([sn])$/i'), 'CBXWPBookmarkScoped\i\1es');
+        yield new Transformation(new Pattern('/é([sn])$/i'), 'CBXWPBookmarkScoped\e\1es');
+        yield new Transformation(new Pattern('/á([sn])$/i'), 'CBXWPBookmarkScoped\a\1es');
         yield new Transformation(new Pattern('/z$/i'), 'ces');
         yield new Transformation(new Pattern('/([aeiou]s)$/i'), '\1');
         yield new Transformation(new Pattern('/([^aeéiou])$/i'), '\1es');
         yield new Transformation(new Pattern('/$/'), 's');
     }
-
     /** @return Substitution[] */
     public static function getIrregular(): iterable
     {

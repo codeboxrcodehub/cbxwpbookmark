@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Contracts\Filesystem;
+namespace CBXWPBookmarkScoped\Illuminate\Contracts\Filesystem;
 
 interface Cloud extends Filesystem
 {

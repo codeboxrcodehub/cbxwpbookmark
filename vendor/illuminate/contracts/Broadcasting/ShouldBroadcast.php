@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Contracts\Broadcasting;
+namespace CBXWPBookmarkScoped\Illuminate\Contracts\Broadcasting;
 
 interface ShouldBroadcast
 {

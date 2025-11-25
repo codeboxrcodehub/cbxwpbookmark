@@ -3,7 +3,7 @@ Contributors: codeboxr, manchumahara
 Tags: bookmark,favorite,collection,user collection,user bookmark
 Requires at least: 5.3
 Tested up to: 6.8
-Stable tag: 2.0.3
+Stable tag: 2.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -169,6 +169,13 @@ How to install the plugin and get it working.
 == Screenshots ==
 
 == Changelog ==
+= 2.0.4 =
+* [fixed] Composer based custom scope/namespace for vendor to avoid conflict with other plugins
+* [fixed] Composer based custom scope/namespace for vendor to avoid conflict with other plugins
+* [fixed] Pro addon 2.0.4 released and needed to update to make it work with core 2.0.4
+* [note] Pro addon note: deactivate, manually delete & install new version or install the new version as replacement.
+* [fixed] Astra theme hash base vue js route fixed
+
 = 2.0.3 =
 * [important] From core version 2.0.0 there is compatibility issues with php and pro addon. For safe deactivate Bookmark pro addon(s). Update core & activate. the update pro addon.
 * [fixed] Fixed site crash or db connectivity error if not default mysql port

@@ -1,9 +1,8 @@
 <?php
 
-namespace Illuminate\Database\Eloquent;
+namespace CBXWPBookmarkScoped\Illuminate\Database\Eloquent;
 
 use RuntimeException;
-
 class MassAssignmentException extends RuntimeException
 {
     //

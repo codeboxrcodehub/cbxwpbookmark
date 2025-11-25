@@ -1,8 +1,7 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Doctrine\Inflector;
+declare (strict_types=1);
+namespace CBXWPBookmarkScoped\Doctrine\Inflector;
 
 class NoopWordInflector implements WordInflector
 {

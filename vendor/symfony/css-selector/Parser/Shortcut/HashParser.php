@@ -8,14 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+namespace CBXWPBookmarkScoped\Symfony\Component\CssSelector\Parser\Shortcut;
 
-namespace Symfony\Component\CssSelector\Parser\Shortcut;
-
-use Symfony\Component\CssSelector\Node\ElementNode;
-use Symfony\Component\CssSelector\Node\HashNode;
-use Symfony\Component\CssSelector\Node\SelectorNode;
-use Symfony\Component\CssSelector\Parser\ParserInterface;
-
+use CBXWPBookmarkScoped\Symfony\Component\CssSelector\Node\ElementNode;
+use CBXWPBookmarkScoped\Symfony\Component\CssSelector\Node\HashNode;
+use CBXWPBookmarkScoped\Symfony\Component\CssSelector\Node\SelectorNode;
+use CBXWPBookmarkScoped\Symfony\Component\CssSelector\Parser\ParserInterface;
 /**
  * CSS selector hash parser shortcut.
  *
@@ -38,11 +36,8 @@ class HashParser implements ParserInterface
         //     2 => string 'input' (length=5)
         //     3 => string 'ab6bd_field' (length=11)
         if (preg_match('/^(?:([a-z]++)\|)?+([\w-]++|\*)?+#([\w-]++)$/i', trim($source), $matches)) {
-            return [
-                new SelectorNode(new HashNode(new ElementNode($matches[1] ?: null, $matches[2] ?: null), $matches[3])),
-            ];
+            return [new SelectorNode(new HashNode(new ElementNode($matches[1] ?: null, $matches[2] ?: null), $matches[3]))];
         }
-
         return [];
     }
 }

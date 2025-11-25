@@ -8,11 +8,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 use CBXWPBookmark\Models\Bookmark;
 use CBXWPBookmark\Models\Category;
-use Illuminate\Database\Capsule\Manager;
+use CBXWPBookmarkScoped\Illuminate\Database\Capsule\Manager;
 use CBXWPBookmark\MigrationManage;
 use CBXWPBookmark\CBXWPBookmarkSettings;
 use CBXWPBookmark\UserManage;
-use Illuminate\Database\QueryException;
+use CBXWPBookmarkScoped\Illuminate\Database\QueryException;
 
 //use Exception;
 
@@ -300,26 +300,6 @@ class CBXWPBookmarkHelper {
         global $wpdb;
 
         $capsule = new Manager();
-
-        /*$connection_params = [
-                'driver'   => 'mysql',
-                'host'     => DB_HOST,
-                'database' => DB_NAME,
-                'username' => DB_USER,
-                'password' => DB_PASSWORD,
-                'prefix'   => $wpdb->prefix,
-        ];
-
-        if ( $wpdb->has_cap( 'collation' ) ) {
-            if ( DB_CHARSET != '' ) {
-                //$charset_collate = "DEFAULT CHARACTER SET $wpdb->charset";
-                $connection_params['charset'] = DB_CHARSET;
-            }
-            if ( DB_COLLATE != '' ) {
-                //$charset_collate .= " COLLATE $wpdb->collate";
-                $connection_params['collation'] = DB_COLLATE;
-            }
-        }*/
 
         $connection_params = [
                 'driver'   => 'mysql',
@@ -4198,13 +4178,14 @@ class CBXWPBookmarkHelper {
      */
     public static function getBookmarkAdminDashboardData() {
         try {
-            $data = [
+           return [
                     'bookmark_count' => self::getTotalBookmarkCount(),
                     'cats_count'     => self::getTotalCategoryCount(),
             ];
 
-            return $data;
-        } catch ( Exception ) {
+
+        } catch ( Exception $e) {
+            //write_log('exception');
             return [];
         }
     }//end function getBookmarkAdminDashboardData
@@ -4231,7 +4212,7 @@ class CBXWPBookmarkHelper {
             }
 
             return $data;
-        } catch ( Exception ) {
+        } catch ( Exception $e) {
             return [];
         }
     }//end function getBookmarkFrontDashboardData
@@ -4577,7 +4558,7 @@ class CBXWPBookmarkHelper {
                         'bookmark_count' => $bookmarkCount
                 ];
             } )->toArray();
-        } catch ( Exception ) {
+        } catch ( Exception $e) {
             return [];
         }
 

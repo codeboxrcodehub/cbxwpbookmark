@@ -1,31 +1,30 @@
 <?php
 
-namespace Sabberworm\CSS\CSSList;
+namespace CBXWPBookmarkScoped\Sabberworm\CSS\CSSList;
 
-use Sabberworm\CSS\Comment\Comment;
-use Sabberworm\CSS\Comment\Commentable;
-use Sabberworm\CSS\CSSElement;
-use Sabberworm\CSS\OutputFormat;
-use Sabberworm\CSS\Parsing\ParserState;
-use Sabberworm\CSS\Parsing\SourceException;
-use Sabberworm\CSS\Parsing\UnexpectedEOFException;
-use Sabberworm\CSS\Parsing\UnexpectedTokenException;
-use Sabberworm\CSS\Position\Position;
-use Sabberworm\CSS\Position\Positionable;
-use Sabberworm\CSS\Property\AtRule;
-use Sabberworm\CSS\Property\Charset;
-use Sabberworm\CSS\Property\CSSNamespace;
-use Sabberworm\CSS\Property\Import;
-use Sabberworm\CSS\Property\Selector;
-use Sabberworm\CSS\Renderable;
-use Sabberworm\CSS\RuleSet\AtRuleSet;
-use Sabberworm\CSS\RuleSet\DeclarationBlock;
-use Sabberworm\CSS\RuleSet\RuleSet;
-use Sabberworm\CSS\Settings;
-use Sabberworm\CSS\Value\CSSString;
-use Sabberworm\CSS\Value\URL;
-use Sabberworm\CSS\Value\Value;
-
+use CBXWPBookmarkScoped\Sabberworm\CSS\Comment\Comment;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Comment\Commentable;
+use CBXWPBookmarkScoped\Sabberworm\CSS\CSSElement;
+use CBXWPBookmarkScoped\Sabberworm\CSS\OutputFormat;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Parsing\ParserState;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Parsing\SourceException;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Parsing\UnexpectedEOFException;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Parsing\UnexpectedTokenException;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Position\Position;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Position\Positionable;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Property\AtRule;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Property\Charset;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Property\CSSNamespace;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Property\Import;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Property\Selector;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Renderable;
+use CBXWPBookmarkScoped\Sabberworm\CSS\RuleSet\AtRuleSet;
+use CBXWPBookmarkScoped\Sabberworm\CSS\RuleSet\DeclarationBlock;
+use CBXWPBookmarkScoped\Sabberworm\CSS\RuleSet\RuleSet;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Settings;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Value\CSSString;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Value\URL;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Value\Value;
 /**
  * This is the most generic container available. It can contain `DeclarationBlock`s (rule sets with a selector),
  * `RuleSet`s as well as other `CSSList` objects.
@@ -35,21 +34,18 @@ use Sabberworm\CSS\Value\Value;
 abstract class CSSList implements Commentable, CSSElement, Positionable
 {
     use Position;
-
     /**
      * @var array<array-key, Comment>
      *
      * @internal since 8.8.0
      */
     protected $aComments;
-
     /**
      * @var array<int, RuleSet|CSSList|Import|Charset>
      *
      * @internal since 8.8.0
      */
     protected $aContents;
-
     /**
      * @param int $iLineNo
      */
@@ -59,7 +55,6 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
         $this->aContents = [];
         $this->setPosition($iLineNo);
     }
-
     /**
      * @return void
      *
@@ -83,7 +78,7 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
                 try {
                     $oListItem = self::parseListItem($oParserState, $oList);
                 } catch (UnexpectedTokenException $e) {
-                    $oListItem = false;
+                    $oListItem = \false;
                 }
             } else {
                 $oListItem = self::parseListItem($oParserState, $oList);
@@ -103,7 +98,6 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
             throw new SourceException("Unexpected end of document", $oParserState->currentLine());
         }
     }
-
     /**
      * @return AtRuleBlockList|KeyFrame|Charset|CSSNamespace|Import|AtRuleSet|DeclarationBlock|null|false
      *
@@ -118,20 +112,10 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
             $oAtRule = self::parseAtRule($oParserState);
             if ($oAtRule instanceof Charset) {
                 if (!$bIsRoot) {
-                    throw new UnexpectedTokenException(
-                        '@charset may only occur in root document',
-                        '',
-                        'custom',
-                        $oParserState->currentLine()
-                    );
+                    throw new UnexpectedTokenException('@charset may only occur in root document', '', 'custom', $oParserState->currentLine());
                 }
                 if (count($oList->getContents()) > 0) {
-                    throw new UnexpectedTokenException(
-                        '@charset must be the first parseable token in a document',
-                        '',
-                        'custom',
-                        $oParserState->currentLine()
-                    );
+                    throw new UnexpectedTokenException('@charset must be the first parseable token in a document', '', 'custom', $oParserState->currentLine());
                 }
                 $oParserState->setCharset($oAtRule->getCharset());
             }
@@ -151,7 +135,6 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
             return DeclarationBlock::parse($oParserState, $oList);
         }
     }
-
     /**
      * @param ParserState $oParserState
      *
@@ -174,17 +157,17 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
             if (!$oParserState->comes(';')) {
                 $sMediaQuery = trim($oParserState->consumeUntil([';', ParserState::EOF]));
             }
-            $oParserState->consumeUntil([';', ParserState::EOF], true, true);
+            $oParserState->consumeUntil([';', ParserState::EOF], \true, \true);
             return new Import($oLocation, $sMediaQuery ?: null, $iIdentifierLineNum);
         } elseif ($sIdentifier === 'charset') {
             $oCharsetString = CSSString::parse($oParserState);
             $oParserState->consumeWhiteSpace();
-            $oParserState->consumeUntil([';', ParserState::EOF], true, true);
+            $oParserState->consumeUntil([';', ParserState::EOF], \true, \true);
             return new Charset($oCharsetString, $iIdentifierLineNum);
         } elseif (self::identifierIs($sIdentifier, 'keyframes')) {
             $oResult = new KeyFrame($iIdentifierLineNum);
             $oResult->setVendorKeyFrame($sIdentifier);
-            $oResult->setAnimationName(trim($oParserState->consumeUntil('{', false, true)));
+            $oResult->setAnimationName(trim($oParserState->consumeUntil('{', \false, \true)));
             CSSList::parseList($oParserState, $oResult);
             if ($oParserState->comes('}')) {
                 $oParserState->consume('}');
@@ -197,22 +180,17 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
                 $sPrefix = $mUrl;
                 $mUrl = Value::parsePrimitiveValue($oParserState);
             }
-            $oParserState->consumeUntil([';', ParserState::EOF], true, true);
+            $oParserState->consumeUntil([';', ParserState::EOF], \true, \true);
             if ($sPrefix !== null && !is_string($sPrefix)) {
                 throw new UnexpectedTokenException('Wrong namespace prefix', $sPrefix, 'custom', $iIdentifierLineNum);
             }
             if (!($mUrl instanceof CSSString || $mUrl instanceof URL)) {
-                throw new UnexpectedTokenException(
-                    'Wrong namespace url of invalid type',
-                    $mUrl,
-                    'custom',
-                    $iIdentifierLineNum
-                );
+                throw new UnexpectedTokenException('Wrong namespace url of invalid type', $mUrl, 'custom', $iIdentifierLineNum);
             }
             return new CSSNamespace($mUrl, $sPrefix, $iIdentifierLineNum);
         } else {
             // Unknown other at rule (font-face or such)
-            $sArgs = trim($oParserState->consumeUntil('{', false, true));
+            $sArgs = trim($oParserState->consumeUntil('{', \false, \true));
             if (substr_count($sArgs, "(") != substr_count($sArgs, ")")) {
                 if ($oParserState->getSettings()->bLenientParsing) {
                     return null;
@@ -220,10 +198,10 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
                     throw new SourceException("Unmatched brace count in media query", $oParserState->currentLine());
                 }
             }
-            $bUseRuleSet = true;
+            $bUseRuleSet = \true;
             foreach (explode('/', AtRule::BLOCK_RULES) as $sBlockRuleName) {
                 if (self::identifierIs($sIdentifier, $sBlockRuleName)) {
-                    $bUseRuleSet = false;
+                    $bUseRuleSet = \false;
                     break;
                 }
             }
@@ -240,7 +218,6 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
             return $oAtRule;
         }
     }
-
     /**
      * Tests an identifier for a given value. Since identifiers are all keywords, they can be vendor-prefixed.
      * We need to check for these versions too.
@@ -252,10 +229,8 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
      */
     private static function identifierIs($sIdentifier, $sMatch)
     {
-        return (strcasecmp($sIdentifier, $sMatch) === 0)
-            ?: preg_match("/^(-\\w+-)?$sMatch$/i", $sIdentifier) === 1;
+        return strcasecmp($sIdentifier, $sMatch) === 0 ?: preg_match("/^(-\\w+-)?{$sMatch}\$/i", $sIdentifier) === 1;
     }
-
     /**
      * Prepends an item to the list of contents.
      *
@@ -267,7 +242,6 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
     {
         array_unshift($this->aContents, $oItem);
     }
-
     /**
      * Appends an item to the list of contents.
      *
@@ -279,7 +253,6 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
     {
         $this->aContents[] = $oItem;
     }
-
     /**
      * Splices the list of contents.
      *
@@ -293,7 +266,6 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
     {
         array_splice($this->aContents, $iOffset, $iLength, $mReplacement);
     }
-
     /**
      * Inserts an item in the CSS list before its sibling. If the desired sibling cannot be found,
      * the item is appended at the end.
@@ -303,13 +275,12 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
      */
     public function insertBefore($item, $sibling)
     {
-        if (in_array($sibling, $this->aContents, true)) {
+        if (in_array($sibling, $this->aContents, \true)) {
             $this->replace($sibling, [$item, $sibling]);
         } else {
             $this->append($item);
         }
     }
-
     /**
      * Removes an item from the CSS list.
      *
@@ -321,14 +292,13 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
      */
     public function remove($oItemToRemove)
     {
-        $iKey = array_search($oItemToRemove, $this->aContents, true);
-        if ($iKey !== false) {
+        $iKey = array_search($oItemToRemove, $this->aContents, \true);
+        if ($iKey !== \false) {
             unset($this->aContents[$iKey]);
-            return true;
+            return \true;
         }
-        return false;
+        return \false;
     }
-
     /**
      * Replaces an item from the CSS list.
      *
@@ -340,18 +310,17 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
      */
     public function replace($oOldItem, $mNewItem)
     {
-        $iKey = array_search($oOldItem, $this->aContents, true);
-        if ($iKey !== false) {
+        $iKey = array_search($oOldItem, $this->aContents, \true);
+        if ($iKey !== \false) {
             if (is_array($mNewItem)) {
                 array_splice($this->aContents, $iKey, 1, $mNewItem);
             } else {
                 array_splice($this->aContents, $iKey, 1, [$mNewItem]);
             }
-            return true;
+            return \true;
         }
-        return false;
+        return \false;
     }
-
     /**
      * @param array<int, RuleSet|Import|Charset|CSSList> $aContents
      */
@@ -362,7 +331,6 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
             $this->append($content);
         }
     }
-
     /**
      * Removes a declaration block from the CSS list if it matches all given selectors.
      *
@@ -371,7 +339,7 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
      *
      * @return void
      */
-    public function removeDeclarationBlockBySelector($mSelector, $bRemoveAll = false)
+    public function removeDeclarationBlockBySelector($mSelector, $bRemoveAll = \false)
     {
         if ($mSelector instanceof DeclarationBlock) {
             $mSelector = $mSelector->getSelectors();
@@ -380,19 +348,15 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
             $mSelector = explode(',', $mSelector);
         }
         foreach ($mSelector as $iKey => &$mSel) {
-            if (!($mSel instanceof Selector)) {
+            if (!$mSel instanceof Selector) {
                 if (!Selector::isValid($mSel)) {
-                    throw new UnexpectedTokenException(
-                        "Selector did not match '" . Selector::SELECTOR_VALIDATION_RX . "'.",
-                        $mSel,
-                        "custom"
-                    );
+                    throw new UnexpectedTokenException("Selector did not match '" . Selector::SELECTOR_VALIDATION_RX . "'.", $mSel, "custom");
                 }
                 $mSel = new Selector($mSel);
             }
         }
         foreach ($this->aContents as $iKey => $mItem) {
-            if (!($mItem instanceof DeclarationBlock)) {
+            if (!$mItem instanceof DeclarationBlock) {
                 continue;
             }
             if ($mItem->getSelectors() == $mSelector) {
@@ -403,7 +367,6 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
             }
         }
     }
-
     /**
      * @return string
      *
@@ -413,14 +376,13 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
     {
         return $this->render(new OutputFormat());
     }
-
     /**
      * @return string
      */
     protected function renderListContents(OutputFormat $oOutputFormat)
     {
         $sResult = '';
-        $bIsFirst = true;
+        $bIsFirst = \true;
         $oNextLevel = $oOutputFormat;
         if (!$this->isRootList()) {
             $oNextLevel = $oOutputFormat->nextLevel();
@@ -433,29 +395,25 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
                 continue;
             }
             if ($bIsFirst) {
-                $bIsFirst = false;
+                $bIsFirst = \false;
                 $sResult .= $oNextLevel->spaceBeforeBlocks();
             } else {
                 $sResult .= $oNextLevel->spaceBetweenBlocks();
             }
             $sResult .= $sRendered;
         }
-
         if (!$bIsFirst) {
             // Had some output
             $sResult .= $oOutputFormat->spaceAfterBlocks();
         }
-
         return $sResult;
     }
-
     /**
      * Return true if the list can not be further outdented. Only important when rendering.
      *
      * @return bool
      */
     abstract public function isRootList();
-
     /**
      * Returns the stored items.
      *
@@ -465,7 +423,6 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
     {
         return $this->aContents;
     }
-
     /**
      * @param array<array-key, Comment> $aComments
      *
@@ -475,7 +432,6 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
     {
         $this->aComments = array_merge($this->aComments, $aComments);
     }
-
     /**
      * @return array<array-key, Comment>
      */
@@ -483,7 +439,6 @@ abstract class CSSList implements Commentable, CSSElement, Positionable
     {
         return $this->aComments;
     }
-
     /**
      * @param array<array-key, Comment> $aComments
      *

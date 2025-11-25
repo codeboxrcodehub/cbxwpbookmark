@@ -1,18 +1,17 @@
 <?php
 
-namespace Illuminate\Database;
+namespace CBXWPBookmarkScoped\Illuminate\Database;
 
-use Doctrine\DBAL\Driver\PDOPgSql\Driver as DoctrineDriver;
-use Doctrine\DBAL\Version;
-use Illuminate\Database\PDO\PostgresDriver;
-use Illuminate\Database\Query\Grammars\PostgresGrammar as QueryGrammar;
-use Illuminate\Database\Query\Processors\PostgresProcessor;
-use Illuminate\Database\Schema\Grammars\PostgresGrammar as SchemaGrammar;
-use Illuminate\Database\Schema\PostgresBuilder;
-use Illuminate\Database\Schema\PostgresSchemaState;
-use Illuminate\Filesystem\Filesystem;
+use CBXWPBookmarkScoped\Doctrine\DBAL\Driver\PDOPgSql\Driver as DoctrineDriver;
+use CBXWPBookmarkScoped\Doctrine\DBAL\Version;
+use CBXWPBookmarkScoped\Illuminate\Database\PDO\PostgresDriver;
+use CBXWPBookmarkScoped\Illuminate\Database\Query\Grammars\PostgresGrammar as QueryGrammar;
+use CBXWPBookmarkScoped\Illuminate\Database\Query\Processors\PostgresProcessor;
+use CBXWPBookmarkScoped\Illuminate\Database\Schema\Grammars\PostgresGrammar as SchemaGrammar;
+use CBXWPBookmarkScoped\Illuminate\Database\Schema\PostgresBuilder;
+use CBXWPBookmarkScoped\Illuminate\Database\Schema\PostgresSchemaState;
+use CBXWPBookmarkScoped\Illuminate\Filesystem\Filesystem;
 use PDO;
-
 class PostgresConnection extends Connection
 {
     /**
@@ -32,15 +31,9 @@ class PostgresConnection extends Connection
             } else {
                 $pdoParam = PDO::PARAM_STR;
             }
-
-            $statement->bindValue(
-                is_string($key) ? $key : $key + 1,
-                $value,
-                $pdoParam
-            );
+            $statement->bindValue(is_string($key) ? $key : $key + 1, $value, $pdoParam);
         }
     }
-
     /**
      * Get the default query grammar instance.
      *
@@ -48,9 +41,8 @@ class PostgresConnection extends Connection
      */
     protected function getDefaultQueryGrammar()
     {
-        return $this->withTablePrefix(new QueryGrammar);
+        return $this->withTablePrefix(new QueryGrammar());
     }
-
     /**
      * Get a schema builder instance for the connection.
      *
@@ -61,10 +53,8 @@ class PostgresConnection extends Connection
         if (is_null($this->schemaGrammar)) {
             $this->useDefaultSchemaGrammar();
         }
-
         return new PostgresBuilder($this);
     }
-
     /**
      * Get the default schema grammar instance.
      *
@@ -72,9 +62,8 @@ class PostgresConnection extends Connection
      */
     protected function getDefaultSchemaGrammar()
     {
-        return $this->withTablePrefix(new SchemaGrammar);
+        return $this->withTablePrefix(new SchemaGrammar());
     }
-
     /**
      * Get the schema state for the connection.
      *
@@ -86,7 +75,6 @@ class PostgresConnection extends Connection
     {
         return new PostgresSchemaState($this, $files, $processFactory);
     }
-
     /**
      * Get the default post processor instance.
      *
@@ -94,9 +82,8 @@ class PostgresConnection extends Connection
      */
     protected function getDefaultPostProcessor()
     {
-        return new PostgresProcessor;
+        return new PostgresProcessor();
     }
-
     /**
      * Get the Doctrine DBAL driver.
      *
@@ -104,6 +91,6 @@ class PostgresConnection extends Connection
      */
     protected function getDoctrineDriver()
     {
-        return class_exists(Version::class) ? new DoctrineDriver : new PostgresDriver;
+        return class_exists(Version::class) ? new DoctrineDriver() : new PostgresDriver();
     }
 }

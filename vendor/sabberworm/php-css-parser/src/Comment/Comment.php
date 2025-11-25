@@ -1,23 +1,20 @@
 <?php
 
-namespace Sabberworm\CSS\Comment;
+namespace CBXWPBookmarkScoped\Sabberworm\CSS\Comment;
 
-use Sabberworm\CSS\OutputFormat;
-use Sabberworm\CSS\Renderable;
-use Sabberworm\CSS\Position\Position;
-use Sabberworm\CSS\Position\Positionable;
-
+use CBXWPBookmarkScoped\Sabberworm\CSS\OutputFormat;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Renderable;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Position\Position;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Position\Positionable;
 class Comment implements Positionable, Renderable
 {
     use Position;
-
     /**
      * @var string
      *
      * @internal since 8.8.0
      */
     protected $sComment;
-
     /**
      * @param string $sComment
      * @param int $iLineNo
@@ -27,7 +24,6 @@ class Comment implements Positionable, Renderable
         $this->sComment = $sComment;
         $this->setPosition($iLineNo);
     }
-
     /**
      * @return string
      */
@@ -35,7 +31,6 @@ class Comment implements Positionable, Renderable
     {
         return $this->sComment;
     }
-
     /**
      * @param string $sComment
      *
@@ -45,7 +40,6 @@ class Comment implements Positionable, Renderable
     {
         $this->sComment = $sComment;
     }
-
     /**
      * @return string
      *
@@ -55,7 +49,6 @@ class Comment implements Positionable, Renderable
     {
         return $this->render(new OutputFormat());
     }
-
     /**
      * @param OutputFormat|null $oOutputFormat
      *

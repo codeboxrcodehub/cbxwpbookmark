@@ -1,14 +1,12 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types=1);
+namespace CBXWPBookmarkScoped\Doctrine\Inflector\Rules\French;
 
-namespace Doctrine\Inflector\Rules\French;
-
-use Doctrine\Inflector\Rules\Pattern;
-use Doctrine\Inflector\Rules\Substitution;
-use Doctrine\Inflector\Rules\Transformation;
-use Doctrine\Inflector\Rules\Word;
-
+use CBXWPBookmarkScoped\Doctrine\Inflector\Rules\Pattern;
+use CBXWPBookmarkScoped\Doctrine\Inflector\Rules\Substitution;
+use CBXWPBookmarkScoped\Doctrine\Inflector\Rules\Transformation;
+use CBXWPBookmarkScoped\Doctrine\Inflector\Rules\Word;
 class Inflectible
 {
     /** @return Transformation[] */
@@ -20,7 +18,6 @@ class Inflectible
         yield new Transformation(new Pattern('/(bijou|caillou|chou|genou|hibou|joujou|pou|au|eu|eau)x$/'), '\1');
         yield new Transformation(new Pattern('/s$/'), '');
     }
-
     /** @return Transformation[] */
     public static function getPlural(): iterable
     {
@@ -33,7 +30,6 @@ class Inflectible
         yield new Transformation(new Pattern('/(bijou|caillou|chou|genou|hibou|joujou|lieu|pou|au|eu|eau)$/'), '\1x');
         yield new Transformation(new Pattern('/$/'), 's');
     }
-
     /** @return Substitution[] */
     public static function getIrregular(): iterable
     {

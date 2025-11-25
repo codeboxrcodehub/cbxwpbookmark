@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Support\Traits;
+namespace CBXWPBookmarkScoped\Illuminate\Support\Traits;
 
 trait Tappable
 {

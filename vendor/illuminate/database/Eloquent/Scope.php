@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Database\Eloquent;
+namespace CBXWPBookmarkScoped\Illuminate\Database\Eloquent;
 
 interface Scope
 {

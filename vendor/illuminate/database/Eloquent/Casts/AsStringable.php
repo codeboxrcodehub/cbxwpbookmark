@@ -1,11 +1,10 @@
 <?php
 
-namespace Illuminate\Database\Eloquent\Casts;
+namespace CBXWPBookmarkScoped\Illuminate\Database\Eloquent\Casts;
 
-use Illuminate\Contracts\Database\Eloquent\Castable;
-use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
-use Illuminate\Support\Str;
-
+use CBXWPBookmarkScoped\Illuminate\Contracts\Database\Eloquent\Castable;
+use CBXWPBookmarkScoped\Illuminate\Contracts\Database\Eloquent\CastsAttributes;
+use CBXWPBookmarkScoped\Illuminate\Support\Str;
 class AsStringable implements Castable
 {
     /**
@@ -22,7 +21,6 @@ class AsStringable implements Castable
             {
                 return isset($value) ? Str::of($value) : null;
             }
-
             public function set($model, $key, $value, $attributes)
             {
                 return isset($value) ? (string) $value : null;

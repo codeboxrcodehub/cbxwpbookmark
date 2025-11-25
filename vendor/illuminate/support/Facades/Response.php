@@ -1,9 +1,8 @@
 <?php
 
-namespace Illuminate\Support\Facades;
+namespace CBXWPBookmarkScoped\Illuminate\Support\Facades;
 
-use Illuminate\Contracts\Routing\ResponseFactory as ResponseFactoryContract;
-
+use CBXWPBookmarkScoped\Illuminate\Contracts\Routing\ResponseFactory as ResponseFactoryContract;
 /**
  * @method static \Illuminate\Http\JsonResponse json(string|array $data = [], int $status = 200, array $headers = [], int $options = 0)
  * @method static \Illuminate\Http\JsonResponse jsonp(string $callback, string|array $data = [], int $status = 200, array $headers = [], int $options = 0)

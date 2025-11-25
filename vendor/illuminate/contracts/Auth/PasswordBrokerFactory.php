@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Contracts\Auth;
+namespace CBXWPBookmarkScoped\Illuminate\Contracts\Auth;
 
 interface PasswordBrokerFactory
 {

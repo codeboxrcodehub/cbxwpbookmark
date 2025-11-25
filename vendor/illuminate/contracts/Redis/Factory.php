@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Contracts\Redis;
+namespace CBXWPBookmarkScoped\Illuminate\Contracts\Redis;
 
 interface Factory
 {

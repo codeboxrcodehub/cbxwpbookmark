@@ -1,14 +1,12 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types=1);
+namespace CBXWPBookmarkScoped\Doctrine\Inflector\Rules\Turkish;
 
-namespace Doctrine\Inflector\Rules\Turkish;
-
-use Doctrine\Inflector\Rules\Pattern;
-use Doctrine\Inflector\Rules\Substitution;
-use Doctrine\Inflector\Rules\Transformation;
-use Doctrine\Inflector\Rules\Word;
-
+use CBXWPBookmarkScoped\Doctrine\Inflector\Rules\Pattern;
+use CBXWPBookmarkScoped\Doctrine\Inflector\Rules\Substitution;
+use CBXWPBookmarkScoped\Doctrine\Inflector\Rules\Transformation;
+use CBXWPBookmarkScoped\Doctrine\Inflector\Rules\Word;
 class Inflectible
 {
     /** @return Transformation[] */
@@ -16,14 +14,12 @@ class Inflectible
     {
         yield new Transformation(new Pattern('/l[ae]r$/i'), '');
     }
-
     /** @return Transformation[] */
     public static function getPlural(): iterable
     {
         yield new Transformation(new Pattern('/([eöiü][^aoıueöiü]{0,6})$/u'), '\1ler');
         yield new Transformation(new Pattern('/([aoıu][^aoıueöiü]{0,6})$/u'), '\1lar');
     }
-
     /** @return Substitution[] */
     public static function getIrregular(): iterable
     {

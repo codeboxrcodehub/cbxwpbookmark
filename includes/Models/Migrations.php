@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-use Illuminate\Database\Eloquent\Model as Eloquent;
+use CBXWPBookmarkScoped\Illuminate\Database\Eloquent\Model as Eloquent;
 
 class Migrations extends Eloquent {
 

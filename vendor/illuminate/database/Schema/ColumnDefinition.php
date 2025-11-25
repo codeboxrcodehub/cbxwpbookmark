@@ -1,9 +1,8 @@
 <?php
 
-namespace Illuminate\Database\Schema;
+namespace CBXWPBookmarkScoped\Illuminate\Database\Schema;
 
-use Illuminate\Support\Fluent;
-
+use CBXWPBookmarkScoped\Illuminate\Support\Fluent;
 /**
  * @method $this after(string $column) Place the column "after" another column (MySQL)
  * @method $this always() Used as a modifier for generatedAs() (PostgreSQL)

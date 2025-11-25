@@ -2,7 +2,7 @@
 
 //use CBXWPBookmark\Helpers\CBXWPBookmarkHelper;
 use CBXWPBookmark\CBXWPBookmarkSettings;
-use enshrined\svgSanitize\Sanitizer;
+use CBXWPBookmarkScoped\enshrined\svgSanitize\Sanitizer;
 
 if ( ! function_exists( 'cbxwpbookmark_is_rest_api_request' ) ) {
 	/**

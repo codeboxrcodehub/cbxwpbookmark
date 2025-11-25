@@ -1,10 +1,9 @@
 <?php
 
-namespace Illuminate\Container;
+namespace CBXWPBookmarkScoped\Illuminate\Container;
 
 use Exception;
-use Psr\Container\NotFoundExceptionInterface;
-
+use CBXWPBookmarkScoped\Psr\Container\NotFoundExceptionInterface;
 class EntryNotFoundException extends Exception implements NotFoundExceptionInterface
 {
     //

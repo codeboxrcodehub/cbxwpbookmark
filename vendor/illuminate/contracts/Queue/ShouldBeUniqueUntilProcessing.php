@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Contracts\Queue;
+namespace CBXWPBookmarkScoped\Illuminate\Contracts\Queue;
 
 interface ShouldBeUniqueUntilProcessing extends ShouldBeUnique
 {

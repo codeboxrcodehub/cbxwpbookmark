@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 use CBXWPBookmark\Models\Migrations;
 use Exception;
-use Illuminate\Database\Capsule\Manager as Capsule;
+use CBXWPBookmarkScoped\Illuminate\Database\Capsule\Manager as Capsule;
 
 /**
  * Manage migration and database table

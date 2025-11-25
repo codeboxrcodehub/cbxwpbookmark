@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Database\Events;
+namespace CBXWPBookmarkScoped\Illuminate\Database\Events;
 
 class MigrationEnded extends MigrationEvent
 {

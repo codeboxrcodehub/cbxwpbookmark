@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Contracts\Support;
+namespace CBXWPBookmarkScoped\Illuminate\Contracts\Support;
 
 interface Jsonable
 {

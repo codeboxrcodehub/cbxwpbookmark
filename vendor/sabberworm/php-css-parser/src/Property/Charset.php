@@ -1,13 +1,12 @@
 <?php
 
-namespace Sabberworm\CSS\Property;
+namespace CBXWPBookmarkScoped\Sabberworm\CSS\Property;
 
-use Sabberworm\CSS\Comment\Comment;
-use Sabberworm\CSS\OutputFormat;
-use Sabberworm\CSS\Position\Position;
-use Sabberworm\CSS\Position\Positionable;
-use Sabberworm\CSS\Value\CSSString;
-
+use CBXWPBookmarkScoped\Sabberworm\CSS\Comment\Comment;
+use CBXWPBookmarkScoped\Sabberworm\CSS\OutputFormat;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Position\Position;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Position\Positionable;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Value\CSSString;
 /**
  * Class representing an `@charset` rule.
  *
@@ -19,26 +18,22 @@ use Sabberworm\CSS\Value\CSSString;
 class Charset implements AtRule, Positionable
 {
     use Position;
-
     /**
      * @var CSSString
      */
     private $oCharset;
-
     /**
      * @var int
      *
      * @internal since 8.8.0
      */
     protected $iLineNo;
-
     /**
      * @var array<array-key, Comment>
      *
      * @internal since 8.8.0
      */
     protected $aComments;
-
     /**
      * @param CSSString $oCharset
      * @param int $iLineNo
@@ -49,7 +44,6 @@ class Charset implements AtRule, Positionable
         $this->setPosition($iLineNo);
         $this->aComments = [];
     }
-
     /**
      * @param string|CSSString $oCharset
      *
@@ -60,7 +54,6 @@ class Charset implements AtRule, Positionable
         $sCharset = $sCharset instanceof CSSString ? $sCharset : new CSSString($sCharset);
         $this->oCharset = $sCharset;
     }
-
     /**
      * @return string
      */
@@ -68,7 +61,6 @@ class Charset implements AtRule, Positionable
     {
         return $this->oCharset->getString();
     }
-
     /**
      * @return string
      *
@@ -78,7 +70,6 @@ class Charset implements AtRule, Positionable
     {
         return $this->render(new OutputFormat());
     }
-
     /**
      * @param OutputFormat|null $oOutputFormat
      *
@@ -88,7 +79,6 @@ class Charset implements AtRule, Positionable
     {
         return "{$oOutputFormat->comments($this)}@charset {$this->oCharset->render($oOutputFormat)};";
     }
-
     /**
      * @return string
      */
@@ -96,7 +86,6 @@ class Charset implements AtRule, Positionable
     {
         return 'charset';
     }
-
     /**
      * @return string
      */
@@ -104,7 +93,6 @@ class Charset implements AtRule, Positionable
     {
         return $this->oCharset;
     }
-
     /**
      * @param array<array-key, Comment> $aComments
      *
@@ -114,7 +102,6 @@ class Charset implements AtRule, Positionable
     {
         $this->aComments = array_merge($this->aComments, $aComments);
     }
-
     /**
      * @return array<array-key, Comment>
      */
@@ -122,7 +109,6 @@ class Charset implements AtRule, Positionable
     {
         return $this->aComments;
     }
-
     /**
      * @param array<array-key, Comment> $aComments
      *

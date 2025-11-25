@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Contracts\Cache;
+namespace CBXWPBookmarkScoped\Illuminate\Contracts\Cache;
 
 interface Factory
 {

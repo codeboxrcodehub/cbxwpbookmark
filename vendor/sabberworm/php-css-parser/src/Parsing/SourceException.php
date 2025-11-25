@@ -1,14 +1,12 @@
 <?php
 
-namespace Sabberworm\CSS\Parsing;
+namespace CBXWPBookmarkScoped\Sabberworm\CSS\Parsing;
 
-use Sabberworm\CSS\Position\Position;
-use Sabberworm\CSS\Position\Positionable;
-
+use CBXWPBookmarkScoped\Sabberworm\CSS\Position\Position;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Position\Positionable;
 class SourceException extends \Exception implements Positionable
 {
     use Position;
-
     /**
      * @param string $sMessage
      * @param int $iLineNo
@@ -17,7 +15,7 @@ class SourceException extends \Exception implements Positionable
     {
         $this->setPosition($iLineNo);
         if (!empty($iLineNo)) {
-            $sMessage .= " [line no: $iLineNo]";
+            $sMessage .= " [line no: {$iLineNo}]";
         }
         parent::__construct($sMessage);
     }

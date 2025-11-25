@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Contracts\Translation;
+namespace CBXWPBookmarkScoped\Illuminate\Contracts\Translation;
 
 interface HasLocalePreference
 {

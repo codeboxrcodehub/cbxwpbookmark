@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Contracts\Auth\Access;
+namespace CBXWPBookmarkScoped\Illuminate\Contracts\Auth\Access;
 
 interface Authorizable
 {

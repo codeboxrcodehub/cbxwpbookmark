@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Contracts\View;
+namespace CBXWPBookmarkScoped\Illuminate\Contracts\View;
 
 interface Engine
 {

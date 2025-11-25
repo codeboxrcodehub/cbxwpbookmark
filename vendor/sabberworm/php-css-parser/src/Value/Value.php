@@ -1,15 +1,14 @@
 <?php
 
-namespace Sabberworm\CSS\Value;
+namespace CBXWPBookmarkScoped\Sabberworm\CSS\Value;
 
-use Sabberworm\CSS\CSSElement;
-use Sabberworm\CSS\Parsing\ParserState;
-use Sabberworm\CSS\Parsing\SourceException;
-use Sabberworm\CSS\Parsing\UnexpectedEOFException;
-use Sabberworm\CSS\Parsing\UnexpectedTokenException;
-use Sabberworm\CSS\Position\Position;
-use Sabberworm\CSS\Position\Positionable;
-
+use CBXWPBookmarkScoped\Sabberworm\CSS\CSSElement;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Parsing\ParserState;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Parsing\SourceException;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Parsing\UnexpectedEOFException;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Parsing\UnexpectedTokenException;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Position\Position;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Position\Positionable;
 /**
  * Abstract base class for specific classes of CSS values: `Size`, `Color`, `CSSString` and `URL`, and another
  * abstract subclass `ValueList`.
@@ -17,7 +16,6 @@ use Sabberworm\CSS\Position\Positionable;
 abstract class Value implements CSSElement, Positionable
 {
     use Position;
-
     /**
      * @param int $iLineNo
      */
@@ -25,7 +23,6 @@ abstract class Value implements CSSElement, Positionable
     {
         $this->setPosition($iLineNo);
     }
-
     /**
      * @param array<array-key, string> $aListDelimiters
      *
@@ -42,19 +39,14 @@ abstract class Value implements CSSElement, Positionable
         $aStack = [];
         $oParserState->consumeWhiteSpace();
         //Build a list of delimiters and parsed values
-        while (
-            !($oParserState->comes('}') || $oParserState->comes(';') || $oParserState->comes('!')
-                || $oParserState->comes(')')
-                || $oParserState->comes('\\')
-                || $oParserState->isEnd())
-        ) {
+        while (!($oParserState->comes('}') || $oParserState->comes(';') || $oParserState->comes('!') || $oParserState->comes(')') || $oParserState->comes('\\') || $oParserState->isEnd())) {
             if (count($aStack) > 0) {
-                $bFoundDelimiter = false;
+                $bFoundDelimiter = \false;
                 foreach ($aListDelimiters as $sDelimiter) {
                     if ($oParserState->comes($sDelimiter)) {
                         array_push($aStack, $oParserState->consume($sDelimiter));
                         $oParserState->consumeWhiteSpace();
-                        $bFoundDelimiter = true;
+                        $bFoundDelimiter = \true;
                         break;
                     }
                 }
@@ -74,11 +66,12 @@ abstract class Value implements CSSElement, Positionable
             }
             $aNewStack = [];
             for ($iStartPosition = 0; $iStartPosition < $iStackLength; ++$iStartPosition) {
-                if ($iStartPosition === ($iStackLength - 1) || $sDelimiter !== $aStack[$iStartPosition + 1]) {
+                if ($iStartPosition === $iStackLength - 1 || $sDelimiter !== $aStack[$iStartPosition + 1]) {
                     $aNewStack[] = $aStack[$iStartPosition];
                     continue;
                 }
-                $iLength = 2; //Number of elements to be joined
+                $iLength = 2;
+                //Number of elements to be joined
                 for ($i = $iStartPosition + 3; $i < $iStackLength; $i += 2, ++$iLength) {
                     if ($sDelimiter !== $aStack[$i]) {
                         break;
@@ -94,16 +87,10 @@ abstract class Value implements CSSElement, Positionable
             $aStack = $aNewStack;
         }
         if (!isset($aStack[0])) {
-            throw new UnexpectedTokenException(
-                " {$oParserState->peek()} ",
-                $oParserState->peek(1, -1) . $oParserState->peek(2),
-                'literal',
-                $oParserState->currentLine()
-            );
+            throw new UnexpectedTokenException(" {$oParserState->peek()} ", $oParserState->peek(1, -1) . $oParserState->peek(2), 'literal', $oParserState->currentLine());
         }
         return $aStack[0];
     }
-
     /**
      * @param bool $bIgnoreCase
      *
@@ -114,29 +101,22 @@ abstract class Value implements CSSElement, Positionable
      *
      * @internal since V8.8.0
      */
-    public static function parseIdentifierOrFunction(ParserState $oParserState, $bIgnoreCase = false)
+    public static function parseIdentifierOrFunction(ParserState $oParserState, $bIgnoreCase = \false)
     {
         $oAnchor = $oParserState->anchor();
         $mResult = $oParserState->parseIdentifier($bIgnoreCase);
-
         if ($oParserState->comes('(')) {
             $oAnchor->backtrack();
             if ($oParserState->streql('url', $mResult)) {
                 $mResult = URL::parse($oParserState);
-            } elseif (
-                $oParserState->streql('calc', $mResult)
-                || $oParserState->streql('-webkit-calc', $mResult)
-                || $oParserState->streql('-moz-calc', $mResult)
-            ) {
+            } elseif ($oParserState->streql('calc', $mResult) || $oParserState->streql('-webkit-calc', $mResult) || $oParserState->streql('-moz-calc', $mResult)) {
                 $mResult = CalcFunction::parse($oParserState);
             } else {
                 $mResult = CSSFunction::parse($oParserState, $bIgnoreCase);
             }
         }
-
         return $mResult;
     }
-
     /**
      * @return CSSFunction|CSSString|LineName|Size|URL|string
      *
@@ -150,14 +130,9 @@ abstract class Value implements CSSElement, Positionable
     {
         $oValue = null;
         $oParserState->consumeWhiteSpace();
-        if (
-            is_numeric($oParserState->peek())
-            || ($oParserState->comes('-.')
-                && is_numeric($oParserState->peek(1, 2)))
-            || (($oParserState->comes('-') || $oParserState->comes('.')) && is_numeric($oParserState->peek(1, 1)))
-        ) {
+        if (is_numeric($oParserState->peek()) || $oParserState->comes('-.') && is_numeric($oParserState->peek(1, 2)) || ($oParserState->comes('-') || $oParserState->comes('.')) && is_numeric($oParserState->peek(1, 1))) {
             $oValue = Size::parse($oParserState);
-        } elseif ($oParserState->comes('#') || $oParserState->comes('rgb', true) || $oParserState->comes('hsl', true)) {
+        } elseif ($oParserState->comes('#') || $oParserState->comes('rgb', \true) || $oParserState->comes('hsl', \true)) {
             $oValue = Color::parse($oParserState);
         } elseif ($oParserState->comes("'") || $oParserState->comes('"')) {
             $oValue = CSSString::parse($oParserState);
@@ -172,7 +147,7 @@ abstract class Value implements CSSElement, Positionable
             try {
                 $oValue = self::parseIdentifierOrFunction($oParserState);
             } catch (UnexpectedTokenException $e) {
-                if (\in_array($sNextChar, ['+', '-', '*', '/'], true)) {
+                if (\in_array($sNextChar, ['+', '-', '*', '/'], \true)) {
                     $oValue = $oParserState->consume(1);
                 } else {
                     throw $e;
@@ -182,7 +157,6 @@ abstract class Value implements CSSElement, Positionable
         $oParserState->consumeWhiteSpace();
         return $oValue;
     }
-
     /**
      * @return CSSFunction
      *
@@ -191,11 +165,10 @@ abstract class Value implements CSSElement, Positionable
      */
     private static function parseMicrosoftFilter(ParserState $oParserState)
     {
-        $sFunction = $oParserState->consumeUntil('(', false, true);
+        $sFunction = $oParserState->consumeUntil('(', \false, \true);
         $aArguments = Value::parseValue($oParserState, [',', '=']);
         return new CSSFunction($sFunction, $aArguments, ',', $oParserState->currentLine());
     }
-
     /**
      * @return string
      *
@@ -204,15 +177,17 @@ abstract class Value implements CSSElement, Positionable
      */
     private static function parseUnicodeRangeValue(ParserState $oParserState)
     {
-        $iCodepointMaxLength = 6; // Code points outside BMP can use up to six digits
+        $iCodepointMaxLength = 6;
+        // Code points outside BMP can use up to six digits
         $sRange = "";
         $oParserState->consume("U+");
         do {
             if ($oParserState->comes('-')) {
-                $iCodepointMaxLength = 13; // Max length is 2 six digit code points + the dash(-) between them
+                $iCodepointMaxLength = 13;
+                // Max length is 2 six digit code points + the dash(-) between them
             }
             $sRange .= $oParserState->consume(1);
-        } while (strlen($sRange) < $iCodepointMaxLength && preg_match("/[A-Fa-f0-9\?-]/", $oParserState->peek()));
+        } while (strlen($sRange) < $iCodepointMaxLength && preg_match("/[A-Fa-f0-9\\?-]/", $oParserState->peek()));
         return "U+{$sRange}";
     }
 }

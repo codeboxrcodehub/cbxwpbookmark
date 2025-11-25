@@ -1,10 +1,9 @@
 <?php
 
-namespace Illuminate\Contracts\Container;
+namespace CBXWPBookmarkScoped\Illuminate\Contracts\Container;
 
 use Exception;
-use Psr\Container\ContainerExceptionInterface;
-
+use CBXWPBookmarkScoped\Psr\Container\ContainerExceptionInterface;
 class CircularDependencyException extends Exception implements ContainerExceptionInterface
 {
     //

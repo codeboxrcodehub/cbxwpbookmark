@@ -71,25 +71,6 @@ $cbxwpbookmark_doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com
                                     </div>
                                 </div>
                             </div>
-                            <!--<div class="col-6">
-                                <div class="cbx-backend-feature-card">
-                                    <div class="feature-card-body static">
-                                        <div class="feature-card-header">
-                                            <a href="https://codeboxr.com/product/cbx-bookmark-mycred-addon/?utm_source=plgsidebarinfo&utm_medium=plgsidebar&utm_campaign=wpfreemium"
-                                               target="_blank"> <img
-                                                        src="https://codeboxr.com/wp-content/uploads/productshots/11792-profile.png"
-                                                        alt="CBX Bookmark myCred Addon"/> </a>
-
-                                        </div>
-                                        <div class="feature-card-description">
-                                            <h3>
-                                                <a href="https://codeboxr.com/product/cbx-bookmark-mycred-addon/?utm_source=plgsidebarinfo&utm_medium=plgsidebar&utm_campaign=wpfreemium"
-                                                   target="_blank">CBX Bookmark myCred Addon</a></h3>
-                                            <p>myCred integration. Point on bookmark.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -102,10 +83,24 @@ $cbxwpbookmark_doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com
                     <div class="content">
                         <div class="cbx-backend-settings-row">
                             <p>
+                                Version - 2.0.4
+                            </p>
+                            <ul>
+                                <li>[fixed] Composer based custom scope/namespace for vendor to avoid conflict with other plugins</li>
+                                <li>[fixed] Composer based custom scope/namespace for vendor to avoid conflict with other plugins</li>
+                                <li>[fixed] Pro addon 2.0.4 released and needed to update to make it work with core 2.0.4</li>
+                                <li>[note] Pro addon note: deactivate, manually delete &amp; install new version or install the new version as replacement.</li>
+                                <li>[fixed] Astra theme hash base vue js route fixed</li>
+                            </ul>
+                        </div>
+                        <div class="cbx-backend-settings-row">
+                            <p>
                                 Version - 2.0.3
                             </p>
                             <ul>
-                                <li>[important] From core version 2.0.0 there is compatibility issues with php and pro addon. For safe deactivate Bookmark pro addon(s). Update core &amp; activate. the update pro addon.</li>
+                                <li>[important] From core version 2.0.0 there is compatibility issues with php and pro addon. For safe deactivate Bookmark pro addon(s). Update core &amp; activate. the
+                                    update pro addon.
+                                </li>
                                 <li>[fixed] Fixed site crash or db connectivity error if not default mysql port</li>
                                 <li>[improved] Table names are now escape[security improvement]</li>
                                 <li>[improved] Pro Addon compatibility checking improved(2nd attempt)</li>
@@ -123,27 +118,6 @@ $cbxwpbookmark_doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com
                                 <li>[fixed] Auto page create security issue fixed(Reported by Nabil Irawan)</li>
                             </ul>
                         </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 2.0.1
-                            </p>
-                            <ul>
-                                <li>[fixed] Composer loading issue solved</li>
-                            </ul>
-                        </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 2.0.0
-                            </p>
-                            <ul>
-                                <li>[updated] PHP version compatibility check updated</li>
-                                <li>[fixed] PHP file direct access check issue checked for all files</li>
-                                <li>[updated] Admin dashboard design/views update</li>
-                                <li>[updated] Admin dashboard pages implemented with js views</li>
-                                <li>[improved] Helps and support and dashboard page separated</li>
-                                <li>[updated] Pro Addon plugin V2.0.0 released</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
                 <div class="cbx-backend-card dashboard-changelog">
@@ -153,6 +127,16 @@ $cbxwpbookmark_doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com
                         </div>
                     </div>
                     <div class="content">
+                        <div class="cbx-backend-settings-row">
+                            <p>
+                                Version - 2.0.4
+                            </p>
+                            <ul>
+                                <li>[note] Need core plugin 2.0.4</li>
+                                <li>[updated] Core plugin 2.0.4 released</li>
+                                <li>[fixed] Composer/PHP package Conflict issue solved</li>
+                            </ul>
+                        </div>
                         <div class="cbx-backend-settings-row">
                             <p>
                                 Version - 2.0.3
@@ -169,34 +153,6 @@ $cbxwpbookmark_doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com
                             <ul>
                                 <li>[updated] Misc improvement</li>
                                 <li>[updated] Core plugin 2.0.2 released</li>
-                            </ul>
-                        </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 2.0.1
-                            </p>
-                            <ul>
-                                <li>[fixed] Composer loading issue solved</li>
-                            </ul>
-                        </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 2.0.0
-                            </p>
-                            <ul>
-                                <li>[updated] PHP version compatibility check updated</li>
-                                <li>[fixed] PHP file direct access check issue checked for all files</li>
-                                <li>[updated] Core plugin V2.0.0 released</li>
-                                <li>[new] MyCred Bookmark addon merged with core</li>
-                            </ul>
-                        </div>
-                        <div class="cbx-backend-settings-row">
-                            <p>
-                                Version - 1.5.4
-                            </p>
-                            <ul>
-                                <li>[fixed] Deleting one category was deleting bookmarks from other category if bookmarks were in both category.</li>
-                                <li>[updated] Core plugin 1.9.11 released</li>
                             </ul>
                         </div>
                     </div>
@@ -300,16 +256,16 @@ $cbxwpbookmark_doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com
                     <div class="content">
                         <?php
                         $cbxwpbookmark_top_plugins = [
+                                'https://codeboxr.com/product/cbx-petition-for-wordpress/'                            => 'CBX Petition',
+                                'https://codeboxr.com/product/cbx-multi-criteria-rating-review-for-wordpress/'        => 'CBX Multi Criteria Rating & Review',
+                                'https://codeboxr.com/product/comfort-restaurant-booking-for-wordpress/'              => 'Comfort Restaurant Booking',
                                 'https://codeboxr.com/product/cbx-changelog-for-wordpress/'                           => 'CBX Changelog',
                                 'https://codeboxr.com/product/cbx-tour-user-walkthroughs-guided-tours-for-wordpress/' => 'CBX Tour – User Walkthroughs/Guided Tours',
-                                'https://codeboxr.com/product/cbx-currency-converter-for-wordpress/'                  => 'CBX Currency Converter',
                                 'https://codeboxr.com/product/cbx-email-logger-for-wordpress/'                        => 'CBX Email SMTP & Logger',
-                                'https://codeboxr.com/product/cbx-petition-for-wordpress/'                            => 'CBX Petition',
                                 'https://codeboxr.com/product/cbx-poll-for-wordpress/'                                => 'CBX Poll',
-                                'https://codeboxr.com/product/show-next-previous-article-for-wordpress'               => 'CBX Next Previous Article ',
-                                'https://codeboxr.com/product/cbx-multi-criteria-rating-review-for-wordpress/'        => 'CBX Multi Criteria Rating & Review',
                                 'https://codeboxr.com/product/cbx-user-online-for-wordpress/'                         => 'CBX User Online & Last Login',
-                                'https://codeboxr.com/product/comfort-restaurant-booking-for-wordpress/'              => 'Comfort Restaurant Booking for WordPress'
+                                'https://codeboxr.com/product/cbx-single-criteria-rating-review-for-wordpress/'       => 'CBX 5 Star Rating & Review',
+                                'https://codeboxr.com/product/cbx-google-map-for-wordpress/'                          => 'CBX Map for Google Map & OpenStreetMap'
                         ];
 
                         foreach ( $cbxwpbookmark_top_plugins as $link => $title ) {

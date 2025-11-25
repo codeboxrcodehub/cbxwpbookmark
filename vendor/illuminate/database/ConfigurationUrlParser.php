@@ -1,9 +1,8 @@
 <?php
 
-namespace Illuminate\Database;
+namespace CBXWPBookmarkScoped\Illuminate\Database;
 
-use Illuminate\Support\ConfigurationUrlParser as BaseConfigurationUrlParser;
-
+use CBXWPBookmarkScoped\Illuminate\Support\ConfigurationUrlParser as BaseConfigurationUrlParser;
 class ConfigurationUrlParser extends BaseConfigurationUrlParser
 {
     //

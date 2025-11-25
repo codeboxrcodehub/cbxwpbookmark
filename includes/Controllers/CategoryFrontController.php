@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 //use CBXWPBookmark\Helpers\CBXWPBookmarkHelper;
 use CBXWPBookmark\Models\Category;
 use Exception;
-use Rakit\Validation\Validator;
+use CBXWPBookmarkScoped\Rakit\Validation\Validator;
 use WP_REST_Request;
 use WP_REST_Response;
 

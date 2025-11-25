@@ -1183,7 +1183,7 @@ class CBXWPBookmarkAdmin {
 	 */
 	public function check_pro_addon() {
 		//pro addon
-		cbxwpbookmark_check_version_and_deactivate_plugin( 'cbxwpbookmarkaddon/cbxwpbookmarkaddon.php', '2.0.0', 'cbxwpbookmark_proaddon_deactivated' );
+		cbxwpbookmark_check_version_and_deactivate_plugin( 'cbxwpbookmarkaddon/cbxwpbookmarkaddon.php', '2.0.4', 'cbxwpbookmark_proaddon_deactivated' );
 		cbxwpbookmark_deactivate_mycred_proaddon();
 
 	}//end method check_pro_addon

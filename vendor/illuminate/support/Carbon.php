@@ -1,10 +1,9 @@
 <?php
 
-namespace Illuminate\Support;
+namespace CBXWPBookmarkScoped\Illuminate\Support;
 
-use Carbon\Carbon as BaseCarbon;
-use Carbon\CarbonImmutable as BaseCarbonImmutable;
-
+use CBXWPBookmarkScoped\Carbon\Carbon as BaseCarbon;
+use CBXWPBookmarkScoped\Carbon\CarbonImmutable as BaseCarbonImmutable;
 class Carbon extends BaseCarbon
 {
     /**

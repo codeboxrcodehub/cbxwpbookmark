@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Support\Facades;
+namespace CBXWPBookmarkScoped\Illuminate\Support\Facades;
 
 /**
  * @method static \Psr\Log\LoggerInterface channel(string $channel = null)

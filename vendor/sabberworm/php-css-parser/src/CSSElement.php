@@ -1,8 +1,7 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Sabberworm\CSS;
+declare (strict_types=1);
+namespace CBXWPBookmarkScoped\Sabberworm\CSS;
 
 /**
  * Represents any entity in the CSS that is encapsulated by a class.
@@ -14,4 +13,6 @@ namespace Sabberworm\CSS;
  *
  * It extends `Renderable` because every element is renderable.
  */
-interface CSSElement extends Renderable {}
+interface CSSElement extends Renderable
+{
+}

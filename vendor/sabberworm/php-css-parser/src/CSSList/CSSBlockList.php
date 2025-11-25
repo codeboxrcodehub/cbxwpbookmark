@@ -1,16 +1,15 @@
 <?php
 
-namespace Sabberworm\CSS\CSSList;
+namespace CBXWPBookmarkScoped\Sabberworm\CSS\CSSList;
 
-use Sabberworm\CSS\CSSElement;
-use Sabberworm\CSS\Property\Selector;
-use Sabberworm\CSS\Rule\Rule;
-use Sabberworm\CSS\RuleSet\DeclarationBlock;
-use Sabberworm\CSS\RuleSet\RuleSet;
-use Sabberworm\CSS\Value\CSSFunction;
-use Sabberworm\CSS\Value\Value;
-use Sabberworm\CSS\Value\ValueList;
-
+use CBXWPBookmarkScoped\Sabberworm\CSS\CSSElement;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Property\Selector;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Rule\Rule;
+use CBXWPBookmarkScoped\Sabberworm\CSS\RuleSet\DeclarationBlock;
+use CBXWPBookmarkScoped\Sabberworm\CSS\RuleSet\RuleSet;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Value\CSSFunction;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Value\Value;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Value\ValueList;
 /**
  * A `CSSBlockList` is a `CSSList` whose `DeclarationBlock`s are guaranteed to contain valid declaration blocks or
  * at-rules.
@@ -26,7 +25,6 @@ abstract class CSSBlockList extends CSSList
     {
         parent::__construct($iLineNo);
     }
-
     /**
      * @param array<int, DeclarationBlock> $aResult
      *
@@ -42,7 +40,6 @@ abstract class CSSBlockList extends CSSList
             }
         }
     }
-
     /**
      * @param array<int, RuleSet> $aResult
      *
@@ -58,7 +55,6 @@ abstract class CSSBlockList extends CSSList
             }
         }
     }
-
     /**
      * Returns all `Value` objects found recursively in `Rule`s in the tree.
      *
@@ -81,30 +77,24 @@ abstract class CSSBlockList extends CSSList
      *
      * @see RuleSet->getRules()
      */
-    public function getAllValues(
-        $element = null,
-        $ruleSearchPatternOrSearchInFunctionArguments = null,
-        $searchInFunctionArguments = false
-    ) {
+    public function getAllValues($element = null, $ruleSearchPatternOrSearchInFunctionArguments = null, $searchInFunctionArguments = \false)
+    {
         if (\is_bool($ruleSearchPatternOrSearchInFunctionArguments)) {
             $searchInFunctionArguments = $ruleSearchPatternOrSearchInFunctionArguments;
             $searchString = null;
         } else {
             $searchString = $ruleSearchPatternOrSearchInFunctionArguments;
         }
-
         if ($element === null) {
             $element = $this;
         } elseif (\is_string($element)) {
             $searchString = $element;
             $element = $this;
         }
-
         $result = [];
         $this->allValues($element, $result, $searchString, $searchInFunctionArguments);
         return $result;
     }
-
     /**
      * @param CSSElement|string $oElement
      * @param array<int, Value> $aResult
@@ -113,7 +103,7 @@ abstract class CSSBlockList extends CSSList
      *
      * @return void
      */
-    protected function allValues($oElement, array &$aResult, $sSearchString = null, $bSearchInFunctionArguments = false)
+    protected function allValues($oElement, array &$aResult, $sSearchString = null, $bSearchInFunctionArguments = \false)
     {
         if ($oElement instanceof CSSBlockList) {
             foreach ($oElement->getContents() as $oContent) {
@@ -126,7 +116,7 @@ abstract class CSSBlockList extends CSSList
         } elseif ($oElement instanceof Rule) {
             $this->allValues($oElement->getValue(), $aResult, $sSearchString, $bSearchInFunctionArguments);
         } elseif ($oElement instanceof ValueList) {
-            if ($bSearchInFunctionArguments || !($oElement instanceof CSSFunction)) {
+            if ($bSearchInFunctionArguments || !$oElement instanceof CSSFunction) {
                 foreach ($oElement->getListComponents() as $mComponent) {
                     $this->allValues($mComponent, $aResult, $sSearchString, $bSearchInFunctionArguments);
                 }
@@ -136,7 +126,6 @@ abstract class CSSBlockList extends CSSList
             $aResult[] = $oElement;
         }
     }
-
     /**
      * @param array<int, Selector> $aResult
      * @param string|null $sSpecificitySearch
@@ -160,9 +149,9 @@ abstract class CSSBlockList extends CSSList
                         $sComparator = $aSpecificitySearch[0];
                         $iTargetSpecificity = $aSpecificitySearch[1];
                     }
-                    $iTargetSpecificity = (int)$iTargetSpecificity;
+                    $iTargetSpecificity = (int) $iTargetSpecificity;
                     $iSelectorSpecificity = $oSelector->getSpecificity();
-                    $bMatches = false;
+                    $bMatches = \false;
                     switch ($sComparator) {
                         case '<=':
                             $bMatches = $iSelectorSpecificity <= $iTargetSpecificity;

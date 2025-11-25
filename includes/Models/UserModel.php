@@ -2,7 +2,7 @@
 
 namespace CBXWPBookmark\Models;
 
-use Illuminate\Database\Eloquent\Model as Eloquent;
+use CBXWPBookmarkScoped\Illuminate\Database\Eloquent\Model as Eloquent;
 
 /**
  * Class UserModel

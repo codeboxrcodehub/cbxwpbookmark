@@ -1,15 +1,12 @@
 <?php
 
-namespace Rakit\Validation\Rules;
+namespace CBXWPBookmarkScoped\Rakit\Validation\Rules;
 
-use Rakit\Validation\Rule;
-
+use CBXWPBookmarkScoped\Rakit\Validation\Rule;
 class Ipv4 extends Rule
 {
-
     /** @var string */
     protected $message = "The :attribute is not valid IPv4 Address";
-
     /**
      * Check the $value is valid
      *
@@ -18,6 +15,6 @@ class Ipv4 extends Rule
      */
     public function check($value): bool
     {
-        return filter_var($value, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) !== false;
+        return filter_var($value, \FILTER_VALIDATE_IP, \FILTER_FLAG_IPV4) !== \false;
     }
 }

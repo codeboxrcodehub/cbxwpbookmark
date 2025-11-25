@@ -1,8 +1,7 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Sabberworm\CSS\Position;
+declare (strict_types=1);
+namespace CBXWPBookmarkScoped\Sabberworm\CSS\Position;
 
 /**
  * Provides a standard reusable implementation of `Positionable`.
@@ -17,12 +16,10 @@ trait Position
      * @var int<1, max>|null
      */
     protected $lineNumber;
-
     /**
      * @var int<0, max>|null
      */
     protected $columnNumber;
-
     /**
      * @return int<1, max>|null
      */
@@ -30,17 +27,14 @@ trait Position
     {
         return $this->lineNumber;
     }
-
     /**
      * @return int<0, max>
      */
     public function getLineNo()
     {
         $lineNumber = $this->getLineNumber();
-
         return $lineNumber !== null ? $lineNumber : 0;
     }
-
     /**
      * @return int<0, max>|null
      */
@@ -48,17 +42,14 @@ trait Position
     {
         return $this->columnNumber;
     }
-
     /**
      * @return int<0, max>
      */
     public function getColNo()
     {
         $columnNumber = $this->getColumnNumber();
-
         return $columnNumber !== null ? $columnNumber : 0;
     }
-
     /**
      * @param int<0, max>|null $lineNumber
      * @param int<0, max>|null $columnNumber

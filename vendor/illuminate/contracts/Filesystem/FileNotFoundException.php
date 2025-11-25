@@ -1,9 +1,8 @@
 <?php
 
-namespace Illuminate\Contracts\Filesystem;
+namespace CBXWPBookmarkScoped\Illuminate\Contracts\Filesystem;
 
 use Exception;
-
 class FileNotFoundException extends Exception
 {
     //

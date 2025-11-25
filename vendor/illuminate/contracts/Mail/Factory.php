@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Contracts\Mail;
+namespace CBXWPBookmarkScoped\Illuminate\Contracts\Mail;
 
 interface Factory
 {

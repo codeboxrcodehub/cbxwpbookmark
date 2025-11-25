@@ -1,9 +1,8 @@
 <?php
 
-namespace Psr\Clock;
+namespace CBXWPBookmarkScoped\Psr\Clock;
 
 use DateTimeImmutable;
-
 interface ClockInterface
 {
     /**

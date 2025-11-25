@@ -1,10 +1,9 @@
 <?php
 
-namespace Illuminate\Database\PDO;
+namespace CBXWPBookmarkScoped\Illuminate\Database\PDO;
 
-use Doctrine\DBAL\Driver\AbstractMySQLDriver;
-use Illuminate\Database\PDO\Concerns\ConnectsToDatabase;
-
+use CBXWPBookmarkScoped\Doctrine\DBAL\Driver\AbstractMySQLDriver;
+use CBXWPBookmarkScoped\Illuminate\Database\PDO\Concerns\ConnectsToDatabase;
 class MySqlDriver extends AbstractMySQLDriver
 {
     use ConnectsToDatabase;

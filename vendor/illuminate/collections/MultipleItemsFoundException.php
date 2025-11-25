@@ -1,9 +1,8 @@
 <?php
 
-namespace Illuminate\Support;
+namespace CBXWPBookmarkScoped\Illuminate\Support;
 
 use RuntimeException;
-
 class MultipleItemsFoundException extends RuntimeException
 {
 }

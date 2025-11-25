@@ -1,11 +1,11 @@
 <?php
 
-use Illuminate\Contracts\Support\DeferringDisplayableValue;
-use Illuminate\Contracts\Support\Htmlable;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Env;
-use Illuminate\Support\HigherOrderTapProxy;
-use Illuminate\Support\Optional;
+use CBXWPBookmarkScoped\Illuminate\Contracts\Support\DeferringDisplayableValue;
+use CBXWPBookmarkScoped\Illuminate\Contracts\Support\Htmlable;
+use CBXWPBookmarkScoped\Illuminate\Support\Arr;
+use CBXWPBookmarkScoped\Illuminate\Support\Env;
+use CBXWPBookmarkScoped\Illuminate\Support\HigherOrderTapProxy;
+use CBXWPBookmarkScoped\Illuminate\Support\Optional;
 
 if (! function_exists('append_config')) {
     /**

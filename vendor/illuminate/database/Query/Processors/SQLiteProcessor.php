@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Database\Query\Processors;
+namespace CBXWPBookmarkScoped\Illuminate\Database\Query\Processors;
 
 class SQLiteProcessor extends Processor
 {

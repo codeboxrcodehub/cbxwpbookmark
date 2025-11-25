@@ -1,41 +1,35 @@
 <?php
 
-namespace Sabberworm\CSS\Property;
+namespace CBXWPBookmarkScoped\Sabberworm\CSS\Property;
 
-use Sabberworm\CSS\Comment\Comment;
-use Sabberworm\CSS\OutputFormat;
-use Sabberworm\CSS\Position\Position;
-use Sabberworm\CSS\Position\Positionable;
-
+use CBXWPBookmarkScoped\Sabberworm\CSS\Comment\Comment;
+use CBXWPBookmarkScoped\Sabberworm\CSS\OutputFormat;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Position\Position;
+use CBXWPBookmarkScoped\Sabberworm\CSS\Position\Positionable;
 /**
  * `CSSNamespace` represents an `@namespace` rule.
  */
 class CSSNamespace implements AtRule, Positionable
 {
     use Position;
-
     /**
      * @var string
      */
     private $mUrl;
-
     /**
      * @var string
      */
     private $sPrefix;
-
     /**
      * @var int
      */
     private $iLineNo;
-
     /**
      * @var array<array-key, Comment>
      *
      * @internal since 8.8.0
      */
     protected $aComments;
-
     /**
      * @param string $mUrl
      * @param string|null $sPrefix
@@ -48,7 +42,6 @@ class CSSNamespace implements AtRule, Positionable
         $this->setPosition($iLineNo);
         $this->aComments = [];
     }
-
     /**
      * @return string
      *
@@ -58,7 +51,6 @@ class CSSNamespace implements AtRule, Positionable
     {
         return $this->render(new OutputFormat());
     }
-
     /**
      * @param OutputFormat|null $oOutputFormat
      *
@@ -66,10 +58,8 @@ class CSSNamespace implements AtRule, Positionable
      */
     public function render($oOutputFormat)
     {
-        return '@namespace ' . ($this->sPrefix === null ? '' : $this->sPrefix . ' ')
-            . $this->mUrl->render($oOutputFormat) . ';';
+        return '@namespace ' . ($this->sPrefix === null ? '' : $this->sPrefix . ' ') . $this->mUrl->render($oOutputFormat) . ';';
     }
-
     /**
      * @return string
      */
@@ -77,7 +67,6 @@ class CSSNamespace implements AtRule, Positionable
     {
         return $this->mUrl;
     }
-
     /**
      * @return string|null
      */
@@ -85,7 +74,6 @@ class CSSNamespace implements AtRule, Positionable
     {
         return $this->sPrefix;
     }
-
     /**
      * @param string $mUrl
      *
@@ -95,7 +83,6 @@ class CSSNamespace implements AtRule, Positionable
     {
         $this->mUrl = $mUrl;
     }
-
     /**
      * @param string $sPrefix
      *
@@ -105,7 +92,6 @@ class CSSNamespace implements AtRule, Positionable
     {
         $this->sPrefix = $sPrefix;
     }
-
     /**
      * @return string
      */
@@ -113,7 +99,6 @@ class CSSNamespace implements AtRule, Positionable
     {
         return 'namespace';
     }
-
     /**
      * @return array<int, string>
      */
@@ -125,7 +110,6 @@ class CSSNamespace implements AtRule, Positionable
         }
         return $aResult;
     }
-
     /**
      * @param array<array-key, Comment> $aComments
      *
@@ -135,7 +119,6 @@ class CSSNamespace implements AtRule, Positionable
     {
         $this->aComments = array_merge($this->aComments, $aComments);
     }
-
     /**
      * @return array<array-key, Comment>
      */
@@ -143,7 +126,6 @@ class CSSNamespace implements AtRule, Positionable
     {
         return $this->aComments;
     }
-
     /**
      * @param array<array-key, Comment> $aComments
      *

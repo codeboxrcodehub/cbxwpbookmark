@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-use Illuminate\Database\Capsule\Manager as Capsule;
+use CBXWPBookmarkScoped\Illuminate\Database\Capsule\Manager as Capsule;
 
 if (!class_exists("CBXWPBookmarkAddSortOrder")) {
     /**
