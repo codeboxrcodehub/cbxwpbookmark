@@ -166,7 +166,7 @@ jobs:
       # -------------------------------------------
       # Add readme.txt AND vendor/autoload.php in trunk + tag
       # -------------------------------------------
-      - name: Add final files: readme and vendor/autoload.php
+      - name: Add final files readme and vendor/autoload.php
         run: |
           version="${GITHUB_REF##*/}"
 
