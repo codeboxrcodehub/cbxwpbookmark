@@ -9,24 +9,21 @@ jobs:
   tag:
     name: New tag
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
 
       - name: Debug File List
         run: ls -R
 
-      - name: Install SVN
+      - name: Install SVN (Subversion)
         run: |
           sudo apt-get update
           sudo apt-get install subversion
 
-      # -------------------------------------------
-      # KEEPING EXISTING README-FINDING LOGIC
-      # -------------------------------------------
       - name: Find Readme File
         id: find_readme
         run: |
+          #readme_file=$(find . -type f -iname "readme.*" | head -n 1)
           readme_file=$(find . -maxdepth 1 -type f -iname "readme.txt" | head -n 1)
           if [ -n "$readme_file" ]; then
             echo "Readme file found: $readme_file"
@@ -36,9 +33,6 @@ jobs:
             exit 1
           fi
 
-      # -------------------------------------------
-      # KEEPING EXISTING RELEASE NOTES LOGIC
-      # -------------------------------------------
       - name: Extract Release Notes
         id: release_notes
         run: |
@@ -46,26 +40,32 @@ jobs:
           current_tag="${{ github.ref_name }}"
           readme_file="${{ env.readme_file }}"
 
+          # Extract the version (strip 'refs/tags/' if it exists)
           version=${current_tag#refs/tags/}
 
+          # Read lines from the changelog section
           in_changelog=0
           release_notes=""
           capturing_version=0
-
           while IFS= read -r line; do
+            # Start capturing after finding the changelog section
             if [[ "$line" == "$changelog_section_start" ]]; then
               in_changelog=1
               continue
             fi
 
+            # Stop capturing if we encounter a new version or the end of the file
             if [[ $in_changelog -eq 1 && "$line" =~ ^= ]]; then
+              # Check if this is the current version
               if [[ "$line" == "= $version =" ]]; then
                 capturing_version=1
               elif [[ $capturing_version -eq 1 ]]; then
+                # Stop if we see the next version
                 break
               fi
             fi
 
+            # Capture lines only for the current version
             if [[ $capturing_version -eq 1 && -n "$line" ]]; then
               release_notes+="$line\n"
             fi
@@ -76,145 +76,32 @@ jobs:
             exit 1
           fi
 
+          # Debug: Print extracted release notes
+          echo "Extracted release notes for version $version:"
+          printf "%b" "$release_notes"
+
+          # Set output (fixed, now using Environment File)
           echo "notes<<EOF" >> $GITHUB_OUTPUT
           printf "%b\n" "$release_notes" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
-      # -------------------------------------------
-      # CUSTOM SVN DEPLOY LOGIC
-      # -------------------------------------------
-      - name: Checkout WP.org SVN
+      - name: Debug Release Notes
         run: |
-          svn co https://plugins.svn.wordpress.org/${{ github.event.repository.name }}/ svn-wp
+          echo "Debugging Release Notes:"
+          echo "${{ steps.release_notes.outputs.notes }}"
 
-      - name: Clean trunk
-        run: |
-          rm -rf svn-wp/trunk/*
-          mkdir -p svn-wp/trunk
+      - name: WordPress Plugin Deploy
+        id: deploy
+        uses: 10up/action-wordpress-plugin-deploy@stable
+        with:
+          generate-zip: true
 
-      # -------------------------------------------
-      # Copy vendor WITHOUT autoload.php
-      # -------------------------------------------
-      - name: Copy vendor folder (excluding autoload.php)
-        run: |
-          if [ -d "vendor" ]; then
-            mkdir -p svn-wp/trunk/vendor
-            rsync -av \
-              --exclude='autoload.php' \
-              ./vendor/ svn-wp/trunk/vendor/
-          fi
-
-      # -------------------------------------------
-      # Commit vendor folders one-by-one
-      # -------------------------------------------
-      - name: Commit vendor subfolders
-        run: |
-          if [ -d "svn-wp/trunk/vendor" ]; then
-            cd svn-wp/trunk/vendor
-
-            for dir in */; do
-              echo "Processing vendor folder: $dir"
-
-              cd "$dir"
-              svn add --force .
-              svn status
-
-              svn commit -m "Add vendor folder: ${dir%/} for version ${{ github.ref_name }}" \
-                --username "${{ secrets.SVN_USERNAME }}" \
-                --password "${{ secrets.SVN_PASSWORD }}" \
-                || echo "Nothing to commit for $dir"
-
-              cd ..
-            done
-          fi
-
-      # -------------------------------------------
-      # Copy remaining plugin files (excluding readme.txt + vendor)
-      # -------------------------------------------
-      - name: Copy remaining plugin files
-        run: |
-          rsync -av \
-            --exclude='vendor' \
-            --exclude='readme.txt' \
-            --exclude='svn-wp' \
-            ./ svn-wp/trunk/
-
-      # -------------------------------------------
-      # Commit remaining plugin files
-      # -------------------------------------------
-      - name: Commit the rest of the plugin files
-        run: |
-          cd svn-wp
-          svn add --force trunk
-          svn status
-          svn commit -m "Add remaining plugin files for version ${{ github.ref_name }}" \
-            --username "${{ secrets.SVN_USERNAME }}" \
-            --password "${{ secrets.SVN_PASSWORD }}"
-
-      # -------------------------------------------
-      # Create the tag from trunk
-      # -------------------------------------------
-      - name: Create new SVN tag
-        run: |
-          version="${GITHUB_REF##*/}"
-          cd svn-wp
-          svn cp trunk tags/$version
-          svn commit -m "Tag version $version" \
-            --username "${{ secrets.SVN_USERNAME }}" \
-            --password "${{ secrets.SVN_PASSWORD }}"
-
-      # -------------------------------------------
-      # Add readme.txt AND vendor/autoload.php in trunk + tag
-      # -------------------------------------------
-      - name: Add final files readme and vendor/autoload.php
-        run: |
-          version="${GITHUB_REF##*/}"
-
-          # add readme.txt to trunk
-          cp readme.txt svn-wp/trunk/readme.txt
-          svn -q add svn-wp/trunk/readme.txt || true
-
-          # add readme.txt to tag
-          cp readme.txt svn-wp/tags/$version/readme.txt
-          svn -q add svn-wp/tags/$version/readme.txt || true
-
-          # add autoload.php if exists
-          if [ -f "vendor/autoload.php" ]; then
-            cp vendor/autoload.php svn-wp/trunk/vendor/autoload.php
-            cp vendor/autoload.php svn-wp/tags/$version/vendor/autoload.php
-
-            svn -q add svn-wp/trunk/vendor/autoload.php || true
-            svn -q add svn-wp/tags/$version/vendor/autoload.php || true
-          fi
-
-      # -------------------------------------------
-      # Update stable tag in both readmes
-      # -------------------------------------------
-      - name: Update readme stable tag in trunk + tag
-        run: |
-          version="${GITHUB_REF##*/}"
-
-          sed -i "s/^Stable tag:.*/Stable tag: $version/" svn-wp/trunk/readme.txt
-          sed -i "s/^Stable tag:.*/Stable tag: $version/" svn-wp/tags/$version/readme.txt
-
-      # -------------------------------------------
-      # Commit final updates (readme + autoload.php)
-      # -------------------------------------------
-      - name: Commit final readme + autoload.php
-        run: |
-          cd svn-wp
-          svn commit -m "Finalize stable tag and autoloader for version ${GITHUB_REF##*/}" \
-            --username "${{ secrets.SVN_USERNAME }}" \
-            --password "${{ secrets.SVN_PASSWORD }}"
-
-      # -------------------------------------------
-      # CREATE GITHUB RELEASE (unchanged)
-      # -------------------------------------------
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}
           body: ${{ steps.release_notes.outputs.notes }}
+          files: ${{github.workspace}}/${{ github.event.repository.name }}.zip
 
 env:
   SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
