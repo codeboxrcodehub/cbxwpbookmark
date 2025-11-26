@@ -22,7 +22,7 @@ jobs:
           sudo apt-get install subversion
 
       # -------------------------------------------
-      # KEEPING YOUR EXISTING README-FINDING LOGIC
+      # KEEPING EXISTING README-FINDING LOGIC
       # -------------------------------------------
       - name: Find Readme File
         id: find_readme
@@ -37,7 +37,7 @@ jobs:
           fi
 
       # -------------------------------------------
-      # KEEPING YOUR EXISTING RELEASE NOTES LOGIC
+      # KEEPING EXISTING RELEASE NOTES LOGIC
       # -------------------------------------------
       - name: Extract Release Notes
         id: release_notes
@@ -81,27 +81,79 @@ jobs:
           echo "EOF" >> $GITHUB_OUTPUT
 
       # -------------------------------------------
-      # BEGIN CUSTOM SVN DEPLOY LOGIC
+      # CUSTOM SVN DEPLOY LOGIC
       # -------------------------------------------
       - name: Checkout WP.org SVN
         run: |
           svn co https://plugins.svn.wordpress.org/${{ github.event.repository.name }}/ svn-wp
 
-      - name: Copy plugin files to trunk (excluding readme.txt)
+      - name: Clean trunk
         run: |
           rm -rf svn-wp/trunk/*
-          rsync -av --exclude='readme.txt' --exclude='svn-wp' ./ svn-wp/trunk/
+          mkdir -p svn-wp/trunk
 
+      # -------------------------------------------
+      # Copy vendor WITHOUT autoload.php
+      # -------------------------------------------
+      - name: Copy vendor folder (excluding autoload.php)
+        run: |
+          if [ -d "vendor" ]; then
+            mkdir -p svn-wp/trunk/vendor
+            rsync -av \
+              --exclude='autoload.php' \
+              ./vendor/ svn-wp/trunk/vendor/
+          fi
 
-      - name: Commit trunk update
+      # -------------------------------------------
+      # Commit vendor folders one-by-one
+      # -------------------------------------------
+      - name: Commit vendor subfolders
+        run: |
+          if [ -d "svn-wp/trunk/vendor" ]; then
+            cd svn-wp/trunk/vendor
+
+            for dir in */; do
+              echo "Processing vendor folder: $dir"
+
+              cd "$dir"
+              svn add --force .
+              svn status
+
+              svn commit -m "Add vendor folder: ${dir%/} for version ${{ github.ref_name }}" \
+                --username "${{ secrets.SVN_USERNAME }}" \
+                --password "${{ secrets.SVN_PASSWORD }}" \
+                || echo "Nothing to commit for $dir"
+
+              cd ..
+            done
+          fi
+
+      # -------------------------------------------
+      # Copy remaining plugin files (excluding readme.txt + vendor)
+      # -------------------------------------------
+      - name: Copy remaining plugin files
+        run: |
+          rsync -av \
+            --exclude='vendor' \
+            --exclude='readme.txt' \
+            --exclude='svn-wp' \
+            ./ svn-wp/trunk/
+
+      # -------------------------------------------
+      # Commit remaining plugin files
+      # -------------------------------------------
+      - name: Commit the rest of the plugin files
         run: |
           cd svn-wp
           svn add --force trunk
           svn status
-          svn commit -m "Update trunk for version ${{ github.ref_name }}" \
+          svn commit -m "Add remaining plugin files for version ${{ github.ref_name }}" \
             --username "${{ secrets.SVN_USERNAME }}" \
             --password "${{ secrets.SVN_PASSWORD }}"
 
+      # -------------------------------------------
+      # Create the tag from trunk
+      # -------------------------------------------
       - name: Create new SVN tag
         run: |
           version="${GITHUB_REF##*/}"
@@ -111,25 +163,52 @@ jobs:
             --username "${{ secrets.SVN_USERNAME }}" \
             --password "${{ secrets.SVN_PASSWORD }}"
 
-      - name: Update readme stable tag in both trunk and tag
+      # -------------------------------------------
+      # Add readme.txt AND vendor/autoload.php in trunk + tag
+      # -------------------------------------------
+      - name: Add final files: readme + vendor/autoload.php
         run: |
           version="${GITHUB_REF##*/}"
 
-          # update readme in trunk
-          sed -i "s/^Stable tag:.*/Stable tag: $version/" svn-wp/trunk/readme.txt
+          # add readme.txt to trunk
+          cp readme.txt svn-wp/trunk/readme.txt
+          svn -q add svn-wp/trunk/readme.txt || true
 
-          # update readme in tag dir
+          # add readme.txt to tag
+          cp readme.txt svn-wp/tags/$version/readme.txt
+          svn -q add svn-wp/tags/$version/readme.txt || true
+
+          # add autoload.php if exists
+          if [ -f "vendor/autoload.php" ]; then
+            cp vendor/autoload.php svn-wp/trunk/vendor/autoload.php
+            cp vendor/autoload.php svn-wp/tags/$version/vendor/autoload.php
+
+            svn -q add svn-wp/trunk/vendor/autoload.php || true
+            svn -q add svn-wp/tags/$version/vendor/autoload.php || true
+          fi
+
+      # -------------------------------------------
+      # Update stable tag in both readmes
+      # -------------------------------------------
+      - name: Update readme stable tag in trunk + tag
+        run: |
+          version="${GITHUB_REF##*/}"
+
+          sed -i "s/^Stable tag:.*/Stable tag: $version/" svn-wp/trunk/readme.txt
           sed -i "s/^Stable tag:.*/Stable tag: $version/" svn-wp/tags/$version/readme.txt
 
-      - name: Commit updated readmes (final)
+      # -------------------------------------------
+      # Commit final updates (readme + autoload.php)
+      # -------------------------------------------
+      - name: Commit final readme + autoload.php
         run: |
           cd svn-wp
-          svn commit -m "Update stable tag to ${GITHUB_REF##*/}" \
+          svn commit -m "Finalize stable tag and autoloader for version ${GITHUB_REF##*/}" \
             --username "${{ secrets.SVN_USERNAME }}" \
             --password "${{ secrets.SVN_PASSWORD }}"
 
       # -------------------------------------------
-      # CREATE GITHUB RELEASE (KEEP THIS AS IS)
+      # CREATE GITHUB RELEASE (unchanged)
       # -------------------------------------------
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
