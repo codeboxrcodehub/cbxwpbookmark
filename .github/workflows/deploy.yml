@@ -87,12 +87,11 @@ jobs:
         run: |
           svn co https://plugins.svn.wordpress.org/${{ github.event.repository.name }}/ svn-wp
 
-      - name: Copy all plugin files except readme.txt into trunk
+      - name: Copy plugin files to trunk (excluding readme.txt)
         run: |
           rm -rf svn-wp/trunk/*
-          shopt -s extglob
-          cp -R !(readme.txt) svn-wp/trunk/
-          shopt -u extglob
+          rsync -av --exclude='readme.txt' --exclude='svn-wp' ./ svn-wp/trunk/
+
 
       - name: Commit trunk update
         run: |
