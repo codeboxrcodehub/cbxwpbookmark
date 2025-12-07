@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-//use CBXWPBookmark\Helpers\CBXWPBookmarkHelper;
+
 use CBXWPBookmark\Models\Category;
 use Exception;
 use CBXWPBookmarkScoped\Rakit\Validation\Validator;

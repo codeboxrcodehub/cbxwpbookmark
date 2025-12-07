@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-//use CBXWPBookmark\Helpers\CBXWPBookmarkHelper;
+
 use CBXWPBookmark\CBXWPBookmarkSettings;
 use CBXWPBookmarkScoped\Illuminate\Database\Eloquent\Model as Eloquent;
 

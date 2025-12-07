@@ -2,7 +2,7 @@
 namespace CBXWPBookmark;
 
 use CBXWPBookmark\CBXWPBookmarkSettings;
-//use CBXWPBookmark\Helpers\CBXWPBookmarkHelper;
+
 
 use CBXWPBookmark\Models\Category;
 use CBXWPBookmark\Widgets\Elementor\CBXWPBookmarkBtnElemWidget;
@@ -126,14 +126,14 @@ class CBXWPBookmarkPublic {
 
 		//phpcs:disable
 		if ( $bookmark_mode == 'user_cat' ) {
-			$cats_by_user = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $category_table WHERE user_id = %d ORDER BY $cats_by_user_orderby $cats_by_user_order", $user_id ), ARRAY_A );
+			$cats_by_user = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM {$category_table} WHERE user_id = %d ORDER BY $cats_by_user_orderby $cats_by_user_order", $user_id ), ARRAY_A );
 		} else {
-			$cats_by_user = $wpdb->get_results( "SELECT * FROM $category_table WHERE 1 ORDER BY $cats_by_user_orderby $cats_by_user_order", ARRAY_A );
+			$cats_by_user = $wpdb->get_results( "SELECT * FROM {$category_table} WHERE 1 ORDER BY $cats_by_user_orderby $cats_by_user_order", ARRAY_A );
 		}
 
 
 		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
-		$post_in_cats_t = $wpdb->get_results( $wpdb->prepare( "SELECT DISTINCT cat_id FROM $bookmark_table WHERE object_type = %s AND user_id = %d AND object_id = %d", [
+		$post_in_cats_t = $wpdb->get_results( $wpdb->prepare( "SELECT DISTINCT cat_id FROM {$bookmark_table} WHERE object_type = %s AND user_id = %d AND object_id = %d", [
 			$object_type,
 			$user_id,
 			$object_id
@@ -414,11 +414,11 @@ class CBXWPBookmarkPublic {
 		$message  = [];
 
 		if ( isset( $_POST['limit'] ) && $_POST['limit'] != null ) {
-			$instance['limit'] = intval( $_POST['limit'] );
+			$instance['limit'] = absint( $_POST['limit'] );
 		}
 
 		if ( isset( $_POST['offset'] ) && $_POST['offset'] != null ) {
-			$instance['offset'] = intval( $_POST['offset'] );
+			$instance['offset'] = absint( $_POST['offset'] );
 		}
 
 		if ( isset( $_POST['catid'] ) ) {
@@ -432,7 +432,7 @@ class CBXWPBookmarkPublic {
 		}
 
 		if ( isset( $_POST['userid'] ) && $_POST['userid'] != 0 ) {
-			$instance['userid'] = intval( $_POST['userid'] );
+			$instance['userid'] = absint( $_POST['userid'] );
 		}
 
 		if ( isset( $_POST['order'] ) && $_POST['order'] != null ) {
@@ -632,10 +632,10 @@ class CBXWPBookmarkPublic {
 				}
 
 				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
-				$cats_by_user = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $category_table WHERE user_id = %d", $user_id ), ARRAY_A );
+				$cats_by_user = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM {$category_table} WHERE user_id = %d", $user_id ), ARRAY_A );
 
 				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
-				$post_in_cats_t = $wpdb->get_results( $wpdb->prepare( "SELECT DISTINCT cat_id FROM $bookmark_table WHERE object_type = %s AND  user_id = %d AND object_id = %d", [
+				$post_in_cats_t = $wpdb->get_results( $wpdb->prepare( "SELECT DISTINCT cat_id FROM {$bookmark_table} WHERE object_type = %s AND  user_id = %d AND object_id = %d", [
 					$object_type,
 					$user_id,
 					$object_id
@@ -740,10 +740,10 @@ class CBXWPBookmarkPublic {
 			if ( $return !== false ) {
 
 				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
-				$cats_by_user = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $category_table WHERE user_id = %d", $user_id ), ARRAY_A );
+				$cats_by_user = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM {$category_table} WHERE user_id = %d", $user_id ), ARRAY_A );
 
 				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
-				$post_in_cats_t = $wpdb->get_results( $wpdb->prepare( "SELECT DISTINCT cat_id FROM $bookmark_table WHERE object_type = %s AND  user_id = %d AND object_id = %d", [
+				$post_in_cats_t = $wpdb->get_results( $wpdb->prepare( "SELECT DISTINCT cat_id FROM {$bookmark_table} WHERE object_type = %s AND  user_id = %d AND object_id = %d", [
 					$object_type,
 					$user_id,
 					$object_id
@@ -885,7 +885,7 @@ class CBXWPBookmarkPublic {
 				//$delete_bookmark = $wpdb->delete($bookmark_table, array('cat_id' => $cat_id, 'user_id' => $user_id), array('%d', '%d'));
 
 				// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
-				$bookmarks_by_category = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $bookmark_table WHERE cat_id = %d", $cat_id ), ARRAY_A );
+				$bookmarks_by_category = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM {$bookmark_table} WHERE cat_id = %d", $cat_id ), ARRAY_A );
 
 				if ( $bookmarks_by_category != null ) {
 					foreach ( $bookmarks_by_category as $single_bookmark ) {
@@ -907,10 +907,10 @@ class CBXWPBookmarkPublic {
 					$object_type = isset( $_POST['object_type'] ) ? sanitize_text_field( wp_unslash( $_POST['object_type'] ) ) : 'post'; //post, page, user, product, any thing custom
 
 					// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
-					$cats_by_user = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $category_table WHERE user_id = %d", $user_id ), ARRAY_A );
+					$cats_by_user = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM {$category_table} WHERE user_id = %d", $user_id ), ARRAY_A );
 
 					// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
-					$post_in_cats_t = $wpdb->get_results( $wpdb->prepare( "SELECT DISTINCT cat_id FROM $bookmark_table WHERE object_type = %s AND  user_id = %d AND object_id = %d", [
+					$post_in_cats_t = $wpdb->get_results( $wpdb->prepare( "SELECT DISTINCT cat_id FROM {$bookmark_table} WHERE object_type = %s AND  user_id = %d AND object_id = %d", [
 						$object_type,
 						$user_id,
 						$object_id

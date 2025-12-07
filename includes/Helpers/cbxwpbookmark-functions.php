@@ -1,6 +1,6 @@
 <?php
 
-//use CBXWPBookmark\Helpers\CBXWPBookmarkHelper;
+
 use CBXWPBookmark\CBXWPBookmarkSettings;
 use CBXWPBookmarkScoped\enshrined\svgSanitize\Sanitizer;
 

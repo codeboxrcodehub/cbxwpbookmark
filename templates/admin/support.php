@@ -83,6 +83,17 @@ $cbxwpbookmark_doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com
                     <div class="content">
                         <div class="cbx-backend-settings-row">
                             <p>
+                                Version - 2.0.5
+                            </p>
+                            <ul>
+                                <li>[fixed] VC widget error fixed</li>
+                                <li>[updated] WordPress 6.9 compatible</li>
+                                <li>[updated] Pro Addon 2.0.5 released</li>
+                                <li>[new] Pro addon now supports automatic update [check setting]</li>
+                            </ul>
+                        </div>
+                        <div class="cbx-backend-settings-row">
+                            <p>
                                 Version - 2.0.4
                             </p>
                             <ul>
@@ -127,6 +138,17 @@ $cbxwpbookmark_doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com
                         </div>
                     </div>
                     <div class="content">
+                        <div class="cbx-backend-settings-row">
+                            <p>
+                                Version - 2.0.5
+                            </p>
+                            <ul>
+                                <li>[fixed] VC widget error fixed</li>
+                                <li>[updated] WordPress 6.9 compatible</li>
+                                <li>[updated] Core plugin 2.0.5 released</li>
+                                <li>[new] Pro addon now supports automatic update [check setting]</li>
+                            </ul>
+                        </div>
                         <div class="cbx-backend-settings-row">
                             <p>
                                 Version - 2.0.4

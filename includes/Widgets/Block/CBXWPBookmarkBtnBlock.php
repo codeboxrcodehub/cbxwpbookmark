@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-//use CBXWPBookmark\Helpers\CBXWPBookmarkHelper;
+
 
 /**
  * CBX Bookmark - Bookmark button Block Widget

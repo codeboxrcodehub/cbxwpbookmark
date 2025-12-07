@@ -35,7 +35,7 @@ class StringHandler implements HandlerInterface
     public function handle(Reader $reader, TokenStream $stream): bool
     {
         $quote = $reader->getSubstring(1);
-        if (!\in_array($quote, ["'", '"'])) {
+        if (!\in_array($quote, ["'", '"'], \true)) {
             return \false;
         }
         $reader->moveForward(1);

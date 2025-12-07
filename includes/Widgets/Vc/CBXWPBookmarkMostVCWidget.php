@@ -2,6 +2,8 @@
 namespace CBXWPBookmark\Widgets\Vc;
 
 // Prevent direct file access
+
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -83,7 +85,7 @@ class CBXWPBookmarkMostVCWidget extends \WPBakeryShortCode {
 					'admin_label' => false, //it must be false
 					'heading'     => esc_html__( 'Post type(s)', 'cbxwpbookmark' ),
 					'param_name'  => 'type',
-					'value'       => CBXWPBookmarkHelper::post_types_plain_r(),
+					'value'       => \CBXWPBookmarkHelper::post_types_plain_r(),
 					'std'         => [],
 				],
 				[

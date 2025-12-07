@@ -2,7 +2,7 @@
 
 namespace CBXWPBookmark\Models;
 
-//use CBXWPBookmark\Helpers\CBXWPBookmarkHelper;
+
 use CBXWPBookmarkScoped\Illuminate\Database\Eloquent\Model as Eloquent;
 
 /**

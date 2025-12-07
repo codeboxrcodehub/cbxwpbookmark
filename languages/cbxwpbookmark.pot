@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-12 17:45+0000\n"
+"POT-Creation-Date: 2025-12-06 17:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -57,7 +57,7 @@ msgstr ""
 msgid "0 means all time"
 msgstr ""
 
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:95
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:97
 msgid "0 means all time, need numeric value."
 msgstr ""
 
@@ -87,7 +87,7 @@ msgid "7 Days"
 msgstr ""
 
 #. %s: bookmark product description url
-#: includes/CBXWPBookmarkAdmin.php:975
+#: includes/CBXWPBookmarkAdmin.php:976
 #, php-format
 msgid ""
 "<a target=\"_blank\" href=\"%s\">CBX Bookmark Pro Addon</a> has extended "
@@ -95,40 +95,38 @@ msgid ""
 msgstr ""
 
 #. translators:translators: %s: plugin setting url for licence
-#: includes/CBXWPBookmarkAdmin.php:951
+#: includes/CBXWPBookmarkAdmin.php:952
 #, php-format
 msgid ""
 "<strong>Note:</strong> CBX Bookmark & Favorite Pro Addon is custom plugin. "
-"This plugin can not be auto update from dashboard/plugin manager. For manual "
-"update please check <a target=\"_blank\" href=\"%1$s\">documentation</a>. "
 "<strong style=\"color: red;\">It seems this plugin's current version is "
 "older than %2$s . To get the latest pro addon features, this plugin needs to "
 "upgrade to %2$s or later.</strong>"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3938
+#: includes/Helpers/CBXWPBookmarkHelper.php:3956
 msgid "Actions"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3912
+#: includes/Helpers/CBXWPBookmarkHelper.php:3930
 msgid "Add"
 msgstr ""
 
 #: includes/CBXWPBookmarkSettings.php:1010
-#: includes/Helpers/CBXWPBookmarkHelper.php:3908
+#: includes/Helpers/CBXWPBookmarkHelper.php:3926
 msgid "Add New"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4027
+#: includes/Helpers/CBXWPBookmarkHelper.php:4045
 msgid "Add New Category"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3976
-#: includes/Helpers/CBXWPBookmarkHelper.php:4030
+#: includes/Helpers/CBXWPBookmarkHelper.php:3994
+#: includes/Helpers/CBXWPBookmarkHelper.php:4048
 msgid "Added By"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3247
+#: includes/Helpers/CBXWPBookmarkHelper.php:3265
 msgid "After Content"
 msgstr ""
 
@@ -139,30 +137,30 @@ msgstr ""
 #: includes/CBXWPBookmarkShortcodes.php:183
 #: includes/Customizer/CBXWPBookmarkCustomizer.php:416
 #: includes/Customizer/CBXWPBookmarkCustomizer.php:429
-#: includes/Helpers/CBXWPBookmarkHelper.php:403
+#: includes/Helpers/CBXWPBookmarkHelper.php:413
 #: includes/Widgets/Block/CBXWPBookmarkMyBookmarkBlock.php:158
 #: includes/Widgets/Elementor/CBXWPBookmarkMyBookmarkElemWidget.php:85
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:45
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:47
 msgid "All Bookmarks"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1553
+#: includes/CBXWPBookmarkPublic.php:1552
 msgid "All bookmarks deleted."
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1233
+#: includes/CBXWPBookmarkPublic.php:1232
 msgid "All Bookmarks Removed"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:1767
-#: includes/Helpers/CBXWPBookmarkHelper.php:1776
+#: includes/Helpers/CBXWPBookmarkHelper.php:1786
+#: includes/Helpers/CBXWPBookmarkHelper.php:1795
 msgid "All Categories"
 msgstr ""
 
 #: includes/Customizer/CBXWPBookmarkCustomizer.php:661
 #: includes/Widgets/Block/CBXWPBookmarkMyBookmarkBlock.php:141
 #: includes/Widgets/Elementor/CBXWPBookmarkMyBookmarkElemWidget.php:195
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:135
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:137
 #: includes/Widgets/Classic/MyBookmark/views/admin.php:127
 msgid "Allow Delete"
 msgstr ""
@@ -170,7 +168,7 @@ msgstr ""
 #: includes/Customizer/CBXWPBookmarkCustomizer.php:687
 #: includes/Widgets/Block/CBXWPBookmarkMyBookmarkBlock.php:142
 #: includes/Widgets/Elementor/CBXWPBookmarkMyBookmarkElemWidget.php:208
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:146
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:148
 #: includes/Widgets/Classic/MyBookmark/views/admin.php:140
 msgid "Allow Delete All"
 msgstr ""
@@ -190,7 +188,7 @@ msgstr ""
 msgid "Another Category with same name already exists!"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1253
+#: includes/CBXWPBookmarkPublic.php:1252
 msgid ""
 "Are you sure to delete all of your bookmarks? This process can not be undone."
 msgstr ""
@@ -203,16 +201,16 @@ msgstr ""
 msgid "Are you sure to remove this step?"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1229
+#: includes/CBXWPBookmarkPublic.php:1228
 msgid "Are you sure you want to delete this Bookmark Category?"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1230
+#: includes/CBXWPBookmarkPublic.php:1229
 msgid "Are you sure you want to delete this Bookmark?"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:315 includes/CBXWPBookmarkPublic.php:1227
-#: includes/Helpers/CBXWPBookmarkHelper.php:3940
+#: includes/CBXWPBookmarkAdmin.php:315 includes/CBXWPBookmarkPublic.php:1226
+#: includes/Helpers/CBXWPBookmarkHelper.php:3958
 msgid "Are you sure?"
 msgstr ""
 
@@ -222,8 +220,8 @@ msgstr ""
 #: includes/Widgets/Elementor/CBXWPBookmarkMostElemWidget.php:96
 #: includes/Widgets/Elementor/CBXWPBookmarkMyBookmarkElemWidget.php:97
 #: includes/Widgets/Vc/CBXWPBookmarkCategoryVCWidget.php:51
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:51
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:53
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:53
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:55
 #: includes/Widgets/Classic/Category/views/admin.php:84
 #: includes/Widgets/Classic/Most/views/admin.php:105
 #: includes/Widgets/Classic/MyBookmark/views/admin.php:19
@@ -236,7 +234,7 @@ msgstr ""
 msgid "Ascending Order"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:340 includes/CBXWPBookmarkPublic.php:1259
+#: includes/CBXWPBookmarkAdmin.php:340 includes/CBXWPBookmarkPublic.php:1258
 msgid "Attention"
 msgstr ""
 
@@ -248,7 +246,7 @@ msgstr ""
 msgid "Author's Bookmarks"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3241
+#: includes/Helpers/CBXWPBookmarkHelper.php:3259
 msgid "Auto Integration"
 msgstr ""
 
@@ -257,11 +255,11 @@ msgid ""
 "Automatic page creation done. This message doesn't confirm success or failed"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3920
+#: includes/Helpers/CBXWPBookmarkHelper.php:3938
 msgid "Back"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3246
+#: includes/Helpers/CBXWPBookmarkHelper.php:3264
 msgid "Before Content"
 msgstr ""
 
@@ -272,18 +270,18 @@ msgstr ""
 msgid "Block Settings"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:2909
+#: includes/Helpers/CBXWPBookmarkHelper.php:2927
 msgid "Blue"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:2914
+#: includes/Helpers/CBXWPBookmarkHelper.php:2932
 msgid "Blue Gray"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:683
-#: includes/Helpers/CBXWPBookmarkHelper.php:1045
-#: includes/Helpers/CBXWPBookmarkHelper.php:4120
-#: includes/Helpers/CBXWPBookmarkHelper.php:4138
+#: includes/Helpers/CBXWPBookmarkHelper.php:693
+#: includes/Helpers/CBXWPBookmarkHelper.php:1055
+#: includes/Helpers/CBXWPBookmarkHelper.php:4144
+#: includes/Helpers/CBXWPBookmarkHelper.php:4162
 msgid "Bookmark"
 msgstr ""
 
@@ -295,7 +293,7 @@ msgstr ""
 msgid "Bookmark added!"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3242
+#: includes/Helpers/CBXWPBookmarkHelper.php:3260
 msgid "Bookmark button auto integration position"
 msgstr ""
 
@@ -307,8 +305,8 @@ msgstr ""
 #: includes/Customizer/CBXWPBookmarkCustomizer.php:126
 #: includes/Customizer/CBXWPBookmarkCustomizer.php:154
 #: includes/Customizer/CBXWPBookmarkCustomizer.php:168
-#: includes/Helpers/CBXWPBookmarkHelper.php:384
-#: includes/Helpers/CBXWPBookmarkHelper.php:4131
+#: includes/Helpers/CBXWPBookmarkHelper.php:394
+#: includes/Helpers/CBXWPBookmarkHelper.php:4155
 #: includes/Widgets/Block/CBXWPBookmarkCategoryBlock.php:160
 #: includes/Widgets/Elementor/CBXWPBookmarkCategoryElemWidget.php:81
 #: includes/Widgets/Vc/CBXWPBookmarkCategoryVCWidget.php:43
@@ -323,7 +321,7 @@ msgstr ""
 
 #: includes/Widgets/Block/CBXWPBookmarkMostBlock.php:71
 #: includes/Widgets/Elementor/CBXWPBookmarkMostElemWidget.php:110
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:62
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:64
 #: includes/Widgets/Classic/Most/views/admin.php:88
 msgid "Bookmark Count"
 msgstr ""
@@ -337,8 +335,8 @@ msgstr ""
 
 #: includes/Widgets/Elementor/CBXWPBookmarkMostElemWidget.php:111
 #: includes/Widgets/Elementor/CBXWPBookmarkMyBookmarkElemWidget.php:111
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:63
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:64
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:65
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:66
 msgid "Bookmark id"
 msgstr ""
 
@@ -355,7 +353,7 @@ msgstr ""
 msgid "Bookmark information"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3190
+#: includes/Helpers/CBXWPBookmarkHelper.php:3208
 msgid "Bookmark Label"
 msgstr ""
 
@@ -363,24 +361,24 @@ msgstr ""
 msgid "Bookmark List"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3970
+#: includes/Helpers/CBXWPBookmarkHelper.php:3988
 msgid "Bookmark Listing"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1897
-#: includes/Helpers/CBXWPBookmarkHelper.php:3922
+#: includes/CBXWPBookmarkPublic.php:1896
+#: includes/Helpers/CBXWPBookmarkHelper.php:3940
 msgid "Bookmark Manager"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4089
+#: includes/Helpers/CBXWPBookmarkHelper.php:4107
 msgid "Bookmark Manager: Tools"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3204
+#: includes/Helpers/CBXWPBookmarkHelper.php:3222
 msgid "Bookmark Mode"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1405
+#: includes/CBXWPBookmarkPublic.php:1404
 #: includes/Controllers/BookmarkFrontController.php:244
 #: includes/Controllers/BookmarkFrontController.php:321
 msgid "Bookmark not found"
@@ -394,7 +392,7 @@ msgstr ""
 msgid "Bookmark Order Updated successfully"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3364
+#: includes/Helpers/CBXWPBookmarkHelper.php:3382
 msgid "Bookmark Popup Z-Inxdex"
 msgstr ""
 
@@ -402,11 +400,11 @@ msgstr ""
 msgid "Bookmark remove failed!"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1232
+#: includes/CBXWPBookmarkPublic.php:1231
 msgid "Bookmark Removed"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1234
+#: includes/CBXWPBookmarkPublic.php:1233
 msgid "Bookmark Removed Failed"
 msgstr ""
 
@@ -414,7 +412,7 @@ msgstr ""
 msgid "Bookmark removed!"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:1077
+#: includes/CBXWPBookmarkAdmin.php:1081
 msgid "Bookmark reset setting html loaded successfully"
 msgstr ""
 
@@ -422,57 +420,57 @@ msgstr ""
 msgid "Bookmark setting options reset successfully"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:1101
+#: includes/CBXWPBookmarkAdmin.php:1105
 msgid "Bookmark setting reset successfully"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4124
+#: includes/Helpers/CBXWPBookmarkHelper.php:4148
 msgid "Bookmark Submission Overview"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4361
+#: includes/Helpers/CBXWPBookmarkHelper.php:4391
 msgid "Bookmark table does not exist. Please check the database structure."
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:688
-#: includes/Helpers/CBXWPBookmarkHelper.php:1050
+#: includes/Helpers/CBXWPBookmarkHelper.php:698
+#: includes/Helpers/CBXWPBookmarkHelper.php:1060
 msgid "Bookmark This"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3299
+#: includes/Helpers/CBXWPBookmarkHelper.php:3317
 msgid "Bookmark will work for selected post types"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:684
-#: includes/Helpers/CBXWPBookmarkHelper.php:693
-#: includes/Helpers/CBXWPBookmarkHelper.php:1046
-#: includes/Helpers/CBXWPBookmarkHelper.php:1055
+#: includes/Helpers/CBXWPBookmarkHelper.php:694
+#: includes/Helpers/CBXWPBookmarkHelper.php:703
+#: includes/Helpers/CBXWPBookmarkHelper.php:1056
+#: includes/Helpers/CBXWPBookmarkHelper.php:1065
 msgid "Bookmarked"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3197
+#: includes/Helpers/CBXWPBookmarkHelper.php:3215
 msgid "Bookmarked Label"
 msgstr ""
 
 #: includes/CBXWPBookmarkAdmin.php:494
-#: includes/Helpers/CBXWPBookmarkHelper.php:4121
-#: includes/Helpers/CBXWPBookmarkHelper.php:4210
+#: includes/Helpers/CBXWPBookmarkHelper.php:4145
+#: includes/Helpers/CBXWPBookmarkHelper.php:4240
 msgid "Bookmarks"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1398
+#: includes/CBXWPBookmarkPublic.php:1397
 msgid "Bookmarks loaded"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1790
+#: includes/CBXWPBookmarkPublic.php:1789
 msgid "Bookmarks Overview"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4134
+#: includes/Helpers/CBXWPBookmarkHelper.php:4158
 msgid "Bookmarks Overview by Category"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4122
+#: includes/Helpers/CBXWPBookmarkHelper.php:4146
 msgid "Bookmarks submitted"
 msgstr ""
 
@@ -480,7 +478,7 @@ msgstr ""
 msgid "Bookmarks: Global Settings"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:2913
+#: includes/Helpers/CBXWPBookmarkHelper.php:2931
 msgid "Brown"
 msgstr ""
 
@@ -488,9 +486,9 @@ msgstr ""
 msgid "buddyPress Activity"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:462
-#: includes/Helpers/CBXWPBookmarkHelper.php:2454
-#: includes/Helpers/CBXWPBookmarkHelper.php:2512
+#: includes/Helpers/CBXWPBookmarkHelper.php:472
+#: includes/Helpers/CBXWPBookmarkHelper.php:2472
+#: includes/Helpers/CBXWPBookmarkHelper.php:2530
 msgid "Built in post types"
 msgstr ""
 
@@ -500,13 +498,13 @@ msgstr ""
 msgid "Built-in Post Types"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4142
+#: includes/Helpers/CBXWPBookmarkHelper.php:4166
 msgid "By"
 msgstr ""
 
 #: includes/CBXWPBookmarkAdmin.php:324 includes/CBXWPBookmarkAdmin.php:345
-#: includes/CBXWPBookmarkPublic.php:1264
-#: includes/Helpers/CBXWPBookmarkHelper.php:3944
+#: includes/CBXWPBookmarkPublic.php:1263
+#: includes/Helpers/CBXWPBookmarkHelper.php:3962
 msgid "Cancel"
 msgstr ""
 
@@ -515,11 +513,11 @@ msgid "cancel and close"
 msgstr ""
 
 #: includes/CBXWPBookmarkAdmin.php:508
-#: includes/Helpers/CBXWPBookmarkHelper.php:4133
+#: includes/Helpers/CBXWPBookmarkHelper.php:4157
 msgid "Categories"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4132
+#: includes/Helpers/CBXWPBookmarkHelper.php:4156
 msgid "Categories created"
 msgstr ""
 
@@ -531,10 +529,10 @@ msgstr ""
 msgid "Categories(Comma Separated)"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:1036
-#: includes/Helpers/CBXWPBookmarkHelper.php:3974
-#: includes/Helpers/CBXWPBookmarkHelper.php:4026
-#: includes/Helpers/CBXWPBookmarkHelper.php:4141
+#: includes/CBXWPBookmarkAdmin.php:1040
+#: includes/Helpers/CBXWPBookmarkHelper.php:3992
+#: includes/Helpers/CBXWPBookmarkHelper.php:4044
+#: includes/Helpers/CBXWPBookmarkHelper.php:4165
 msgid "Category"
 msgstr ""
 
@@ -568,15 +566,15 @@ msgstr ""
 msgid "Category creation failed"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3216
+#: includes/Helpers/CBXWPBookmarkHelper.php:3234
 msgid "Category Default Status"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3217
+#: includes/Helpers/CBXWPBookmarkHelper.php:3235
 msgid "Category Default Status If user category mode is selected"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1225
+#: includes/CBXWPBookmarkPublic.php:1224
 msgid "Category deleted successfully"
 msgstr ""
 
@@ -584,7 +582,7 @@ msgstr ""
 #: includes/Customizer/CBXWPBookmarkCustomizer.php:587
 #: includes/Widgets/Block/CBXWPBookmarkCategoryBlock.php:71
 #: includes/Widgets/Elementor/CBXWPBookmarkMyBookmarkElemWidget.php:161
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:106
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:108
 #: includes/Widgets/Classic/Category/views/admin.php:62
 #: includes/Widgets/Classic/MyBookmark/views/admin.php:94
 msgid "Category ID"
@@ -614,17 +612,17 @@ msgstr ""
 msgid "Category information"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4021
+#: includes/Helpers/CBXWPBookmarkHelper.php:4039
 msgid "Category Listing"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1844
-#: includes/Helpers/CBXWPBookmarkHelper.php:4022
+#: includes/CBXWPBookmarkPublic.php:1843
+#: includes/Helpers/CBXWPBookmarkHelper.php:4040
 msgid "Category Manager"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:867
-#: includes/Helpers/CBXWPBookmarkHelper.php:1229
+#: includes/Helpers/CBXWPBookmarkHelper.php:877
+#: includes/Helpers/CBXWPBookmarkHelper.php:1239
 #: includes/Widgets/Block/CBXWPBookmarkCategoryBlock.php:75
 #: includes/Widgets/Elementor/CBXWPBookmarkCategoryElemWidget.php:107
 #: includes/Widgets/Vc/CBXWPBookmarkCategoryVCWidget.php:62
@@ -632,7 +630,7 @@ msgid "Category Name"
 msgstr ""
 
 #: includes/CBXWPBookmarkPublic.php:511 includes/CBXWPBookmarkPublic.php:591
-#: includes/CBXWPBookmarkPublic.php:713 includes/CBXWPBookmarkPublic.php:1236
+#: includes/CBXWPBookmarkPublic.php:713 includes/CBXWPBookmarkPublic.php:1235
 msgid "Category name can not be empty"
 msgstr ""
 
@@ -653,7 +651,7 @@ msgstr ""
 msgid "Category Privacy"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4417
+#: includes/Helpers/CBXWPBookmarkHelper.php:4447
 msgid "Category table does not exist. Please check the database structure."
 msgstr ""
 
@@ -662,8 +660,8 @@ msgstr ""
 msgid "Category Title"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1186
-#: includes/Helpers/CBXWPBookmarkHelper.php:2818
+#: includes/CBXWPBookmarkPublic.php:1185
+#: includes/Helpers/CBXWPBookmarkHelper.php:2836
 msgid "Category title"
 msgstr ""
 
@@ -719,7 +717,7 @@ msgstr ""
 msgid "CBX Bookmark Categories"
 msgstr ""
 
-#: templates/admin/support.php:230
+#: templates/admin/support.php:228
 msgid "CBX Bookmark Plugin Details"
 msgstr ""
 
@@ -739,11 +737,11 @@ msgstr ""
 msgid "CBX Bookmark Tools"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1455
+#: includes/CBXWPBookmarkPublic.php:1454
 #: includes/Widgets/Vc/CBXWPBookmarkBtnVCWidget.php:33
 #: includes/Widgets/Vc/CBXWPBookmarkCategoryVCWidget.php:33
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:33
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:35
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:35
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:37
 msgid "CBX Bookmark Widgets"
 msgstr ""
 
@@ -757,7 +755,7 @@ msgstr ""
 
 #: includes/Widgets/Block/CBXWPBookmarkMostBlock.php:153
 #: includes/Widgets/Elementor/CBXWPBookmarkMostElemWidget.php:41
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:29
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:31
 #: includes/Widgets/Classic/Most/CBXWPBookmarkMostWidget.php:38
 msgid "CBX Most Bookmarked Posts"
 msgstr ""
@@ -768,7 +766,7 @@ msgstr ""
 msgid "CBX My Bookmarked Posts"
 msgstr ""
 
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:31
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:33
 msgid "CBX My Bookmarks"
 msgstr ""
 
@@ -792,15 +790,15 @@ msgstr ""
 msgid "CBX WP Bookmark Setting"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3993
+#: includes/Helpers/CBXWPBookmarkHelper.php:4011
 msgid "Change User"
 msgstr ""
 
-#: templates/admin/support.php:99
+#: templates/admin/support.php:80
 msgid "Changelog Core Plugin"
 msgstr ""
 
-#: templates/admin/support.php:139
+#: templates/admin/support.php:136
 msgid "Changelog Pro Addon"
 msgstr ""
 
@@ -814,8 +812,8 @@ msgid ""
 msgstr ""
 
 #: includes/CBXWPBookmarkSettings.php:479
-#: includes/Helpers/CBXWPBookmarkHelper.php:3472
-#: includes/Helpers/CBXWPBookmarkHelper.php:4076
+#: includes/Helpers/CBXWPBookmarkHelper.php:3490
+#: includes/Helpers/CBXWPBookmarkHelper.php:4094
 msgid "Check All"
 msgstr ""
 
@@ -835,31 +833,31 @@ msgstr ""
 msgid "clear and close"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1237
-#: includes/Helpers/CBXWPBookmarkHelper.php:805
-#: includes/Helpers/CBXWPBookmarkHelper.php:1167
+#: includes/CBXWPBookmarkPublic.php:1236
+#: includes/Helpers/CBXWPBookmarkHelper.php:815
+#: includes/Helpers/CBXWPBookmarkHelper.php:1177
 msgid "Click Category to Bookmark"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3878
+#: includes/Helpers/CBXWPBookmarkHelper.php:3896
 msgid "Click to clone"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:887
-#: includes/Helpers/CBXWPBookmarkHelper.php:1249
+#: includes/Helpers/CBXWPBookmarkHelper.php:897
+#: includes/Helpers/CBXWPBookmarkHelper.php:1259
 msgid "Click to Close"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1192
-#: includes/Helpers/CBXWPBookmarkHelper.php:2825
-#: includes/Helpers/CBXWPBookmarkHelper.php:3858
+#: includes/CBXWPBookmarkPublic.php:1191
+#: includes/Helpers/CBXWPBookmarkHelper.php:2843
+#: includes/Helpers/CBXWPBookmarkHelper.php:3876
 msgid "Click to close"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:741
-#: includes/Helpers/CBXWPBookmarkHelper.php:806
-#: includes/Helpers/CBXWPBookmarkHelper.php:1103
-#: includes/Helpers/CBXWPBookmarkHelper.php:1168
+#: includes/Helpers/CBXWPBookmarkHelper.php:751
+#: includes/Helpers/CBXWPBookmarkHelper.php:816
+#: includes/Helpers/CBXWPBookmarkHelper.php:1113
+#: includes/Helpers/CBXWPBookmarkHelper.php:1178
 msgid "Click to close bookmark panel/modal"
 msgstr ""
 
@@ -867,15 +865,15 @@ msgstr ""
 msgid "Click to copy"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:2823
+#: includes/Helpers/CBXWPBookmarkHelper.php:2841
 msgid "Click to create/save"
 msgstr ""
 
 #: includes/CBXWPBookmarkPublic.php:541
-#: includes/Helpers/CBXWPBookmarkHelper.php:880
-#: includes/Helpers/CBXWPBookmarkHelper.php:1242
-#: includes/Helpers/CBXWPBookmarkHelper.php:1716
-#: includes/Helpers/CBXWPBookmarkHelper.php:3886
+#: includes/Helpers/CBXWPBookmarkHelper.php:890
+#: includes/Helpers/CBXWPBookmarkHelper.php:1252
+#: includes/Helpers/CBXWPBookmarkHelper.php:1735
+#: includes/Helpers/CBXWPBookmarkHelper.php:3904
 msgid "Click to delete"
 msgstr ""
 
@@ -884,32 +882,32 @@ msgid "Click to delete all"
 msgstr ""
 
 #: includes/CBXWPBookmarkPublic.php:540
-#: includes/Helpers/CBXWPBookmarkHelper.php:3882
+#: includes/Helpers/CBXWPBookmarkHelper.php:3900
 msgid "Click to edit"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1238
+#: includes/CBXWPBookmarkPublic.php:1237
 msgid "Click to Edit Category"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3890
+#: includes/Helpers/CBXWPBookmarkHelper.php:3908
 msgid "Click to open menu"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3866
+#: includes/Helpers/CBXWPBookmarkHelper.php:3884
 msgid "Click to reset"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:885
-#: includes/Helpers/CBXWPBookmarkHelper.php:1247
+#: includes/Helpers/CBXWPBookmarkHelper.php:895
+#: includes/Helpers/CBXWPBookmarkHelper.php:1257
 msgid "Click to save"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:1714
+#: includes/Helpers/CBXWPBookmarkHelper.php:1733
 msgid "Click to Save/edit"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3862
+#: includes/Helpers/CBXWPBookmarkHelper.php:3880
 msgid "Click to search"
 msgstr ""
 
@@ -917,15 +915,15 @@ msgstr ""
 msgid "Click to show hide"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1191
+#: includes/CBXWPBookmarkPublic.php:1190
 msgid "Click to update"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3874
+#: includes/Helpers/CBXWPBookmarkHelper.php:3892
 msgid "Click to view"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3879
+#: includes/Helpers/CBXWPBookmarkHelper.php:3897
 msgid "Clone"
 msgstr ""
 
@@ -933,23 +931,23 @@ msgstr ""
 msgid "Cloning is forbidden."
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1192
-#: includes/Helpers/CBXWPBookmarkHelper.php:742
-#: includes/Helpers/CBXWPBookmarkHelper.php:807
-#: includes/Helpers/CBXWPBookmarkHelper.php:858
-#: includes/Helpers/CBXWPBookmarkHelper.php:859
-#: includes/Helpers/CBXWPBookmarkHelper.php:888
-#: includes/Helpers/CBXWPBookmarkHelper.php:1104
-#: includes/Helpers/CBXWPBookmarkHelper.php:1169
-#: includes/Helpers/CBXWPBookmarkHelper.php:1220
-#: includes/Helpers/CBXWPBookmarkHelper.php:1221
-#: includes/Helpers/CBXWPBookmarkHelper.php:1250
-#: includes/Helpers/CBXWPBookmarkHelper.php:2826
-#: includes/Helpers/CBXWPBookmarkHelper.php:3859
+#: includes/CBXWPBookmarkPublic.php:1191
+#: includes/Helpers/CBXWPBookmarkHelper.php:752
+#: includes/Helpers/CBXWPBookmarkHelper.php:817
+#: includes/Helpers/CBXWPBookmarkHelper.php:868
+#: includes/Helpers/CBXWPBookmarkHelper.php:869
+#: includes/Helpers/CBXWPBookmarkHelper.php:898
+#: includes/Helpers/CBXWPBookmarkHelper.php:1114
+#: includes/Helpers/CBXWPBookmarkHelper.php:1179
+#: includes/Helpers/CBXWPBookmarkHelper.php:1230
+#: includes/Helpers/CBXWPBookmarkHelper.php:1231
+#: includes/Helpers/CBXWPBookmarkHelper.php:1260
+#: includes/Helpers/CBXWPBookmarkHelper.php:2844
+#: includes/Helpers/CBXWPBookmarkHelper.php:3877
 msgid "Close"
 msgstr ""
 
-#: templates/admin/support.php:185
+#: templates/admin/support.php:183
 msgid "Codeboxr News Updates"
 msgstr ""
 
@@ -973,20 +971,20 @@ msgstr ""
 msgid "color swatch"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3870
+#: includes/Helpers/CBXWPBookmarkHelper.php:3888
 msgid "Column Filter"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3148
+#: includes/Helpers/CBXWPBookmarkHelper.php:3166
 msgid "Configure using customizer"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:343 includes/CBXWPBookmarkPublic.php:1262
+#: includes/CBXWPBookmarkAdmin.php:343 includes/CBXWPBookmarkPublic.php:1261
 msgid "Confirmation"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:307 includes/CBXWPBookmarkPublic.php:1269
-#: includes/Helpers/CBXWPBookmarkHelper.php:3896
+#: includes/CBXWPBookmarkAdmin.php:307 includes/CBXWPBookmarkPublic.php:1268
+#: includes/Helpers/CBXWPBookmarkHelper.php:3914
 msgid "Copied"
 msgstr ""
 
@@ -994,46 +992,46 @@ msgstr ""
 msgid "Copied to clipboard"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:306 includes/CBXWPBookmarkPublic.php:1216
-#: includes/CBXWPBookmarkPublic.php:1268
-#: includes/Helpers/CBXWPBookmarkHelper.php:3895
+#: includes/CBXWPBookmarkAdmin.php:306 includes/CBXWPBookmarkPublic.php:1215
+#: includes/CBXWPBookmarkPublic.php:1267
+#: includes/Helpers/CBXWPBookmarkHelper.php:3913
 msgid "Copy"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1213
+#: includes/CBXWPBookmarkPublic.php:1212
 msgid "Copy and Share Url"
 msgstr ""
 
-#: templates/admin/support.php:258
+#: templates/admin/support.php:256
 msgid "Core Plugin Support"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:857
-#: includes/Helpers/CBXWPBookmarkHelper.php:1219
-#: includes/Helpers/CBXWPBookmarkHelper.php:2824
+#: includes/Helpers/CBXWPBookmarkHelper.php:867
+#: includes/Helpers/CBXWPBookmarkHelper.php:1229
+#: includes/Helpers/CBXWPBookmarkHelper.php:2842
 msgid "Create"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1240
-#: includes/Helpers/CBXWPBookmarkHelper.php:856
-#: includes/Helpers/CBXWPBookmarkHelper.php:1218
+#: includes/CBXWPBookmarkPublic.php:1239
+#: includes/Helpers/CBXWPBookmarkHelper.php:866
+#: includes/Helpers/CBXWPBookmarkHelper.php:1228
 msgid "Create Category"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:2810
-#: includes/Helpers/CBXWPBookmarkHelper.php:2811
+#: includes/Helpers/CBXWPBookmarkHelper.php:2828
+#: includes/Helpers/CBXWPBookmarkHelper.php:2829
 msgid "Create New Category"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:1037 includes/CBXWPBookmarkAdmin.php:1056
+#: includes/CBXWPBookmarkAdmin.php:1041 includes/CBXWPBookmarkAdmin.php:1060
 msgid "Created"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4043
+#: includes/Helpers/CBXWPBookmarkHelper.php:4061
 msgid "Created Date"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3988
+#: includes/Helpers/CBXWPBookmarkHelper.php:4006
 msgid "Created Time"
 msgstr ""
 
@@ -1048,7 +1046,7 @@ msgstr ""
 msgid "Custom Post Types"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3358
+#: includes/Helpers/CBXWPBookmarkHelper.php:3376
 msgid "Customizer(Recommended)"
 msgstr ""
 
@@ -1056,7 +1054,7 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4117
+#: includes/Helpers/CBXWPBookmarkHelper.php:4141
 msgid "Dashboard Overview"
 msgstr ""
 
@@ -1064,38 +1062,38 @@ msgstr ""
 msgid "Data Updated Successfully"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3978
-#: includes/Helpers/CBXWPBookmarkHelper.php:4032
+#: includes/Helpers/CBXWPBookmarkHelper.php:3996
+#: includes/Helpers/CBXWPBookmarkHelper.php:4050
 msgid "Date"
 msgstr ""
 
 #: includes/Widgets/Elementor/CBXWPBookmarkMostElemWidget.php:149
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:94
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:96
 msgid "Day(s)"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:2905
+#: includes/Helpers/CBXWPBookmarkHelper.php:2923
 msgid "Default"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3374
+#: includes/Helpers/CBXWPBookmarkHelper.php:3392
 msgid ""
 "Default guest user is shown wordpress core login form. Pro addon helps to "
 "integrate 3rd party plugins like woocommerce, restrict content pro etc."
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3205
+#: includes/Helpers/CBXWPBookmarkHelper.php:3223
 msgid ""
 "Default is category belongs to user, other two mode is global category and "
 "no category quick bookmark."
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:881
-#: includes/Helpers/CBXWPBookmarkHelper.php:1243
-#: includes/Helpers/CBXWPBookmarkHelper.php:1405
-#: includes/Helpers/CBXWPBookmarkHelper.php:1717
-#: includes/Helpers/CBXWPBookmarkHelper.php:3887
-#: includes/Helpers/CBXWPBookmarkHelper.php:3918
+#: includes/Helpers/CBXWPBookmarkHelper.php:891
+#: includes/Helpers/CBXWPBookmarkHelper.php:1253
+#: includes/Helpers/CBXWPBookmarkHelper.php:1427
+#: includes/Helpers/CBXWPBookmarkHelper.php:1736
+#: includes/Helpers/CBXWPBookmarkHelper.php:3905
+#: includes/Helpers/CBXWPBookmarkHelper.php:3936
 msgid "Delete"
 msgstr ""
 
@@ -1103,13 +1101,13 @@ msgstr ""
 msgid "Delete All"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3416
+#: includes/Helpers/CBXWPBookmarkHelper.php:3434
 msgid ""
 "Delete Global Config data and custom table created by this plugin on "
 "uninstall."
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3939
+#: includes/Helpers/CBXWPBookmarkHelper.php:3957
 msgid "Delete Selected"
 msgstr ""
 
@@ -1119,8 +1117,8 @@ msgstr ""
 #: includes/Widgets/Elementor/CBXWPBookmarkMostElemWidget.php:97
 #: includes/Widgets/Elementor/CBXWPBookmarkMyBookmarkElemWidget.php:98
 #: includes/Widgets/Vc/CBXWPBookmarkCategoryVCWidget.php:52
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:52
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:54
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:54
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:56
 #: includes/Widgets/Classic/Category/views/admin.php:88
 #: includes/Widgets/Classic/Most/views/admin.php:106
 #: includes/Widgets/Classic/MyBookmark/views/admin.php:20
@@ -1133,16 +1131,16 @@ msgstr ""
 msgid "Descending Order"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3991
-#: includes/Helpers/CBXWPBookmarkHelper.php:4046
+#: includes/Helpers/CBXWPBookmarkHelper.php:4009
+#: includes/Helpers/CBXWPBookmarkHelper.php:4064
 msgid "Description"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3417
+#: includes/Helpers/CBXWPBookmarkHelper.php:3435
 msgid "Details table information is here"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3248
+#: includes/Helpers/CBXWPBookmarkHelper.php:3266
 msgid "Disable Auto Integration"
 msgstr ""
 
@@ -1150,7 +1148,7 @@ msgstr ""
 msgid "Display"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3176
+#: includes/Helpers/CBXWPBookmarkHelper.php:3194
 msgid "Display Bookmark Label"
 msgstr ""
 
@@ -1173,8 +1171,8 @@ msgstr ""
 #: includes/Widgets/Elementor/CBXWPBookmarkMostElemWidget.php:91
 #: includes/Widgets/Elementor/CBXWPBookmarkMyBookmarkElemWidget.php:92
 #: includes/Widgets/Vc/CBXWPBookmarkCategoryVCWidget.php:48
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:48
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:50
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:50
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:52
 msgid "Display order"
 msgstr ""
 
@@ -1182,8 +1180,8 @@ msgstr ""
 #: includes/Widgets/Elementor/CBXWPBookmarkMostElemWidget.php:105
 #: includes/Widgets/Elementor/CBXWPBookmarkMyBookmarkElemWidget.php:106
 #: includes/Widgets/Vc/CBXWPBookmarkCategoryVCWidget.php:59
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:59
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:61
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:61
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:63
 msgid "Display order by"
 msgstr ""
 
@@ -1191,7 +1189,7 @@ msgstr ""
 msgid "Display Share Url"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3177
+#: includes/Helpers/CBXWPBookmarkHelper.php:3195
 msgid ""
 "Display the label Bookmark or Bookmarked. This param has no shortcode method,"
 " if enabled works everywhere, if disabled then same."
@@ -1203,19 +1201,19 @@ msgid ""
 "cbxwpbookmark-guest-login-trigger\" href=\"#\">please login</a>"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:1016
+#: includes/CBXWPBookmarkAdmin.php:1017
 msgid "Documentation"
 msgstr ""
 
-#: templates/admin/support.php:240
+#: templates/admin/support.php:238
 msgid "Documentation & User Guide"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:2754
+#: includes/Helpers/CBXWPBookmarkHelper.php:2772
 msgid "Don't show login form"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4084
+#: includes/Helpers/CBXWPBookmarkHelper.php:4102
 msgid "Done"
 msgstr ""
 
@@ -1232,13 +1230,13 @@ msgid "Duration"
 msgstr ""
 
 #: includes/CBXWPBookmarkSettings.php:774
-#: includes/Helpers/CBXWPBookmarkHelper.php:1715
-#: includes/Helpers/CBXWPBookmarkHelper.php:3883
-#: includes/Helpers/CBXWPBookmarkHelper.php:3916
+#: includes/Helpers/CBXWPBookmarkHelper.php:1734
+#: includes/Helpers/CBXWPBookmarkHelper.php:3901
+#: includes/Helpers/CBXWPBookmarkHelper.php:3934
 msgid "Edit"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1239
+#: includes/CBXWPBookmarkPublic.php:1238
 msgid "Edit Category"
 msgstr ""
 
@@ -1246,11 +1244,11 @@ msgstr ""
 msgid "Edit User"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3931
+#: includes/Helpers/CBXWPBookmarkHelper.php:3949
 msgid "Email"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:341 includes/CBXWPBookmarkPublic.php:1260
+#: includes/CBXWPBookmarkAdmin.php:341 includes/CBXWPBookmarkPublic.php:1259
 msgid "Error"
 msgstr ""
 
@@ -1258,51 +1256,51 @@ msgstr ""
 msgid "Error creating category"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1235
+#: includes/CBXWPBookmarkPublic.php:1234
 msgid "Error loading data. Response code = "
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3191
+#: includes/Helpers/CBXWPBookmarkHelper.php:3209
 msgid "Example: Bookmark. If empty then label will be used from translation"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3198
+#: includes/Helpers/CBXWPBookmarkHelper.php:3216
 msgid "Example: Bookmarked. If empty then label will be used from translation"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1231
+#: includes/CBXWPBookmarkPublic.php:1230
 msgid "Failed to Bookmark"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3871
+#: includes/Helpers/CBXWPBookmarkHelper.php:3889
 msgid "Filter"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4240
+#: includes/Helpers/CBXWPBookmarkHelper.php:4270
 msgid "First"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3507
+#: includes/Helpers/CBXWPBookmarkHelper.php:3525
 msgid "Following database tables will be reset/deleted and then re-created."
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3469
-#: includes/Helpers/CBXWPBookmarkHelper.php:4074
+#: includes/Helpers/CBXWPBookmarkHelper.php:3487
+#: includes/Helpers/CBXWPBookmarkHelper.php:4092
 msgid ""
 "Following option values created by this plugin(including addon) from "
 "WordPress core option table"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3310
+#: includes/Helpers/CBXWPBookmarkHelper.php:3328
 msgid "For which post types auto integration will be used"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:1014
+#: includes/CBXWPBookmarkAdmin.php:1015
 msgid "Free Support"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3067
-#: includes/Helpers/CBXWPBookmarkHelper.php:3162
+#: includes/Helpers/CBXWPBookmarkHelper.php:3085
+#: includes/Helpers/CBXWPBookmarkHelper.php:3180
 msgid "General Settings"
 msgstr ""
 
@@ -1310,7 +1308,7 @@ msgstr ""
 msgid "Get Free & Pro Addons"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3210
+#: includes/Helpers/CBXWPBookmarkHelper.php:3228
 msgid "Global Category"
 msgstr ""
 
@@ -1318,21 +1316,21 @@ msgstr ""
 msgid "Global Settings"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3927
+#: includes/Helpers/CBXWPBookmarkHelper.php:3945
 msgid "Go to page "
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:2911
+#: includes/Helpers/CBXWPBookmarkHelper.php:2929
 msgid "Green"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:2318
-#: includes/Helpers/CBXWPBookmarkHelper.php:2330
-#: includes/Helpers/CBXWPBookmarkHelper.php:3921
+#: includes/Helpers/CBXWPBookmarkHelper.php:2337
+#: includes/Helpers/CBXWPBookmarkHelper.php:2349
+#: includes/Helpers/CBXWPBookmarkHelper.php:3939
 msgid "Guest"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3373
+#: includes/Helpers/CBXWPBookmarkHelper.php:3391
 msgid "Guest User Login Form"
 msgstr ""
 
@@ -1340,7 +1338,7 @@ msgstr ""
 msgid "Hacking attempt ?"
 msgstr ""
 
-#: templates/admin/support.php:219
+#: templates/admin/support.php:217
 msgid "Help & Supports"
 msgstr ""
 
@@ -1348,25 +1346,25 @@ msgstr ""
 msgid "Helps & Updates"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3906
-#: includes/Helpers/CBXWPBookmarkHelper.php:4223
-#: includes/Helpers/CBXWPBookmarkHelper.php:4224
+#: includes/Helpers/CBXWPBookmarkHelper.php:3924
+#: includes/Helpers/CBXWPBookmarkHelper.php:4253
+#: includes/Helpers/CBXWPBookmarkHelper.php:4254
 msgid "Helps And Updates"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3898
+#: includes/Helpers/CBXWPBookmarkHelper.php:3916
 msgid "Hide"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3394
+#: includes/Helpers/CBXWPBookmarkHelper.php:3412
 msgid "Hide Bookmark for Guest"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3228
+#: includes/Helpers/CBXWPBookmarkHelper.php:3246
 msgid "Hide Category Privacy Field"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3229
+#: includes/Helpers/CBXWPBookmarkHelper.php:3247
 msgid ""
 "Hide category privacy field if user category mode is selected. Default "
 "status will be used from above setting. This feature does't disable the "
@@ -1385,9 +1383,9 @@ msgstr ""
 msgid "hue selection slider"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:1032 includes/CBXWPBookmarkAdmin.php:1052
+#: includes/CBXWPBookmarkAdmin.php:1036 includes/CBXWPBookmarkAdmin.php:1056
 #: includes/Customizer/CBXWPBookmarkCustomizer.php:477
-#: includes/Helpers/CBXWPBookmarkHelper.php:3935
+#: includes/Helpers/CBXWPBookmarkHelper.php:3953
 msgid "ID"
 msgstr ""
 
@@ -1418,11 +1416,11 @@ msgstr ""
 msgid "Incomplete deletion. %1$d successfully and %$2d failed"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:2908
+#: includes/Helpers/CBXWPBookmarkHelper.php:2926
 msgid "Indigo"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:338 includes/CBXWPBookmarkPublic.php:1257
+#: includes/CBXWPBookmarkAdmin.php:338 includes/CBXWPBookmarkPublic.php:1256
 msgid "Info"
 msgstr ""
 
@@ -1432,11 +1430,11 @@ msgstr ""
 msgid "Keep empty to hide"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4243
+#: includes/Helpers/CBXWPBookmarkHelper.php:4273
 msgid "Last"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4129
+#: includes/Helpers/CBXWPBookmarkHelper.php:4153
 msgid "Latest Bookmarks"
 msgstr ""
 
@@ -1447,16 +1445,16 @@ msgid "Leave empty to hide"
 msgstr ""
 
 #: includes/Widgets/Vc/CBXWPBookmarkCategoryVCWidget.php:41
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:41
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:43
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:43
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:45
 msgid "Leave empty to ignore"
 msgstr ""
 
 #: includes/Customizer/CBXWPBookmarkCustomizer.php:499
 #: includes/Widgets/Elementor/CBXWPBookmarkMostElemWidget.php:122
 #: includes/Widgets/Elementor/CBXWPBookmarkMyBookmarkElemWidget.php:122
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:75
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:76
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:77
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:78
 msgid "Limit"
 msgstr ""
 
@@ -1468,8 +1466,8 @@ msgstr ""
 msgid "List"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:896
-#: includes/Helpers/CBXWPBookmarkHelper.php:1258
+#: includes/Helpers/CBXWPBookmarkHelper.php:906
+#: includes/Helpers/CBXWPBookmarkHelper.php:1268
 msgid "List Category"
 msgstr ""
 
@@ -1493,37 +1491,37 @@ msgstr ""
 msgid "Load More"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1251
+#: includes/CBXWPBookmarkPublic.php:1250
 msgid "Load More ..."
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:342 includes/CBXWPBookmarkPublic.php:1261
+#: includes/CBXWPBookmarkAdmin.php:342 includes/CBXWPBookmarkPublic.php:1260
 msgid "Loading"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3930
-#: includes/Helpers/CBXWPBookmarkHelper.php:4239
+#: includes/Helpers/CBXWPBookmarkHelper.php:3948
+#: includes/Helpers/CBXWPBookmarkHelper.php:4269
 msgid "Loading..."
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4209
+#: includes/Helpers/CBXWPBookmarkHelper.php:4239
 msgid "Manage Bookmarks"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:898
-#: includes/Helpers/CBXWPBookmarkHelper.php:1260
+#: includes/Helpers/CBXWPBookmarkHelper.php:908
+#: includes/Helpers/CBXWPBookmarkHelper.php:1270
 msgid "Manage Category"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4216
+#: includes/Helpers/CBXWPBookmarkHelper.php:4246
 msgid "Manage Settings"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1242
+#: includes/CBXWPBookmarkPublic.php:1241
 msgid "Maximum category limit reached"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3891
+#: includes/Helpers/CBXWPBookmarkHelper.php:3909
 msgid "Menu"
 msgstr ""
 
@@ -1531,26 +1529,26 @@ msgstr ""
 msgid "Migrated successfully"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4088
+#: includes/Helpers/CBXWPBookmarkHelper.php:4106
 msgid "Migration File Name"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4086
+#: includes/Helpers/CBXWPBookmarkHelper.php:4104
 msgid "Migration Files"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3977
-#: includes/Helpers/CBXWPBookmarkHelper.php:4031
+#: includes/Helpers/CBXWPBookmarkHelper.php:3995
+#: includes/Helpers/CBXWPBookmarkHelper.php:4049
 msgid "Moderator"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:1057
-#: includes/Helpers/CBXWPBookmarkHelper.php:3979
-#: includes/Helpers/CBXWPBookmarkHelper.php:4033
+#: includes/CBXWPBookmarkAdmin.php:1061
+#: includes/Helpers/CBXWPBookmarkHelper.php:3997
+#: includes/Helpers/CBXWPBookmarkHelper.php:4051
 msgid "Modified"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4127
+#: includes/Helpers/CBXWPBookmarkHelper.php:4151
 msgid "Monthly Bookmark Submission Overview"
 msgstr ""
 
@@ -1562,7 +1560,7 @@ msgstr ""
 #: includes/CBXWPBookmarkShortcodes.php:634
 #: includes/Widgets/Block/CBXWPBookmarkMostBlock.php:184
 #: includes/Widgets/Elementor/CBXWPBookmarkMostElemWidget.php:84
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:43
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:45
 msgid "Most Bookmarked Posts"
 msgstr ""
 
@@ -1570,22 +1568,22 @@ msgstr ""
 msgid "Most Bookmarked Posts Settings"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3332
+#: includes/Helpers/CBXWPBookmarkHelper.php:3350
 msgid "My Bookmark Page"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3129
+#: includes/Helpers/CBXWPBookmarkHelper.php:3147
 msgid "My Bookmark Page doesn't exists."
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3352
+#: includes/Helpers/CBXWPBookmarkHelper.php:3370
 msgid "My Bookmark Page Method"
 msgstr ""
 
 #: includes/Widgets/Block/CBXWPBookmarkCategoryBlock.php:146
 #: includes/Widgets/Block/CBXWPBookmarkMyBookmarkBlock.php:144
 #: includes/Widgets/Vc/CBXWPBookmarkCategoryVCWidget.php:118
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:170
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:172
 #: includes/Widgets/Classic/MyBookmark/views/admin.php:184
 msgid "My Bookmark Page Url(Base Url)"
 msgstr ""
@@ -1603,42 +1601,42 @@ msgstr ""
 msgid "My Bookmarks"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3936
+#: includes/Helpers/CBXWPBookmarkHelper.php:3954
 msgid "Name"
 msgstr ""
 
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:76
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:77
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:78
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:79
 msgid "Need numeric value."
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4085
+#: includes/Helpers/CBXWPBookmarkHelper.php:4103
 msgid "Need to migrate"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:894
-#: includes/Helpers/CBXWPBookmarkHelper.php:1256
+#: includes/Helpers/CBXWPBookmarkHelper.php:904
+#: includes/Helpers/CBXWPBookmarkHelper.php:1266
 msgid "New Category"
 msgstr ""
 
-#: templates/admin/support.php:310
+#: templates/admin/support.php:308
 msgid "New Plugins: HRM & ERP "
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4242
+#: includes/Helpers/CBXWPBookmarkHelper.php:4272
 msgid "Next"
 msgstr ""
 
 #: includes/CBXWPBookmarkAdmin.php:314
-#: includes/Helpers/CBXWPBookmarkHelper.php:3183
-#: includes/Helpers/CBXWPBookmarkHelper.php:3235
-#: includes/Helpers/CBXWPBookmarkHelper.php:3279
-#: includes/Helpers/CBXWPBookmarkHelper.php:3291
-#: includes/Helpers/CBXWPBookmarkHelper.php:3326
-#: includes/Helpers/CBXWPBookmarkHelper.php:3388
-#: includes/Helpers/CBXWPBookmarkHelper.php:3400
-#: includes/Helpers/CBXWPBookmarkHelper.php:3423
-#: includes/Helpers/CBXWPBookmarkHelper.php:3911
+#: includes/Helpers/CBXWPBookmarkHelper.php:3201
+#: includes/Helpers/CBXWPBookmarkHelper.php:3253
+#: includes/Helpers/CBXWPBookmarkHelper.php:3297
+#: includes/Helpers/CBXWPBookmarkHelper.php:3309
+#: includes/Helpers/CBXWPBookmarkHelper.php:3344
+#: includes/Helpers/CBXWPBookmarkHelper.php:3406
+#: includes/Helpers/CBXWPBookmarkHelper.php:3418
+#: includes/Helpers/CBXWPBookmarkHelper.php:3441
+#: includes/Helpers/CBXWPBookmarkHelper.php:3929
 #: includes/Widgets/Elementor/CBXWPBookmarkBtnElemWidget.php:84
 #: includes/Widgets/Elementor/CBXWPBookmarkCategoryElemWidget.php:149
 #: includes/Widgets/Elementor/CBXWPBookmarkCategoryElemWidget.php:161
@@ -1654,14 +1652,14 @@ msgstr ""
 #: includes/Widgets/Vc/CBXWPBookmarkBtnVCWidget.php:42
 #: includes/Widgets/Vc/CBXWPBookmarkCategoryVCWidget.php:98
 #: includes/Widgets/Vc/CBXWPBookmarkCategoryVCWidget.php:109
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:106
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:117
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:97
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:117
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:128
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:139
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:150
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:161
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:108
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:119
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:99
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:119
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:130
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:141
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:152
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:163
 #: includes/Widgets/Classic/Category/views/admin.php:33
 #: includes/Widgets/Classic/Category/views/admin.php:102
 #: includes/Widgets/Classic/Category/views/admin.php:117
@@ -1688,32 +1686,32 @@ msgstr ""
 msgid "No bookmark found"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3972
+#: includes/Helpers/CBXWPBookmarkHelper.php:3990
 msgid "No bookmark found, please add one"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1250
+#: includes/CBXWPBookmarkPublic.php:1249
 msgid "No bookmarks found"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1241
+#: includes/CBXWPBookmarkPublic.php:1240
 msgid "No category found"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4024
+#: includes/Helpers/CBXWPBookmarkHelper.php:4042
 msgid "No category found, please add one"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:1834
-#: includes/Helpers/CBXWPBookmarkHelper.php:1836
+#: includes/Helpers/CBXWPBookmarkHelper.php:1853
+#: includes/Helpers/CBXWPBookmarkHelper.php:1855
 msgid "No category found."
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3211
+#: includes/Helpers/CBXWPBookmarkHelper.php:3229
 msgid "No Category(Single Click Bookmark)"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:942 includes/CBXWPBookmarkPublic.php:1141
+#: includes/CBXWPBookmarkPublic.php:942 includes/CBXWPBookmarkPublic.php:1140
 msgid "No data available"
 msgstr ""
 
@@ -1730,35 +1728,35 @@ msgstr ""
 msgid "Number of Posts"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3925
+#: includes/Helpers/CBXWPBookmarkHelper.php:3943
 msgid "of"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:344 includes/CBXWPBookmarkPublic.php:1263
+#: includes/CBXWPBookmarkAdmin.php:344 includes/CBXWPBookmarkPublic.php:1262
 msgid "OK"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3415
+#: includes/Helpers/CBXWPBookmarkHelper.php:3433
 msgid "On Uninstall delete plugin data"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:316 includes/CBXWPBookmarkPublic.php:1228
+#: includes/CBXWPBookmarkAdmin.php:316 includes/CBXWPBookmarkPublic.php:1227
 msgid "Once you delete, it's gone forever. You can not revert it back."
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3479
-#: includes/Helpers/CBXWPBookmarkHelper.php:3500
-#: includes/Helpers/CBXWPBookmarkHelper.php:4079
+#: includes/Helpers/CBXWPBookmarkHelper.php:3497
+#: includes/Helpers/CBXWPBookmarkHelper.php:3518
+#: includes/Helpers/CBXWPBookmarkHelper.php:4097
 msgid "Option ID"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3478
-#: includes/Helpers/CBXWPBookmarkHelper.php:3499
-#: includes/Helpers/CBXWPBookmarkHelper.php:4078
+#: includes/Helpers/CBXWPBookmarkHelper.php:3496
+#: includes/Helpers/CBXWPBookmarkHelper.php:3517
+#: includes/Helpers/CBXWPBookmarkHelper.php:4096
 msgid "Option Name"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:2912
+#: includes/Helpers/CBXWPBookmarkHelper.php:2930
 msgid "Orange"
 msgstr ""
 
@@ -1784,17 +1782,17 @@ msgstr ""
 msgid "Order By"
 msgstr ""
 
-#: templates/admin/support.php:275
+#: templates/admin/support.php:273
 msgid "Other WordPress Plugins"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3628
+#: includes/Helpers/CBXWPBookmarkHelper.php:3646
 msgctxt "Page slug"
 msgid "bookmark-user-dashboard"
 msgstr ""
 
 #: includes/Helpers/CBXWPBookmarkHelper.php:166
-#: includes/Helpers/CBXWPBookmarkHelper.php:3623
+#: includes/Helpers/CBXWPBookmarkHelper.php:3641
 msgctxt "Page slug"
 msgid "mybookmarks"
 msgstr ""
@@ -1805,27 +1803,27 @@ msgid "user-bookmark-dashboard"
 msgstr ""
 
 #: includes/Helpers/CBXWPBookmarkHelper.php:167
-#: includes/Helpers/CBXWPBookmarkHelper.php:3624
+#: includes/Helpers/CBXWPBookmarkHelper.php:3642
 msgctxt "Page title"
 msgid "My Bookmarks"
 msgstr ""
 
 #: includes/Helpers/CBXWPBookmarkHelper.php:172
-#: includes/Helpers/CBXWPBookmarkHelper.php:3629
+#: includes/Helpers/CBXWPBookmarkHelper.php:3647
 msgctxt "Page title"
 msgid "User Bookmark Dashboard"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3990
-#: includes/Helpers/CBXWPBookmarkHelper.php:4045
+#: includes/Helpers/CBXWPBookmarkHelper.php:4008
+#: includes/Helpers/CBXWPBookmarkHelper.php:4063
 msgid "Permalink"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3901
+#: includes/Helpers/CBXWPBookmarkHelper.php:3919
 msgid "Phone"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3130
+#: includes/Helpers/CBXWPBookmarkHelper.php:3148
 msgid ""
 "Please <a data-busy=\"0\" id=\"cbxwpbookmark_autocreate_page\" "
 "class=\"button\" href=\"#\" target=\"_blank\">click here</a> to create. If "
@@ -1900,16 +1898,16 @@ msgstr ""
 msgid "Please fix this field."
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:740
-#: includes/Helpers/CBXWPBookmarkHelper.php:1102
+#: includes/Helpers/CBXWPBookmarkHelper.php:750
+#: includes/Helpers/CBXWPBookmarkHelper.php:1112
 msgid "Please login to bookmark"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1523
+#: includes/CBXWPBookmarkPublic.php:1522
 msgid "Please login to delete your bookmarks."
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3418
+#: includes/Helpers/CBXWPBookmarkHelper.php:3436
 msgid ""
 "Please note that this process can not be undone and it is recommended to "
 "keep full database backup before doing this."
@@ -1919,11 +1917,11 @@ msgstr ""
 #: includes/CBXWPBookmarkSettings.php:640
 #: includes/CBXWPBookmarkSettings.php:785
 #: includes/Customizer/CBXWPBookmarkCustomizer.php:814
-#: includes/Helpers/CBXWPBookmarkHelper.php:4047
+#: includes/Helpers/CBXWPBookmarkHelper.php:4065
 msgid "Please Select"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4081
+#: includes/Helpers/CBXWPBookmarkHelper.php:4099
 msgid "Please select at least one option"
 msgstr ""
 
@@ -1943,8 +1941,8 @@ msgstr ""
 msgid "Please select..."
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:1033
-#: includes/Helpers/CBXWPBookmarkHelper.php:3903
+#: includes/CBXWPBookmarkAdmin.php:1037
+#: includes/Helpers/CBXWPBookmarkHelper.php:3921
 msgid "Post"
 msgstr ""
 
@@ -1953,8 +1951,8 @@ msgstr ""
 #: includes/Widgets/Block/CBXWPBookmarkMyBookmarkBlock.php:75
 #: includes/Widgets/Elementor/CBXWPBookmarkMostElemWidget.php:112
 #: includes/Widgets/Elementor/CBXWPBookmarkMyBookmarkElemWidget.php:112
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:64
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:65
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:66
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:67
 #: includes/Widgets/Classic/Most/views/admin.php:90
 #: includes/Widgets/Classic/MyBookmark/views/admin.php:29
 msgid "Post ID"
@@ -1965,34 +1963,34 @@ msgstr ""
 #: includes/Widgets/Block/CBXWPBookmarkMyBookmarkBlock.php:85
 #: includes/Widgets/Elementor/CBXWPBookmarkMostElemWidget.php:114
 #: includes/Widgets/Elementor/CBXWPBookmarkMyBookmarkElemWidget.php:114
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:66
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:67
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:68
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:69
 #: includes/Widgets/Classic/Most/views/admin.php:92
 #: includes/Widgets/Classic/MyBookmark/views/admin.php:31
 msgid "Post Title"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:1034
+#: includes/CBXWPBookmarkAdmin.php:1038
 #: includes/Customizer/CBXWPBookmarkCustomizer.php:479
-#: includes/Helpers/CBXWPBookmarkHelper.php:3973
-#: includes/Helpers/CBXWPBookmarkHelper.php:4025
-#: includes/Helpers/CBXWPBookmarkHelper.php:4139
+#: includes/Helpers/CBXWPBookmarkHelper.php:3991
+#: includes/Helpers/CBXWPBookmarkHelper.php:4043
+#: includes/Helpers/CBXWPBookmarkHelper.php:4163
 #: includes/Widgets/Block/CBXWPBookmarkMostBlock.php:75
 #: includes/Widgets/Block/CBXWPBookmarkMyBookmarkBlock.php:70
 #: includes/Widgets/Elementor/CBXWPBookmarkMostElemWidget.php:113
 #: includes/Widgets/Elementor/CBXWPBookmarkMyBookmarkElemWidget.php:113
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:65
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:66
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:67
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:68
 #: includes/Widgets/Classic/Most/views/admin.php:89
 #: includes/Widgets/Classic/MyBookmark/views/admin.php:28
 msgid "Post Type"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3309
+#: includes/Helpers/CBXWPBookmarkHelper.php:3327
 msgid "Post Type Auto Integration"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3298
+#: includes/Helpers/CBXWPBookmarkHelper.php:3316
 msgid "Post Type Selection"
 msgstr ""
 
@@ -2006,23 +2004,23 @@ msgstr ""
 
 #: includes/Widgets/Elementor/CBXWPBookmarkMostElemWidget.php:135
 #: includes/Widgets/Elementor/CBXWPBookmarkMyBookmarkElemWidget.php:135
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:84
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:85
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:86
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:87
 msgid "Post type(s)"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3904
+#: includes/Helpers/CBXWPBookmarkHelper.php:3922
 msgid "Posts"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4241
+#: includes/Helpers/CBXWPBookmarkHelper.php:4271
 msgid "Prev"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:1055
+#: includes/CBXWPBookmarkAdmin.php:1059
 #: includes/Customizer/CBXWPBookmarkCustomizer.php:239
 #: includes/Customizer/CBXWPBookmarkCustomizer.php:247
-#: includes/Helpers/CBXWPBookmarkHelper.php:4042
+#: includes/Helpers/CBXWPBookmarkHelper.php:4060
 #: includes/Widgets/Block/CBXWPBookmarkCategoryBlock.php:79
 #: includes/Widgets/Block/CBXWPBookmarkCategoryBlock.php:140
 #: includes/Widgets/Elementor/CBXWPBookmarkCategoryElemWidget.php:109
@@ -2034,22 +2032,22 @@ msgstr ""
 msgid "Privacy"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1189
-#: includes/Helpers/CBXWPBookmarkHelper.php:2696
-#: includes/Helpers/CBXWPBookmarkHelper.php:2821
-#: includes/Helpers/CBXWPBookmarkHelper.php:3222
-#: includes/Helpers/CBXWPBookmarkHelper.php:4437
+#: includes/CBXWPBookmarkPublic.php:1188
+#: includes/Helpers/CBXWPBookmarkHelper.php:2714
+#: includes/Helpers/CBXWPBookmarkHelper.php:2839
+#: includes/Helpers/CBXWPBookmarkHelper.php:3240
+#: includes/Helpers/CBXWPBookmarkHelper.php:4467
 #: includes/Models/Category.php:103
 #: includes/Widgets/Elementor/CBXWPBookmarkCategoryElemWidget.php:124
 #: includes/Widgets/Vc/CBXWPBookmarkCategoryVCWidget.php:76
 msgid "Private"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1189
-#: includes/Helpers/CBXWPBookmarkHelper.php:850
-#: includes/Helpers/CBXWPBookmarkHelper.php:874
-#: includes/Helpers/CBXWPBookmarkHelper.php:1212
-#: includes/Helpers/CBXWPBookmarkHelper.php:1236
+#: includes/CBXWPBookmarkPublic.php:1188
+#: includes/Helpers/CBXWPBookmarkHelper.php:860
+#: includes/Helpers/CBXWPBookmarkHelper.php:884
+#: includes/Helpers/CBXWPBookmarkHelper.php:1222
+#: includes/Helpers/CBXWPBookmarkHelper.php:1246
 msgid "Private Category"
 msgstr ""
 
@@ -2058,31 +2056,35 @@ msgstr ""
 msgid "Private only"
 msgstr ""
 
-#: templates/admin/support.php:268
+#: templates/admin/support.php:266
 msgid "Pro Addon Support"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:2377
+#: includes/CBXWPBookmarkAdmin.php:131
+msgid "Pro Licences"
+msgstr ""
+
+#: includes/Helpers/CBXWPBookmarkHelper.php:2396
 msgid "Proportional"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1188
+#: includes/CBXWPBookmarkPublic.php:1187
 #: includes/Customizer/CBXWPBookmarkCustomizer.php:246
-#: includes/Helpers/CBXWPBookmarkHelper.php:2695
-#: includes/Helpers/CBXWPBookmarkHelper.php:2820
-#: includes/Helpers/CBXWPBookmarkHelper.php:3221
-#: includes/Helpers/CBXWPBookmarkHelper.php:4436
+#: includes/Helpers/CBXWPBookmarkHelper.php:2713
+#: includes/Helpers/CBXWPBookmarkHelper.php:2838
+#: includes/Helpers/CBXWPBookmarkHelper.php:3239
+#: includes/Helpers/CBXWPBookmarkHelper.php:4466
 #: includes/Models/Category.php:103
 #: includes/Widgets/Elementor/CBXWPBookmarkCategoryElemWidget.php:123
 #: includes/Widgets/Vc/CBXWPBookmarkCategoryVCWidget.php:75
 msgid "Public"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1188
-#: includes/Helpers/CBXWPBookmarkHelper.php:849
-#: includes/Helpers/CBXWPBookmarkHelper.php:873
-#: includes/Helpers/CBXWPBookmarkHelper.php:1211
-#: includes/Helpers/CBXWPBookmarkHelper.php:1235
+#: includes/CBXWPBookmarkPublic.php:1187
+#: includes/Helpers/CBXWPBookmarkHelper.php:859
+#: includes/Helpers/CBXWPBookmarkHelper.php:883
+#: includes/Helpers/CBXWPBookmarkHelper.php:1221
+#: includes/Helpers/CBXWPBookmarkHelper.php:1245
 msgid "Public Category"
 msgstr ""
 
@@ -2091,20 +2093,20 @@ msgstr ""
 msgid "Public only"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3987
-#: includes/Helpers/CBXWPBookmarkHelper.php:4041
+#: includes/Helpers/CBXWPBookmarkHelper.php:4005
+#: includes/Helpers/CBXWPBookmarkHelper.php:4059
 msgid "Publish"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:2907
+#: includes/Helpers/CBXWPBookmarkHelper.php:2925
 msgid "Purple"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4118
+#: includes/Helpers/CBXWPBookmarkHelper.php:4142
 msgid "Quick information of important components"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4125
+#: includes/Helpers/CBXWPBookmarkHelper.php:4149
 msgid "Quick overview of monthly bookmark submissions."
 msgstr ""
 
@@ -2112,7 +2114,7 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:2906
+#: includes/Helpers/CBXWPBookmarkHelper.php:2924
 msgid "Red"
 msgstr ""
 
@@ -2120,37 +2122,37 @@ msgstr ""
 msgid "Request failed, please reload the page."
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3867
+#: includes/Helpers/CBXWPBookmarkHelper.php:3885
 msgid "Reset"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4080
+#: includes/Helpers/CBXWPBookmarkHelper.php:4098
 msgid "Reset Data"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4082
+#: includes/Helpers/CBXWPBookmarkHelper.php:4100
 msgid "Reset option data"
 msgstr ""
 
-#: templates/admin/support.php:248
+#: templates/admin/support.php:246
 msgid "Review & Rate CBX Bookmark Plugin"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:1015
+#: includes/CBXWPBookmarkAdmin.php:1016
 msgid "Reviews"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3926
+#: includes/Helpers/CBXWPBookmarkHelper.php:3944
 msgid "Row count "
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4087
+#: includes/Helpers/CBXWPBookmarkHelper.php:4105
 msgid "Run Migration"
 msgstr ""
 
 #: includes/CBXWPBookmarkAdmin.php:323
-#: includes/Helpers/CBXWPBookmarkHelper.php:886
-#: includes/Helpers/CBXWPBookmarkHelper.php:1248
+#: includes/Helpers/CBXWPBookmarkHelper.php:896
+#: includes/Helpers/CBXWPBookmarkHelper.php:1258
 msgid "Save"
 msgstr ""
 
@@ -2163,11 +2165,11 @@ msgstr ""
 msgid "Save Settings"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3863
+#: includes/Helpers/CBXWPBookmarkHelper.php:3881
 msgid "Search"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3929
+#: includes/Helpers/CBXWPBookmarkHelper.php:3947
 msgid "Search ..."
 msgstr ""
 
@@ -2175,16 +2177,16 @@ msgstr ""
 msgid "Search here"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:814
-#: includes/Helpers/CBXWPBookmarkHelper.php:833
-#: includes/Helpers/CBXWPBookmarkHelper.php:1176
-#: includes/Helpers/CBXWPBookmarkHelper.php:1195
-#: includes/Helpers/CBXWPBookmarkHelper.php:3928
+#: includes/Helpers/CBXWPBookmarkHelper.php:824
+#: includes/Helpers/CBXWPBookmarkHelper.php:843
+#: includes/Helpers/CBXWPBookmarkHelper.php:1186
+#: includes/Helpers/CBXWPBookmarkHelper.php:1205
+#: includes/Helpers/CBXWPBookmarkHelper.php:3946
 msgid "Search..."
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3981
-#: includes/Helpers/CBXWPBookmarkHelper.php:4035
+#: includes/Helpers/CBXWPBookmarkHelper.php:3999
+#: includes/Helpers/CBXWPBookmarkHelper.php:4053
 msgid "Select"
 msgstr ""
 
@@ -2192,7 +2194,7 @@ msgstr ""
 msgid "Select Bookmark Shortcodes"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3994
+#: includes/Helpers/CBXWPBookmarkHelper.php:4012
 msgid "Select Category"
 msgstr ""
 
@@ -2212,11 +2214,11 @@ msgstr ""
 msgid "Select order by"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4558
+#: includes/Helpers/CBXWPBookmarkHelper.php:4588
 msgid "Select page"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3995
+#: includes/Helpers/CBXWPBookmarkHelper.php:4013
 #: includes/Widgets/Block/CBXWPBookmarkMostBlock.php:94
 #: includes/Widgets/Block/CBXWPBookmarkMyBookmarkBlock.php:92
 msgid "Select Post Type"
@@ -2232,7 +2234,7 @@ msgstr ""
 msgid "Select post type(s)"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3169
+#: includes/Helpers/CBXWPBookmarkHelper.php:3187
 msgid "Select predefine theme."
 msgstr ""
 
@@ -2240,18 +2242,18 @@ msgstr ""
 msgid "Select privacy"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3914
+#: includes/Helpers/CBXWPBookmarkHelper.php:3932
 msgid "Select Status"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3342
+#: includes/Helpers/CBXWPBookmarkHelper.php:3360
 msgid ""
 "Select the page where you have placed the [cbxwpbookmark_user_dashboard] "
 "shortcode. This user dashboard page/shortcode helps to display multiple user "
 "related shortcodes/components/functionalities."
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3168
+#: includes/Helpers/CBXWPBookmarkHelper.php:3186
 msgid "Select Theme"
 msgstr ""
 
@@ -2259,7 +2261,7 @@ msgstr ""
 msgid "Select Time Duration"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3992
+#: includes/Helpers/CBXWPBookmarkHelper.php:4010
 msgid "Select User"
 msgstr ""
 
@@ -2267,8 +2269,8 @@ msgstr ""
 msgid "Select which bookmark shortcodes"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3980
-#: includes/Helpers/CBXWPBookmarkHelper.php:4034
+#: includes/Helpers/CBXWPBookmarkHelper.php:3998
+#: includes/Helpers/CBXWPBookmarkHelper.php:4052
 msgid "Selected"
 msgstr ""
 
@@ -2294,9 +2296,9 @@ msgstr ""
 msgid "Setting"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:989
-#: includes/Helpers/CBXWPBookmarkHelper.php:3905
-#: includes/Helpers/CBXWPBookmarkHelper.php:4217
+#: includes/CBXWPBookmarkAdmin.php:990
+#: includes/Helpers/CBXWPBookmarkHelper.php:3923
+#: includes/Helpers/CBXWPBookmarkHelper.php:4247
 msgid "Settings"
 msgstr ""
 
@@ -2308,11 +2310,11 @@ msgstr ""
 msgid "Share bookmarks with others"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3359
+#: includes/Helpers/CBXWPBookmarkHelper.php:3377
 msgid "Shortcode"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3353
+#: includes/Helpers/CBXWPBookmarkHelper.php:3371
 msgid ""
 "Shortcode method is old, customizer way is new and more easy. We recommend "
 "to use customizer and remove the shortcodes from that page related with this "
@@ -2332,7 +2334,7 @@ msgstr ""
 msgid "Shortcodes/Functionalities"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3321
+#: includes/Helpers/CBXWPBookmarkHelper.php:3339
 msgid "Show bookmark count"
 msgstr ""
 
@@ -2357,7 +2359,7 @@ msgid "Show Category Count"
 msgstr ""
 
 #: includes/Widgets/Elementor/CBXWPBookmarkMyBookmarkElemWidget.php:183
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:124
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:126
 msgid "Show category count"
 msgstr ""
 
@@ -2368,7 +2370,7 @@ msgstr ""
 
 #: includes/Customizer/CBXWPBookmarkCustomizer.php:610
 #: includes/Widgets/Elementor/CBXWPBookmarkMyBookmarkElemWidget.php:170
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:113
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:115
 msgid "Show category title"
 msgstr ""
 
@@ -2382,12 +2384,12 @@ msgstr ""
 msgid "Show Count"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3320
+#: includes/Helpers/CBXWPBookmarkHelper.php:3338
 #: includes/Widgets/Elementor/CBXWPBookmarkBtnElemWidget.php:81
 #: includes/Widgets/Elementor/CBXWPBookmarkCategoryElemWidget.php:146
 #: includes/Widgets/Elementor/CBXWPBookmarkMostElemWidget.php:162
 #: includes/Widgets/Vc/CBXWPBookmarkCategoryVCWidget.php:94
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:102
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:104
 msgid "Show count"
 msgstr ""
 
@@ -2395,13 +2397,13 @@ msgstr ""
 msgid "Show count for category"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3273
-#: includes/Helpers/CBXWPBookmarkHelper.php:3274
+#: includes/Helpers/CBXWPBookmarkHelper.php:3291
+#: includes/Helpers/CBXWPBookmarkHelper.php:3292
 msgid "Show in Archive"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3285
-#: includes/Helpers/CBXWPBookmarkHelper.php:3286
+#: includes/Helpers/CBXWPBookmarkHelper.php:3303
+#: includes/Helpers/CBXWPBookmarkHelper.php:3304
 msgid "Show in Home"
 msgstr ""
 
@@ -2415,15 +2417,15 @@ msgid "Show Load More"
 msgstr ""
 
 #: includes/Widgets/Elementor/CBXWPBookmarkMyBookmarkElemWidget.php:149
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:93
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:95
 msgid "Show load more"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3382
+#: includes/Helpers/CBXWPBookmarkHelper.php:3400
 msgid "Show Register link to guest"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3383
+#: includes/Helpers/CBXWPBookmarkHelper.php:3401
 msgid ""
 "Show register link to guest, depends on if registration is enabled in "
 "wordpress core"
@@ -2435,7 +2437,7 @@ msgid "Show Share Option"
 msgstr ""
 
 #: includes/Widgets/Elementor/CBXWPBookmarkMyBookmarkElemWidget.php:220
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:157
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:159
 msgid "Show Share url"
 msgstr ""
 
@@ -2443,7 +2445,7 @@ msgstr ""
 msgid "Show Thumb"
 msgstr ""
 
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:113
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:115
 msgid "Show thumb"
 msgstr ""
 
@@ -2455,38 +2457,38 @@ msgstr ""
 msgid "Show thumbnail"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4083
+#: includes/Helpers/CBXWPBookmarkHelper.php:4101
 msgid "Show/Hide"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3924
+#: includes/Helpers/CBXWPBookmarkHelper.php:3942
 msgid "Showing "
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3261
+#: includes/Helpers/CBXWPBookmarkHelper.php:3279
 msgid "Skip for User Role"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3253
+#: includes/Helpers/CBXWPBookmarkHelper.php:3271
 msgid "Skip Post Id(s)"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3254
+#: includes/Helpers/CBXWPBookmarkHelper.php:3272
 msgid ""
 "Skip to show bookmark button for post id, put post id as comma separated for "
 "multiple"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3262
+#: includes/Helpers/CBXWPBookmarkHelper.php:3280
 msgid "Skip to show bookmark button for user roles"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4366
-#: includes/Helpers/CBXWPBookmarkHelper.php:4422
+#: includes/Helpers/CBXWPBookmarkHelper.php:4396
+#: includes/Helpers/CBXWPBookmarkHelper.php:4452
 msgid "Something Went Wrong. Please try again later."
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3365
+#: includes/Helpers/CBXWPBookmarkHelper.php:3383
 msgid ""
 "Sometimes bookmark popup doesn't show properly or may not compatible with "
 "theme. Increasing the z-index value will help."
@@ -2496,7 +2498,7 @@ msgstr ""
 msgid "Sorry! category update failed or database error"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3932
+#: includes/Helpers/CBXWPBookmarkHelper.php:3950
 msgid "Sorry! Invalid form validation. Please check"
 msgstr ""
 
@@ -2524,7 +2526,7 @@ msgid ""
 "do not have enough permission."
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:1081 includes/CBXWPBookmarkAdmin.php:1106
+#: includes/CBXWPBookmarkAdmin.php:1085 includes/CBXWPBookmarkAdmin.php:1110
 msgid "Sorry, you don't have enough permission"
 msgstr ""
 
@@ -2533,29 +2535,29 @@ msgstr ""
 msgid "Sorry, you don't have enough permission!"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1245
+#: includes/CBXWPBookmarkPublic.php:1244
 msgid ""
 "Sorry, you reached the maximum category limit and to create one one, please "
 "delete unnecessary categories first"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3996
+#: includes/Helpers/CBXWPBookmarkHelper.php:4014
 msgid "Sort Order"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4140
+#: includes/Helpers/CBXWPBookmarkHelper.php:4164
 msgid "Start Date"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3943
+#: includes/Helpers/CBXWPBookmarkHelper.php:3961
 msgid "Status"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4048
+#: includes/Helpers/CBXWPBookmarkHelper.php:4066
 msgid "Submit"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:339 includes/CBXWPBookmarkPublic.php:1258
+#: includes/CBXWPBookmarkAdmin.php:339 includes/CBXWPBookmarkPublic.php:1257
 msgid "Success"
 msgstr ""
 
@@ -2563,22 +2565,22 @@ msgstr ""
 msgid "Support & Docs"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3513
-#: includes/Helpers/CBXWPBookmarkHelper.php:3535
+#: includes/Helpers/CBXWPBookmarkHelper.php:3531
+#: includes/Helpers/CBXWPBookmarkHelper.php:3553
 msgid "Table Name"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3514
-#: includes/Helpers/CBXWPBookmarkHelper.php:3536
+#: includes/Helpers/CBXWPBookmarkHelper.php:3532
+#: includes/Helpers/CBXWPBookmarkHelper.php:3554
 msgid "Table Name in DB"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:2910
+#: includes/Helpers/CBXWPBookmarkHelper.php:2928
 msgid "Teal"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3985
-#: includes/Helpers/CBXWPBookmarkHelper.php:4039
+#: includes/Helpers/CBXWPBookmarkHelper.php:4003
+#: includes/Helpers/CBXWPBookmarkHelper.php:4057
 msgid "Terms and Conditions"
 msgstr ""
 
@@ -2627,26 +2629,26 @@ msgstr ""
 msgid "This widget shows bookmark categories from a logged in user."
 msgstr ""
 
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:32
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:34
 #: includes/Widgets/Classic/MyBookmark/CBXWPBookmarkMyBookmarkWidget.php:40
 msgid "This widget shows bookmarked posts from a user"
 msgstr ""
 
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:30
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:32
 #: includes/Widgets/Classic/Most/CBXWPBookmarkMostWidget.php:40
 msgid ""
 "This widget shows most bookmarked post from all user within specific time "
 "limit."
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:337 includes/CBXWPBookmarkPublic.php:1256
+#: includes/CBXWPBookmarkAdmin.php:337 includes/CBXWPBookmarkPublic.php:1255
 msgid "Tip"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:1053
+#: includes/CBXWPBookmarkAdmin.php:1057
 #: includes/Customizer/CBXWPBookmarkCustomizer.php:164
 #: includes/Customizer/CBXWPBookmarkCustomizer.php:425
-#: includes/Helpers/CBXWPBookmarkHelper.php:4029
+#: includes/Helpers/CBXWPBookmarkHelper.php:4047
 #: includes/Widgets/Block/CBXWPBookmarkCategoryBlock.php:132
 #: includes/Widgets/Block/CBXWPBookmarkMostBlock.php:158
 #: includes/Widgets/Block/CBXWPBookmarkMyBookmarkBlock.php:127
@@ -2654,15 +2656,15 @@ msgstr ""
 #: includes/Widgets/Elementor/CBXWPBookmarkMostElemWidget.php:81
 #: includes/Widgets/Elementor/CBXWPBookmarkMyBookmarkElemWidget.php:82
 #: includes/Widgets/Vc/CBXWPBookmarkCategoryVCWidget.php:40
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:40
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:42
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:42
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:44
 #: includes/Widgets/Classic/Category/views/admin.php:7
 #: includes/Widgets/Classic/Most/views/admin.php:6
 #: includes/Widgets/Classic/MyBookmark/views/admin.php:6
 msgid "Title"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3150
+#: includes/Helpers/CBXWPBookmarkHelper.php:3168
 msgid ""
 "To configure <strong>My Bookmarks</strong> page using customizer please "
 "create a page and set as my bookmark page using above setting."
@@ -2680,28 +2682,28 @@ msgstr ""
 msgid "Tools"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3409
+#: includes/Helpers/CBXWPBookmarkHelper.php:3427
 msgid "Tools Settings"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3902
+#: includes/Helpers/CBXWPBookmarkHelper.php:3920
 msgid "Total"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3395
+#: includes/Helpers/CBXWPBookmarkHelper.php:3413
 msgid "Totally hide bookmark button for guest user, default it's shown but "
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:1017
+#: includes/CBXWPBookmarkAdmin.php:1020
 msgid "Try Pro Addon"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:843
-#: includes/Helpers/CBXWPBookmarkHelper.php:1205
+#: includes/Helpers/CBXWPBookmarkHelper.php:853
+#: includes/Helpers/CBXWPBookmarkHelper.php:1215
 msgid "Type Category Name"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1226
+#: includes/CBXWPBookmarkPublic.php:1225
 msgid "Unable to delete the category"
 msgstr ""
 
@@ -2727,17 +2729,17 @@ msgid "Unauthorized request"
 msgstr ""
 
 #: includes/CBXWPBookmarkSettings.php:479
-#: includes/Helpers/CBXWPBookmarkHelper.php:3473
-#: includes/Helpers/CBXWPBookmarkHelper.php:4077
+#: includes/Helpers/CBXWPBookmarkHelper.php:3491
+#: includes/Helpers/CBXWPBookmarkHelper.php:4095
 msgid "Uncheck All"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:2375
-#: includes/Helpers/CBXWPBookmarkHelper.php:2376
+#: includes/Helpers/CBXWPBookmarkHelper.php:2394
+#: includes/Helpers/CBXWPBookmarkHelper.php:2395
 msgid "Unknown"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:2955
+#: includes/Helpers/CBXWPBookmarkHelper.php:2973
 msgid "Unnamed"
 msgstr ""
 
@@ -2753,8 +2755,8 @@ msgstr ""
 msgid "Untitled article"
 msgstr ""
 
-#: includes/CBXWPBookmarkPublic.php:1191
-#: includes/Helpers/CBXWPBookmarkHelper.php:3917
+#: includes/CBXWPBookmarkPublic.php:1190
+#: includes/Helpers/CBXWPBookmarkHelper.php:3935
 msgid "Update"
 msgstr ""
 
@@ -2762,11 +2764,11 @@ msgstr ""
 msgid "Update Failed"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:4044
+#: includes/Helpers/CBXWPBookmarkHelper.php:4062
 msgid "Updated Date"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3989
+#: includes/Helpers/CBXWPBookmarkHelper.php:4007
 msgid "Updated Time"
 msgstr ""
 
@@ -2774,40 +2776,40 @@ msgstr ""
 msgid "use previous color"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:1035 includes/CBXWPBookmarkAdmin.php:1054
-#: includes/Helpers/CBXWPBookmarkHelper.php:3900
+#: includes/CBXWPBookmarkAdmin.php:1039 includes/CBXWPBookmarkAdmin.php:1058
+#: includes/Helpers/CBXWPBookmarkHelper.php:3918
 msgid "User"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3341
+#: includes/Helpers/CBXWPBookmarkHelper.php:3359
 msgid "User Dashboard Page"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3907
+#: includes/Helpers/CBXWPBookmarkHelper.php:3925
 msgid "User List"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3209
+#: includes/Helpers/CBXWPBookmarkHelper.php:3227
 msgid "User owns category"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3333
+#: includes/Helpers/CBXWPBookmarkHelper.php:3351
 msgid ""
 "User's private(or public based on shortcode/customizer params) bookmark page."
 msgstr ""
 
 #: includes/CBXWPBookmarkSettings.php:778
-#: includes/Helpers/CBXWPBookmarkHelper.php:3875
-#: includes/Helpers/CBXWPBookmarkHelper.php:3919
+#: includes/Helpers/CBXWPBookmarkHelper.php:3893
+#: includes/Helpers/CBXWPBookmarkHelper.php:3937
 msgid "View"
 msgstr ""
 
-#: includes/CBXWPBookmarkAdmin.php:989
+#: includes/CBXWPBookmarkAdmin.php:990
 msgid "View settings"
 msgstr ""
 
 #. %s: my bookmark page url
-#: includes/Helpers/CBXWPBookmarkHelper.php:3122
+#: includes/Helpers/CBXWPBookmarkHelper.php:3140
 #, php-format
 msgid "Visit <a href=\"%s\" target=\"_blank\">My Bookmarks</a> Page"
 msgstr ""
@@ -2825,20 +2827,20 @@ msgid ""
 "Bookmark & Favorite Pro Addon V2.0.0"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:2753
+#: includes/Helpers/CBXWPBookmarkHelper.php:2771
 msgid "WordPress Core Login Form"
 msgstr ""
 
 #: includes/CBXWPBookmarkAdmin.php:313
-#: includes/Helpers/CBXWPBookmarkHelper.php:3182
-#: includes/Helpers/CBXWPBookmarkHelper.php:3234
-#: includes/Helpers/CBXWPBookmarkHelper.php:3278
-#: includes/Helpers/CBXWPBookmarkHelper.php:3290
-#: includes/Helpers/CBXWPBookmarkHelper.php:3325
-#: includes/Helpers/CBXWPBookmarkHelper.php:3387
-#: includes/Helpers/CBXWPBookmarkHelper.php:3399
-#: includes/Helpers/CBXWPBookmarkHelper.php:3422
-#: includes/Helpers/CBXWPBookmarkHelper.php:3910
+#: includes/Helpers/CBXWPBookmarkHelper.php:3200
+#: includes/Helpers/CBXWPBookmarkHelper.php:3252
+#: includes/Helpers/CBXWPBookmarkHelper.php:3296
+#: includes/Helpers/CBXWPBookmarkHelper.php:3308
+#: includes/Helpers/CBXWPBookmarkHelper.php:3343
+#: includes/Helpers/CBXWPBookmarkHelper.php:3405
+#: includes/Helpers/CBXWPBookmarkHelper.php:3417
+#: includes/Helpers/CBXWPBookmarkHelper.php:3440
+#: includes/Helpers/CBXWPBookmarkHelper.php:3928
 #: includes/Widgets/Elementor/CBXWPBookmarkBtnElemWidget.php:83
 #: includes/Widgets/Elementor/CBXWPBookmarkCategoryElemWidget.php:148
 #: includes/Widgets/Elementor/CBXWPBookmarkCategoryElemWidget.php:160
@@ -2854,14 +2856,14 @@ msgstr ""
 #: includes/Widgets/Vc/CBXWPBookmarkBtnVCWidget.php:41
 #: includes/Widgets/Vc/CBXWPBookmarkCategoryVCWidget.php:97
 #: includes/Widgets/Vc/CBXWPBookmarkCategoryVCWidget.php:108
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:105
-#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:116
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:96
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:116
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:127
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:138
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:149
-#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:160
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:107
+#: includes/Widgets/Vc/CBXWPBookmarkMostVCWidget.php:118
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:98
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:118
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:129
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:140
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:151
+#: includes/Widgets/Vc/CBXWPBookmarkMyBookmarkVCWidget.php:162
 #: includes/Widgets/Classic/Category/views/admin.php:36
 #: includes/Widgets/Classic/Category/views/admin.php:98
 #: includes/Widgets/Classic/Category/views/admin.php:113
@@ -2878,15 +2880,15 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3942
+#: includes/Helpers/CBXWPBookmarkHelper.php:3960
 msgid "Yes, delete it!"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3983
-#: includes/Helpers/CBXWPBookmarkHelper.php:4037
+#: includes/Helpers/CBXWPBookmarkHelper.php:4001
+#: includes/Helpers/CBXWPBookmarkHelper.php:4055
 msgid "You are not able to access this page"
 msgstr ""
 
-#: includes/Helpers/CBXWPBookmarkHelper.php:3941
+#: includes/Helpers/CBXWPBookmarkHelper.php:3959
 msgid "You won`t be able to revert this!"
 msgstr ""

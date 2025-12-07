@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 use CBXWPBookmark\CBXWPBookmarkSettings;
-//use CBXWPBookmark\Helpers\CBXWPBookmarkHelper;
+
 use CBXWPBookmark\Models\Bookmark;
 use Exception;
 use WP_REST_Request;

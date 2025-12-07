@@ -4,7 +4,7 @@ namespace CBXWPBookmark;
 use CBXWPBookmark\CBXWPBookmarkSettings;
 use Exception;
 
-//use CBXWPBookmark\Helpers\CBXWPBookmarkHelper;
+
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
@@ -126,10 +126,10 @@ class CBXWPBookmarkAdmin {
 				'id'    => 'cbxwpbookmark_tools',
 				'title' => esc_html__( 'Tools', 'cbxwpbookmark' ),
 			],
-			/*[
+			[
 				'id'    => 'cbxwpbookmark_licences',
 				'title' => esc_html__( 'Pro Licences', 'cbxwpbookmark' ),
-			]*/
+			]
 		];
 
 		return array_merge( $sections, $extra_sections );
@@ -482,7 +482,7 @@ class CBXWPBookmarkAdmin {
 		global $submenu;
 
 		//review listing page
-		$bookmark_list_page_hook = add_menu_page( esc_html__( 'CBX WP Bookmark Dashboard', 'cbxwpbookmark' ),
+		$dashboard_page_hook = add_menu_page( esc_html__( 'CBX WP Bookmark Dashboard', 'cbxwpbookmark' ),
 			esc_html__( 'CBX Bookmarks', 'cbxwpbookmark' ),
 			'cbxwpbookmark_dashboard_manage',
 			'cbxwpbookmark-dashboard',
@@ -944,11 +944,12 @@ class CBXWPBookmarkAdmin {
 
 		if($pro_addon_version != '' && version_compare( $pro_addon_version, $pro_latest_version, '<' ) ){
 
-			$plugin_manual_update = 'https://codeboxr.com/manual-update-pro-addon/';
+			//$plugin_manual_update = 'https://codeboxr.com/manual-update-pro-addon/';
+			$plugin_manual_update = admin_url( 'admin.php?page=cbxwpbookmark-settings#cbxwpbookmark_licences' );
 
 
 			/* translators:translators: %s: plugin setting url for licence */
-			$custom_message     = wp_kses(sprintf( __( '<strong>Note:</strong> CBX Bookmark & Favorite Pro Addon is custom plugin. This plugin can not be auto update from dashboard/plugin manager. For manual update please check <a target="_blank" href="%1$s">documentation</a>. <strong style="color: red;">It seems this plugin\'s current version is older than %2$s . To get the latest pro addon features, this plugin needs to upgrade to %2$s or later.</strong>', 'cbxwpbookmark' ), esc_url( $plugin_manual_update ), $pro_latest_version ), ['strong' => ['style' => []],'a' => ['href' => [], 'target' => []]]);
+			$custom_message     = wp_kses(sprintf( __( '<strong>Note:</strong> CBX Bookmark & Favorite Pro Addon is custom plugin. <strong style="color: red;">It seems this plugin\'s current version is older than %2$s . To get the latest pro addon features, this plugin needs to upgrade to %2$s or later.</strong>', 'cbxwpbookmark' ), $pro_latest_version, $pro_latest_version ), ['strong' => ['style' => []],'a' => ['href' => [], 'target' => []]]);
 
 			// Output a row with custom content
 			echo '<tr class="plugin-update-tr">
@@ -1014,7 +1015,10 @@ class CBXWPBookmarkAdmin {
 			$links_array[] = '<a target="_blank" style="color:#005ae0 !important; font-weight: bold;" href="https://wordpress.org/support/plugin/cbxwpbookmark/" aria-label="' . esc_attr__( 'Free Support', 'cbxwpbookmark' ) . '">' . esc_html__( 'Free Support', 'cbxwpbookmark' ) . '</a>';
 			$links_array[] = '<a target="_blank" style="color:#005ae0 !important; font-weight: bold;" href="https://wordpress.org/plugins/cbxwpbookmark/#reviews" aria-label="' . esc_attr__( 'Reviews', 'cbxwpbookmark' ) . '">' . esc_html__( 'Reviews', 'cbxwpbookmark' ) . '</a>';
 			$links_array[] = '<a target="_blank" style="color:#005ae0 !important; font-weight: bold;" href="https://codeboxr.com/doc/cbxwpbookmark-doc/" aria-label="' . esc_attr__( 'Documentation', 'cbxwpbookmark' ) . '">' . esc_html__( 'Documentation', 'cbxwpbookmark' ) . '</a>';
-			$links_array[] = '<a target="_blank" style="color:#005ae0 !important; font-weight: bold;" href="https://codeboxr.com/product/cbx-wordpress-bookmark/" aria-label="' . esc_attr__( 'Try Pro Addon', 'cbxwpbookmark' ) . '">' . esc_html__( 'Try Pro Addon', 'cbxwpbookmark' ) . '</a>';
+
+			if(!defined('CBXWPBOOKMARKADDON_PLUGIN_NAME')){
+				$links_array[] = '<a target="_blank" style="color:#005ae0 !important; font-weight: bold;" href="https://codeboxr.com/product/cbx-wordpress-bookmark/" aria-label="' . esc_attr__( 'Try Pro Addon', 'cbxwpbookmark' ) . '">' . esc_html__( 'Try Pro Addon', 'cbxwpbookmark' ) . '</a>';
+			}
 		}
 
 		return $links_array;

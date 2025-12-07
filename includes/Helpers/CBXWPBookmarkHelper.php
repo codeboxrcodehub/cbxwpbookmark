@@ -1303,11 +1303,21 @@ class CBXWPBookmarkHelper {
 
         $bookmark_mode = $settings->get_field( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
 
-        $limit    = isset( $instance['limit'] ) ? intval( $instance['limit'] ) : 10;
+        $limit    = isset( $instance['limit'] ) ? absint( $instance['limit'] ) : 10;
         $order_by = isset( $instance['orderby'] ) ? esc_attr( $instance['orderby'] ) : 'id';
         $order    = isset( $instance['order'] ) ? esc_attr( $instance['order'] ) : 'DESC';
         $type     = isset( $instance['type'] ) ? wp_unslash( $instance['type'] ) : []; //object type(post types), multiple as array
 
+        $order_arr = ['DESC', 'ASC'];
+        $order = strtoupper($order);
+        if(!in_array($order, $order_arr)) {
+            $order = 'DESC';
+        }
+
+        $order_by = trim($order_by);
+        if ( ! in_array( $order_by, cbxwpbookmarks_bookmark_sortable_keys() ) ) {
+            $order_by = 'id';
+        }
 
         //old format compatibility
         if ( is_string( $type ) ) {
@@ -1317,7 +1327,7 @@ class CBXWPBookmarkHelper {
         $type = array_filter( $type );
 
 
-        $offset = isset( $instance['offset'] ) ? intval( $instance['offset'] ) : 0;
+        $offset = isset( $instance['offset'] ) ? absint( $instance['offset'] ) : 0;
         $catid  = isset( $instance['catid'] ) ? wp_unslash( $instance['catid'] ) : [];
         if ( $catid == 0 || $catid == '0' ) {
             $catid = '';
@@ -1328,11 +1338,11 @@ class CBXWPBookmarkHelper {
         }
         $catid = array_filter( $catid );
 
-        $cattitle    = isset( $instance['cattitle'] ) ? intval( $instance['cattitle'] ) : 0; //Show category title
-        $allowdelete = isset( $instance['allowdelete'] ) ? intval( $instance['allowdelete'] ) : 0;
+        $cattitle    = isset( $instance['cattitle'] ) ? absint( $instance['cattitle'] ) : 0; //Show category title
+        $allowdelete = isset( $instance['allowdelete'] ) ? absint( $instance['allowdelete'] ) : 0;
 
 
-        $userid_attr = isset( $instance['userid'] ) ? intval( $instance['userid'] ) : 0;
+        $userid_attr = isset( $instance['userid'] ) ? absint( $instance['userid'] ) : 0;
         $userid      = absint( $userid_attr );
 
 
@@ -1355,17 +1365,17 @@ class CBXWPBookmarkHelper {
         $type_sql = '';
 
 
-        if ( $bookmark_mode != 'no_cat' ) {
+        if ( $bookmark_mode !== 'no_cat' ) {
             if ( is_array( $catid ) && sizeof( $catid ) > 0 ) {
                 $cats_ids_placeholders = implode( ',', array_fill( 0, count( $catid ), '%d' ) );
                 // phpcs:disable WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQLPlaceholders.UnfinishedPrepare
                 $cat_sql = $wpdb->prepare( "AND cat_id IN ({$cats_ids_placeholders})", $catid );
             } else {
-                if ( $bookmark_mode == 'user_cat' ) {
+                if ( $bookmark_mode === 'user_cat' ) {
                     //same user seeing
                     if ( $privacy != 2 ) {
                         //phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
-                        $cats = $wpdb->get_results( $wpdb->prepare( "SELECT *  FROM  {$category_table} WHERE user_id = %d AND privacy = %d", $userid, intval( $privacy ) ), ARRAY_A );
+                        $cats = $wpdb->get_results( $wpdb->prepare( "SELECT *  FROM  {$category_table} WHERE user_id = %d AND privacy = %d", $userid, absint( $privacy ) ), ARRAY_A );
                     } else {
                         // phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
                         $cats = $wpdb->get_results( $wpdb->prepare( "SELECT *  FROM  {$category_table} WHERE user_id = %d", $userid ), ARRAY_A );
@@ -1374,7 +1384,7 @@ class CBXWPBookmarkHelper {
                     $cats_ids = [];
                     if ( is_array( $cats ) && sizeof( $cats ) > 0 ) {
                         foreach ( $cats as $cat ) {
-                            $cats_ids[] = intval( $cat['id'] );
+                            $cats_ids[] = absint( $cat['id'] );
                         }
 
                         $cats_ids_placeholders = implode( ',', array_fill( 0, count( $cats_ids ), '%d' ) );
@@ -1387,10 +1397,10 @@ class CBXWPBookmarkHelper {
 
         $join = '';
 
-        if ( $order_by == 'title' ) {
+        if ( $order_by === 'title' ) {
 
             $posts_table = esc_sql( $wpdb->prefix . 'posts' ); //core posts table
-            $join        .= " LEFT JOIN $posts_table posts ON posts.ID = bookmarks.object_id ";
+            $join        .= " LEFT JOIN {$posts_table} posts ON posts.ID = bookmarks.object_id ";
 
             $order_by = 'posts.post_title';
         }
@@ -1403,15 +1413,17 @@ class CBXWPBookmarkHelper {
         }
 
         $param    = [ $userid, $offset, $limit ];
-        $main_sql = "SELECT *  FROM $bookmark_table AS bookmarks $join  WHERE user_id = %d $cat_sql $type_sql group by object_id ORDER BY $order_by $order LIMIT %d, %d";
+        $main_sql = "SELECT *  FROM {$bookmark_table} AS bookmarks {$join}  WHERE user_id = %d {$cat_sql} {$type_sql} group by object_id ORDER BY {$order_by} {$order} LIMIT %d, %d";
 
         // phpcs:ignore WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.PreparedSQL.NotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
         $items = $wpdb->get_results( $wpdb->prepare( $main_sql, $param ) );
 
 
+
         // checking If results are available
         if ( $items !== null && sizeof( $items ) > 0 ) {
             foreach ( $items as $item ) {
+
                 $action_html = ( $allowdelete ) ? '&nbsp; <span class="cbxbookmark-delete-btn cbxbookmark-post-delete ld-ext-right icon icon-only" data-busy="0" data-object_id="' . absint( $item->object_id ) . '" data-object_type="' . esc_attr( $item->object_type ) . '" data-bookmark_id="' . absint( $item->id ) . '"><i class="cbx-icon cbx-icon-15">' . $delete_svg . '</i><i class="ld ld-ring ld-spin"></i><i class="sr-only">' . esc_attr__( 'Delete',
                                 'cbxwpbookmark' ) . '</i></span>' : '';
 
@@ -1442,10 +1454,7 @@ class CBXWPBookmarkHelper {
         ?>
         <?php
 
-        $output = ob_get_clean();
-
-
-        return $output;
+        return ob_get_clean();
     }//end cbxbookmark_post_html
 
 
@@ -1613,27 +1622,27 @@ class CBXWPBookmarkHelper {
         $user_bookmark_page_url = cbxwpbookmarks_mybookmark_page_url();
         $bookmark_mode          = $settings->get_field( 'bookmark_mode', 'cbxwpbookmark_basics', 'user_cat' );
 
-        if ( $bookmark_mode == 'no_cat' ) {
+        if ( $bookmark_mode === 'no_cat' ) {
             return '';
         }
 
-        $privacy    = isset( $instance['privacy'] ) ? intval( $instance['privacy'] ) : 1; //1 = public, 0 = private 2 = ignore
+        $privacy    = isset( $instance['privacy'] ) ? absint( $instance['privacy'] ) : 1; //1 = public, 0 = private 2 = ignore
         $order_by   = isset( $instance['orderby'] ) ? esc_attr( $instance['orderby'] ) : 'cat_name';
         $order      = isset( $instance['order'] ) ? esc_attr( $instance['order'] ) : 'ASC';
-        $show_count = isset( $instance['show_count'] ) ? intval( $instance['show_count'] ) : 0;
+        $show_count = isset( $instance['show_count'] ) ? absint( $instance['show_count'] ) : 0;
         $title      = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
 
 
-        $display        = isset( $instance['display'] ) ? intval( $instance['display'] ) : 0;                //0 = list , 1 = dropdown
-        $show_bookmarks = isset( $instance['show_bookmarks'] ) ? intval( $instance['show_bookmarks'] ) : 0;  //0 = don't , 1 = show bookmarks as sublist
+        $display        = isset( $instance['display'] ) ? absint( $instance['display'] ) : 0;                //0 = list , 1 = dropdown
+        $show_bookmarks = isset( $instance['show_bookmarks'] ) ? absint( $instance['show_bookmarks'] ) : 0;  //0 = don't , 1 = show bookmarks as sublist
         $base_url       = isset( $instance['base_url'] ) ? esc_url( $instance['base_url'] ) : esc_url( $user_bookmark_page_url );
 
         if ( $base_url != '' ) {
             $user_bookmark_page_url = esc_url( $base_url );
         }
 
-        $allowedit = isset( $instance['allowedit'] ) ? intval( $instance['allowedit'] ) : 0;
-        $user_id   = isset( $instance['userid'] ) ? intval( $instance['userid'] ) : 0;
+        $allowedit = isset( $instance['allowedit'] ) ? absint( $instance['allowedit'] ) : 0;
+        $user_id   = isset( $instance['userid'] ) ? absint( $instance['userid'] ) : 0;
 
 
         $userid = $user_id;
@@ -1701,7 +1710,7 @@ class CBXWPBookmarkHelper {
                 );
             } elseif ( $bookmark_mode == 'global_cat' ) {
                 // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
-                $items = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM  $category_table WHERE 1  ORDER BY %s %s", $order_by, $order ) );
+                $items = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM  {$category_table} WHERE 1  ORDER BY %s %s", $order_by, $order ) );
             }
 
 
@@ -2611,10 +2620,10 @@ class CBXWPBookmarkHelper {
 
         if ( $object_type != '' ) {
             // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
-            $bookmarks = $wpdb->get_results( $wpdb->prepare( "SELECT log.* FROM $bookmark_table AS log WHERE log.object_id = %d ;", $object_id ), 'ARRAY_A' );
+            $bookmarks = $wpdb->get_results( $wpdb->prepare( "SELECT log.* FROM {$bookmark_table} AS log WHERE log.object_id = %d ;", $object_id ), 'ARRAY_A' );
         } else {
             // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
-            $bookmarks = $wpdb->get_results( $wpdb->prepare( "SELECT log.* FROM $bookmark_table AS log WHERE log.object_id = %d AND log.object_type = %s ;", $object_id, $object_type ), 'ARRAY_A' );
+            $bookmarks = $wpdb->get_results( $wpdb->prepare( "SELECT log.* FROM {$bookmark_table} AS log WHERE log.object_id = %d AND log.object_type = %s ;", $object_id, $object_type ), 'ARRAY_A' );
         }
 
         return $bookmarks;
@@ -2984,7 +2993,7 @@ class CBXWPBookmarkHelper {
         $bookmark_table = esc_sql( $wpdb->prefix . 'cbxwpbookmark' );
 
         // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
-        $bookmarks = $wpdb->get_results( $wpdb->prepare( "SELECT *  FROM  $bookmark_table WHERE user_id = %d", $user_id ), ARRAY_A );
+        $bookmarks = $wpdb->get_results( $wpdb->prepare( "SELECT *  FROM  {$bookmark_table} WHERE user_id = %d", $user_id ), ARRAY_A );
 
         if ( $bookmarks !== null ) {
             return $bookmarks;
