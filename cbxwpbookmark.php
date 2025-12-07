@@ -41,7 +41,7 @@ defined( 'CBXWPBOOKMARK_DEV_MODE' ) or define( 'CBXWPBOOKMARK_DEV_MODE', false )
 
 defined( 'CBXWPBOOKMARK_PHP_MIN_VERSION' ) or define( 'CBXWPBOOKMARK_PHP_MIN_VERSION', '7.4' );
 defined( 'CBXWPBOOKMARK_WP_MIN_VERSION' ) or define( 'CBXWPBOOKMARK_WP_MIN_VERSION', '5.3' );
-defined( 'CBXWPBOOKMARK_PRO_VERSION' ) or define( 'CBXWPBOOKMARK_PRO_VERSION', '2.0.6' );
+defined( 'CBXWPBOOKMARK_PRO_VERSION' ) or define( 'CBXWPBOOKMARK_PRO_VERSION', '2.0.5' );
 
 
 // Include the main Bookmark class.
