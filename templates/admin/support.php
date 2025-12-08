@@ -83,6 +83,14 @@ $cbxwpbookmark_doc_url    = CBXWPBookmarkHelper::url_utmy( 'https://codeboxr.com
                     <div class="content">
                         <div class="cbx-backend-settings-row">
                             <p>
+                                Version - 2.0.6
+                            </p>
+                            <ul>
+                                <li>[fixed] Dashboard and frontend bookmark listing js error fixed if single click category mode</li>
+                            </ul>
+                        </div>
+                        <div class="cbx-backend-settings-row">
+                            <p>
                                 Version - 2.0.5
                             </p>
                             <ul>

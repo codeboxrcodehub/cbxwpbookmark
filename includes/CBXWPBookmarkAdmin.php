@@ -853,6 +853,7 @@ class CBXWPBookmarkAdmin {
 	public function plugin_upgrader_process_complete_partial(){
 		\CBXWPBookmarkHelper::cbxbookmark_create_pages();
 		\CBXWPBookmarkHelper::customizer_default_adjust( true );
+		\CBXWPBookmarkHelper::defaultRoleCapability();
 	}//end method plugin_upgrader_process_complete_partial
 
 	/**
@@ -945,7 +946,7 @@ class CBXWPBookmarkAdmin {
 		if($pro_addon_version != '' && version_compare( $pro_addon_version, $pro_latest_version, '<' ) ){
 
 			//$plugin_manual_update = 'https://codeboxr.com/manual-update-pro-addon/';
-			$plugin_manual_update = admin_url( 'admin.php?page=cbxwpbookmark-settings#cbxwpbookmark_licences' );
+			//$plugin_manual_update = admin_url( 'admin.php?page=cbxwpbookmark-settings#cbxwpbookmark_licences' );
 
 
 			/* translators:translators: %s: plugin setting url for licence */
@@ -966,10 +967,6 @@ class CBXWPBookmarkAdmin {
 	 * Check plugin compatibility and pro addon install campaign
 	 */
 	public function pro_addon_compatibility_campaign() {
-		if ( ! function_exists( 'is_plugin_active' ) ) {
-			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-		}
-
 		//if the pro addon is active or installed
 		if (!defined( 'CBXWPBOOKMARKADDON_PLUGIN_NAME' )) {
 			/* translators: %s: bookmark product description url */
@@ -1008,9 +1005,9 @@ class CBXWPBookmarkAdmin {
 	 */
 	public function plugin_row_meta( $links_array, $plugin_file_name, $plugin_data, $status ) {
 		if ( strpos( $plugin_file_name, CBXWPBOOKMARK_BASE_NAME ) !== false ) {
-			if ( ! function_exists( 'is_plugin_active' ) ) {
+			/*if ( ! function_exists( 'is_plugin_active' ) ) {
 				include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-			}
+			}*/
 
 			$links_array[] = '<a target="_blank" style="color:#005ae0 !important; font-weight: bold;" href="https://wordpress.org/support/plugin/cbxwpbookmark/" aria-label="' . esc_attr__( 'Free Support', 'cbxwpbookmark' ) . '">' . esc_html__( 'Free Support', 'cbxwpbookmark' ) . '</a>';
 			$links_array[] = '<a target="_blank" style="color:#005ae0 !important; font-weight: bold;" href="https://wordpress.org/plugins/cbxwpbookmark/#reviews" aria-label="' . esc_attr__( 'Reviews', 'cbxwpbookmark' ) . '">' . esc_html__( 'Reviews', 'cbxwpbookmark' ) . '</a>';

@@ -3,7 +3,7 @@ Contributors: codeboxr, manchumahara
 Tags: bookmark,favorite,collection,user collection,user bookmark
 Requires at least: 5.3
 Tested up to: 6.9
-Stable tag: 2.0.5
+Stable tag: 2.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -139,17 +139,17 @@ This plugin is inspired from youtube's bookmark or favorite feature. User can cr
 * Ultimate member support
 * usersWP support
 
-### 🔱 Pro Addon: myCred Integration ###
+### 🔱 Pro Feature: myCred Integration ###
 
 * User gets point after bookmark (configurable)
 * Point cuts from user after remove bookmark (configurable)
 
-👉 Get the [CBX Bookmark myCred Addon](https://codeboxr.com/product/cbx-bookmark-mycred-addon/)
 
 ### 🔱 Third party plugin Integration ###
 
 * buddyBoss
 * myCred
+* bbPress
 * Fifu(Featured Image from URL)
 
 == 🔩 Installation ==
@@ -169,6 +169,9 @@ How to install the plugin and get it working.
 == Screenshots ==
 
 == Changelog ==
+= 2.0.6 =
+* [fixed] Dashboard and frontend bookmark listing js error fixed if single click category mode
+
 = 2.0.5 =
 * [fixed] VC widget error fixed
 * [updated] WordPress 6.9 compatible
